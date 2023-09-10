@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>3 - Making A Controller</title>
+    <title>Apache Zeppelin Release 0.10.1</title>
     <meta name="description" content="">
     <meta name="author" content="The Apache Software Foundation">
 
@@ -127,226 +127,14 @@
     <div class="content">
       
 
+<!--<div class="hero-unit Apache Zeppelin Release 0.10.1">
+  <h1></h1>
+</div>
+-->
+
 <div class="row">
-  
-    <div class="sideMenu col-sm-3">
-      
-      
-      
-
-
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-        
-          
-            <li><a href="/contribution/zeppelinweb/goodPracticeGuide01.html">1 - Defining Components</a></li>
-          
-        
-      
-    
-  
-    
-      
-        
-          
-            <li><a href="/contribution/zeppelinweb/goodPracticeGuide02.html">2 - Event Dispatching</a></li>
-          
-        
-      
-    
-  
-    
-      
-        
-          
-            <li class="active"><a href="/contribution/zeppelinweb/goodPracticeGuide03.html" class="active">3 - Making A Controller</a></li>
-          
-        
-      
-    
-  
-    
-      
-        
-          
-            <li><a href="/contribution/zeppelinweb/goodPracticeGuide04.html">4 - Using ng-bind</a></li>
-          
-        
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-        
-      
-        
-          
-            <li><a href="/contribution/webapplication.html">Web Application</a></li>
-          
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-
-
-
-
-    </div>
-    <div class="col-sm-9">
-      <!--
+  <div class="col-md-12">
+    <!--
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -360,120 +148,107 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<h1>How to Write a Controller</h1>
+<h2>Apache Zeppelin Release 0.10.1</h2>
 
-<p><br/>
-Our main rule regarding writing a controller, is to use the <code>Controller as vm</code> style, however, we also have a few other style guidelines.</p>
+<p>The Apache Zeppelin community is pleased to announce the availability of the 0.10.1 release.</p>
 
-<p>You can see below a full example of what the controller would look like.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">(function() {
-  &#39;use strict&#39;;
+<p>The community put significant effort into improving Apache Zeppelin since the last release.
+568 tickets are resolved.</p>
 
-  angular.module(&#39;zeppelinWebApp&#39;)
-    .controller(&#39;myNewController&#39;, myNewController);
+<p>We encourage to <a href="../../download.html">download</a> the latest release. Feedback through the <a href="../../community.html">mailing lists</a> is very welcome.</p>
 
-    myNewController.$inject = [&#39;$http&#39;];
+<p><br />
+You can visit <a href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12350543&projectId=12316221">issue tracker</a> for full list of issues that are resolved.</p>
 
-    function myNewController($http) {
+<p><br /></p>
 
-      var vm = this;
+<h3>Contributors</h3>
 
-      vm.publicVariable = {};
+<p>This release would not be possible without the following community members&#39; contributions:</p>
 
-      // Controller&#39;s public functions
-      vm.myControllerPublicFunction = myControllerPublicFunction;
+<p>1721563048@qq.com
+Ada Wong
+Adam Binford
+Aleksandr Iushmanov
+Alex Ott
+Andrea Santurbano
+Andreas Weise
+Andrew Musselman
+Bowen0729
+Christoph Nölle
+Dalitso Banda
+Danny Cranmer
+David Golightly
+EricGao888
+Hchen
+Heekang Koo
+Hsuan Lee
+Jason Ogaard
+Javier Fuentes
+Jeff Zhang
+Jocelyn Turcotte
+Johannes Schillinger
+Kalyan Kanuri
+Kengo Seki
+Kevin Risden
+Kirill Turchinskii
+Krishna Pandey
+Lee moon soo
+Martin Tzvetanov Grigorov
+Michael Lese
+Nathaniel Troutman
+Niels Grewe
+OmriK
+Pasha Finkelshteyn
+Philipp Dallig
+Prabhjyot Singh
+Pranav Tharoor
+Robert Hajek
+Stefan Miklosovic
+Timo Olkkonen
+Trevor-zhang
+Vipin Rathor
+Vishal Rao
+Vladimir Prus
+Xun Liu
+Yann PETIT
+YiningGong
+Yunseong Hwang
+Yurim Jin
+Zeno Zeng
+archy.gu
+cuspymd
+dijie
+feibabm
+flinker@126.com
+fredster33
+guanhua.lgh
+house.zhang
+huage1994
+jaeho.yoo
+jasmine-song
+jeffzhang.zjf
+jenil.shah
+jiabao.sun
+khud
+latch-lio
+nicolasgong
+prjain
+qiguoxiaosheng
+rick
+sangrho.lee
+sooyeon shin
+taokelu
+thomas
+totorooo
+vmaster
+xiejiajun
+xuzhou
+yejingchen
+zhangxiaoping
+zhengsl</p>
 
-      _init();
-
-      /*************************************
-      ** Public functions Implementation **
-      *************************************/
-
-      function myControllerPublicFunction() {
-
-        ...
-
-      }
-
-      function myOtherPublicFunction() {
-
-        _utilFunction();
-        ...
-
-      }
-
-      /*************************************
-      ** Private functions Implementation **
-      *************************************/
-
-      function _init() {
-
-        vm.myControllerPublicFunction();
-        ...
-
-      }
-
-      function _utilFunction() {
-
-        ...
-
-      }
-
-      /***************************************
-      ** $scope.$on catchers Implementation **
-      ***************************************/
-
-      $scope.$on(&#39;eventName&#39;, function(event) {
-
-        ...
-
-      })
-    }
-})();
-</code></pre></figure>
-<p>This might look like a lot of lines, but it is mainly to show all the rules at once.</p>
-
-<h4>Using the controller in a view</h4>
-
-<p>Now let&#39;s see how we can use it inside our <code>.html</code> view in normal situations.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div ng-controller=&quot;myNewController as newCtrl&quot;&gt;
-  &lt;div ng-click=&quot;newCtrl.myControllerPublicFunction&quot;&gt;{{newCtrl.publicVariable}}&lt;/div&gt;
-&lt;/div&gt;
-</code></pre></figure>
-<h4>Using the controller in a page</h4>
-
-<p>In the case where your controller will be used on a view directly linked to a route</p>
-
-<p>For example: <code>localhost:8080/myPageName</code></p>
-
-<p>The definition of the controller will take place in the <code>$routeProvider</code> section of the <code>app.js</code> file.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">.when(&#39;/myPageName&#39;, {
-  templateUrl: &#39;app/myPageName/myPageName.html&#39;,
-  controller: &#39;myNewController&#39;,
-  controllerAs: &#39;newCtrl&#39;
-})
-</code></pre></figure>
-<p>Which will leave the <code>.html</code> view without any <code>ng-controller</code> property.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div&gt;
-  &lt;div ng-click=&quot;newCtrl.myControllerPublicFunction&quot;&gt;{{newCtrl.publicVariable}}&lt;/div&gt;
-&lt;/div&gt;
-</code></pre></figure>
-<h4>The rules in detail</h4>
-
-<ul>
-<li>Except <code>$scope.$on</code> and a few special cases, we do not use the <code>$scope</code> of that controller</li>
-<li>Only the functions and variables needed in the view should be linked to the <code>vm</code></li>
-<li>The view is using the controller&#39;s variables and functions through the &#39;as&#39; keyword you set</li>
-<li>Private functions&#39; name start with a <code>_</code></li>
-<li>Functions and variables are grouped by type in that order:
-private variables, public variables, init function call, public functions, private functions, $scope.$on functions</li>
-<li>There is a nice comment separating all those groups</li>
-<li>Services are added to the controller using the <code>$inject</code> at the top of the component</li>
-<li>Inside the controller, you call the public functions using <code>vm.nameOfTheFunction()</code></li>
-</ul>
-
-    </div>
-  
+  </div>
 </div>
 
 
