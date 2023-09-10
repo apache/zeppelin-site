@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.2 Documentation: Geode/Gemfire OQL Interpreter for Apache Zeppelin</title>
+    <meta name="description" content="Apache Geode (incubating) provides a database-like consistency model, reliable transaction processing and a shared-nothing architecture to maintain very low latency performance with high concurrency processing.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+              <span style="vertical-align:middle">Zeppelin</span>
+            </a>
+            <a class="navbar-brand-version" href="/docs/0.7.2">
+              <span><small>0.7.2</small></span>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.2/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.2/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.2/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.2/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.2/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.2/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.2/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.2/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.2/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.2/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.2/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.2/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.2/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.2/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.2/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.2/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.2/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.2/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.2/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.2/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.2/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.2/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.2/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.2/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.2/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.2/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.2/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.2/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-notebookRepo.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.2/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.2/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.2/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.7.2/security/helium_authorization.html">Helium Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.2/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.2/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.2/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.2/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.2/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Geode/Gemfire OQL Interpreter for Apache Zeppelin">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Geode/Gemfire OQL Interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Class</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>%geode.oql</td>
+    <td>GeodeOqlInterpreter</td>
+    <td>Provides OQL environment for Apache Geode</td>
+  </tr>
+</table>
+
+<p>This interpreter supports the <a href="http://geode.incubator.apache.org/">Geode</a> <a href="http://geode-docs.cfapps.io/docs/developing/querying_basics/oql_compared_to_sql.html">Object Query Language (OQL)</a>.  With the OQL-based querying language:</p>
+
+<p><a href="https://www.youtube.com/watch?v=zvzzA9GXu3Q"><img align="right" src="http://img.youtube.com/vi/zvzzA9GXu3Q/3.jpg" alt="zeppelin-view" hspace="10" width="200"></img></a></p>
+
+<ul>
+<li>You can query on any arbitrary object</li>
+<li>You can navigate object collections</li>
+<li>You can invoke methods and access the behavior of objects</li>
+<li>Data mapping is supported</li>
+<li>You are not required to declare types. Since you do not need type definitions, you can work across multiple languages</li>
+<li>You are not constrained by a schema</li>
+</ul>
+
+<p>This <a href="https://www.youtube.com/watch?v=zvzzA9GXu3Q">Video Tutorial</a> illustrates some of the features provided by the <code>Geode Interpreter</code>.</p>
+
+<h2>Create Interpreter</h2>
+
+<p>By default Zeppelin creates one <code>Geode/OQL</code> instance. You can remove it or create more instances.</p>
+
+<p>Multiple Geode instances can be created, each configured to the same or different backend Geode cluster. But over time a  <code>Notebook</code> can have only one Geode interpreter instance <code>bound</code>. That means you <em>cannot</em> connect to different Geode clusters in the same <code>Notebook</code>. This is a known Zeppelin limitation.</p>
+
+<p>To create new Geode instance open the <code>Interpreter</code> section and click the <code>+Create</code> button. Pick a <code>Name</code> of your choice and from the <code>Interpreter</code> drop-down select <code>geode</code>.  Then follow the configuration instructions and <code>Save</code> the new instance.</p>
+
+<blockquote>
+<p>Note: The <code>Name</code> of the instance is used only to distinguish the instances while binding them to the <code>Notebook</code>. The <code>Name</code> is irrelevant inside the <code>Notebook</code>. In the <code>Notebook</code> you must use <code>%geode.oql</code> tag.</p>
+</blockquote>
+
+<h2>Bind to Notebook</h2>
+
+<p>In the <code>Notebook</code> click on the <code>settings</code> icon in the top right corner. The select/deselect the interpreters to be bound with the <code>Notebook</code>.</p>
+
+<h2>Configuration</h2>
+
+<p>You can modify the configuration of the Geode from the <code>Interpreter</code> section.  The Geode interpreter expresses the following properties:</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Property Name</th>
+    <th>Description</th>
+    <th>Default Value</th>
+  </tr>
+  <tr>
+    <td>geode.locator.host</td>
+    <td>The Geode Locator Host</td>
+    <td>localhost</td>
+  </tr>
+  <tr>
+    <td>geode.locator.port</td>
+    <td>The Geode Locator Port</td>
+    <td>10334</td>
+  </tr>
+  <tr>
+    <td>geode.max.result</td>
+    <td>Max number of OQL result to display to prevent the browser overload</td>
+    <td>1000</td>
+  </tr>
+</table>
+
+<h2>How to use</h2>
+
+<blockquote>
+<p><em>Tip 1: Use (CTRL + .) for OQL auto-completion.</em></p>
+
+<p><em>Tip 2: Always start the paragraphs with the full <code>%geode.oql</code> prefix tag! The short notation: <code>%geode</code> would still be able run the OQL queries but the syntax highlighting and the auto-completions will be disabled.</em></p>
+</blockquote>
+
+<h3>Create / Destroy Regions</h3>
+
+<p>The OQL specification does not support  <a href="https://cwiki.apache.org/confluence/display/GEODE/Index#Index-MainConceptsandComponents">Geode Regions</a> mutation operations. To <code>create</code>/<code>destroy</code> regions one should use the <a href="http://geode-docs.cfapps.io/docs/tools_modules/gfsh/chapter_overview.html">GFSH</a> shell tool instead. In the following it is assumed that the GFSH is colocated with Zeppelin server.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%sh
+<span class="nb">source</span> /etc/geode/conf/geode-env.sh
+gfsh <span class="s">&lt;&lt; EOF</span>
+
+<span class="s"> connect --locator=ambari.localdomain[10334]</span>
+
+<span class="s"> destroy region --name=/regionEmployee</span>
+<span class="s"> destroy region --name=/regionCompany</span>
+<span class="s"> create region --name=regionEmployee --type=REPLICATE</span>
+<span class="s"> create region --name=regionCompany --type=REPLICATE</span>
+
+<span class="s"> exit;</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<p>Above snippet re-creates two regions: <code>regionEmployee</code> and <code>regionCompany</code>. Note that you have to explicitly specify the locator host and port. The values should match those you have used in the Geode Interpreter configuration. Comprehensive list of <a href="http://geode-docs.cfapps.io/docs/tools_modules/gfsh/gfsh_quick_reference.html">GFSH Commands by Functional Area</a>.</p>
+
+<h3>Basic OQL</h3>
+<div class="highlight"><pre><code class="sql language-sql" data-lang="sql"><span class="o">%</span><span class="n">geode</span><span class="p">.</span><span class="n">oql</span>
+<span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="o">/</span><span class="n">regionEmployee</span>
+</code></pre></div>
+<p>OQL <code>IN</code> and <code>SET</code> filters:</p>
+<div class="highlight"><pre><code class="sql language-sql" data-lang="sql"><span class="o">%</span><span class="n">geode</span><span class="p">.</span><span class="n">oql</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">/</span><span class="n">regionEmployee</span>
+<span class="k">WHERE</span> <span class="n">companyId</span> <span class="k">IN</span> <span class="k">SET</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">OR</span> <span class="n">lastName</span> <span class="k">IN</span> <span class="k">SET</span><span class="p">(</span><span class="s1">&#39;Tzolov13&#39;</span><span class="p">,</span> <span class="s1">&#39;Tzolov73&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>OQL <code>JOIN</code> operations</p>
+<div class="highlight"><pre><code class="sql language-sql" data-lang="sql"><span class="o">%</span><span class="n">geode</span><span class="p">.</span><span class="n">oql</span>
+<span class="k">SELECT</span> <span class="n">e</span><span class="p">.</span><span class="n">employeeId</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">firstName</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">lastName</span><span class="p">,</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span> <span class="k">as</span> <span class="n">companyId</span><span class="p">,</span> <span class="k">c</span><span class="p">.</span><span class="n">companyName</span><span class="p">,</span> <span class="k">c</span><span class="p">.</span><span class="n">address</span>
+<span class="k">FROM</span> <span class="o">/</span><span class="n">regionEmployee</span> <span class="n">e</span><span class="p">,</span> <span class="o">/</span><span class="n">regionCompany</span> <span class="k">c</span>
+<span class="k">WHERE</span> <span class="n">e</span><span class="p">.</span><span class="n">companyId</span> <span class="o">=</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span>
+</code></pre></div>
+<p>By default the QOL responses contain only the region entry values. To access the keys, query the <code>EntrySet</code> instead:</p>
+<div class="highlight"><pre><code class="sql language-sql" data-lang="sql"><span class="o">%</span><span class="n">geode</span><span class="p">.</span><span class="n">oql</span>
+<span class="k">SELECT</span> <span class="n">e</span><span class="p">.</span><span class="k">key</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">companyId</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">email</span>
+<span class="k">FROM</span> <span class="o">/</span><span class="n">regionEmployee</span><span class="p">.</span><span class="n">entrySet</span> <span class="n">e</span>
+</code></pre></div>
+<p>Following query will return the EntrySet value as a Blob:</p>
+<div class="highlight"><pre><code class="sql language-sql" data-lang="sql"><span class="o">%</span><span class="n">geode</span><span class="p">.</span><span class="n">oql</span>
+<span class="k">SELECT</span> <span class="n">e</span><span class="p">.</span><span class="k">key</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">value</span> <span class="k">FROM</span> <span class="o">/</span><span class="n">regionEmployee</span><span class="p">.</span><span class="n">entrySet</span> <span class="n">e</span>
+</code></pre></div>
+<blockquote>
+<p>Note: You can have multiple queries in the same paragraph but only the result from the first is displayed. [<a href="https://issues.apache.org/jira/browse/ZEPPELIN-178">1</a>], [<a href="https://issues.apache.org/jira/browse/ZEPPELIN-212">2</a>].</p>
+</blockquote>
+
+<h3>GFSH Commands From The Shell</h3>
+
+<p>Use the Shell Interpreter (<code>%sh</code>) to run OQL commands form the command line:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%sh
+<span class="nb">source</span> /etc/geode/conf/geode-env.sh
+gfsh -e <span class="s2">&quot;connect&quot;</span> -e <span class="s2">&quot;list members&quot;</span>
+</code></pre></div>
+<h3>Apply Zeppelin Dynamic Forms</h3>
+
+<p>You can leverage <a href="../manual/dynamicform.html">Zeppelin Dynamic Form</a> inside your OQL queries. You can use both the <code>text input</code> and <code>select form</code> parameterization features</p>
+<div class="highlight"><pre><code class="sql language-sql" data-lang="sql"><span class="o">%</span><span class="n">geode</span><span class="p">.</span><span class="n">oql</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">/</span><span class="n">regionEmployee</span> <span class="n">e</span> <span class="k">WHERE</span> <span class="n">e</span><span class="p">.</span><span class="n">employeeId</span> <span class="o">&gt;</span> <span class="err">${</span><span class="n">Id</span><span class="err">}</span>
+</code></pre></div>
+<h3>Auto-completion</h3>
+
+<p>The Geode Interpreter provides a basic auto-completion functionality. On <code>(Ctrl+.)</code> it list the most relevant suggestions in a pop-up window.</p>
+
+<h2>Geode REST API</h2>
+
+<p>To list the defined regions you can use the <a href="http://geode-docs.cfapps.io/docs/geode_rest/chapter_overview.html">Geode REST API</a>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">http://&lt;geode server hostname&gt;phd1.localdomain:8484/gemfire-api/v1/
+</code></pre></div><div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;regions&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;regionEmployee&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;REPLICATE&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;key-constraint&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;value-constraint&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+  <span class="p">},</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;regionCompany&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;REPLICATE&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;key-constraint&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;value-constraint&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+  <span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>To enable Geode REST API with JSON support add the following properties to geode.server.properties.file and restart:</p>
+</blockquote>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">http-service-port=8484
+start-dev-rest-api=true
+</code></pre></div>
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -17,3 +17,5 @@ source 'https://rubygems.org'
 gem 'github-pages'
 gem 'redcarpet'
 gem 'jekyll-twitter-plugin'
+
+gem "webrick", "~> 1.8" # By upgrading ruby to 3.x

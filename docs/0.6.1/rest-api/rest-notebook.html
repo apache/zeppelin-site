@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Notebook REST API</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.1/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.1/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.1/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.1/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.1/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.1/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.1/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.1/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.1/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.1">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.1</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.1/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.1/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.1/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.1/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.1/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.1/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.1/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.1/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.1/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.1/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.1/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.1/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.1/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.1/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.1/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.1/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.6.1/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.1/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.1/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.1/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.1/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.1/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.1/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.1/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.1/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.1/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.1/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.1/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.1/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.1/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.1/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.1/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.1/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.1/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.1/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.1/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.1/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.1/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.1/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.1/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.1/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.1/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.1/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.1/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.1/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.1/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.1/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.1/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.1/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.1/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.1/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.1/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.1/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Notebook REST API">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Apache Zeppelin Notebook REST API</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p>Apache Zeppelin provides several REST APIs for interaction and remote activation of zeppelin functionality.
+All REST APIs are available starting with the following endpoint <code>http://[zeppelin-server]:[zeppelin-port]/api</code>. 
+Note that Apache Zeppelin REST APIs receive or return JSON objects, it is recommended for you to install some JSON viewers such as <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc">JSONView</a>.</p>
+
+<p>If you work with Apache Zeppelin and find a need for an additional REST API, please <a href="http://zeppelin.apache.org/community.html">file an issue or send us an email</a>.</p>
+
+<h2>Notebook REST API List</h2>
+
+<p>Notebooks REST API supports the following operations: List, Create, Get, Delete, Clone, Run, Export, Import as detailed in the following tables.</p>
+
+<h3>List of the notebooks</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method lists the available notebooks on your server.
+          Notebook JSON contains the <code>name</code> and <code>id</code> of all notebooks.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: [
+    {
+      &quot;name&quot;:&quot;Homepage&quot;,
+      &quot;id&quot;:&quot;2AV4WUEMK&quot;
+    },
+    {
+      &quot;name&quot;:&quot;Zeppelin Tutorial&quot;,
+      &quot;id&quot;:&quot;2A94M5J1Z&quot;
+    }
+  ]
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Create a new notebook</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method creates a new notebook using the given name or default name if none given.
+          The body field of the returned JSON contains the new notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON input (without paragraphs) </td>
+      <td><pre>{&quot;name&quot;: &quot;name of new notebook&quot;}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON input (with initial paragraphs) </td>
+      <td><pre>
+{
+  &quot;name&quot;: &quot;name of new notebook&quot;,
+  &quot;paragraphs&quot;: [
+    {
+      &quot;title&quot;: &quot;paragraph title1&quot;,
+      &quot;text&quot;: &quot;paragraph text1&quot;
+    },
+    {
+      &quot;title&quot;: &quot;paragraph title2&quot;,
+      &quot;text&quot;: &quot;paragraph text2&quot;
+    }
+  ]
+}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;CREATED&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: &quot;2AZPHY918&quot;
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Get an existing notebook information</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method retrieves an existing notebook&#39;s information using the given id.
+          The body field of the returned JSON contain information about paragraphs in the notebook.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: {
+    &quot;paragraphs&quot;: [
+      {
+        &quot;text&quot;: &quot;%sql \nselect age, count(1) value\nfrom bank \nwhere age &lt; 30 \ngroup by age \norder by age&quot;,
+        &quot;config&quot;: {
+          &quot;colWidth&quot;: 4,
+          &quot;graph&quot;: {
+            &quot;mode&quot;: &quot;multiBarChart&quot;,
+            &quot;height&quot;: 300,
+            &quot;optionOpen&quot;: false,
+            &quot;keys&quot;: [
+              {
+                &quot;name&quot;: &quot;age&quot;,
+                &quot;index&quot;: 0,
+                &quot;aggr&quot;: &quot;sum&quot;
+              }
+            ],
+            &quot;values&quot;: [
+              {
+                &quot;name&quot;: &quot;value&quot;,
+                &quot;index&quot;: 1,
+                &quot;aggr&quot;: &quot;sum&quot;
+              }
+            ],
+            &quot;groups&quot;: [],
+            &quot;scatter&quot;: {
+              &quot;xAxis&quot;: {
+                &quot;name&quot;: &quot;age&quot;,
+                &quot;index&quot;: 0,
+                &quot;aggr&quot;: &quot;sum&quot;
+              },
+              &quot;yAxis&quot;: {
+                &quot;name&quot;: &quot;value&quot;,
+                &quot;index&quot;: 1,
+                &quot;aggr&quot;: &quot;sum&quot;
+              }
+            }
+          }
+        },
+        &quot;settings&quot;: {
+          &quot;params&quot;: {},
+          &quot;forms&quot;: {}
+        },
+        &quot;jobName&quot;: &quot;paragraph_1423500782552_-1439281894&quot;,
+        &quot;id&quot;: &quot;20150210-015302_1492795503&quot;,
+        &quot;result&quot;: {
+          &quot;code&quot;: &quot;SUCCESS&quot;,
+          &quot;type&quot;: &quot;TABLE&quot;,
+          &quot;msg&quot;: &quot;age\tvalue\n19\t4\n20\t3\n21\t7\n22\t9\n23\t20\n24\t24\n25\t44\n26\t77\n27\t94\n28\t103\n29\t97\n&quot;
+        },
+        &quot;dateCreated&quot;: &quot;Feb 10, 2015 1:53:02 AM&quot;,
+        &quot;dateStarted&quot;: &quot;Jul 3, 2015 1:43:17 PM&quot;,
+        &quot;dateFinished&quot;: &quot;Jul 3, 2015 1:43:23 PM&quot;,
+        &quot;status&quot;: &quot;FINISHED&quot;,
+        &quot;progressUpdateIntervalMs&quot;: 500
+      }
+    ],
+    &quot;name&quot;: &quot;Zeppelin Tutorial&quot;,
+    &quot;id&quot;: &quot;2A94M5J1Z&quot;,
+    &quot;angularObjects&quot;: {},
+    &quot;config&quot;: {
+      &quot;looknfeel&quot;: &quot;default&quot;
+    },
+    &quot;info&quot;: {}
+  }
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Delete a notebook</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>DELETE</code> method deletes a notebook by the given notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;,&quot;message&quot;: &quot;&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Clone a notebook</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method clones a notebook by the given id and create a new notebook using the given name
+          or default name if none given.
+          The body field of the returned JSON contains the new notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON input </td>
+      <td><pre>{&quot;name&quot;: &quot;name of new notebook&quot;}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;CREATED&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: &quot;2AZPHY918&quot;
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Run all paragraphs</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method runs all paragraphs in the given notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/job/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Stop all paragraphs</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>DELETE</code> method stops all paragraphs in the given notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/job/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;:&quot;OK&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Get the status of all paragraphs</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method gets the status of all paragraphs by the given notebook id.
+          The body field of the returned JSON contains of the array that compose of the paragraph id, paragraph status, paragraph finish date, paragraph started date.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/job/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;body&quot;: [
+    {
+      &quot;id&quot;:&quot;20151121-212654_766735423&quot;,
+      &quot;status&quot;:&quot;FINISHED&quot;,
+      &quot;finished&quot;:&quot;Tue Nov 24 14:21:40 KST 2015&quot;,
+      &quot;started&quot;:&quot;Tue Nov 24 14:21:39 KST 2015&quot;
+    },
+    {
+      &quot;progress&quot;:&quot;1&quot;,
+      &quot;id&quot;:&quot;20151121-212657_730976687&quot;,
+      &quot;status&quot;:&quot;RUNNING&quot;,
+      &quot;finished&quot;:&quot;Tue Nov 24 14:21:35 KST 2015&quot;,
+      &quot;started&quot;:&quot;Tue Nov 24 14:21:40 KST 2015&quot;
+    }
+  ]
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Run a paragraph</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method runs the paragraph by given notebook and paragraph id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/job/[notebookId]/[paragraphId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON input (optional, only needed when if you want to update dynamic form&#39;s value) </td>
+      <td><pre>
+{
+  &quot;name&quot;: &quot;name of new notebook&quot;,
+  &quot;params&quot;: {
+    &quot;formLabel1&quot;: &quot;value1&quot;,
+    &quot;formLabel2&quot;: &quot;value2&quot;
+  }
+}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Stop a paragraph</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>DELETE</code> method stops the paragraph by given notebook and paragraph id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/job/[notebookId]/[paragraphId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Add Cron Job</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method adds cron job by the given notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/cron/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON input </td>
+      <td><pre>{&quot;cron&quot;: &quot;cron expression of notebook&quot;}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Remove Cron Job</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>DELETE</code> method removes cron job by the given notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/cron/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Get Cron Job</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method gets cron job expression of given notebook id.
+          The body field of the returned JSON contains the cron expression.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/cron/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;, &quot;body&quot;: &quot;* * * * * ?&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br /></p>
+
+<h3>Full text search through the paragraphs in all notebooks</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td><code>GET</code> request will return list of matching paragraphs
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/search?q=[query]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td>Sample JSON response </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;body&quot;: [
+    {
+      &quot;id&quot;: &quot;<noteId>/paragraph/<paragraphId>&quot;,
+      &quot;name&quot;:&quot;Notebook Name&quot;, 
+      &quot;snippet&quot;:&quot;&quot;,
+      &quot;text&quot;:&quot;&quot;
+    }
+  ]
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Create a new paragraph</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method create a new paragraph using JSON payload.
+          The body field of the returned JSON contain the new paragraph id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]/paragraph</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON input (add to the last) </td>
+      <td><pre>
+{
+  &quot;title&quot;: &quot;Paragraph insert revised&quot;,
+  &quot;text&quot;: &quot;%spark\nprintln(\&quot;Paragraph insert revised\&quot;)&quot;
+}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON input (add to specific index) </td>
+      <td><pre>
+{
+  &quot;title&quot;: &quot;Paragraph insert revised&quot;,
+  &quot;text&quot;: &quot;%spark\nprintln(\&quot;Paragraph insert revised\&quot;)&quot;,
+  &quot;index&quot;: 0
+}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;CREATED&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: &quot;20151218-100330_1754029574&quot;
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Get a paragraph information</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method retrieves an existing paragraph&#39;s information using the given id.
+          The body field of the returned JSON contain information about paragraph.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]/paragraph/[paragraphId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: {
+    &quot;title&quot;: &quot;Paragraph2&quot;,
+    &quot;text&quot;: &quot;%spark\n\nprintln(\&quot;it&#39;s paragraph2\&quot;)&quot;,
+    &quot;dateUpdated&quot;: &quot;Dec 18, 2015 7:33:54 AM&quot;,
+    &quot;config&quot;: {
+      &quot;colWidth&quot;: 12,
+      &quot;graph&quot;: {
+        &quot;mode&quot;: &quot;table&quot;,
+        &quot;height&quot;: 300,
+        &quot;optionOpen&quot;: false,
+        &quot;keys&quot;: [],
+        &quot;values&quot;: [],
+        &quot;groups&quot;: [],
+        &quot;scatter&quot;: {}
+      },
+      &quot;enabled&quot;: true,
+      &quot;title&quot;: true,
+      &quot;editorMode&quot;: &quot;ace/mode/scala&quot;
+    },
+    &quot;settings&quot;: {
+      &quot;params&quot;: {},
+      &quot;forms&quot;: {}
+    },
+    &quot;jobName&quot;: &quot;paragraph_1450391574392_-1890856722&quot;,
+    &quot;id&quot;: &quot;20151218-073254_1105602047&quot;,
+    &quot;result&quot;: {
+      &quot;code&quot;: &quot;SUCCESS&quot;,
+      &quot;type&quot;: &quot;TEXT&quot;,
+      &quot;msg&quot;: &quot;it&#39;s paragraph2\n&quot;
+    },
+    &quot;dateCreated&quot;: &quot;Dec 18, 2015 7:32:54 AM&quot;,
+    &quot;dateStarted&quot;: &quot;Dec 18, 2015 7:33:55 AM&quot;,
+    &quot;dateFinished&quot;: &quot;Dec 18, 2015 7:33:55 AM&quot;,
+    &quot;status&quot;: &quot;FINISHED&quot;,
+    &quot;progressUpdateIntervalMs&quot;: 500
+  }
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Move a paragraph to the specific index</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method moves a paragraph to the specific index (order) from the notebook.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]/paragraph/[paragraphId]/move/[newIndex]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;,&quot;message&quot;: &quot;&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>Delete a paragraph</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>DELETE</code> method deletes a paragraph by the given notebook and paragraph id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]/paragraph/[paragraphId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;OK&quot;,&quot;message&quot;: &quot;&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br /></p>
+
+<h3>Export a notebook</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method exports a notebook by the given id and gernerates a JSON
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/export/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <td> sample JSON response </td>
+      <td><pre>{
+  &quot;paragraphs&quot;: [
+    {
+      &quot;text&quot;: &quot;%md This is my new paragraph in my new note&quot;,
+      &quot;dateUpdated&quot;: &quot;Jan 8, 2016 4:49:38 PM&quot;,
+      &quot;config&quot;: {
+        &quot;enabled&quot;: true
+      },
+      &quot;settings&quot;: {
+        &quot;params&quot;: {},
+        &quot;forms&quot;: {}
+      },
+      &quot;jobName&quot;: &quot;paragraph_1452300578795_1196072540&quot;,
+      &quot;id&quot;: &quot;20160108-164938_1685162144&quot;,
+      &quot;dateCreated&quot;: &quot;Jan 8, 2016 4:49:38 PM&quot;,
+      &quot;status&quot;: &quot;READY&quot;,
+      &quot;progressUpdateIntervalMs&quot;: 500
+    }
+  ],
+  &quot;name&quot;: &quot;source note for export&quot;,
+  &quot;id&quot;: &quot;2B82H3RR1&quot;,
+  &quot;angularObjects&quot;: {},
+  &quot;config&quot;: {},
+  &quot;info&quot;: {}
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br /></p>
+
+<h3>Import a notebook</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method imports a notebook from the notebook JSON input
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/import</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <td>sample JSON input</td>
+      <td><pre>
+{
+  &quot;paragraphs&quot;: [
+    {
+      &quot;text&quot;: &quot;%md This is my new paragraph in my new note&quot;,
+      &quot;dateUpdated&quot;: &quot;Jan 8, 2016 4:49:38 PM&quot;,
+      &quot;config&quot;: {
+        &quot;enabled&quot;: true
+      },
+      &quot;settings&quot;: {
+        &quot;params&quot;: {},
+        &quot;forms&quot;: {}
+      },
+      &quot;jobName&quot;: &quot;paragraph_1452300578795_1196072540&quot;,
+      &quot;id&quot;: &quot;20160108-164938_1685162144&quot;,
+      &quot;dateCreated&quot;: &quot;Jan 8, 2016 4:49:38 PM&quot;,
+      &quot;status&quot;: &quot;READY&quot;,
+      &quot;progressUpdateIntervalMs&quot;: 500
+    }
+  ],
+  &quot;name&quot;: &quot;source note for export&quot;,
+  &quot;id&quot;: &quot;2B82H3RR1&quot;,
+  &quot;angularObjects&quot;: {},
+  &quot;config&quot;: {},
+  &quot;info&quot;: {}
+}</pre></td>
+    <tr>
+      <td>sample JSON response</td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;CREATED&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: &quot;2AZPHY918&quot;
+}</pre></td>
+    </tr>
+    </tr>
+  </table></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+
