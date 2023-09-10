@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dynamic Form</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.0">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.0</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.0/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.0/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.0/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.0/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.0/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.0/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.0/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.0/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.0/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.0/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.0/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.0/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.0/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.0/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.0/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.0/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.0/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.0/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.0/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.0/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.0/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.0/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.0/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.0/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.0/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.0/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.0/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.0/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+    <div class="content">
+      
+<!--<div class="hero-unit Dynamic Form">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Dynamic Form</h1>
+
+<div id="toc"></div>
+
+<p>Apache Zeppelin dynamically creates input forms. Depending on language backend, there&#39;re two different ways to create dynamic form.
+Custom language backend can select which type of form creation it wants to use.</p>
+
+<h2>Using form Templates</h2>
+
+<p>This mode creates form using simple template language. It&#39;s simple and easy to use. For example Markdown, Shell, SparkSql language backend uses it.</p>
+
+<h3>Text input form</h3>
+
+<p>To create text input form, use <code>${formName}</code> templates.</p>
+
+<p>for example</p>
+
+<p><img class="img-responsive" src="/assets/themes/zeppelin/img/screenshots/form_input.png" width="450px" /></p>
+
+<p>Also you can provide default value, using <code>${formName=defaultValue}</code>.</p>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_input_default.png" /></p>
+
+<h3>Select form</h3>
+
+<p>To create select form, use <code>${formName=defaultValue,option1|option2...}</code></p>
+
+<p>for example</p>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_select.png" /></p>
+
+<p>Also you can separate option&#39;s display name and value, using <code>${formName=defaultValue,option1(DisplayName)|option2(DisplayName)...}</code></p>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_select_displayname.png" /></p>
+
+<h3>Checkbox form</h3>
+
+<p>For multi-selection, you can create a checkbox form using <code>${checkbox:formName=defaultValue1|defaultValue2...,option1|option2...}</code>. The variable will be substituted by a comma-separated string based on the selected items. For example:</p>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_checkbox.png"></p>
+
+<p>Besides, you can specify the delimiter using <code>${checkbox(delimiter):formName=...}</code>:</p>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_checkbox_delimiter.png"></p>
+
+<h2>Creates Programmatically</h2>
+
+<p>Some language backend uses programmatic way to create form. For example <a href="../interpreter/spark.html#zeppelincontext">ZeppelinContext</a> provides form creation API</p>
+
+<p>Here&#39;re some examples.</p>
+
+<h3>Text input form</h3>
+
+<div class="codetabs">
+    <div data-lang="scala" markdown="1">
+
+
+<div class="highlight"><pre><code class="scala"><span class="o">%</span><span class="n">spark</span>
+<span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">))</span>
+</code></pre></div>
+
+
+    </div>
+    <div data-lang="python" markdown="1">
+
+
+<div class="highlight"><pre><code class="python"><span class="o">%</span><span class="n">pyspark</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+
+    </div>
+</div>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_input_prog.png" /></p>
+
+<h3>Text input form with default value</h3>
+
+<div class="codetabs">
+    <div data-lang="scala" markdown="1">
+
+
+<div class="highlight"><pre><code class="scala"><span class="o">%</span><span class="n">spark</span>
+<span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;sun&quot;</span><span class="o">))</span> 
+</code></pre></div>
+
+
+    </div>
+    <div data-lang="python" markdown="1">
+
+
+<div class="highlight"><pre><code class="python"><span class="o">%</span><span class="n">pyspark</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;sun&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+
+    </div>
+</div>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_input_default_prog.png" /></p>
+
+<h3>Select form</h3>
+
+<div class="codetabs">
+    <div data-lang="scala" markdown="1">
+
+
+<div class="highlight"><pre><code class="scala"><span class="o">%</span><span class="n">spark</span>
+<span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;day&quot;</span><span class="o">,</span> <span class="nc">Seq</span><span class="o">((</span><span class="s">&quot;1&quot;</span><span class="o">,</span><span class="s">&quot;mon&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;2&quot;</span><span class="o">,</span><span class="s">&quot;tue&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;3&quot;</span><span class="o">,</span><span class="s">&quot;wed&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;4&quot;</span><span class="o">,</span><span class="s">&quot;thurs&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;5&quot;</span><span class="o">,</span><span class="s">&quot;fri&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;6&quot;</span><span class="o">,</span><span class="s">&quot;sat&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;7&quot;</span><span class="o">,</span><span class="s">&quot;sun&quot;</span><span class="o">))))</span>
+</code></pre></div>
+
+
+    </div>
+    <div data-lang="python" markdown="1">
+
+
+<div class="highlight"><pre><code class="python"><span class="o">%</span><span class="n">pyspark</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;day&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;mon&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="s">&quot;tue&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="s">&quot;wed&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="s">&quot;thurs&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;5&quot;</span><span class="p">,</span><span class="s">&quot;fri&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;6&quot;</span><span class="p">,</span><span class="s">&quot;sat&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;7&quot;</span><span class="p">,</span><span class="s">&quot;sun&quot;</span><span class="p">)]))</span>
+</code></pre></div>
+
+
+    </div>
+</div>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_select_prog.png" /></p>
+
+<h4>Checkbox form</h4>
+
+<div class="codetabs">
+    <div data-lang="scala" markdown="1">
+
+
+<div class="highlight"><pre><code class="scala"><span class="o">%</span><span class="n">spark</span>
+<span class="k">val</span> <span class="n">options</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">((</span><span class="s">&quot;apple&quot;</span><span class="o">,</span><span class="s">&quot;Apple&quot;</span><span class="o">),</span> <span class="o">(</span><span class="s">&quot;banana&quot;</span><span class="o">,</span><span class="s">&quot;Banana&quot;</span><span class="o">),</span> <span class="o">(</span><span class="s">&quot;orange&quot;</span><span class="o">,</span><span class="s">&quot;Orange&quot;</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">checkbox</span><span class="o">(</span><span class="s">&quot;fruit&quot;</span><span class="o">,</span> <span class="n">options</span><span class="o">).</span><span class="n">mkString</span><span class="o">(</span><span class="s">&quot; and &quot;</span><span class="o">))</span>
+</code></pre></div>
+
+
+    </div>
+    <div data-lang="python" markdown="1">
+
+
+<div class="highlight"><pre><code class="python"><span class="o">%</span><span class="n">pyspark</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;Apple&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;Banana&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span><span class="s">&quot;Orange&quot;</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span> <span class="s">&quot; and &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span><span class="s">&quot;fruit&quot;</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;apple&quot;</span><span class="p">])))</span>
+</code></pre></div>
+
+
+    </div>
+</div>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/form_checkbox_prog.png" /></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

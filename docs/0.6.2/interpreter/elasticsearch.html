@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Elasticsearch Interpreter</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.2">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.2</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.2/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.2/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.2/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.2/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.2/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.2/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.2/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.2/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.2/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.2/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.2/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.2/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.2/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.6.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.2/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.2/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.2/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.2/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.2/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.2/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.2/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.2/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.2/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.2/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.2/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.2/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.2/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.2/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.2/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Elasticsearch Interpreter">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Elasticsearch Interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p><a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a> is a highly scalable open-source full-text search and analytics engine. It allows you to store, search, and analyze big volumes of data quickly and in near real time. It is generally used as the underlying engine/technology that powers applications that have complex search features and requirements.</p>
+
+<h2>Configuration</h2>
+
+<table class="table-configuration">
+  <tr>
+    <th>Property</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>elasticsearch.cluster.name</td>
+    <td>elasticsearch</td>
+    <td>Cluster name</td>
+  </tr>
+  <tr>
+    <td>elasticsearch.host</td>
+    <td>localhost</td>
+    <td>Host of a node in the cluster</td>
+  </tr>
+  <tr>
+    <td>elasticsearch.port</td>
+    <td>9300</td>
+    <td>Connection port <b>( Important: this is not the HTTP port, but the transport port )</b></td>
+  </tr>
+  <tr>
+    <td>elasticsearch.result.size</td>
+    <td>10</td>
+    <td>The size of the result set of a search query</td>
+  </tr>
+</table>
+
+<p><center>
+  <img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-config.png" alt="Interpreter configuration">
+</center></p>
+
+<blockquote>
+<p><strong>Note #1 :</strong> You can add more properties to configure the Elasticsearch client.</p>
+
+<p><strong>Note #2 :</strong> If you use Shield, you can add a property named <code>shield.user</code> with a value containing the name and the password ( format: <code>username:password</code> ). For more details about Shield configuration, consult the <a href="https://www.elastic.co/guide/en/shield/current/_using_elasticsearch_java_clients_with_shield.html">Shield reference guide</a>. Do not forget, to copy the shield client jar in the interpreter directory (<code>ZEPPELIN_HOME/interpreters/elasticsearch</code>).</p>
+</blockquote>
+
+<h2>Enabling the Elasticsearch Interpreter</h2>
+
+<p>In a notebook, to enable the <strong>Elasticsearch</strong> interpreter, click the <strong>Gear</strong> icon and select <strong>Elasticsearch</strong>.</p>
+
+<h2>Using the Elasticsearch Interpreter</h2>
+
+<p>In a paragraph, use <code>%elasticsearch</code> to select the Elasticsearch interpreter and then input all commands. To get the list of available commands, use <code>help</code>.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+<span class="nb">help</span>
+
+Elasticsearch interpreter:
+General format: &lt;<span class="nb">command</span>&gt; /&lt;indices&gt;/&lt;types&gt;/&lt;id&gt; &lt;option&gt; &lt;JSON&gt;
+  - indices: list of indices separated by commas <span class="o">(</span>depends on the <span class="nb">command</span><span class="o">)</span>
+  - types: list of document types separated by commas <span class="o">(</span>depends on the <span class="nb">command</span><span class="o">)</span>
+Commands:
+  - search /indices/types &lt;query&gt;
+    . indices and types can be omitted <span class="o">(</span>at least, you have to provide <span class="s1">&#39;/&#39;</span><span class="o">)</span>
+    . a query is either a JSON-formatted query, nor a lucene query
+  - size &lt;value&gt;
+    . defines the size of the result <span class="nb">set</span> <span class="o">(</span>default value is in the config<span class="o">)</span>
+    . <span class="k">if </span>used, this <span class="nb">command </span>must be declared before a search <span class="nb">command</span>
+  - count /indices/types &lt;query&gt;
+    . same comments as <span class="k">for </span>the search
+  - get /index/type/id
+  - delete /index/type/id
+  - index /index/type/id &lt;json-formatted document&gt;
+    . the id can be omitted, elasticsearch will generate one
+</code></pre></div>
+<blockquote>
+<p><strong>Tip :</strong> Use ( Ctrl + . ) for autocompletion.</p>
+</blockquote>
+
+<h3>Get</h3>
+
+<p>With the <code>get</code> command, you can find a document by id. The result is a JSON document.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+get /index/type/id
+</code></pre></div>
+<p>Example:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-get.png" alt="Elasticsearch - Get"></p>
+
+<h3>Search</h3>
+
+<p>With the <code>search</code> command, you can send a search query to Elasticsearch. There are two formats of query:</p>
+
+<ul>
+<li>You can provide a JSON-formatted query, that is exactly what you provide when you use the REST API of Elasticsearch.<br>
+
+<ul>
+<li>See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html">Elasticsearch search API reference document</a> for more details about the content of the search queries.</li>
+</ul></li>
+<li>You can also provide the content of a <code>query_string</code>.
+
+<ul>
+<li>This is a shortcut to a query like that: <code>{ &quot;query&quot;: { &quot;query_string&quot;: { &quot;query&quot;: &quot;__HERE YOUR QUERY__&quot;, &quot;analyze_wildcard&quot;: true } } }</code></li>
+<li>See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax">Elasticsearch query string syntax</a> for more details about the content of such a query.</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+search /index1,index2,.../type1,type2,...  &lt;JSON document containing the query or query_string elements&gt;
+</code></pre></div>
+<p>If you want to modify the size of the result set, you can add a line that is setting the size, before your search command.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+size 50
+search /index1,index2,.../type1,type2,...  &lt;JSON document containing the query or query_string elements&gt;
+</code></pre></div>
+<blockquote>
+<p>A search query can also contain <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html">aggregations</a>. If there is at least one aggregation, the result of the first aggregation is shown, otherwise, you get the search hits.</p>
+</blockquote>
+
+<p>Examples:</p>
+
+<ul>
+<li><p>With a JSON query:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+search / <span class="o">{</span> <span class="s2">&quot;query&quot;</span>: <span class="o">{</span> <span class="s2">&quot;match_all&quot;</span>: <span class="o">{</span> <span class="o">}</span> <span class="o">}</span> <span class="o">}</span>
+
+%elasticsearch
+search /logs <span class="o">{</span> <span class="s2">&quot;query&quot;</span>: <span class="o">{</span> <span class="s2">&quot;query_string&quot;</span>: <span class="o">{</span> <span class="s2">&quot;query&quot;</span>: <span class="s2">&quot;request.method:GET AND status:200&quot;</span> <span class="o">}</span> <span class="o">}</span> <span class="o">}</span>
+
+%elasticsearch
+search /logs <span class="o">{</span> <span class="s2">&quot;aggs&quot;</span>: <span class="o">{</span>
+<span class="s2">&quot;content_length_stats&quot;</span>: <span class="o">{</span>
+  <span class="s2">&quot;extended_stats&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;field&quot;</span>: <span class="s2">&quot;content_length&quot;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="o">}</span> <span class="o">}</span>
+</code></pre></div></li>
+<li><p>With query_string elements:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+search /logs request.method:GET AND status:200
+
+%elasticsearch
+search /logs <span class="o">(</span>404 AND <span class="o">(</span>POST OR DELETE<span class="o">))</span>
+</code></pre></div></li>
+</ul>
+
+<blockquote>
+<p><strong>Important</strong> : a document in Elasticsearch is a JSON document, so it is hierarchical, not flat as a row in a SQL table.
+For the Elastic interpreter, the result of a search query is flattened.</p>
+</blockquote>
+
+<p>Suppose we have a JSON document:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+  &quot;date&quot;: &quot;2015-12-08T21:03:13.588Z&quot;,
+  &quot;request&quot;: {
+    &quot;method&quot;: &quot;GET&quot;,
+    &quot;url&quot;: &quot;/zeppelin/4cd001cd-c517-4fa9-b8e5-a06b8f4056c4&quot;,
+    &quot;headers&quot;: [ &quot;Accept: *.*&quot;, &quot;Host: apache.org&quot;]
+  },
+  &quot;status&quot;: &quot;403&quot;,
+  &quot;content_length&quot;: 1234
+}
+</code></pre></div>
+<p>The data will be flattened like this:</p>
+
+<table><thead>
+<tr>
+<th>content_length</th>
+<th>date</th>
+<th>request.headers[0]</th>
+<th>request.headers[1]</th>
+<th>request.method</th>
+<th>request.url</th>
+<th>status</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1234</td>
+<td>2015-12-08T21:03:13.588Z</td>
+<td>Accept: *.*</td>
+<td>Host: apache.org</td>
+<td>GET</td>
+<td>/zeppelin/4cd001cd-c517-4fa9-b8e5-a06b8f4056c4</td>
+<td>403</td>
+</tr>
+</tbody></table>
+
+<p>Examples:</p>
+
+<ul>
+<li><p>With a table containing the results:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-search-table.png" alt="Elasticsearch - Search - table"></p></li>
+<li><p>You can also use a predefined diagram:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-search-pie.png" alt="Elasticsearch - Search - diagram"></p></li>
+<li><p>With a JSON query:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-search-json-query-table.png" alt="Elasticsearch - Search with query"></p></li>
+<li><p>With a JSON query containing a <code>fields</code> parameter (for filtering the fields in the response): in this case, all the fields values in the response are arrays, so, after flattening the result, the format of all the field names is <code>field_name[x]</code>
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-query-with-fields-param.png" alt="Elasticsearch - Search with query and a fields param"></p></li>
+<li><p>With a query string:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-query-string.png" alt="Elasticsearch - Search with query string"></p></li>
+<li><p>With a query containing a multi-value metric aggregation:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-agg-multi-value-metric.png" alt="Elasticsearch - Search with aggregation (multi-value metric)"></p></li>
+<li><p>With a query containing a multi-bucket aggregation:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-agg-multi-bucket-pie.png" alt="Elasticsearch - Search with aggregation (multi-bucket)"></p></li>
+</ul>
+
+<h3>Count</h3>
+
+<p>With the <code>count</code> command, you can count documents available in some indices and types. You can also provide a query.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+count /index1,index2,.../type1,type2,... &lt;JSON document containing the query OR a query string&gt;
+</code></pre></div>
+<p>Examples:</p>
+
+<ul>
+<li><p>Without query:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-count.png" alt="Elasticsearch - Count"></p></li>
+<li><p>With a query:
+<img src="../assets/themes/zeppelin/img/docs-img/elasticsearch-count-with-query.png" alt="Elasticsearch - Count with query"></p></li>
+</ul>
+
+<h3>Index</h3>
+
+<p>With the <code>index</code> command, you can insert/update a document in Elasticsearch.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+index /index/type/id &lt;JSON document&gt;
+
+%elasticsearch
+index /index/type &lt;JSON document&gt;
+</code></pre></div>
+<h3>Delete</h3>
+
+<p>With the <code>delete</code> command, you can delete a document.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+delete /index/type/id
+</code></pre></div>
+<h3>Apply Zeppelin Dynamic Forms</h3>
+
+<p>You can leverage <a href="/docs/0.6.2/manual/dynamicform.html">Zeppelin Dynamic Form</a> inside your queries. You can use both the <code>text input</code> and <code>select form</code> parameterization features.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%elasticsearch
+size <span class="k">${</span><span class="nv">limit</span><span class="p">=10</span><span class="k">}</span>
+search /index/type <span class="o">{</span> <span class="s2">&quot;query&quot;</span>: <span class="o">{</span> <span class="s2">&quot;match_all&quot;</span>: <span class="o">{</span> <span class="o">}</span> <span class="o">}</span> <span class="o">}</span>
+</code></pre></div>
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+
