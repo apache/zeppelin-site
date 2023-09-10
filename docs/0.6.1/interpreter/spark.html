@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Spark Interpreter Group</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.1/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.1/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.1/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.1/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.1/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.1/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.1/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.1/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.1/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.1">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.1</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.1/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.1/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.1/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.1/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.1/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.1/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.1/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.1/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.1/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.1/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.1/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.1/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.1/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.1/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.1/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.1/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.6.1/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.1/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.1/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.1/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.1/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.1/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.1/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.1/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.1/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.1/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.1/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.1/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.1/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.1/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.1/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.1/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.1/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.1/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.1/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.1/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.1/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.1/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.1/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.1/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.1/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.1/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.1/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.1/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.1/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.1/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.1/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.1/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.1/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.1/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.1/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.1/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.1/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Spark Interpreter Group">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Spark Interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p><a href="http://spark.apache.org">Apache Spark</a> is a fast and general-purpose cluster computing system.
+It provides high-level APIs in Java, Scala, Python and R, and an optimized engine that supports general execution graphs
+Apache Spark is supported in Zeppelin with
+Spark Interpreter group, which consists of five interpreters.</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Class</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>%spark</td>
+    <td>SparkInterpreter</td>
+    <td>Creates a SparkContext and provides a scala environment</td>
+  </tr>
+  <tr>
+    <td>%pyspark</td>
+    <td>PySparkInterpreter</td>
+    <td>Provides a python environment</td>
+  </tr>
+  <tr>
+    <td>%r</td>
+    <td>SparkRInterpreter</td>
+    <td>Provides an R environment with SparkR support</td>
+  </tr>
+  <tr>
+    <td>%sql</td>
+    <td>SparkSQLInterpreter</td>
+    <td>Provides a SQL environment</td>
+  </tr>
+  <tr>
+    <td>%dep</td>
+    <td>DepInterpreter</td>
+    <td>Dependency loader</td>
+  </tr>
+</table>
+
+<h2>Configuration</h2>
+
+<p>The Spark interpreter can be configured with properties provided by Zeppelin.
+You can also set other Spark properties which are not listed in the table. For a list of additional properties, refer to <a href="http://spark.apache.org/docs/latest/configuration.html#available-properties">Spark Available Properties</a>.
+<table class="table-configuration">
+  <tr>
+    <th>Property</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>args</td>
+    <td></td>
+    <td>Spark commandline args</td>
+  </tr>
+    <td>master</td>
+    <td>local[*]</td>
+    <td>Spark master uri. <br/> ex) spark://masterhost:7077</td>
+  <tr>
+    <td>spark.app.name</td>
+    <td>Zeppelin</td>
+    <td>The name of spark application.</td>
+  </tr>
+  <tr>
+    <td>spark.cores.max</td>
+    <td></td>
+    <td>Total number of cores to use. <br/> Empty value uses all available core.</td>
+  </tr>
+  <tr>
+    <td>spark.executor.memory </td>
+    <td>512m</td>
+    <td>Executor memory per worker instance. <br/> ex) 512m, 32g</td>
+  </tr>
+  <tr>
+    <td>zeppelin.dep.additionalRemoteRepository</td>
+    <td>spark-packages, <br/> http://dl.bintray.com/spark-packages/maven, <br/> false;</td>
+    <td>A list of <code>id,remote-repository-URL,is-snapshot;</code> <br/> for each remote repository.</td>
+  </tr>
+  <tr>
+    <td>zeppelin.dep.localrepo</td>
+    <td>local-repo</td>
+    <td>Local repository for dependency loader</td>
+  </tr>
+  <tr>
+    <td>zeppelin.pyspark.python</td>
+    <td>python</td>
+    <td>Python command to run pyspark with</td>
+  </tr>
+  <tr>
+    <td>zeppelin.spark.concurrentSQL</td>
+    <td>false</td>
+    <td>Execute multiple SQL concurrently if set true.</td>
+  </tr>
+  <tr>
+    <td>zeppelin.spark.maxResult</td>
+    <td>1000</td>
+    <td>Max number of SparkSQL result to display.</td>
+  </tr>
+  <tr>
+    <td>zeppelin.spark.printREPLOutput</td>
+    <td>true</td>
+    <td>Print REPL output</td>
+  </tr>
+  <tr>
+    <td>zeppelin.spark.useHiveContext</td>
+    <td>true</td>
+    <td>Use HiveContext instead of SQLContext if it is true.</td>
+  </tr>
+  <tr>
+    <td>zeppelin.spark.importImplicit</td>
+    <td>true</td>
+    <td>Import implicits, UDF collection, and sql if set true.</td>
+  </tr>
+</table></p>
+
+<p>Without any configuration, Spark interpreter works out of box in local mode. But if you want to connect to your Spark cluster, you&#39;ll need to follow below two simple steps.</p>
+
+<h3>1. Export SPARK_HOME</h3>
+
+<p>In <strong>conf/zeppelin-env.sh</strong>, export <code>SPARK_HOME</code> environment variable with your Spark installation path.</p>
+
+<p>for example</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">SPARK_HOME</span><span class="o">=</span>/usr/lib/spark
+</code></pre></div>
+<p>You can optionally export HADOOP_CONF_DIR and SPARK_SUBMIT_OPTIONS</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">HADOOP_CONF_DIR</span><span class="o">=</span>/usr/lib/hadoop
+<span class="nb">export </span><span class="nv">SPARK_SUBMIT_OPTIONS</span><span class="o">=</span><span class="s2">&quot;--packages com.databricks:spark-csv_2.10:1.2.0&quot;</span>
+</code></pre></div>
+<p>For Windows, ensure you have <code>winutils.exe</code> in <code>%HADOOP_HOME%\bin</code>. For more details please see <a href="https://wiki.apache.org/hadoop/WindowsProblems">Problems running Hadoop on Windows</a></p>
+
+<h3>2. Set master in Interpreter menu</h3>
+
+<p>After start Zeppelin, go to <strong>Interpreter</strong> menu and edit <strong>master</strong> property in your Spark interpreter setting. The value may vary depending on your Spark cluster deployment type.</p>
+
+<p>for example,</p>
+
+<ul>
+<li><strong>local[*]</strong> in local mode</li>
+<li><strong>spark://master:7077</strong> in standalone cluster</li>
+<li><strong>yarn-client</strong> in Yarn client mode</li>
+<li><strong>mesos://host:5050</strong> in Mesos cluster</li>
+</ul>
+
+<p>That&#39;s it. Zeppelin will work with any version of Spark and any deployment type without rebuilding Zeppelin in this way. (Zeppelin 0.5.6-incubating release works up to Spark 1.6.1 )</p>
+
+<blockquote>
+<p>Note that without exporting <code>SPARK_HOME</code>, it&#39;s running in local mode with included version of Spark. The included version may vary depending on the build profile.</p>
+</blockquote>
+
+<h2>SparkContext, SQLContext, ZeppelinContext</h2>
+
+<p>SparkContext, SQLContext, ZeppelinContext are automatically created and exposed as variable names &#39;sc&#39;, &#39;sqlContext&#39; and &#39;z&#39;, respectively, both in scala and python environments.</p>
+
+<blockquote>
+<p>Note that scala / python environment shares the same SparkContext, SQLContext, ZeppelinContext instance.</p>
+</blockquote>
+
+<p><a name="dependencyloading"> </a></p>
+
+<h2>Dependency Management</h2>
+
+<p>There are two ways to load external library in spark interpreter. First is using Interpreter setting menu and second is loading Spark properties.</p>
+
+<h3>1. Setting Dependencies via Interpreter Setting</h3>
+
+<p>Please see <a href="../manual/dependencymanagement.html">Dependency Management</a> for the details.</p>
+
+<h3>2. Loading Spark Properties</h3>
+
+<p>Once <code>SPARK_HOME</code> is set in <code>conf/zeppelin-env.sh</code>, Zeppelin uses <code>spark-submit</code> as spark interpreter runner. <code>spark-submit</code> supports two ways to load configurations. The first is command line options such as --master and Zeppelin can pass these options to <code>spark-submit</code> by exporting <code>SPARK_SUBMIT_OPTIONS</code> in conf/zeppelin-env.sh. Second is reading configuration options from <code>SPARK_HOME/conf/spark-defaults.conf</code>. Spark properites that user can set to distribute libraries are:</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>spark-defaults.conf</th>
+    <th>SPARK_SUBMIT_OPTIONS</th>
+    <th>Applicable Interpreter</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>spark.jars</td>
+    <td>--jars</td>
+    <td>%spark</td>
+    <td>Comma-separated list of local jars to include on the driver and executor classpaths.</td>
+  </tr>
+  <tr>
+    <td>spark.jars.packages</td>
+    <td>--packages</td>
+    <td>%spark</td>
+    <td>Comma-separated list of maven coordinates of jars to include on the driver and executor classpaths. Will search the local maven repo, then maven central and any additional remote repositories given by --repositories. The format for the coordinates should be groupId:artifactId:version.</td>
+  </tr>
+  <tr>
+    <td>spark.files</td>
+    <td>--files</td>
+    <td>%pyspark</td>
+    <td>Comma-separated list of files to be placed in the working directory of each executor.</td>
+  </tr>
+</table>
+
+<blockquote>
+<p>Note that adding jar to pyspark is only availabe via <code>%dep</code> interpreter at the moment.</p>
+</blockquote>
+
+<p>Here are few examples:</p>
+
+<ul>
+<li><p>SPARK_SUBMIT_OPTIONS in conf/zeppelin-env.sh</p>
+
+<p>export SPARK<em>SUBMIT</em>OPTIONS=&quot;--packages com.databricks:spark-csv_2.10:1.2.0 --jars /path/mylib1.jar,/path/mylib2.jar --files /path/mylib1.py,/path/mylib2.zip,/path/mylib3.egg&quot;</p></li>
+<li><p>SPARK_HOME/conf/spark-defaults.conf</p>
+
+<p>spark.jars        /path/mylib1.jar,/path/mylib2.jar
+spark.jars.packages   com.databricks:spark-csv_2.10:1.2.0
+spark.files       /path/mylib1.py,/path/mylib2.egg,/path/mylib3.zip</p></li>
+</ul>
+
+<h3>3. Dynamic Dependency Loading via %dep interpreter</h3>
+
+<blockquote>
+<p>Note: <code>%dep</code> interpreter is deprecated since v0.6.0.
+<code>%dep</code> interpreter load libraries to <code>%spark</code> and <code>%pyspark</code> but not to  <code>%spark.sql</code> interpreter so we recommend you to use first option instead.</p>
+</blockquote>
+
+<p>When your code requires external library, instead of doing download/copy/restart Zeppelin, you can easily do following jobs using <code>%dep</code> interpreter.</p>
+
+<ul>
+<li>Load libraries recursively from Maven repository</li>
+<li>Load libraries from local filesystem</li>
+<li>Add additional maven repository</li>
+<li>Automatically add libraries to SparkCluster (You can turn off)</li>
+</ul>
+
+<p>Dep interpreter leverages scala environment. So you can write any Scala code here.
+Note that <code>%dep</code> interpreter should be used before <code>%spark</code>, <code>%pyspark</code>, <code>%sql</code>.</p>
+
+<p>Here&#39;s usages.</p>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">dep</span>
+<span class="n">z</span><span class="o">.</span><span class="n">reset</span><span class="o">()</span> <span class="c1">// clean up previously added artifact and repository</span>
+
+<span class="c1">// add maven repository</span>
+<span class="n">z</span><span class="o">.</span><span class="n">addRepo</span><span class="o">(</span><span class="s">&quot;RepoName&quot;</span><span class="o">).</span><span class="n">url</span><span class="o">(</span><span class="s">&quot;RepoURL&quot;</span><span class="o">)</span>
+
+<span class="c1">// add maven snapshot repository</span>
+<span class="n">z</span><span class="o">.</span><span class="n">addRepo</span><span class="o">(</span><span class="s">&quot;RepoName&quot;</span><span class="o">).</span><span class="n">url</span><span class="o">(</span><span class="s">&quot;RepoURL&quot;</span><span class="o">).</span><span class="n">snapshot</span><span class="o">()</span>
+
+<span class="c1">// add credentials for private maven repository</span>
+<span class="n">z</span><span class="o">.</span><span class="n">addRepo</span><span class="o">(</span><span class="s">&quot;RepoName&quot;</span><span class="o">).</span><span class="n">url</span><span class="o">(</span><span class="s">&quot;RepoURL&quot;</span><span class="o">).</span><span class="n">username</span><span class="o">(</span><span class="s">&quot;username&quot;</span><span class="o">).</span><span class="n">password</span><span class="o">(</span><span class="s">&quot;password&quot;</span><span class="o">)</span>
+
+<span class="c1">// add artifact from filesystem</span>
+<span class="n">z</span><span class="o">.</span><span class="n">load</span><span class="o">(</span><span class="s">&quot;/path/to.jar&quot;</span><span class="o">)</span>
+
+<span class="c1">// add artifact from maven repository, with no dependency</span>
+<span class="n">z</span><span class="o">.</span><span class="n">load</span><span class="o">(</span><span class="s">&quot;groupId:artifactId:version&quot;</span><span class="o">).</span><span class="n">excludeAll</span><span class="o">()</span>
+
+<span class="c1">// add artifact recursively</span>
+<span class="n">z</span><span class="o">.</span><span class="n">load</span><span class="o">(</span><span class="s">&quot;groupId:artifactId:version&quot;</span><span class="o">)</span>
+
+<span class="c1">// add artifact recursively except comma separated GroupID:ArtifactId list</span>
+<span class="n">z</span><span class="o">.</span><span class="n">load</span><span class="o">(</span><span class="s">&quot;groupId:artifactId:version&quot;</span><span class="o">).</span><span class="n">exclude</span><span class="o">(</span><span class="s">&quot;groupId:artifactId,groupId:artifactId, ...&quot;</span><span class="o">)</span>
+
+<span class="c1">// exclude with pattern</span>
+<span class="n">z</span><span class="o">.</span><span class="n">load</span><span class="o">(</span><span class="s">&quot;groupId:artifactId:version&quot;</span><span class="o">).</span><span class="n">exclude</span><span class="o">(*)</span>
+<span class="n">z</span><span class="o">.</span><span class="n">load</span><span class="o">(</span><span class="s">&quot;groupId:artifactId:version&quot;</span><span class="o">).</span><span class="n">exclude</span><span class="o">(</span><span class="s">&quot;groupId:artifactId:*&quot;</span><span class="o">)</span>
+<span class="n">z</span><span class="o">.</span><span class="n">load</span><span class="o">(</span><span class="s">&quot;groupId:artifactId:version&quot;</span><span class="o">).</span><span class="n">exclude</span><span class="o">(</span><span class="s">&quot;groupId:*&quot;</span><span class="o">)</span>
+
+<span class="c1">// local() skips adding artifact to spark clusters (skipping sc.addJar())</span>
+<span class="n">z</span><span class="o">.</span><span class="n">load</span><span class="o">(</span><span class="s">&quot;groupId:artifactId:version&quot;</span><span class="o">).</span><span class="n">local</span><span class="o">()</span>
+</code></pre></div>
+<h2>ZeppelinContext</h2>
+
+<p>Zeppelin automatically injects ZeppelinContext as variable &#39;z&#39; in your scala/python environment. ZeppelinContext provides some additional functions and utility.</p>
+
+<h3>Object Exchange</h3>
+
+<p>ZeppelinContext extends map and it&#39;s shared between scala, python environment.
+So you can put some object from scala and read it from python, vise versa.</p>
+
+<div class="codetabs">
+  <div data-lang="scala" markdown="1">
+
+
+<div class="highlight"><pre><code class="scala"><span class="c1">// Put object from scala</span>
+<span class="o">%</span><span class="n">spark</span>
+<span class="k">val</span> <span class="n">myObject</span> <span class="k">=</span> <span class="o">...</span>
+<span class="n">z</span><span class="o">.</span><span class="n">put</span><span class="o">(</span><span class="s">&quot;objName&quot;</span><span class="o">,</span> <span class="n">myObject</span><span class="o">)</span>
+</code></pre></div>
+
+
+  </div>
+  <div data-lang="python" markdown="1">
+
+
+<div class="highlight"><pre><code class="python"><span class="c"># Get object from python</span>
+<span class="o">%</span><span class="n">pyspark</span>
+<span class="n">myObject</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;objName&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<h3>Form Creation</h3>
+
+<p>ZeppelinContext provides functions for creating forms.
+In scala and python environments, you can create forms programmatically.
+<div class="codetabs">
+  <div data-lang="scala" markdown="1"></p>
+
+<div class="highlight"><pre><code class="scala"><span class="o">%</span><span class="n">spark</span>
+<span class="cm">/* Create text input form */</span>
+<span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="o">(</span><span class="s">&quot;formName&quot;</span><span class="o">)</span>
+
+<span class="cm">/* Create text input form with default value */</span>
+<span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="o">(</span><span class="s">&quot;formName&quot;</span><span class="o">,</span> <span class="s">&quot;defaultValue&quot;</span><span class="o">)</span>
+
+<span class="cm">/* Create select form */</span>
+<span class="n">z</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;formName&quot;</span><span class="o">,</span> <span class="nc">Seq</span><span class="o">((</span><span class="s">&quot;option1&quot;</span><span class="o">,</span> <span class="s">&quot;option1DisplayName&quot;</span><span class="o">),</span>
+                         <span class="o">(</span><span class="s">&quot;option2&quot;</span><span class="o">,</span> <span class="s">&quot;option2DisplayName&quot;</span><span class="o">)))</span>
+
+<span class="cm">/* Create select form with default value*/</span>
+<span class="n">z</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;formName&quot;</span><span class="o">,</span> <span class="s">&quot;option1&quot;</span><span class="o">,</span> <span class="nc">Seq</span><span class="o">((</span><span class="s">&quot;option1&quot;</span><span class="o">,</span> <span class="s">&quot;option1DisplayName&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;option2&quot;</span><span class="o">,</span> <span class="s">&quot;option2DisplayName&quot;</span><span class="o">)))</span>
+</code></pre></div>
+
+
+  </div>
+  <div data-lang="python" markdown="1">
+
+
+<div class="highlight"><pre><code class="python"><span class="o">%</span><span class="n">pyspark</span>
+<span class="c"># Create text input form</span>
+<span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;formName&quot;</span><span class="p">)</span>
+
+<span class="c"># Create text input form with default value</span>
+<span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;formName&quot;</span><span class="p">,</span> <span class="s">&quot;defaultValue&quot;</span><span class="p">)</span>
+
+<span class="c"># Create select form</span>
+<span class="n">z</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;formName&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="s">&quot;option1&quot;</span><span class="p">,</span> <span class="s">&quot;option1DisplayName&quot;</span><span class="p">),</span>
+                      <span class="p">(</span><span class="s">&quot;option2&quot;</span><span class="p">,</span> <span class="s">&quot;option2DisplayName&quot;</span><span class="p">)])</span>
+
+<span class="c"># Create select form with default value</span>
+<span class="n">z</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;formName&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="s">&quot;option1&quot;</span><span class="p">,</span> <span class="s">&quot;option1DisplayName&quot;</span><span class="p">),</span>
+                      <span class="p">(</span><span class="s">&quot;option2&quot;</span><span class="p">,</span> <span class="s">&quot;option2DisplayName&quot;</span><span class="p">)],</span> <span class="s">&quot;option1&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<p>In sql environment, you can create form in simple template.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">%sql
+select * from ${table=defaultTableName} where text like &#39;%${search}%&#39;
+</code></pre></div>
+<p>To learn more about dynamic form, checkout <a href="../manual/dynamicform.html">Dynamic Form</a>.</p>
+
+<h2>Interpreter setting option</h2>
+
+<p>Interpreter setting can choose one of &#39;shared&#39;, &#39;scoped&#39;, &#39;isolated&#39; option. Spark interpreter creates separate scala compiler per each notebook but share a single SparkContext in &#39;scoped&#39; mode (experimental). It creates separate SparkContext per each notebook in &#39;isolated&#39; mode.</p>
+
+<h2>Setting up Zeppelin with Kerberos</h2>
+
+<p>Logical setup with Zeppelin, Kerberos Key Distribution Center (KDC), and Spark on YARN:</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/kdc_zeppelin.png"></p>
+
+<h3>Configuration Setup</h3>
+
+<ol>
+<li><p>On the server that Zeppelin is installed, install Kerberos client modules and configuration, krb5.conf.
+This is to make the server communicate with KDC.</p></li>
+<li><p>Set SPARK_HOME in <code>[ZEPPELIN\_HOME]/conf/zeppelin-env.sh</code> to use spark-submit
+(Additionally, you might have to set <code>export HADOOP\_CONF\_DIR=/etc/hadoop/conf</code>)</p></li>
+<li><p>Add the two properties below to spark configuration (<code>[SPARK_HOME]/conf/spark-defaults.conf</code>):</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">spark.yarn.principal
+spark.yarn.keytab
+</code></pre></div>
+<blockquote>
+<p><strong>NOTE:</strong> If you do not have access to the above spark-defaults.conf file, optionally, you may add the lines to the Spark Interpreter through the Interpreter tab in the Zeppelin UI.</p>
+</blockquote></li>
+<li><p>That&#39;s it. Play with Zeppelin!</p></li>
+</ol>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

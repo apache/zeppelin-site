@@ -10,4 +10,4 @@ RewriteRule ^/?docs/(0.5.[056])(?!-incubating).*/(.*) /docs/$1-incubating/$3  [R
 RewriteRule ^/?docs/latest/(.*) /docs/0.10.1/$1  [PT]
 
 # rewrite docs/snapshot to latest snapshot version
-RewriteRule ^/?docs/snapshot/(.*) /docs/0.10.1-SNAPSHOT/$1  [PT]
+RewriteRule ^/?docs/snapshot/(.*) /docs/0.11-SNAPSHOT/$1  [PT]

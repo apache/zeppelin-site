@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular (frontend API)</title>
+    <meta name="description" content="Angular (frontend API)">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.0">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.0</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.0/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.0/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.0/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.0/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.0/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.0/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.0/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.0/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.0/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.0/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.0/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.0/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.0/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.0/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.0/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.0/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.0/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.0/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.0/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.0/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.0/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.0/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.0/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.0/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.0/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.0/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.0/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.0/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+    <div class="content">
+      
+<!--<div class="hero-unit Angular (frontend API)">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Front-end Angular API in Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Basic Usage</h2>
+
+<p>In addition to the <a href="./back-end-angular.html">back-end API</a> to handle Angular objects binding, Apache Zeppelin also exposes a simple AngularJS <code><strong>z</strong></code> object on the front-end side to expose the same capabilities.
+This <code><strong>z</strong></code> object is accessible in the Angular isolated scope for each paragraph.</p>
+
+<h3>Bind / Unbind Variables</h3>
+
+<p>Through the <strong><code>z</code></strong>, you can bind / unbind variables to <strong>AngularJS view</strong>.
+Bind a value to an angular object and a <strong>mandatory</strong> target paragraph:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html">%angular
+
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;superheroId&quot;</span><span class="nt">&gt;</span>Super Hero: <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;superheroId&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Superhero name ...&quot;</span> <span class="na">ng-model=</span><span class="s">&quot;superhero&quot;</span><span class="nt">&gt;&lt;/input&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">ng-click=</span><span class="s">&quot;z.angularBind(&#39;superhero&#39;,superhero,&#39;20160222-232336_1472609686&#39;)&quot;</span><span class="nt">&gt;</span> Bind<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>
+<p><img src="../assets/themes/zeppelin/img/screenshots/z_angularBind.gif" /></p>
+
+<hr/>
+
+<p>Unbind/remove a value from angular object and a <strong>mandatory</strong> target paragraph:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html">%angular
+
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">ng-click=</span><span class="s">&quot;z.angularUnbind(&#39;superhero&#39;,&#39;20160222-232336_1472609686&#39;)&quot;</span><span class="nt">&gt;</span> UnBind<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>
+<p><img src="../assets/themes/zeppelin/img/screenshots/z_angularUnbind.gif" /></p>
+
+<p>The signature for the <strong><code>z.angularBind() / z.angularUnbind()</code></strong> functions are:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="c1">// Bind</span>
+<span class="nx">z</span><span class="p">.</span><span class="nx">angularBind</span><span class="p">(</span><span class="nx">angularObjectName</span><span class="p">,</span> <span class="nx">angularObjectValue</span><span class="p">,</span> <span class="nx">paragraphId</span><span class="p">);</span>
+
+<span class="c1">// Unbind</span>
+<span class="nx">z</span><span class="p">.</span><span class="nx">angularUnbind</span><span class="p">(</span><span class="nx">angularObjectName</span><span class="p">,</span> <span class="nx">angularObjectValue</span><span class="p">,</span> <span class="nx">paragraphId</span><span class="p">);</span>
+</code></pre></div>
+<p>All the parameters are mandatory.</p>
+
+<p><br /></p>
+
+<h3>Run Paragraph</h3>
+
+<p>You can also trigger paragraph execution by calling <strong><code>z.runParagraph()</code></strong> function passing the appropriate paragraphId: </p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html">%angular
+
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;paragraphId&quot;</span><span class="nt">&gt;</span>Paragraph Id: <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;paragraphId&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Paragraph Id ...&quot;</span> <span class="na">ng-model=</span><span class="s">&quot;paragraph&quot;</span><span class="nt">&gt;&lt;/input&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">ng-click=</span><span class="s">&quot;z.runParagraph(paragraph)&quot;</span><span class="nt">&gt;</span> Run Paragraph<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>
+<p><img src="../assets/themes/zeppelin/img/screenshots/z_runParagraph.gif" /></p>
+
+<p><br /></p>
+
+<h2>Overriding dynamic form with Angular Object</h2>
+
+<p>The front-end Angular Interaction API has been designed to offer richer form capabilities and variable binding. With the existing <strong>Dynamic Form</strong> system you can already create input text, select and checkbox forms but the choice is rather limited and the look &amp; feel cannot be changed.</p>
+
+<p>The idea is to create a custom form using plain HTML/AngularJS code and bind actions on this form to push/remove Angular variables to targeted paragraphs using this new API. </p>
+
+<p>Consequently if you use the <strong>Dynamic Form</strong> syntax in a paragraph and there is a bound Angular object having the same name as the <code>${formName}</code>, the Angular object will have higher priority and the <strong>Dynamic Form</strong> will not be displayed. Example: </p>
+
+<p><img src="../assets/themes/zeppelin/img/screenshots/z_angularJs_overriding_dynamic_form.gif" /></p>
+
+<p><br /></p>
+
+<h2>Feature matrix comparison</h2>
+
+<p>How does the front-end AngularJS API compares to the <a href="./back-end-angular.html">back-end API</a> ? Below is a comparison matrix for both APIs:</p>
+
+<table class="table-configuration">
+    <thead>
+        <tr>
+            <th>Actions</th>
+            <th>Front-end API</th>
+            <th>Back-end API</th>
+        </tr>
+    </thead>
+        <tr>
+            <td>Initiate binding</td>
+            <td>z.angularbind(var, initialValue, paragraphId)</td>
+            <td>z.angularBind(var, initialValue)</td>
+        </tr>
+        <tr>
+            <td>Update value</td>
+            <td>same to ordinary angularjs scope variable, or z.angularbind(var, newValue, paragraphId)</td>
+            <td>z.angularBind(var, newValue)</td>
+        </tr>
+        <tr>
+            <td>Watching value</td>
+            <td>same to ordinary angularjs scope variable</td>
+            <td>z.angularWatch(var, (oldVal, newVal) => ...)</td>
+        </tr>
+        <tr>
+            <td>Destroy binding</td>
+            <td>z.angularUnbind(var, paragraphId)</td>
+            <td>z.angularUnbind(var)</td>
+        </tr>
+        <tr>
+            <td>Executing Paragraph</td>
+            <td>z.runParagraph(paragraphId)</td>
+            <td>z.run(paragraphId)</td>
+        </tr>                                
+    <tbody>
+    <tbody>    
+</table>
+
+<p>Both APIs are pretty similar, except for value watching where it is done naturally by AngularJS internals on the front-end and by user custom watcher functions in the back-end.</p>
+
+<p>There is also a slight difference in term of scope. Front-end API limits the Angular object binding to a paragraph scope whereas back-end API allows you to bind an Angular object at the global or note scope. This restriction has been designed purposely to avoid Angular object leaks and scope pollution.</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

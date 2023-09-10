@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.0 Documentation: Alluxio Interpreter for Apache Zeppelin</title>
+    <meta name="description" content="Alluxio is a memory-centric distributed storage system enabling reliable data sharing at memory-speed across cluster frameworks.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.7.0">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.7.0</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.0/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.0/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.0/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.0/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.0/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.0/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.0/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.0/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.0/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.0/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.0/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.0/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.0/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.0/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.0/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.0/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.0/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.0/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.0/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.0/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.0/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.0/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.0/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.0/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.0/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.0/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.0/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.0/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.0/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.0/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.0/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.0/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.0/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.0/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.0/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.0/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.0/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Alluxio Interpreter for Apache Zeppelin">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Alluxio Interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p><a href="http://alluxio.org/">Alluxio</a> is a memory-centric distributed storage system enabling reliable data sharing at memory-speed across cluster frameworks.</p>
+
+<h2>Configuration</h2>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Class</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>alluxio.master.hostname</td>
+    <td>localhost</td>
+    <td>Alluxio master hostname</td>
+  </tr>
+  <tr>
+    <td>alluxio.master.port</td>
+    <td>19998</td>
+    <td>Alluxio master port</td>
+  </tr>
+</table>
+
+<h2>Enabling Alluxio Interpreter</h2>
+
+<p>In a notebook, to enable the <strong>Alluxio</strong> interpreter, click on the <strong>Gear</strong> icon and select <strong>Alluxio</strong>.</p>
+
+<h2>Using the Alluxio Interpreter</h2>
+
+<p>In a paragraph, use <code>%alluxio</code> to select the <strong>Alluxio</strong> interpreter and then input all commands.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">%alluxio
+<span class="nb">help</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Tip :</strong> Use ( Ctrl + . ) for autocompletion.</p>
+</blockquote>
+
+<h2>Interpreter Commands</h2>
+
+<p>The <strong>Alluxio</strong> interpreter accepts the following commands.</p>
+
+<p><center>
+  <table class="table-configuration">
+    <tr>
+      <th>Operation</th>
+      <th>Syntax</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>cat</td>
+      <td>cat &quot;path&quot;</td>
+      <td>Print the content of the file to the console.</td>
+    </tr>
+    <tr>
+      <td>chgrp</td>
+      <td>chgrp &quot;group&quot; &quot;path&quot;</td>
+      <td>Change the group of the directory or file.</td>
+    </tr>
+    <tr>
+      <td>chmod</td>
+      <td>chmod &quot;permission&quot; &quot;path&quot;</td>
+      <td>Change the permission of the directory or file.</td>
+    </tr>
+    <tr>
+      <td>chown</td>
+      <td>chown &quot;owner&quot; &quot;path&quot;</td>
+      <td>Change the owner of the directory or file.</td>
+    </tr>
+    <tr>
+      <td>copyFromLocal</td>
+      <td>copyFromLocal &quot;source path&quot; &quot;remote path&quot;</td>
+      <td>Copy the specified file specified by &quot;source path&quot; to the path specified by &quot;remote path&quot;.
+      This command will fail if &quot;remote path&quot; already exists.</td>
+    </tr>
+    <tr>
+      <td>copyToLocal</td>
+      <td>copyToLocal &quot;remote path&quot; &quot;local path&quot;</td>
+      <td>Copy the specified file from the path specified by &quot;remote path&quot; to a local destination.</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>count &quot;path&quot;</td>
+      <td>Display the number of folders and files matching the specified prefix in &quot;path&quot;.</td>
+    </tr>
+    <tr>
+      <td>du</td>
+      <td>du &quot;path&quot;</td>
+      <td>Display the size of a file or a directory specified by the input path.</td>
+    </tr>
+    <tr>
+      <td>fileInfo</td>
+      <td>fileInfo &quot;path&quot;</td>
+      <td>Print the information of the blocks of a specified file.</td>
+    </tr>
+    <tr>
+      <td>free</td>
+      <td>free &quot;path&quot;</td>
+      <td>Free a file or all files under a directory from Alluxio. If the file/directory is also
+      in under storage, it will still be available there.</td>
+    </tr>
+    <tr>
+      <td>getCapacityBytes</td>
+      <td>getCapacityBytes</td>
+      <td>Get the capacity of the AlluxioFS.</td>
+    </tr>
+    <tr>
+      <td>getUsedBytes</td>
+      <td>getUsedBytes</td>
+      <td>Get number of bytes used in the AlluxioFS.</td>
+    </tr>
+    <tr>
+      <td>load</td>
+      <td>load &quot;path&quot;</td>
+      <td>Load the data of a file or a directory from under storage into Alluxio.</td>
+    </tr>
+    <tr>
+      <td>loadMetadata</td>
+      <td>loadMetadata &quot;path&quot;</td>
+      <td>Load the metadata of a file or a directory from under storage into Alluxio.</td>
+    </tr>
+    <tr>
+      <td>location</td>
+      <td>location &quot;path&quot;</td>
+      <td>Display a list of hosts that have the file data.</td>
+    </tr>
+    <tr>
+      <td>ls</td>
+      <td>ls &quot;path&quot;</td>
+      <td>List all the files and directories directly under the given path with information such as
+      size.</td>
+    </tr>
+    <tr>
+      <td>mkdir</td>
+      <td>mkdir &quot;path1&quot; ... &quot;pathn&quot;</td>
+      <td>Create directory(ies) under the given paths, along with any necessary parent directories.
+      Multiple paths separated by spaces or tabs. This command will fail if any of the given paths
+      already exist.</td>
+    </tr>
+    <tr>
+      <td>mount</td>
+      <td>mount &quot;path&quot; &quot;uri&quot;</td>
+      <td>Mount the underlying file system path &quot;uri&quot; into the Alluxio namespace as &quot;path&quot;. The &quot;path&quot;
+      is assumed not to exist and is created by the operation. No data or metadata is loaded from under
+      storage into Alluxio. After a path is mounted, operations on objects under the mounted path are
+      mirror to the mounted under storage.</td>
+    </tr>
+    <tr>
+      <td>mv</td>
+      <td>mv &quot;source&quot; &quot;destination&quot;</td>
+      <td>Move a file or directory specified by &quot;source&quot; to a new location &quot;destination&quot;. This command
+      will fail if &quot;destination&quot; already exists.</td>
+    </tr>
+    <tr>
+      <td>persist</td>
+      <td>persist &quot;path&quot;</td>
+      <td>Persist a file or directory currently stored only in Alluxio to the underlying file system.</td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td>pin &quot;path&quot;</td>
+      <td>Pin the given file to avoid evicting it from memory. If the given path is a directory, it
+      recursively pins all the files contained and any new files created within this directory.</td>
+    </tr>
+    <tr>
+      <td>report</td>
+      <td>report &quot;path&quot;</td>
+      <td>Report to the master that a file is lost.</td>
+    </tr>
+    <tr>
+      <td>rm</td>
+      <td>rm &quot;path&quot;</td>
+      <td>Remove a file. This command will fail if the given path is a directory rather than a file.</td>
+    </tr>
+    <tr>
+      <td>setTtl</td>
+      <td>setTtl &quot;time&quot;</td>
+      <td>Set the TTL (time to live) in milliseconds to a file.</td>
+    </tr>
+    <tr>
+      <td>tail</td>
+      <td>tail &quot;path&quot;</td>
+      <td>Print the last 1KB of the specified file to the console.</td>
+    </tr>
+    <tr>
+      <td>touch</td>
+      <td>touch &quot;path&quot;</td>
+      <td>Create a 0-byte file at the specified location.</td>
+    </tr>
+    <tr>
+      <td>unmount</td>
+      <td>unmount &quot;path&quot;</td>
+      <td>Unmount the underlying file system path mounted in the Alluxio namespace as &quot;path&quot;. Alluxio
+      objects under &quot;path&quot; are removed from Alluxio, but they still exist in the previously mounted
+      under storage.</td>
+    </tr>
+    <tr>
+      <td>unpin</td>
+      <td>unpin &quot;path&quot;</td>
+      <td>Unpin the given file to allow Alluxio to evict this file again. If the given path is a
+      directory, it recursively unpins all files contained and any new files created within this
+      directory.</td>
+    </tr>
+    <tr>
+      <td>unsetTtl</td>
+      <td>unsetTtl</td>
+      <td>Remove the TTL (time to live) setting from a file.</td>
+    </tr><br>
+  </table>
+</center></p>
+
+<h2>How to test it&#39;s working</h2>
+
+<p>Be sure to have configured correctly the Alluxio interpreter, then open a new paragraph and type one of the above commands.</p>
+
+<p>Below a simple example to show how to interact with Alluxio interpreter.
+Following steps are performed:</p>
+
+<ul>
+<li>using sh interpreter a new text file is created on local machine</li>
+<li>using Alluxio interpreter:
+
+<ul>
+<li>is listed the content of the afs (Alluxio File System) root</li>
+<li>the file previously created is copied to afs</li>
+<li>is listed again the content of the afs root to check the existence of the new copied file</li>
+<li>is showed the content of the copied file (using the tail command)</li>
+<li>the file previously copied to afs is copied to local machine</li>
+</ul></li>
+<li> using sh interpreter it&#39;s checked the existence of the new file copied from Alluxio and its content is showed</li>
+</ul>
+
+<p><center>
+  <img src="../assets/themes/zeppelin/img/docs-img/alluxio-example.png" alt="Alluxio Interpreter Example">
+</center></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

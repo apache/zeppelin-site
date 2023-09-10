@@ -2,8 +2,17 @@
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title 
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "vendor", "node_modules", "scss"]
-gems: ['jekyll-twitter-plugin']
+exclude: 
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Rakefile
+  - Dockerfile
+  - zeppelin-site.sh
+  - .tweet-cache
+  - .asf.yaml
+plugins: ['jekyll-twitter-plugin']
 highlighter: true
 markdown: redcarpet
 encoding: utf-8

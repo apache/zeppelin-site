@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.3 Documentation: Scio Interpreter for Apache Zeppelin</title>
+    <meta name="description" content="Scio is a Scala DSL for Apache Beam/Google Dataflow model.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.3/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.3/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.3/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.3/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.3/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+              <span style="vertical-align:middle">Zeppelin</span>
+            </a>
+            <a class="navbar-brand-version" href="/docs/0.7.3">
+              <span><small>0.7.3</small></span>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.3/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.3/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.3/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.3/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.3/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.3/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.3/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.3/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.3/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.3/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.3/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.3/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.3/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.3/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.3/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.3/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.3/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.3/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.3/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.3/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.3/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.3/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.3/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.3/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.3/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.3/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.3/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.3/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.3/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.3/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.3/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.3/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.3/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.3/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.3/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.3/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.3/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.3/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.3/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-notebookRepo.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.3/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.3/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.3/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.7.3/security/http_security_headers.html">HTTP Security Headers</a></li>
+                <li><a href="/docs/0.7.3/security/helium_authorization.html">Helium Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.3/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.3/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.3/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.3/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.3/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Scio Interpreter for Apache Zeppelin">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Scio Interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p>Scio is a Scala DSL for <a href="https://github.com/GoogleCloudPlatform/DataflowJavaSDK">Google Cloud Dataflow</a> and <a href="http://beam.incubator.apache.org/">Apache Beam</a> inspired by <a href="http://spark.apache.org/">Spark</a> and <a href="https://github.com/twitter/scalding">Scalding</a>. See the current <a href="https://github.com/spotify/scio/wiki">wiki</a> and <a href="http://spotify.github.io/scio/">API documentation</a> for more information.</p>
+
+<h2>Configuration</h2>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Default Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>zeppelin.scio.argz</td>
+    <td>--runner=InProcessPipelineRunner</td>
+    <td>Scio interpreter wide arguments. Documentation: https://github.com/spotify/scio/wiki#options and https://cloud.google.com/dataflow/pipelines/specifying-exec-params</td>
+  </tr>
+  <tr>
+    <td>zeppelin.scio.maxResult</td>
+    <td>1000</td>
+    <td>Max number of SCollection results to display</td>
+  </tr>
+
+</table>
+
+<h2>Enabling the Scio Interpreter</h2>
+
+<p>In a notebook, to enable the <strong>Scio</strong> interpreter, click the <strong>Gear</strong> icon and select <strong>beam</strong> (<strong>beam.scio</strong>).</p>
+
+<h2>Using the Scio Interpreter</h2>
+
+<p>In a paragraph, use <code>%beam.scio</code> to select the <strong>Scio</strong> interpreter. You can use it much the same way as vanilla Scala REPL and <a href="https://github.com/spotify/scio/wiki/Scio-REPL">Scio REPL</a>. State (like variables, imports, execution etc) is shared among all <em>Scio</em> paragraphs. There is a special variable <strong>argz</strong> which holds arguments from Scio interpreter settings. The easiest way to proceed is to create a Scio context via standard <code>ContextAndArgs</code>.</p>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">beam</span><span class="o">.</span><span class="n">scio</span>
+<span class="k">val</span> <span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span> <span class="k">=</span> <span class="nc">ContextAndArgs</span><span class="o">(</span><span class="n">argz</span><span class="o">)</span>
+</code></pre></div>
+<p>Use <code>sc</code> context the way you would in a regular pipeline/REPL.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">beam</span><span class="o">.</span><span class="n">scio</span>
+<span class="k">val</span> <span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span> <span class="k">=</span> <span class="nc">ContextAndArgs</span><span class="o">(</span><span class="n">argz</span><span class="o">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="o">(</span><span class="nc">Seq</span><span class="o">(</span><span class="s">&quot;foo&quot;</span><span class="o">,</span> <span class="s">&quot;foo&quot;</span><span class="o">,</span> <span class="s">&quot;bar&quot;</span><span class="o">)).</span><span class="n">countByValue</span><span class="o">.</span><span class="n">closeAndDisplay</span><span class="o">()</span>
+</code></pre></div>
+<p>If you close Scio context, go ahead an create a new one using <code>ContextAndArgs</code>. Please refer to <a href="https://github.com/spotify/scio/wiki">Scio wiki</a> for more complex examples. You can close Scio context much the same way as in Scio REPL, and use Zeppelin display helpers to synchronously close and display results - read more below.</p>
+
+<h3>Progress</h3>
+
+<p>There can be only one paragraph running at once. There is no notion of overall progress, thus progress bar will show <code>0</code>.</p>
+
+<h3>SCollection display helpers</h3>
+
+<p>Scio interpreter comes with display helpers to ease working with Zeppelin notebooks. Simply use <code>closeAndDisplay()</code> on <code>SCollection</code> to close context and display the results. The number of results is limited by <code>zeppelin.scio.maxResult</code> (by default 1000).</p>
+
+<p>Supported <code>SCollection</code> types:</p>
+
+<ul>
+<li>Scio&#39;s typed BigQuery</li>
+<li>Scala&#39;s Products (case classes, tuples)</li>
+<li>Google BigQuery&#39;s TableRow</li>
+<li>Apache Avro</li>
+<li>All Scala&#39;s <code>AnyVal</code></li>
+</ul>
+
+<h4>Helper methods</h4>
+
+<p>There are different helper methods for different objects. You can easily display results from <code>SCollection</code>, <code>Future[Tap]</code> and <code>Tap</code>.</p>
+
+<h5><code>SCollection</code> helper</h5>
+
+<p><code>SCollection</code> has <code>closeAndDisplay</code> Zeppelin helper method for types listed above. Use it to synchronously close Scio context, and once available pull and display results.</p>
+
+<h5><code>Future[Tap]</code> helper</h5>
+
+<p><code>Future[Tap]</code> has <code>waitAndDisplay</code> Zeppelin helper method for types listed above. Use it to synchronously wait for results, and once available pull and display results.</p>
+
+<h5><code>Tap</code> helper</h5>
+
+<p><code>Tap</code> has <code>display</code> Zeppelin helper method for types listed above. Use it to pull and display results.</p>
+
+<h3>Examples</h3>
+
+<h4>BigQuery example:</h4>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">beam</span><span class="o">.</span><span class="n">scio</span>
+<span class="nd">@BigQueryType</span><span class="o">.</span><span class="n">fromQuery</span><span class="o">(</span><span class="s">&quot;&quot;&quot;|SELECT departure_airport,count(case when departure_delay&gt;0 then 1 else 0 end) as no_of_delays</span>
+<span class="s">                           |FROM [bigquery-samples:airline_ontime_data.flights]</span>
+<span class="s">                           |group by departure_airport</span>
+<span class="s">                           |order by 2 desc</span>
+<span class="s">                           |limit 10&quot;&quot;&quot;</span><span class="o">.</span><span class="n">stripMargin</span><span class="o">)</span> <span class="k">class</span> <span class="nc">Flights</span>
+
+<span class="k">val</span> <span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span> <span class="k">=</span> <span class="nc">ContextAndArgs</span><span class="o">(</span><span class="n">argz</span><span class="o">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">bigQuerySelect</span><span class="o">(</span><span class="nc">Flights</span><span class="o">.</span><span class="n">query</span><span class="o">).</span><span class="n">closeAndDisplay</span><span class="o">(</span><span class="nc">Flights</span><span class="o">.</span><span class="n">schema</span><span class="o">)</span>
+</code></pre></div>
+<h4>BigQuery typed example:</h4>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">beam</span><span class="o">.</span><span class="n">scio</span>
+<span class="nd">@BigQueryType</span><span class="o">.</span><span class="n">fromQuery</span><span class="o">(</span><span class="s">&quot;&quot;&quot;|SELECT departure_airport,count(case when departure_delay&gt;0 then 1 else 0 end) as no_of_delays</span>
+<span class="s">                           |FROM [bigquery-samples:airline_ontime_data.flights]</span>
+<span class="s">                           |group by departure_airport</span>
+<span class="s">                           |order by 2 desc</span>
+<span class="s">                           |limit 10&quot;&quot;&quot;</span><span class="o">.</span><span class="n">stripMargin</span><span class="o">)</span> <span class="k">class</span> <span class="nc">Flights</span>
+
+<span class="k">val</span> <span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span> <span class="k">=</span> <span class="nc">ContextAndArgs</span><span class="o">(</span><span class="n">argz</span><span class="o">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">typedBigQuery</span><span class="o">[</span><span class="kt">Flights</span><span class="o">]().</span><span class="n">flatMap</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">no_of_delays</span><span class="o">).</span><span class="n">mean</span><span class="o">.</span><span class="n">closeAndDisplay</span><span class="o">()</span>
+</code></pre></div>
+<h4>Avro example:</h4>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">beam</span><span class="o">.</span><span class="n">scio</span>
+<span class="k">import</span> <span class="nn">com.spotify.data.ExampleAvro</span>
+
+<span class="k">val</span> <span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span> <span class="k">=</span> <span class="nc">ContextAndArgs</span><span class="o">(</span><span class="n">argz</span><span class="o">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">avroFile</span><span class="o">[</span><span class="kt">ExampleAvro</span><span class="o">](</span><span class="s">&quot;gs://&lt;bucket&gt;/tmp/my.avro&quot;</span><span class="o">).</span><span class="n">take</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">closeAndDisplay</span><span class="o">()</span>
+</code></pre></div>
+<h4>Avro example with a view schema:</h4>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">beam</span><span class="o">.</span><span class="n">scio</span>
+<span class="k">import</span> <span class="nn">com.spotify.data.ExampleAvro</span>
+<span class="k">import</span> <span class="nn">org.apache.avro.Schema</span>
+
+<span class="k">val</span> <span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span> <span class="k">=</span> <span class="nc">ContextAndArgs</span><span class="o">(</span><span class="n">argz</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">view</span> <span class="k">=</span> <span class="nc">Schema</span><span class="o">.</span><span class="n">parse</span><span class="o">(</span><span class="s">&quot;&quot;&quot;{&quot;type&quot;:&quot;record&quot;,&quot;name&quot;:&quot;ExampleAvro&quot;,&quot;namespace&quot;:&quot;com.spotify.data&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;track&quot;,&quot;type&quot;:&quot;string&quot;}, {&quot;name&quot;:&quot;artist&quot;, &quot;type&quot;:&quot;string&quot;}]}&quot;&quot;&quot;</span><span class="o">)</span>
+
+<span class="n">sc</span><span class="o">.</span><span class="n">avroFile</span><span class="o">[</span><span class="kt">EndSongCleaned</span><span class="o">](</span><span class="s">&quot;gs://&lt;bucket&gt;/tmp/my.avro&quot;</span><span class="o">).</span><span class="n">take</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">closeAndDisplay</span><span class="o">(</span><span class="n">view</span><span class="o">)</span>
+</code></pre></div>
+<h3>Google credentials</h3>
+
+<p>Scio Interpreter will try to infer your Google Cloud credentials from its environment, it will take into the account:</p>
+
+<ul>
+<li><code>argz</code> interpreter settings (<a href="https://github.com/spotify/scio/wiki#options">doc</a>)</li>
+<li>environment variable (<code>GOOGLE_APPLICATION_CREDENTIALS</code>)</li>
+<li>gcloud configuration</li>
+</ul>
+
+<h4>BigQuery macro credentials</h4>
+
+<p>Currently BigQuery project for macro expansion is inferred using Google Dataflow&#39;s <a href="https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/sdk/src/main/java/com/google/cloud/dataflow/sdk/options/GcpOptions.java#L187">DefaultProjectFactory().create()</a></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+
