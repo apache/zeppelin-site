@@ -1,7 +1,7 @@
 ## Zeppelin project website
 This readme will walk you through building the Zeppelin website
 
-## Requriement
+## Requirement
 - Docker
 
 ## Develop website
