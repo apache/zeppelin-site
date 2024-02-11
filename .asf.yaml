@@ -14,3 +14,7 @@ jekyll:
 staging:
   profile: ~
   whoami:  asf-staging  
+
+publish:
+  profile: ~
+  whoami: asf-site
