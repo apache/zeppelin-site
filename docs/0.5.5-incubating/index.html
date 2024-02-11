@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Overview</title>
+    
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.5.5-incubating/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.5.5-incubating/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.5.5-incubating/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.5.5-incubating">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            Zeppelin <small>(0.5.5-incubating)</small>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Overview</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/index.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Install</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/install/install.html">Install</a></li>
+                <li><a href="/docs/0.5.5-incubating/install/yarn_install.html">YARN Install</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Tutorial</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/tutorial/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Guide</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/manual/dynamicform.html">Dynamic Form</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.5-incubating/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Hive</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Markdown</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/postgresql.html">Postgresql, hawq</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Tajo</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.5-incubating/displaysystem/display.html">Text</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/display.html#html">Html</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/table.html">Table</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/angular.html">Angular</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Manual</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/manual/notebookashomepage.html">Notebook as Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Notebook Storage</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/storage/storage.html">S3 Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>REST API</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.5.5-incubating/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Development</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.5.5-incubating/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.5.5-incubating/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      
+<!--<div class="hero-unit Overview">
+  <h1> <small>Less Development, More analysis!</small></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p><br />
+<div class="row">
+ <div class="col-md-5">
+<h2>Multi-purpose Notebook</h2></p>
+
+<p style="font-size:16px; color:#555555;font-style:italic;margin-bottom: 15px;">
+  The Notebook is the place for all your needs
+</p>
+
+<ul style="list-style-type: none;padding-left:10px;" >
+  <li style="font-size:20px; margin: 5px;"><span class="glyphicon glyphicon-import"></span> Data Ingestion</li>
+  <li style="font-size:20px; margin: 5px;"><span class="glyphicon glyphicon-eye-open"></span> Data Discovery</li>
+  <li style="font-size:20px; margin: 5px;"><span class="glyphicon glyphicon-wrench"></span> Data Analytics</li>
+  <li style="font-size:20px; margin: 5px;"><span class="glyphicon glyphicon-dashboard"></span> Data Visualization & Collaboration</li>
+</ul>
+
+<p></div>
+ <div class="col-md-7"><img class="img-responsive" style="border: 1px solid #ecf0f1;" height="auto" src="/assets/themes/zeppelin/img/notebook.png" /></div>
+</div></p>
+
+<p><br /></p>
+
+<h3>Multiple language backend</h3>
+
+<p>Zeppelin interpreter concept allows any language/data-processing-backend to be plugged into Zeppelin.
+Currently Zeppelin supports many interpreters such as Scala(with Apache Spark), Python(with Apache Spark), SparkSQL, Hive, Markdown and Shell.</p>
+
+<p><img class="img-responsive" src="/assets/themes/zeppelin/img/screenshots/multiple_language_backend.png" /></p>
+
+<p>Adding new language-backend is really simple. Learn <a href="./development/writingzeppelininterpreter.html">how to write a zeppelin interpreter</a>.</p>
+
+<p><br /></p>
+
+<h3>Apache Spark integration</h3>
+
+<p>Zeppelin provides built-in Apache Spark integration. You don&#39;t need to build a separate module, plugin or library for it.</p>
+
+<p><img src="/assets/themes/zeppelin/img/spark_logo.jpg" width="80px" /></p>
+
+<p>Zeppelin&#39;s Spark integration provides</p>
+
+<ul>
+<li>Automatic SparkContext and SQLContext injection</li>
+<li>Runtime jar dependency loading from local filesystem or maven repository. Learn more about <a href="./interpreter/spark.html#dependencyloading">dependency loader</a>.</li>
+<li>Canceling job and displaying its progress</li>
+</ul>
+
+<p><br /></p>
+
+<h3>Data visualization</h3>
+
+<p>Some basic charts are already included in Zeppelin. Visualizations are not limited to SparkSQL&#39;s query, any output from any language backend can be recognized and visualized.</p>
+
+<div class="row">
+  <div class="col-md-6">
+    <img class="img-responsive" src="/assets/themes/zeppelin/img/graph1.png" />
+  </div>
+  <div class="col-md-6">
+    <img class="img-responsive" src="/assets/themes/zeppelin/img/graph2.png" />
+  </div>
+</div>
+
+<h4>Pivot chart</h4>
+
+<p>With simple drag and drop Zeppelin aggeregates the values and display them in pivot chart. You can easily create chart with multiple aggregated values including sum, count, average, min, max.</p>
+
+<div class="row">
+  <div class="col-md-8">
+    <img class="img-responsive" src="/assets/themes/zeppelin/img/screenshots/pivot.png" />
+  </div>
+</div>
+
+<p>Learn more about Zeppelin&#39;s Display system. ( <a href="./displaysystem/display.html">text</a>, <a href="./displaysystem/display.html#html">html</a>, <a href="./displaysystem/table.html">table</a>, <a href="./displaysystem/angular.html">angular</a> )</p>
+
+<p><br /></p>
+
+<h3>Dynamic forms</h3>
+
+<p>Zeppelin can dynamically create some input forms into your notebook.</p>
+
+<p><img class="img-responsive" src="/assets/themes/zeppelin/img/screenshots/form_input.png" /></p>
+
+<p>Learn more about <a href="./manual/dynamicform.html">Dynamic Forms</a>.</p>
+
+<p><br /></p>
+
+<h3>Collaboration</h3>
+
+<p>Notebook URL can be shared among collaborators. Zeppelin can then broadcast any changes in realtime, just like the collaboration in Google docs.</p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/collaboration.png" /></p>
+
+<p><br /></p>
+
+<h3>Publish</h3>
+
+<p>Zeppelin provides an URL to display the result only, that page does not include Zeppelin's menu and buttons.
+This way, you can easily embed it as an iframe inside of your website.</p>
+
+<div class="row">
+  <img class="img-responsive center-block" src="/assets/themes/zeppelin/img/screenshots/publish.png" />
+</div>
+
+<p><br /></p>
+
+<h3>100% Opensource</h3>
+
+<p>Apache Zeppelin (incubating) is Apache2 Licensed software. Please check out the <a href="https://github.com/apache/incubator-zeppelin">source repository</a> and <a href="./development/howtocontribute.html">How to contribute</a></p>
+
+<p>Zeppelin has a very active development community.
+Join the <a href="./community.html">Mailing list</a> and report issues on our <a href="https://issues.apache.org/jira/browse/ZEPPELIN">Issue tracker</a>.</p>
+
+<p><br /></p>
+
+<h3>Undergoing Incubation</h3>
+
+<p>Apache Zeppelin is an effort undergoing <a href="https://incubator.apache.org/index.html">incubation</a> at The Apache Software Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2015 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.incubator.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

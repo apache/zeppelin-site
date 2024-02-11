@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.3 Documentation: Setting up HTTP Response Headers</title>
+    <meta name="description" content="There are multiple HTTP Security Headers which can be configured in Apache Zeppelin. This page describes how to enable them by providing appropriate value in Zeppelin configuration file.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.3/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.3/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.3/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.3/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.3/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+              <span style="vertical-align:middle">Zeppelin</span>
+            </a>
+            <a class="navbar-brand-version" href="/docs/0.7.3">
+              <span><small>0.7.3</small></span>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.3/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.3/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.3/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.3/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.3/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.3/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.3/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.3/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.3/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.3/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.3/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.3/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.3/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.3/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.3/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.3/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.3/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.3/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.3/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.3/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.3/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.3/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.3/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.3/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.3/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.3/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.3/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.3/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.3/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.3/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.3/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.3/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.3/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.3/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.3/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.3/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.3/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.3/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.3/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-notebookRepo.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.3/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.3/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.3/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.7.3/security/http_security_headers.html">HTTP Security Headers</a></li>
+                <li><a href="/docs/0.7.3/security/helium_authorization.html">Helium Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.3/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.3/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.3/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.3/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.3/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Setting up HTTP Response Headers">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Setting up HTTP Response Headers for Zeppelin</h1>
+
+<div id="toc"></div>
+
+<p>Apache Zeppelin can be configured to include HTTP Headers which aids in preventing Cross Site Scripting (XSS), Cross-Frame Scripting (XFS) and also enforces HTTP Strict Transport Security. Apache Zeppelin also has configuration available to set the Application Server Version to desired value.</p>
+
+<h2>Setting up HTTP Strict Transport Security (HSTS) Response Header</h2>
+
+<p>Enabling HSTS Response Header prevents Man-in-the-middle attacks by automatically redirecting HTTP requests to HTTPS when Zeppelin Server is running on SSL. Read on how to configure SSL for Zeppelin <a href="../operation/configuration.html">here</a>. Even if web page contains any resource which gets served over HTTP or any HTTP links, it will automatically be redirected to HTTPS for the target domain. 
+It also prevents MITM attack by not allowing User to override the invalid certificate message, when Attacker presents invalid SSL certificate to the User.  </p>
+
+<p>The following property needs to be updated in the zeppelin-site.xml in order to enable HSTS. You can choose appropriate value for &quot;max-age&quot;.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;property&gt;
+  &lt;name&gt;zeppelin.server.strict.transport&lt;/name&gt;
+  &lt;value&gt;max-age=631138519&lt;/value&gt;
+  &lt;description&gt;The HTTP Strict-Transport-Security response header is a security feature that lets a web site tell browsers that it should only be communicated with using HTTPS, instead of using HTTP. Enable this when Zeppelin is running on HTTPS. Value is in Seconds, the default value is equivalent to 20 years.&lt;/description&gt;
+&lt;/property&gt;
+</code></pre></div>
+<p>Possible values are:</p>
+
+<ul>
+<li>max-age=&lt;expire-time&gt;</li>
+<li>max-age=&lt;expire-time&gt;; includeSubDomains</li>
+<li>max-age=&lt;expire-time&gt;; preload</li>
+</ul>
+
+<p>Read more about HSTS <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">here</a>.</p>
+
+<h2>Setting up X-XSS-PROTECTION Header</h2>
+
+<p>The HTTP X-XSS-Protection response header is a feature of Internet Explorer, Chrome and Safari Web browsers that initiates configured action when they detect reflected cross-site scripting (XSS) attacks.</p>
+
+<p>The following property needs to be updated in the zeppelin-site.xml in order to set X-XSS-PROTECTION header. </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;property&gt;
+  &lt;name&gt;zeppelin.server.xxss.protection&lt;/name&gt;
+  &lt;value&gt;1; mode=block&lt;/value&gt;
+  &lt;description&gt;The HTTP X-XSS-Protection response header is a feature of Internet Explorer, Chrome and Safari that stops pages from loading when they detect reflected cross-site scripting (XSS) attacks. When value is set to 1 and a cross-site scripting attack is detected, the browser will sanitize the page (remove the unsafe parts).&lt;/description&gt;
+&lt;/property&gt;
+</code></pre></div>
+<p>You can choose appropriate value from below.</p>
+
+<ul>
+<li>0  (Disables XSS filtering)</li>
+<li>1  (Enables XSS filtering. If a cross-site scripting attack is detected, the browser will sanitize the page.)</li>
+<li>1; mode=block  (Enables XSS filtering. The browser will prevent rendering of the page if an attack is detected.)</li>
+</ul>
+
+<p>Read more about HTTP X-XSS-Protection response header <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">here</a>.</p>
+
+<h2>Setting up X-Frame-Options Header</h2>
+
+<p>The X-Frame-Options HTTP response header can indicate browser to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites in a <code>&lt;frame&gt;</code>,<code>&lt;iframe&gt;</code> or <code>&lt;object&gt;</code>.</p>
+
+<p>The following property needs to be updated in the zeppelin-site.xml in order to set X-Frame-Options header.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;property&gt;
+  &lt;name&gt;zeppelin.server.xframe.options&lt;/name&gt;
+  &lt;value&gt;SAMEORIGIN&lt;/value&gt;
+  &lt;description&gt;The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a frame/iframe/object.&lt;/description&gt;
+&lt;/property&gt;
+</code></pre></div>
+<p>You can choose appropriate value from below.</p>
+
+<ul>
+<li>DENY</li>
+<li>SAMEORIGIN</li>
+<li>ALLOW-FROM <em>uri</em></li>
+</ul>
+
+<h2>Setting up Server Header</h2>
+
+<p>Security conscious organisations does not want to reveal the Application Server name and version to prevent finding this information easily by Attacker while fingerprinting the Application. The exact version number can tell an Attacker if the current Application Server is patched for or vulnerable to certain publicly known CVE associated to it.</p>
+
+<p>The following property needs to be updated in the zeppelin-site.xml in order to set Server header.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;property&gt;
+    &lt;name&gt;zeppelin.server.jetty.name&lt;/name&gt;
+    &lt;value&gt;Jetty(7.6.0.v20120127)&lt;/value&gt;
+    &lt;description&gt;Hardcoding Application Server name to Prevent Fingerprinting&lt;/description&gt;
+&lt;/property&gt;
+</code></pre></div>
+<p>The value can be any &quot;String&quot;.</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

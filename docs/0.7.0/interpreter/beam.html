@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.0 Documentation: Beam interpreter in Apache Zeppelin</title>
+    <meta name="description" content="Apache Beam is an open source, unified programming model that you can use to create a data processing pipeline.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.7.0">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.7.0</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.0/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.0/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.0/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.0/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.0/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.0/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.0/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.0/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.0/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.0/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.0/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.0/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.0/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.0/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.0/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.0/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.0/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.0/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.0/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.0/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.0/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.0/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.0/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.0/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.0/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.0/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.0/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.0/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.0/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.0/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.0/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.0/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.0/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.0/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.0/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.0/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.0/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Beam interpreter in Apache Zeppelin">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Beam interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p><a href="http://beam.incubator.apache.org">Apache Beam</a> is an open source unified platform for data processing pipelines. A pipeline can be build using one of the Beam SDKs.
+The execution of the pipeline is done by different Runners. Currently, Beam supports Apache Flink Runner, Apache Spark Runner, and Google Dataflow Runner.</p>
+
+<h2>How to use</h2>
+
+<p>Basically, you can write normal Beam java code where you can determine the Runner. You should write the main method inside a class becuase the interpreter invoke this main to execute the pipeline. Unlike Zeppelin normal pattern, each paragraph is considered as a separate job, there isn&#39;t any relation to any other paragraph.</p>
+
+<p>The following is a demonstration of a word count example with data represented in array of strings
+But it can read data from files by replacing <code>Create.of(SENTENCES).withCoder(StringUtf8Coder.of())</code> with <code>TextIO.Read.from(&quot;path/to/filename.txt&quot;)</code></p>
+<div class="highlight"><pre><code class="java language-java" data-lang="java"><span class="o">%</span><span class="n">beam</span>
+
+<span class="c1">// most used imports</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.coders.StringUtf8Coder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.transforms.Create</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.spark.api.java.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.spark.api.java.function.Function</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.spark.SparkConf</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.spark.streaming.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.spark.SparkContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.runners.direct.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.runners.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.options.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.runners.spark.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.runners.spark.io.ConsoleIO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.runners.flink.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.runners.flink.examples.WordCount.Options</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.Pipeline</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.io.TextIO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.options.PipelineOptionsFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.transforms.Count</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.transforms.DoFn</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.transforms.MapElements</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.transforms.ParDo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.transforms.SimpleFunction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.values.KV</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.beam.sdk.options.PipelineOptions</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MinimalWordCount</span> <span class="o">{</span>
+  <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+  <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span><span class="o">[]</span> <span class="n">SENTENCES_ARRAY</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span>
+    <span class="s">&quot;Hadoop is the Elephant King!&quot;</span><span class="o">,</span>
+    <span class="s">&quot;A yellow and elegant thing.&quot;</span><span class="o">,</span>
+    <span class="s">&quot;He never forgets&quot;</span><span class="o">,</span>
+    <span class="s">&quot;Useful data, or lets&quot;</span><span class="o">,</span>
+    <span class="s">&quot;An extraneous element cling!&quot;</span><span class="o">,</span>
+    <span class="s">&quot;A wonderful king is Hadoop.&quot;</span><span class="o">,</span>
+    <span class="s">&quot;The elephant plays well with Sqoop.&quot;</span><span class="o">,</span>
+    <span class="s">&quot;But what helps him to thrive&quot;</span><span class="o">,</span>
+    <span class="s">&quot;Are Impala, and Hive,&quot;</span><span class="o">,</span>
+    <span class="s">&quot;And HDFS in the group.&quot;</span><span class="o">,</span>
+    <span class="s">&quot;Hadoop is an elegant fellow.&quot;</span><span class="o">,</span>
+    <span class="s">&quot;An elephant gentle and mellow.&quot;</span><span class="o">,</span>
+    <span class="s">&quot;He never gets mad,&quot;</span><span class="o">,</span>
+    <span class="s">&quot;Or does anything bad,&quot;</span><span class="o">,</span>
+    <span class="s">&quot;Because, at his core, he is yellow&quot;</span><span class="o">,</span>
+    <span class="o">};</span>  
+  <span class="kd">static</span> <span class="kd">final</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">SENTENCES</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">SENTENCES_ARRAY</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Options</span> <span class="n">options</span> <span class="o">=</span> <span class="n">PipelineOptionsFactory</span><span class="o">.</span><span class="na">create</span><span class="o">().</span><span class="na">as</span><span class="o">(</span><span class="n">Options</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">options</span><span class="o">.</span><span class="na">setRunner</span><span class="o">(</span><span class="n">FlinkRunner</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">Pipeline</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">options</span><span class="o">);</span>
+    <span class="n">p</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">Create</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">SENTENCES</span><span class="o">).</span><span class="na">withCoder</span><span class="o">(</span><span class="n">StringUtf8Coder</span><span class="o">.</span><span class="na">of</span><span class="o">()))</span>
+         <span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="s">&quot;ExtractWords&quot;</span><span class="o">,</span> <span class="n">ParDo</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="k">new</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+           <span class="nd">@Override</span>
+           <span class="kd">public</span> <span class="kt">void</span> <span class="nf">processElement</span><span class="o">(</span><span class="n">ProcessContext</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span>
+             <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">word</span> <span class="o">:</span> <span class="n">c</span><span class="o">.</span><span class="na">element</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;[^a-zA-Z&#39;]+&quot;</span><span class="o">))</span> <span class="o">{</span>
+               <span class="k">if</span> <span class="o">(!</span><span class="n">word</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                 <span class="n">c</span><span class="o">.</span><span class="na">output</span><span class="o">(</span><span class="n">word</span><span class="o">);</span>
+               <span class="o">}</span>
+             <span class="o">}</span>
+           <span class="o">}</span>
+         <span class="o">}))</span>
+        <span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">Count</span><span class="o">.&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">perElement</span><span class="o">())</span>
+        <span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="s">&quot;FormatResults&quot;</span><span class="o">,</span> <span class="n">ParDo</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="k">new</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">KV</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;,</span> <span class="n">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+          <span class="nd">@Override</span>
+          <span class="kd">public</span> <span class="kt">void</span> <span class="nf">processElement</span><span class="o">(</span><span class="n">DoFn</span><span class="o">&lt;</span><span class="n">KV</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;,</span> <span class="n">String</span><span class="o">&gt;.</span><span class="na">ProcessContext</span> <span class="n">arg0</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+            <span class="n">s</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;\n&quot;</span> <span class="o">+</span> <span class="n">arg0</span><span class="o">.</span><span class="na">element</span><span class="o">().</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">arg0</span><span class="o">.</span><span class="na">element</span><span class="o">().</span><span class="na">getValue</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}));</span>
+    <span class="n">p</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;%table word\tcount&quot;</span><span class="o">);</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

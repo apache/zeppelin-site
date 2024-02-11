@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>How to contribute</title>
+    <meta name="description" content="How to contribute">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.5.5-incubating/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.5.5-incubating/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.5.5-incubating/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.5.5-incubating">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            Zeppelin <small>(0.5.5-incubating)</small>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Overview</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/index.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Install</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/install/install.html">Install</a></li>
+                <li><a href="/docs/0.5.5-incubating/install/yarn_install.html">YARN Install</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Tutorial</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/tutorial/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Guide</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/manual/dynamicform.html">Dynamic Form</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.5-incubating/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Hive</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Markdown</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/postgresql.html">Postgresql, hawq</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Tajo</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.5-incubating/displaysystem/display.html">Text</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/display.html#html">Html</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/table.html">Table</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/angular.html">Angular</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Manual</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/manual/notebookashomepage.html">Notebook as Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Notebook Storage</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/storage/storage.html">S3 Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>REST API</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.5.5-incubating/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Development</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.5.5-incubating/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.5.5-incubating/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      
+<!--<div class="hero-unit How to contribute">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>IMPORTANT</h2>
+
+<p>Apache Zeppelin (incubating) is an <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache2 License</a> Software.
+Any contribution to Zeppelin (Source code, Documents, Image, Website) means you agree license all your contributions as Apache2 License.</p>
+
+<h3>Setting up</h3>
+
+<p>Here are some things you will need to do to build and test Zeppelin. </p>
+
+<h4>Software Configuration Management(SCM)</h4>
+
+<p>Zeppelin uses Git for it&#39;s SCM system. Hosted by github.com. <code>https://github.com/apache/incubator-zeppelin</code> You&#39;ll need git client installed in your development machine. </p>
+
+<h4>Integrated Development Environment(IDE)</h4>
+
+<p>You are free to use whatever IDE you prefer, or your favorite command line editor. </p>
+
+<h4>Build Tools</h4>
+
+<p>To build the code, install
+Oracle Java 7
+Apache Maven</p>
+
+<h3>Getting the source code</h3>
+
+<p>First of all, you need the Zeppelin source code. The official location for Zeppelin is <a href="https://github.com/apache/incubator-zeppelin">https://github.com/apache/incubator-zeppelin</a></p>
+
+<h4>git access</h4>
+
+<p>Get the source code on your development machine using git.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">git clone https://github.com/apache/incubator-zeppelin.git zeppelin
+</code></pre></div>
+<p>You may also want to develop against a specific release. For example, for branch-0.1</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">git clone -b branch-0.1 https://github.com/apache/incubator-zeppelin.git zeppelin
+</code></pre></div>
+<h4>Fork repository</h4>
+
+<p>If you want not only build Zeppelin but also make changes, then you need to fork Zeppelin repository and make pull request.</p>
+
+<h3>Build</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">mvn install
+</code></pre></div>
+<p>To skip test</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">mvn install -DskipTests
+</code></pre></div>
+<p>To build with specific spark / hadoop version</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">mvn install -Dspark.version=1.0.1 -Dhadoop.version=2.2.0
+</code></pre></div>
+<h3>Run Zeppelin server in development mode</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">cd zeppelin-server
+HADOOP_HOME=YOUR_HADOOP_HOME JAVA_HOME=YOUR_JAVA_HOME mvn exec:java -Dexec.mainClass=&quot;org.apache.zeppelin.server.ZeppelinServer&quot; -Dexec.args=&quot;&quot;
+</code></pre></div>
+<p>NOTE: make sure you first run <code>mvn clean install -DskipTests</code> on your zeppelin root directory otherwise your server build will fail to find the required dependencies in the local repro</p>
+
+<p>or use daemon script</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin/zeppelin-daemon start
+</code></pre></div>
+<p>Server will be run on http://localhost:8080</p>
+
+<h3>Generating Thrift Code</h3>
+
+<p>Some portions of the Zeppelin code are generated by <a href="http://thrift.apache.org">Thrift</a>. For most Zeppelin changes, you don&#39;t need to worry about this, but if you modify any of the Thrift IDL files (e.g. zeppelin-interpreter/src/main/thrift/*.thrift), then you also need to regenerate these files and submit their updated version as part of your patch.</p>
+
+<p>To regenerate the code, install thrift-0.9.0 and change directory into Zeppelin source directory. and then run following command</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">thrift -out zeppelin-interpreter/src/main/java/ --gen java zeppelin-interpreter/src/main/thrift/RemoteInterpreterService.thrift
+</code></pre></div>
+<h3>JIRA</h3>
+
+<p>Zeppelin manages its issues in Jira. <a href="https://issues.apache.org/jira/browse/ZEPPELIN">https://issues.apache.org/jira/browse/ZEPPELIN</a></p>
+
+<h3>Stay involved</h3>
+
+<p>Contributors should join the Zeppelin mailing lists.</p>
+
+<ul>
+<li><a href="http://mail-archives.apache.org/mod_mbox/incubator-zeppelin-dev/">dev@zeppelin.incubator.apache.org</a> is for people who want to contribute code to Zeppelin. <a href="mailto:dev-subscribe@zeppelin.incubator.apache.org?subject=send%20this%20email%20to%20subscribe">subscribe</a>, <a href="mailto:dev-unsubscribe@zeppelin.incubator.apache.org?subject=send%20this%20email%20to%20unsubscribe">unsubscribe</a>, <a href="http://mail-archives.apache.org/mod_mbox/incubator-zeppelin-dev/">archives</a></li>
+</ul>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2015 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.incubator.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

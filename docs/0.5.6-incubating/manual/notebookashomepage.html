@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Notebook as Homepage</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.5.6-incubating/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.5.6-incubating/assets/themes/zeppelin/js/docs.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.5.6-incubating/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.5.6-incubating/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.5.6-incubating">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>(0.5.6-incubating)</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Overview</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/index.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Install</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/install/install.html">Install</a></li>
+                <li><a href="/docs/0.5.6-incubating/install/yarn_install.html">YARN Install</a></li>
+                <li><a href="/docs/0.5.6-incubating/install/virtual_machine.html">Virtual Machine Install</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Tutorial</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/tutorial/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Guide</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/manual/dynamicform.html">Dynamic Form</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.6-incubating/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/postgresql.html">Postgresql, hawq</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.5.6-incubating/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.5.6-incubating/pleasecontribute.html">Tajo</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.6-incubating/displaysystem/display.html">Text</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/display.html#html">Html</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/table.html">Table</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/angular.html">Angular</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Manual</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/manual/notebookashomepage.html">Notebook as Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Notebook Storage</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/storage/storage.html#Git">Git Storage</a></li>
+                <li><a href="/docs/0.5.6-incubating/storage/storage.html#S3">S3 Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>REST API</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.5.6-incubating/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Development</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.5.6-incubating/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.5.6-incubating/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      
+<!--<div class="hero-unit Notebook as Homepage">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h2>Customize your zeppelin homepage</h2>
+
+<p>Zeppelin allows you to use one of the notebooks you create as your zeppelin Homepage.
+ With that you can brand your zeppelin installation, 
+ adjust the instruction to your users needs and even translate to other languages.</p>
+
+<p><br /></p>
+
+<h3>How to set a notebook as your zeppelin homepage</h3>
+
+<p>The process for creating your homepage is very simple as shown below:</p>
+
+<ol>
+<li>Create a notebook using zeppelin</li>
+<li>Set the notebook id in the config file</li>
+<li><p>Restart zeppelin</p>
+
+<p><br /></p>
+
+<h4>Create a notebook using zeppelin</h4>
+
+<p>Create a new notebook using zeppelin,
+you can use <code>%md</code> interpreter for markdown content or any other interpreter you like.</p>
+
+<p>You can also use the display system to generate <a href="../displaysystem/display.html">text</a>, 
+<a href="../displaysystem/display.html#html">html</a>,<a href="../displaysystem/table.html">table</a> or
+<a href="../displaysystem/angular.html">angular</a></p>
+
+<p>Run (shift+Enter) the notebook and see the output. Optionally, change the notebook view to report to hide 
+the code sections.</p>
+
+<p><br /></p>
+
+<h4>Set the notebook id in the config file</h4>
+
+<p>To set the notebook id in the config file you should copy it from the last word in the notebook url </p>
+
+<p>for example</p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/homepage_notebook_id.png" /></p>
+
+<p>Set the notebook id to the <code>ZEPPELIN_NOTEBOOK_HOMESCREEN</code> environment variable 
+or <code>zeppelin.notebook.homescreen</code> property. </p>
+
+<p>You can also set the <code>ZEPPELIN_NOTEBOOK_HOMESCREEN_HIDE</code> environment variable 
+or <code>zeppelin.notebook.homescreen.hide</code> property to hide the new notebook from the notebook list.</p>
+
+<p><br /></p>
+
+<h4>Restart zeppelin</h4>
+
+<p>Restart your zeppelin server</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">./bin/zeppelin-deamon stop 
+./bin/zeppelin-deamon start
+</code></pre></div>
+<h4>That&#39;s it! Open your browser and navigate to zeppelin and see your customized homepage...</h4></li>
+</ol>
+
+<p><br /></p>
+
+<h3>Show notebooks list in your custom homepage</h3>
+
+<p>If you want to display the list of notebooks on your custom zeppelin homepage all 
+you need to do is use our %angular support.</p>
+
+<p><br />
+  Add the following code to a paragraph in you home page and run it... walla! you have your notebooks list.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript">  <span class="nx">println</span><span class="p">(</span>
+  <span class="s2">&quot;&quot;&quot;%angular </span>
+<span class="s2">    &lt;div class=&quot;</span><span class="nx">col</span><span class="o">-</span><span class="nx">md</span><span class="o">-</span><span class="mi">4</span><span class="s2">&quot; ng-controller=&quot;</span><span class="nx">HomeCtrl</span> <span class="nx">as</span> <span class="nx">home</span><span class="s2">&quot;&gt;</span>
+<span class="s2">      &lt;h4&gt;Notebooks&lt;/h4&gt;</span>
+<span class="s2">      &lt;div&gt;</span>
+<span class="s2">        &lt;h5&gt;&lt;a href=&quot;&quot; data-toggle=&quot;</span><span class="nx">modal</span><span class="s2">&quot; data-target=&quot;</span><span class="err">#</span><span class="nx">noteNameModal</span><span class="s2">&quot; style=&quot;</span><span class="nx">text</span><span class="o">-</span><span class="nx">decoration</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span><span class="s2">&quot;&gt;</span>
+<span class="s2">          &lt;i style=&quot;</span><span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">15</span><span class="nx">px</span><span class="p">;</span><span class="s2">&quot; class=&quot;</span><span class="nx">icon</span><span class="o">-</span><span class="nx">notebook</span><span class="s2">&quot;&gt;&lt;/i&gt; Create new note&lt;/a&gt;&lt;/h5&gt;</span>
+<span class="s2">          &lt;ul style=&quot;</span><span class="nx">list</span><span class="o">-</span><span class="nx">style</span><span class="o">-</span><span class="nx">type</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span><span class="s2">&quot;&gt;</span>
+<span class="s2">            &lt;li ng-repeat=&quot;</span><span class="nx">note</span> <span class="k">in</span> <span class="nx">home</span><span class="p">.</span><span class="nx">notes</span><span class="p">.</span><span class="nx">list</span> <span class="nx">track</span> <span class="nx">by</span> <span class="nx">$index</span><span class="s2">&quot;&gt;&lt;i style=&quot;</span><span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span><span class="s2">&quot; class=&quot;</span><span class="nx">icon</span><span class="o">-</span><span class="nx">doc</span><span class="s2">&quot;&gt;&lt;/i&gt;</span>
+<span class="s2">              &lt;a style=&quot;</span><span class="nx">text</span><span class="o">-</span><span class="nx">decoration</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span><span class="s2">&quot; href=&quot;</span><span class="err">#</span><span class="o">/</span><span class="nx">notebook</span><span class="o">/</span><span class="s2">&quot;&gt;&lt;/a&gt;</span>
+<span class="s2">            &lt;/li&gt;</span>
+<span class="s2">          &lt;/ul&gt;</span>
+<span class="s2">      &lt;/div&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">  &quot;&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>After running the notebook you will see output similar to this one:
+  <img src="/assets/themes/zeppelin/img/screenshots/homepage_notebook_list.png" /></p>
+
+<p>The main trick here relays in linking the <code>&lt;div&gt;</code> to the controller:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript">  <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">controller</span><span class="o">=</span><span class="s2">&quot;HomeCtrl as home&quot;</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Once we have <code>home</code> as our controller variable in our <code>&lt;div&gt;&lt;/div&gt;</code> 
+  we can use <code>home.notes.list</code> to get access to the notebook list.</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.incubator.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+
