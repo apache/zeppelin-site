@@ -22,22 +22,23 @@ limitations under the License.
 # Download Apache Zeppelin
 
 The latest release of Apache Zeppelin is **0.11.0**.
-  - 0.11.0 released on Feb 21, 2024 ([release notes](./releases/zeppelin-release-0.11.0.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.11.0))
 
-    * Binary package with all interpreters ([Install guide](../../docs/0.10.1/quickstart/install.html)):
-      <p><div class="btn btn-md btn-primary" onclick="ga('send', 'event', 'download', 'zeppelin-bin-all', '0.11.0'); window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz'">zeppelin-0.11.0-bin-all.tgz</div> (843MB,
-      [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.asc),
-      [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.sha512))</p>
+- 0.11.0 released on Feb 21, 2024 ([release notes](./releases/zeppelin-release-0.11.0.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.11.0))
 
-    * Binary package with Spark interpreter and interpreter net-install script ([interpreter installation guide](../../docs/0.10.1/usage/interpreter/installation.html)):
-      <p><div class="btn btn-md btn-primary" onclick="ga('send', 'event', 'download', 'zeppelin-bin-netinst', '0.11.0'); window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz'">zeppelin-0.11.0-bin-netinst.tgz</div> (577MB,
-      [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.asc),
-      [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.sha512))</p>
+  * Binary package with all interpreters ([Install guide](../../docs/0.10.1/quickstart/install.html)):
+  <p><div class="btn btn-md btn-primary" onclick="ga('send', 'event', 'download', 'zeppelin-bin-all', '0.11.0'); window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz'">zeppelin-0.11.0-bin-all.tgz</div> (843MB,
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.sha512))</p>
 
-    * Source:
-      <a style="cursor:pointer" onclick="ga('send', 'event', 'download', 'zeppelin-src', '0.11.0'); window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz'">zeppelin-0.11.0.tgz</a> (10MB,
-      [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.asc),
-      [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.sha512))
+  * Binary package with Spark interpreter and interpreter net-install script ([interpreter installation guide](../../docs/0.10.1/usage/interpreter/installation.html)):
+  <p><div class="btn btn-md btn-primary" onclick="ga('send', 'event', 'download', 'zeppelin-bin-netinst', '0.11.0'); window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz'">zeppelin-0.11.0-bin-netinst.tgz</div> (577MB,
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.sha512))</p>
+
+  * Source:
+  <a style="cursor:pointer" onclick="ga('send', 'event', 'download', 'zeppelin-src', '0.11.0'); window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz'">zeppelin-0.11.0.tgz</a> (10MB,
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.sha512))
 
 # Using the official docker image
 
