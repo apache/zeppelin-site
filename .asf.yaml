@@ -13,7 +13,7 @@ jekyll:
 
 staging:
   profile: ~
-  whoami:  asf-staging  
+  whoami:  asf-staging
 
 publish:
   profile: ~
