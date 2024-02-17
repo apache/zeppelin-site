@@ -165,6 +165,12 @@ available to trusted users, and the server on which Zeppelin is
 installed does not contain any secrets or have privileges beyond
 those the users are trusted with.</p>
 
+<p>All interpreters should be assumed to be able to access the local 
+shell and execute arbitrary commands with the privileges of the user
+running the Zeppelin server. As generic interpreters such as sh, Groovy,
+Java and Python make this especially trivial, we plan to disable the sh
+interpreter by default from version 0.11.1 onward.</p>
+
 <h3>Zeppelin on Docker</h3>
 
 <p>An exception to the above is when the Zeppelin interpreter
@@ -221,7 +227,7 @@ for each vulnerability you are reporting.</p>
 <ul>
 <li>The reporter reports the vulnerability privately to <a href="mailto:security@zeppelin.apache.org">security@zeppelin.apache.org</a>.</li>
 <li>The Zeppelin project security team works privately with the reporter to resolve the vulnerability.</li>
-<li>The Zeppelin project creates a new release of the package the vulnerabilty affects to deliver its fix.</li>
+<li>The Zeppelin project creates a new release of the package the vulnerability affects to deliver its fix.</li>
 <li>The Zeppelin project publicly announces the vulnerability and describes how to apply the fix.</li>
 </ul>
 
