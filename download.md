@@ -23,7 +23,7 @@ limitations under the License.
 
 The latest release of Apache Zeppelin is **0.11.0**.
 
-- 0.11.0 released on Feb 21, 2024 ([release notes](./releases/zeppelin-release-0.11.0.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.11.0))
+- 0.11.0 released on Feb 12, 2024 ([release notes](./releases/zeppelin-release-0.11.0.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.11.0))
 
   * Binary package with all interpreters ([Install guide](../../docs/0.11.0/quickstart/install.html)):
   <p><div class="btn btn-md btn-primary" onclick="ga('send', 'event', 'download', 'zeppelin-bin-all', '0.11.0'); window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz'">zeppelin-0.11.0-bin-all.tgz</div> (843MB,
