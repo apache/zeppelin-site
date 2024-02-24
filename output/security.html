@@ -211,6 +211,14 @@ trusted users access to Zeppelin. Specifically, unless Docker or K8s
 isolation has been configured as mentioned above, users technically
 have access to all notes by other users.</p>
 
+<h2>Executable verification</h2>
+
+<p>When running Zeppelin service, be mindful that it utilizes executables
+which might be pre-installed on your server or container. These
+executables could potentially be altered for malicious purposes. 
+To mitigate this risk, it&#39;s recommended to set the paths to trusted
+locations for these executables, such as PYTHON and SPARK_HOME.</p>
+
 <h1>Reporting security issues</h1>
 
 <p>If you have found a potential security issue in Zeppelin,
