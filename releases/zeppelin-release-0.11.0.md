@@ -86,6 +86,7 @@ This release would not be possible without the following community members' cont
 - Xie Yi(xieyi888)
 - yaini(yaini)
 - YiningGong(NicolasGong)
+- Yubi Lee(eubnara)
 - youshaojun(youshaojun)
 - zkyTech(zkytech)
 - Zoltan Holoda(zholoda)
