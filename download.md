@@ -21,24 +21,24 @@ limitations under the License.
 
 # Download Apache Zeppelin
 
-The latest release of Apache Zeppelin is **0.11.0**.
+The latest release of Apache Zeppelin is **0.11.1**.
 
-- 0.11.0 released on Feb 12, 2024 ([release notes](./releases/zeppelin-release-0.11.0.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.11.0))
+- 0.11.1 released on Apr 2, 2024 ([release notes](./releases/zeppelin-release-0.11.1.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.11.1))
 
-  * Binary package with all interpreters ([Install guide](../../docs/0.11.0/quickstart/install.html)):
-  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz'">zeppelin-0.11.0-bin-all.tgz</div> (843MB,
-  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.asc),
-  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.sha512))</p>
+  * Binary package with all interpreters ([Install guide](../../docs/0.11.1/quickstart/install.html)):
+  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-all.tgz'">zeppelin-0.11.1-bin-all.tgz</div> (843MB,
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-all.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-all.tgz.sha512))</p>
 
-  * Binary package with Spark interpreter and interpreter net-install script ([interpreter installation guide](../../docs/0.11.0/usage/interpreter/installation.html)):
-  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz'">zeppelin-0.11.0-bin-netinst.tgz</div> (577MB,
-  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.asc),
-  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.sha512))</p>
+  * Binary package with Spark interpreter and interpreter net-install script ([interpreter installation guide](../../docs/0.11.1/usage/interpreter/installation.html)):
+  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-netinst.tgz'">zeppelin-0.11.1-bin-netinst.tgz</div> (577MB,
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-netinst.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-netinst.tgz.sha512))</p>
 
   * Source:
-  <a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz'">zeppelin-0.11.0.tgz</a> (10MB,
-  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.asc),
-  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.sha512))
+  <a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1.tgz'">zeppelin-0.11.1.tgz</a> (10MB,
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1.tgz.sha512))
 
 # Using the official docker image
 
@@ -47,7 +47,7 @@ Make sure that [docker](https://www.docker.com/community-edition) is installed i
 Use this command to launch Apache Zeppelin in a container.
 
 ```bash
-docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.11.0
+docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.11.1
 
 ```
 To persist `logs` and `notebook` directories, use the [volume](https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only) option for docker container.
@@ -55,9 +55,9 @@ You can also use [volume](https://docs.docker.com/engine/reference/commandline/r
 
 ```bash
 docker run -u $(id -u) -p 8080:8080 --rm -v $PWD/logs:/logs -v $PWD/notebook:/notebook \
-  -v /usr/lib/spark-2.5.0:/opt/spark -v /usr/lib/flink-1.17.2:/opt/flink \
+  -v /usr/lib/spark-3.5.1:/opt/spark -v /usr/lib/flink-1.18.1:/opt/flink \
   -e FLINK_HOME=/opt/flink -e SPARK_HOME=/opt/spark \
-  -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' --name zeppelin apache/zeppelin:0.11.0
+  -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' --name zeppelin apache/zeppelin:0.11.1
 ```
 
 If you have trouble accessing `localhost:8080` in the browser, Please clear browser cache.
@@ -75,7 +75,24 @@ For developers, to get latest *0.12.0-SNAPSHOT* check [README](https://github.co
 
 ## Old releases
 
-  - 0.10.1 released on Feb 29, 2022 ([release notes](./releases/zeppelin-release-0.10.1.html)) ([git tag](https://gitbox.apache.org/repos/asf?p=zeppelin.git;h=refs/tags/v0.11.0)) 
+  - 0.11.0 released on Feb 12, 2024 ([release notes](./releases/zeppelin-release-0.11.0.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.11.0))
+
+    * Binary package with all interpreters ([Install guide](../../docs/0.11.0/quickstart/install.html)):
+      <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz'">zeppelin-0.11.0-bin-all.tgz</div> (843MB,
+      [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.asc),
+      [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.sha512))</p>
+
+    * Binary package with Spark interpreter and interpreter net-install script ([interpreter installation guide](../../docs/0.11.0/usage/interpreter/installation.html)):
+      <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz'">zeppelin-0.11.0-bin-netinst.tgz</div> (577MB,
+      [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.asc),
+      [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.sha512))</p>
+
+    * Source:
+      <a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz'">zeppelin-0.11.0.tgz</a> (10MB,
+      [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.asc),
+      [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.sha512))
+
+  - 0.10.1 released on Feb 29, 2022 ([release notes](./releases/zeppelin-release-0.10.1.html)) ([git tag](https://gitbox.apache.org/repos/asf?p=zeppelin.git;h=refs/tags/v0.10.1)) 
 
     * Binary package with all interpreters ([Install guide](../../docs/0.10.1/quickstart/install.html)):
       <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-all.tgz'">zeppelin-0.10.1-bin-all.tgz</div> (1.5g,
