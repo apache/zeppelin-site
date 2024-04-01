@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>1 - Defining Components</title>
+    <title>Apache Zeppelin Release 0.9.0</title>
     <meta name="description" content="">
     <meta name="author" content="The Apache Software Foundation">
 
@@ -128,238 +128,14 @@
     <div class="content">
       
 
+<!--<div class="hero-unit Apache Zeppelin Release 0.9.0">
+  <h1></h1>
+</div>
+-->
+
 <div class="row">
-  
-    <div class="sideMenu col-sm-3">
-      
-      
-      
-
-
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-        
-          
-            <li class="active"><a href="/contribution/zeppelinweb/goodPracticeGuide01.html" class="active">1 - Defining Components</a></li>
-          
-        
-      
-    
-  
-    
-      
-        
-          
-            <li><a href="/contribution/zeppelinweb/goodPracticeGuide02.html">2 - Event Dispatching</a></li>
-          
-        
-      
-    
-  
-    
-      
-        
-          
-            <li><a href="/contribution/zeppelinweb/goodPracticeGuide03.html">3 - Making A Controller</a></li>
-          
-        
-      
-    
-  
-    
-      
-        
-          
-            <li><a href="/contribution/zeppelinweb/goodPracticeGuide04.html">4 - Using ng-bind</a></li>
-          
-        
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-        
-      
-        
-          
-            <li><a href="/contribution/webapplication.html">Web Application</a></li>
-          
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-    
-      
-        
-      
-    
-  
-
-
-
-
-    </div>
-    <div class="col-sm-9">
-      <!--
+  <div class="col-md-12">
+    <!--
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -373,32 +149,34 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<h1>Defining Angular Components</h1>
+<h2>Apache Zeppelin Release 0.11.1</h2>
 
-<p><br/>
-We should have only one Angular Component per file, and it should look like this:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&#39;use strict&#39;;
-(function() {
+<p>The Apache Zeppelin community is pleased to announce the availability of the 0.11.1 release.</p>
 
-  angular.module(&#39;zeppelinWebApp&#39;).controller(&#39;HomeCtrl&#39;, HomeCtrl);
+<p>The community put significant effort into improving Apache Zeppelin since the last release.</p>
 
-  function HomeCtrl($location) {
-  &#39;ngInject&#39;;
-    ...
-  }
+<p>2 tickets and several security issues are resolved. You can visit <a href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316221&version=12354214">issue tracker</a> for full list of issues that are resolved.</p>
 
-})();
-</code></pre></figure>
-<h4>Explanations</h4>
+<p>We encourage to <a href="../../download.html">download</a> the latest release. Feedback through the <a href="../../community.html">mailing lists</a> is very welcome.</p>
+
+<h3>Major Changes</h3>
 
 <ul>
-<li>The component function and the component&#39;s dependency injection are separated from the component definition</li>
-<li>We apply an Immediately Invoked Function Expression (IIFE) to each component, You can learn more about it
-in this <a href="https://github.com/johnpapa/angular-styleguide/tree/master/a1#iife">nice post</a> of John Papa.</li>
+<li>Fix several security issues</li>
 </ul>
 
-    </div>
-  
+<h3>Contributors</h3>
+
+<p>This release would not be possible without the following community members&#39; contributions:</p>
+
+<ul>
+<li>Jongyoul Lee(jongyoul)</li>
+<li>myongyun(myongyun)</li>
+<li>Philipp Dallig(Reamer)</li>
+<li>PJ Fanning(pjfanning)</li>
+</ul>
+
+  </div>
 </div>
 
 
