@@ -34,5 +34,5 @@ jobs:
           git config --global user.name "apache zepplein"
           git add ./helium.json
           git commit -m "update helium.json"
-          git push origin main
+          git push origin feature/test-update-helium.json
     
