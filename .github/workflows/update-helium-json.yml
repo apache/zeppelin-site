@@ -4,6 +4,9 @@
 name: Update helium.json
 
 on:
+  push:
+    branches:
+      - 'feature/test-update-helium.json'
   schedule:
     - cron: 0 0 * * *
 
