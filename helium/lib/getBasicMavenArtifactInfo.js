@@ -203,15 +203,15 @@ function filterWithGivenArtifact(bodyList) {
 
             const interpreters = [
                 'spark-interpreter', 'zeppelin-jupyter-interpreter', 'zeppelin-display', 'zeppelin-flink',
-                'spark-scala-2.11', 'sap', 'spark1-shims', 'spark2-shims', 'spark-scala-parent',
-                'spark-scala-2.10', 'spark-shims', 'zeppelin-beam', 'zeppelin-ignite_2.11', 'zeppelin-kylin',
-                'zeppelin-ignite_2.10', 'zeppelin-cassandra_2.11', 'zeppelin-flink_2.11', 'zeppelin-lens',
-                'zeppelin-cassandra_2.10', 'zeppelin-solr', 'zeppelin-viyadb'
+                'spark-scala-', 'sap', 'spark1-shims', 'spark2-shims', 'spark3-shims', 'spark-scala-parent',
+                'spark-shims', 'zeppelin-beam', 'zeppelin-kylin',
+                'zeppelin-ignite_', 'zeppelin-flink_', 'zeppelin-lens',
+                'zeppelin-cassandra_', 'zeppelin-solr', 'zeppelin-viyadb', 'snappydata-zeppelin'
             ];
             const result = dependency ?
                 (
                     _.findWhere(dependency, {artifactId: 'zeppelin-interpreter'})
-                    || interpreters.includes(dep.name)
+                    || interpreters.some(interpreter => dep.name.includes(interpreter))
                 )
                 : undefined
 
