@@ -270,13 +270,13 @@ export async function getMavenHandler(callback) {
     }
     await delay(5000);
     await getAllVersionInfo(zeppelinList);
-    await delay(3000);
+    await delay(4000);
     await getEachPomFileContent(pomUriList);
-    await delay(3000);
+    await delay(4000);
     await parseXmlToJson(responseList);
-    await delay(3000);
+    await delay(4000);
     await filterWithGivenArtifact(bodyList);
-    await delay(3000);
+    await delay(4000);
     _.map(finalArtifactList, function (artifact) {
         if (!_.isEmpty(artifact)) {
             for (const key in artifact) {
