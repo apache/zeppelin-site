@@ -23,6 +23,7 @@ function addDependencies(dependencies, target) {
     }
     return target;
 }
+
 const delay = (timeToDelay) => new Promise((resolve) => setTimeout(resolve, timeToDelay))
 
 export function create() {
