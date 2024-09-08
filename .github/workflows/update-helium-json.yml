@@ -33,7 +33,7 @@ jobs:
           git config --global user.email "dev@zeppelin.apache.org"
           git config --global user.name "apache zepplein"
           
-          if [[ -n $(git status --porcelain) ]]; then
+          if [[ -n $(git status --porcelain ./helium.json) ]]; then
             git add ./helium.json
             git commit -m "update helium.json"
             git push origin feature/test-update-helium.json
