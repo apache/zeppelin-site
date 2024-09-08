@@ -60,7 +60,7 @@ const setEachVersionInfo = function(dependency, data) {
     return eachVerInfo
 }
 
-const finalResult = []
+const finalResult = {}
 const client = new RegistryClient();
 async function getDependencies(packageName) {
     await client.get(`https://registry.npmjs.org/${packageName}`, { timeout: 1000 }, (error, data) => {
@@ -70,8 +70,7 @@ async function getDependencies(packageName) {
         };
 
         const pkgInfo = {}
-        pkgInfo[data.name] = setEachVersionInfo(packageName, data)
-        finalResult.push(pkgInfo)
+        finalResult[data.name] = setEachVersionInfo(packageName, data)
         // var result = removeExtraSquareBracket(finalResult).replace(/]|[[]/g, '').trim()
     });
 }

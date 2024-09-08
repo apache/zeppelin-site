@@ -27,25 +27,25 @@ async function searchOnlyZeppelinRelatedArtifact(uri) {
     }
 
     return fetch(uri)
-        .then(async (result) => {
-            const response = (await result.json()).response
-            const body = response.docs;
+    .then(async (result) => {
+        const response = (await result.json()).response
+        const body = response.docs;
 
-            for (const artifact in body) {
-                const artifactId = body[artifact].a
-                const groupId = body[artifact].g
-                let published = body[artifact].timestamp
-                published = moment(published).format()
+        for (const artifact in body) {
+            const artifactId = body[artifact].a
+            const groupId = body[artifact].g
+            let published = body[artifact].timestamp
+            published = moment(published).format()
 
-                if (filterLessThanOneYear(published)) {
-                    zeppelinList.push({
-                        groupId,
-                        artifactId
-                    })
-                }
+            if (filterLessThanOneYear(published)) {
+                zeppelinList.push({
+                    groupId,
+                    artifactId
+                })
             }
-            return zeppelinList
-        });
+        }
+        return zeppelinList
+    });
 }
 
 function createSlashedGroupId(groupId) {
@@ -82,33 +82,33 @@ async function getAllVersionInfo(zeppelinList) {
         }
 
         return fetch(baseUri)
-            .then(async (result) => {
-                const response = (await result.json()).response
-                const body = response.docs;
-                const pomUriListEachVer = {}
+        .then(async (result) => {
+            const response = (await result.json()).response
+            const body = response.docs;
+            const pomUriListEachVer = {}
 
-                for (const ver in body) {
+            for (const ver in body) {
 
-                    const artifactId = body[ver].a
-                    const groupId = body[ver].g.split('.')
-                    const version = body[ver].v
-                    let published = body[ver].timestamp
-                    published = moment(published).format()
+                const artifactId = body[ver].a
+                const groupId = body[ver].g.split('.')
+                const version = body[ver].v
+                let published = body[ver].timestamp
+                published = moment(published).format()
 
-                    if (filterLessThanOneYear(published) && createSlashedGroupId(groupId)) {
-                        const pomUri = createPomUrl(groupId, artifactId, version)
+                if (filterLessThanOneYear(published) && createSlashedGroupId(groupId)) {
+                    const pomUri = createPomUrl(groupId, artifactId, version)
 
-                        pomUriListEachVer[version] = {
-                            artifactId,
-                            version,
-                            published,
-                            pomUri
-                        }
+                    pomUriListEachVer[version] = {
+                        artifactId,
+                        version,
+                        published,
+                        pomUri
                     }
                 }
-                pomUriList.push(pomUriListEachVer)
-                return pomUriList
-            });
+            }
+            pomUriList.push(pomUriListEachVer)
+            return pomUriList
+        });
     })
 }
 
@@ -125,17 +125,17 @@ function getEachPomFileContent(pomUriList) {
 
             const pomUri = ver.pomUri.replace('http', 'https')
             return fetch(pomUri)
-                .then(async (result) => {
-                    const response = (await result.text())
+            .then(async (result) => {
+                const response = (await result.text())
 
-                    const eachVersionResponse = {
-                        version: version,
-                        artifactId: artifactId,
-                        published: published,
-                        response: response,
-                    };
-                    return eachVersionResponse;
-                });
+                const eachVersionResponse = {
+                    version: version,
+                    artifactId: artifactId,
+                    published: published,
+                    response: response,
+                };
+                return eachVersionResponse;
+            });
         })).then(function (result) {
             responseList.push(result);
         })
@@ -148,40 +148,40 @@ function parseXmlToJson(responseList) {
         return Promise.all(_.map(response, function (ver) {
             // parse each pom.xml to JSON format
             return xml2js.parseStringAsync(ver.response, {explicitArray: false})
-                .then(function (result) {
-                    const projectDeps = result.project.dependencies
-                    const projectDepManages = result.project.dependencyManagement
-                    const name = result.project.artifactId
-                    const groupId = result.project.groupId ? result.project.groupId : result.project.parent.groupId
-                    const artifactId = result.project.artifactId
-                    const version = result.project.version ? result.project.version : result.project.parent.version
-                    const description = result.project.description ? result.project.description : result.project.name
-                    const published = ver.published
-
-                    let dependencies;
-                    if (projectDeps) {
-                        dependencies = projectDeps.dependency;
-                    } else if (projectDepManages) {
-                        dependencies = projectDepManages.dependencies.dependency;
-                    } else {
-                        dependencies = undefined;
-                    }
-
-                    const eachVerBodyList = {
-                        name: name,
-                        groupId: groupId,
-                        artifactId: artifactId,
-                        version: version,
-                        description: description,
-                        published: published,
-                        dependencies: dependencies,
-                    };
-                    return eachVerBodyList;
-                })
-        }))
             .then(function (result) {
-                bodyList.push(result);
+                const projectDeps = result.project.dependencies
+                const projectDepManages = result.project.dependencyManagement
+                const name = result.project.artifactId
+                const groupId = result.project.groupId ? result.project.groupId : result.project.parent.groupId
+                const artifactId = result.project.artifactId
+                const version = result.project.version ? result.project.version : result.project.parent.version
+                const description = result.project.description ? result.project.description : result.project.name
+                const published = ver.published
+
+                let dependencies;
+                if (projectDeps) {
+                    dependencies = projectDeps.dependency;
+                } else if (projectDepManages) {
+                    dependencies = projectDepManages.dependencies.dependency;
+                } else {
+                    dependencies = undefined;
+                }
+
+                const eachVerBodyList = {
+                    name: name,
+                    groupId: groupId,
+                    artifactId: artifactId,
+                    version: version,
+                    description: description,
+                    published: published,
+                    dependencies: dependencies,
+                };
+                return eachVerBodyList;
             })
+        }))
+        .then(function (result) {
+            bodyList.push(result);
+        })
     })
 }
 
@@ -232,22 +232,22 @@ function filterWithGivenArtifact(bodyList) {
                 :
                 undefined;
         }))
-            .then(function (result) {
-                const resultByVersion = _.indexBy(_.omit(result, _.isUndefined), 'version')
-                for (const key in resultByVersion) {
-                    const obj = resultByVersion[key]
-                    if (obj.version == 'latest') {
-                        obj.version = obj.artifact.split('@')[1]
-                    }
+        .then(function (result) {
+            const resultByVersion = _.indexBy(_.omit(result, _.isUndefined), 'version')
+            for (const key in resultByVersion) {
+                const obj = resultByVersion[key]
+                if (obj.version == 'latest') {
+                    obj.version = obj.artifact.split('@')[1]
                 }
+            }
 
-                finalArtifactList.push(resultByVersion)
-            })
+            finalArtifactList.push(resultByVersion)
+        })
     })
 }
 
 const delay = (timeToDelay) => new Promise((resolve) => setTimeout(resolve, timeToDelay))
-const result = [];
+const result = {};
 
 export async function getBasicMavenHandler(callback) {
     const uri = 'http://search.maven.org/solrsearch/select?q=zeppelin&rows=200';
@@ -265,9 +265,7 @@ export async function getBasicMavenHandler(callback) {
         if (!_.isEmpty(artifact)) {
             for (const key in artifact) {
                 const artifactId = artifact[key].artifactId
-                const body = {}
-                body[artifactId] = artifact
-                result.push(body);
+                result[artifactId] = artifact
             }
         }
     });

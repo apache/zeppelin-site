@@ -32,7 +32,12 @@ jobs:
         run: |
           git config --global user.email "dev@zeppelin.apache.org"
           git config --global user.name "apache zepplein"
-          git add ./helium.json
-          git commit -m "update helium.json"
-          git push origin feature/test-update-helium.json
+          
+          if [[ -n $(git status --porcelain) ]]; then
+            git add ./helium.json
+            git commit -m "update helium.json"
+            git push origin feature/test-update-helium.json
+          else
+            echo "No changes to commit"
+          fi
     
