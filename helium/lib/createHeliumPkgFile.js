@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import Promise from "bluebird";
 import stringify from 'json-stringify-pretty-compact';
 import {getMavenHandler} from "./getMavenArtifactInfo.js";
@@ -13,43 +12,29 @@ const pushPkgInfoToTmp = async function() {
     return {};
 }
 
-const delay = (timeToDelay) => new Promise((resolve) => setTimeout(resolve, timeToDelay))
+async function addDependenciesToJson(callback, target) {
+    const result = await callback(() => {});
+    return addDependencies(result, target);
+}
 
+function addDependencies(dependencies, target) {
+    for (const key of Array.from(new Set(Object.keys(dependencies))).sort()) {
+        target[key] = dependencies[key];
+    }
+    return target;
+}
+const getParsedJsonStr = (key, dependencies) => `    "${key}"` + ': ' + stringify(dependencies[key]).split('\n').join('\n    ') + ',\n';
+const delay = (timeToDelay) => new Promise((resolve) => setTimeout(resolve, timeToDelay))
 
 export function create() {
     pushPkgInfoToTmp()
-        .then(async (response) => {
-            const result = await getBasicMavenHandler(() => {});
-            for (const body of result) {
-                for (const key of Object.keys(body)) {
-                    response[key] = body[key];
-                }
-            }
-            return response;
+    .then(async (response) => addDependenciesToJson(getBasicMavenHandler, response))
+    .then(async (response) => addDependenciesToJson(getMavenHandler, response))
+    .then(async (response) => addDependenciesToJson(fetchHelium, response))
+    .then(async (response) => {
+        await delay(8000)
+        fs.writeFileSync('./helium.json', stringify([response]), (err) => {
+            console.log("error!!!");
         })
-        .then(async (response) => {
-            const result = await getMavenHandler(() => {});
-            for (const body of result) {
-                for (const key of Object.keys(body)) {
-                    response[key] = body[key];
-                }
-            }
-            return response;
-        })
-        .then(async (response) => {
-            const result = await fetchHelium();
-            for (const body of result) {
-                for (const key of Object.keys(body)) {
-                    response[key] = body[key];
-                }
-            }
-            return response;
-        })
-        .then(async (response) => {
-            await delay(8000)
-            const result = [response];
-            fs.writeFileSync('./helium.json', stringify(result), (err) => {
-                console.log("error!!!");
-            })
-        });
+    });
 }
