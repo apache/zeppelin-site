@@ -23,7 +23,6 @@ function addDependencies(dependencies, target) {
     }
     return target;
 }
-const getParsedJsonStr = (key, dependencies) => `    "${key}"` + ': ' + stringify(dependencies[key]).split('\n').join('\n    ') + ',\n';
 const delay = (timeToDelay) => new Promise((resolve) => setTimeout(resolve, timeToDelay))
 
 export function create() {
