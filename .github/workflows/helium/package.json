@@ -4,7 +4,7 @@
   "description": "create helium json",
   "main": "index.js",
   "bin": {
-    "helium-json": "./index.js"
+    "helium-json": "index.js"
   },
   "type": "module",
   "scripts": {

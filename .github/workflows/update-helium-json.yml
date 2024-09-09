@@ -24,7 +24,7 @@ jobs:
           node-version: 16
       - name: run node
         run: |
-          npm i ./helium
+          npm i ./.github/workflows/helium
           npx helium-json create
       - name: push json
         env:
@@ -34,8 +34,10 @@ jobs:
           git config --global user.name "apache zepplein"
           
           if [[ -n $(git status --porcelain ./helium.json) ]]; then
+            DATE=$(date "+%B %d, %Y, %H:%M")
+            CHANGED_LINES=$(git diff --numstat helium.json | awk '{added += $1; deleted += $2} END {print added + deleted+0}')
             git add ./helium.json
-            git commit -m "update helium.json"
+            git commit -m "Update helium.json (${DATE})" -m "${CHANGED_LINES} lines modified"
             git push origin feature/test-update-helium.json
           else
             echo "No changes to commit"
