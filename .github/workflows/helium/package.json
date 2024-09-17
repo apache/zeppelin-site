@@ -1,0 +1,29 @@
+{
+  "name": "helium-json-creator",
+  "version": "1.0.0",
+  "description": "create helium json",
+  "main": "index.js",
+  "bin": {
+    "helium-json": "index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pythonstrup",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "commander": "^12.1.0",
+    "json-stringify-pretty-compact": "^4.0.0",
+    "moment": "^2.30.1",
+    "node-fetch": "^3.3.2",
+    "npm-dependants": "^2.1.2",
+    "npm-registry-client": "^8.6.0",
+    "prttty": "^0.9.1",
+    "silent-npm-registry-client": "^3.0.1",
+    "stream": "^0.0.3",
+    "underscore": "^1.13.6",
+    "xml2js": "^0.6.2"
+  }
+}

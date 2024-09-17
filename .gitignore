@@ -5,3 +5,5 @@ _site/
 
 # IDE 
 .idea/
+
+node_modules

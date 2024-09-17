@@ -1,0 +1,40 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Update helium.json
+
+on:
+  schedule:
+    - cron: 0 0 * * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: run node
+        run: |
+          npm i ./.github/workflows/helium
+          npx helium-json create
+      - name: push json
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          git config --global user.email "dev@zeppelin.apache.org"
+          git config --global user.name "apache zepplein"
+          
+          if [[ -n $(git status --porcelain ./helium.json) ]]; then
+            DATE=$(date "+%B %d, %Y, %H:%M")
+            CHANGED_LINES=$(git diff --numstat helium.json | awk '{added += $1; deleted += $2} END {print added + deleted+0}')
+            git add ./helium.json
+            git commit -m "Update helium.json (${DATE})" -m "${CHANGED_LINES} lines modified"
+            git push origin master
+          else
+            echo "No changes to commit"
+          fi
