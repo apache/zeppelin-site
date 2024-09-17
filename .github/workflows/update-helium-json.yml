@@ -7,7 +7,6 @@ on:
   schedule:
     - cron: 0 0 * * *
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,4 +38,3 @@ jobs:
           else
             echo "No changes to commit"
           fi
-    
