@@ -86,6 +86,7 @@
           <a href="#" data-toggle="dropdown" class="dropdown-toggle">Docs<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li class="title"><span><b>Release</b></span></li>
+            <li><a href="/docs/0.11.2">0.11.</a></li>
             <li><a href="/docs/0.11.1">0.11.1</a></li>
             <li><a href="/docs/0.11.0">0.11.0</a></li>
             <li><a href="/docs/0.10.1">0.10.1</a></li>
@@ -151,7 +152,53 @@ limitations under the License.
 
 <h1>Download Apache Zeppelin</h1>
 
-<p>The latest release of Apache Zeppelin is <strong>0.11.1</strong>.</p>
+<p>The latest release of Apache Zeppelin is <strong>0.11.2</strong>.</p>
+
+<ul>
+<li><p>0.11.2 released on Sep 22, 2024 (<a href="./releases/zeppelin-release-0.11.2.html">release notes</a>) (<a href="https://github.com/apache/zeppelin/tree/v0.11.2">git tag</a>)</p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.11.2/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz'">zeppelin-0.11.1-bin-all.tgz</div> (843MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.11.2/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz'">zeppelin-0.11.1-bin-netinst.tgz</div> (577MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz'">zeppelin-0.11.2.tgz</a> (10MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz.sha512">sha</a>)</li>
+</ul></li>
+</ul>
+
+<h1>Using the official docker image</h1>
+
+<p>Make sure that <a href="https://www.docker.com/community-edition">docker</a> is installed in your local machine.  </p>
+
+<p>Use this command to launch Apache Zeppelin in a container.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.11.2
+
+</code></pre></figure>
+<p>To persist <code>logs</code> and <code>notebook</code> directories, use the <a href="https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only">volume</a> option for docker container.
+You can also use <a href="https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only">volume</a> for Spark and Flink binary distribution.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -u $(id -u) -p 8080:8080 --rm -v $PWD/logs:/logs -v $PWD/notebook:/notebook \
+  -v /usr/lib/spark-3.5.1:/opt/spark -v /usr/lib/flink-1.18.1:/opt/flink \
+  -e FLINK_HOME=/opt/flink -e SPARK_HOME=/opt/spark \
+  -e ZEPPELIN_LOG_DIR=&#39;/logs&#39; -e ZEPPELIN_NOTEBOOK_DIR=&#39;/notebook&#39; --name zeppelin apache/zeppelin:0.11.2
+</code></pre></figure>
+<p>If you have trouble accessing <code>localhost:8080</code> in the browser, Please clear browser cache.</p>
+
+<h2>Verify the integrity of the files</h2>
+
+<p>It is essential that you <a href="https://www.apache.org/info/verification.html">verify</a> the integrity of the downloaded files using the PGP or MD5 signatures. This signature should be matched against the <a href="https://downloads.apache.org/zeppelin/KEYS">KEYS</a> file.</p>
+
+<h2>Build from source</h2>
+
+<p>For developers, to get latest <em>0.12.0-SNAPSHOT</em> check <a href="https://github.com/apache/zeppelin/blob/master/README.md">README</a>.</p>
+
+<h2>Old releases</h2>
 
 <ul>
 <li><p>0.11.1 released on Apr 2, 2024 (<a href="./releases/zeppelin-release-0.11.1.html">release notes</a>) (<a href="https://github.com/apache/zeppelin/tree/v0.11.1">git tag</a>)</p>
@@ -170,36 +217,6 @@ limitations under the License.
 <a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1.tgz.asc">pgp</a>,
 <a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1.tgz.sha512">sha</a>)</li>
 </ul></li>
-</ul>
-
-<h1>Using the official docker image</h1>
-
-<p>Make sure that <a href="https://www.docker.com/community-edition">docker</a> is installed in your local machine.  </p>
-
-<p>Use this command to launch Apache Zeppelin in a container.</p>
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.11.1
-
-</code></pre></figure>
-<p>To persist <code>logs</code> and <code>notebook</code> directories, use the <a href="https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only">volume</a> option for docker container.
-You can also use <a href="https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only">volume</a> for Spark and Flink binary distribution.</p>
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -u $(id -u) -p 8080:8080 --rm -v $PWD/logs:/logs -v $PWD/notebook:/notebook \
-  -v /usr/lib/spark-3.5.1:/opt/spark -v /usr/lib/flink-1.18.1:/opt/flink \
-  -e FLINK_HOME=/opt/flink -e SPARK_HOME=/opt/spark \
-  -e ZEPPELIN_LOG_DIR=&#39;/logs&#39; -e ZEPPELIN_NOTEBOOK_DIR=&#39;/notebook&#39; --name zeppelin apache/zeppelin:0.11.1
-</code></pre></figure>
-<p>If you have trouble accessing <code>localhost:8080</code> in the browser, Please clear browser cache.</p>
-
-<h2>Verify the integrity of the files</h2>
-
-<p>It is essential that you <a href="https://www.apache.org/info/verification.html">verify</a> the integrity of the downloaded files using the PGP or MD5 signatures. This signature should be matched against the <a href="https://downloads.apache.org/zeppelin/KEYS">KEYS</a> file.</p>
-
-<h2>Build from source</h2>
-
-<p>For developers, to get latest <em>0.12.0-SNAPSHOT</em> check <a href="https://github.com/apache/zeppelin/blob/master/README.md">README</a>.</p>
-
-<h2>Old releases</h2>
-
-<ul>
 <li><p>0.11.0 released on Feb 12, 2024 (<a href="./releases/zeppelin-release-0.11.0.html">release notes</a>) (<a href="https://github.com/apache/zeppelin/tree/v0.11.0">git tag</a>)</p>
 
 <ul>
@@ -299,32 +316,6 @@ You can also use <a href="https://docs.docker.com/engine/reference/commandline/r
 <p>Thanks to many Zeppelin contributors, we can provide much more interpreters in every release.</p>
 
 <p>Please check the <a href="./supported_interpreters.html">Supported Interpreters</a> before you download Zeppelin package.</p>
-
-<!--
--------------
-### Old release
-
-##### Zeppelin-0.3.3 (2014.03.29)
-
-Download <a onclick="ga('send', 'event', 'download', 'zeppelin', '0.3.3');" href="https://s3-ap-northeast-1.amazonaws.com/zeppel.in/zeppelin-0.3.3.tar.gz">zeppelin-0.3.3.tar.gz</a> ([release note](https://zeppelin-project.atlassian.net/secure/ReleaseNote.jspa?projectId=10001&version=10301))
-
-##### Zeppelin-0.3.2 (2014.03.14)
-
-Download <a onclick="ga('send', 'event', 'download', 'zeppelin', '0.3.2');" href="https://s3-ap-northeast-1.amazonaws.com/zeppel.in/zeppelin-0.3.2.tar.gz">zeppelin-0.3.2.tar.gz</a> ([release note](https://zeppelin-project.atlassian.net/secure/ReleaseNote.jspa?projectId=10001&version=10300))
-
-##### Zeppelin-0.3.1 (2014.03.06)
-
-Download <a onclick="ga('send', 'event', 'download', 'zeppelin', '0.3.1');" href="https://s3-ap-northeast-1.amazonaws.com/zeppel.in/zeppelin-0.3.1.tar.gz">zeppelin-0.3.1.tar.gz</a> ([release note](https://zeppelin-project.atlassian.net/secure/ReleaseNote.jspa?projectId=10001&version=10201))
-
-##### Zeppelin-0.3.0 (2014.02.07)
-
-Download <a onclick="ga('send', 'event', 'download', 'zeppelin', '0.3.0');" href="https://s3-ap-northeast-1.amazonaws.com/zeppel.in/zeppelin-0.3.0.tar.gz">zeppelin-0.3.0.tar.gz</a>, ([release note](https://zeppelin-project.atlassian.net/secure/ReleaseNote.jspa?projectId=10001&version=10200))
-
-##### Zeppelin-0.2.0 (2014.01.22)
-
-Download Download <a onclick="ga('send', 'event', 'download', 'zeppelin', '0.2.0');" href="https://s3-ap-northeast-1.amazonaws.com/zeppel.in/zeppelin-0.2.0.tar.gz">zeppelin-0.2.0.tar.gz</a>, ([release note](https://zeppelin-project.atlassian.net/secure/ReleaseNote.jspa?projectId=10001&version=10001))
-
--->
 
   </div>
 </div>

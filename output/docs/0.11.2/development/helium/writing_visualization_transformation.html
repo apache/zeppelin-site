@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.11.2 Documentation: Transformations in Zeppelin Visualization</title>
+    <meta name="description" content="Description for Transformations">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.11.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.11.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.11.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.11.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.11.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/docs/0.11.2/assets/themes/zeppelin/img/zeppelin_logo.png" width="50"
+                   style="margin-top: -2px;" alt="I'm zeppelin">
+              <span style="margin-left: 5px; font-size: 27px;">Zeppelin</span>
+              <a class="navbar-brand-version" href="/docs/0.11.2"
+                 style="font-size: 15px; color: white;"> 0.11.2
+              </a>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span>Getting Started</span></li>
+                <li><a href="/docs/0.11.2/quickstart/install.html">Install</a></li>
+                <li><a href="/docs/0.11.2/quickstart/explore_ui.html">Explore UI</a></li>
+                <li><a href="/docs/0.11.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Run Mode</span></li>
+                <li><a href="/docs/0.11.2/quickstart/kubernetes.html">Kubernetes</a></li>
+                <li><a href="/docs/0.11.2/quickstart/docker.html">Docker</a></li>
+                <li><a href="/docs/0.11.2/quickstart/yarn.html">Yarn</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/quickstart/spark_with_zeppelin.html">Spark with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/flink_with_zeppelin.html">Flink with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/sql_with_zeppelin.html">SQL with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/python_with_zeppelin.html">Python with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/r_with_zeppelin.html">R with Zeppelin</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Usage<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Dynamic Form</span></li>
+                <li><a href="/docs/0.11.2/usage/dynamic_form/intro.html">What is Dynamic Form?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Display System</span></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#text">Text Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#html">HTML Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#table">Table Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#network">Network Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/angular_backend.html">Angular Display using Backend API</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/angular_frontend.html">Angular Display using Frontend API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Interpreter</span></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/overview.html">Overview</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/interpreter_binding_mode.html">Interpreter Binding Mode</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/user_impersonation.html">User Impersonation</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/dependency_management.html">Dependency Management</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/installation.html">Installing Interpreters</a></li>
+                <!--<li><a href="/docs/0.11.2/usage/interpreter/dynamic_loading.html">Dynamic Interpreter Loading (Experimental)</a></li>-->
+                <li><a href="/docs/0.11.2/usage/interpreter/execution_hooks.html">Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Other Features</span></li>
+                <li><a href="/docs/0.11.2/usage/other_features/publishing_paragraphs.html">Publishing Paragraphs</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/personalized_mode.html">Personalized Mode</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/customizing_homepage.html">Customizing Zeppelin Homepage</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/notebook_actions.html">Notebook Actions</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/cron_scheduler.html">Cron Scheduler</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/zeppelin_context.html">Zeppelin Context</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>REST API</span></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/zeppelin_server.html">Zeppelin Server API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/notebook_repository.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/credential.html">Credential API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/helium.html">Helium API</a></li>
+                <li class="title"><span>Zeppelin SDK</span></li>
+                <li><a href="/docs/0.11.2/usage/zeppelin_sdk/client_api.html">Client API</a></li>
+                <li><a href="/docs/0.11.2/usage/zeppelin_sdk/session_api.html">Session API</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Setup<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Basics</span></li>
+                <li><a href="/docs/0.11.2/setup/basics/how_to_build.html">How to Build Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/setup/basics/hadoop_integration.html">Hadoop Integration</a></li>
+                <li><a href="/docs/0.11.2/setup/basics/multi_user_support.html">Multi-user Support</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Deployment</span></li>
+                <!--<li><a href="/docs/0.11.2/setup/deployment/docker.html">Docker Image for Zeppelin</a></li>-->
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-standalone-mode">Spark Cluster Mode: Standalone</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-on-yarn-mode">Spark Cluster Mode: YARN</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-on-mesos-mode">Spark Cluster Mode: Mesos</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/flink_and_spark_cluster.html">Zeppelin with Flink, Spark Cluster</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/cdh.html">Zeppelin on CDH</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/virtual_machine.html">Zeppelin on VM: Vagrant</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Security</span></li>
+                <li><a href="/docs/0.11.2/setup/security/authentication_nginx.html">HTTP Basic Auth using NGINX</a></li>
+                <li><a href="/docs/0.11.2/setup/security/shiro_authentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.11.2/setup/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.11.2/setup/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.11.2/setup/security/http_security_headers.html">HTTP Security Headers</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Notebook Storage</span></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-google-cloud-storage">Google Cloud Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-oss">OSS Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-mongodb">MongoDB Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Operation</span></li>
+                <li><a href="/docs/0.11.2/setup/operation/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/monitoring.html">Monitoring</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/proxy_setting.html">Proxy Setting</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/upgrading.html">Upgrading</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/trouble_shooting.html">Trouble Shooting</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Interpreters</span></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/overview.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.11.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.11.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.11.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.11.2/interpreter/r.html">R</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.11.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.11.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.11.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.11.2/interpreter/groovy.html">Groovy</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.11.2/interpreter/influxdb.html">influxDB</a></li>
+                <li><a href="/docs/0.11.2/interpreter/java.html">Java</a></li>
+                <li><a href="/docs/0.11.2/interpreter/jupyter.html">Jupyter</a></li>
+                <li><a href="/docs/0.11.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.11.2/interpreter/mahout.html">Mahout</a></li>
+                <li><a href="/docs/0.11.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.11.2/interpreter/mongodb.html">MongoDB</a></li>
+                <li><a href="/docs/0.11.2/interpreter/neo4j.html">Neo4j</a></li>
+                <li><a href="/docs/0.11.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.11.2/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.11.2/interpreter/sparql.html">Sparql</a></li>
+                <li><a href="/docs/0.11.2/interpreter/submarine.html">Submarine</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span>Extending Zeppelin</span></li>
+                <li><a href="/docs/0.11.2/development/writing_zeppelin_interpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Helium (Experimental)</span></li>
+                <li><a href="/docs/0.11.2/development/helium/overview.html">Overview</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_application.html">Writing Helium Application</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_spell.html">Writing Helium Spell</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_visualization_basic.html">Writing Helium Visualization: Basics</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_visualization_transformation.html">Writing Helium Visualization: Transformation</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Contributing to Zeppelin</span></li>
+                <li><a href="/docs/0.11.2/setup/basics/how_to_build.html">How to Build Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/useful_developer_tools.html">Useful Developer Tools</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/how_to_contribute_code.html">How to Contribute (code)</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/how_to_contribute_website.html">How to Contribute (website)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>External Resources</span></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://zeppelin.apache.org/community.html">Mailing List</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://cwiki.apache.org/confluence/display/ZEPPELIN/Zeppelin+Home">Apache Zeppelin Wiki</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="http://stackoverflow.com/questions/tagged/apache-zeppelin">Stackoverflow Questions about Zeppelin</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.11.2/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Transformations in Zeppelin Visualization">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Transformations for Zeppelin Visualization</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p>Transformations </p>
+
+<ul>
+<li><strong>renders</strong> setting which allows users to set columns and </li>
+<li><strong>transforms</strong> table rows according to the configured columns.</li>
+</ul>
+
+<p>Zeppelin provides 4 types of transformations.</p>
+
+<h2>1. PassthroughTransformation</h2>
+
+<p><code>PassthroughTransformation</code> is the simple transformation which does not convert original tabledata at all.</p>
+
+<p>See <a href="https://github.com/apache/zeppelin/blob/master/zeppelin-web/src/app/tabledata/passthrough.js">passthrough.js</a></p>
+
+<h2>2. ColumnselectorTransformation</h2>
+
+<p><code>ColumnselectorTransformation</code> is uses when you need <code>N</code> axes but do not need aggregation. </p>
+
+<p>See <a href="https://github.com/apache/zeppelin/blob/master/zeppelin-web/src/app/tabledata/columnselector.js">columnselector.js</a></p>
+
+<h2>3. PivotTransformation</h2>
+
+<p><code>PivotTransformation</code> provides group by and aggregation. Every chart using <code>PivotTransformation</code> has 3 axes. <code>Keys</code>, <code>Groups</code> and <code>Values</code>.</p>
+
+<p>See <a href="https://github.com/apache/zeppelin/blob/master/zeppelin-web/src/app/tabledata/pivot.js">pivot.js</a></p>
+
+<h2>4. AdvancedTransformation</h2>
+
+<p><code>AdvancedTransformation</code> has more detailed options while providing existing features of <code>PivotTransformation</code> and <code>ColumnselectorTransformation</code></p>
+
+<ul>
+<li>multiple sub charts</li>
+<li>configurable chart axes</li>
+<li>parameter widgets: <code>input</code>, <code>checkbox</code>, <code>option</code>, <code>textarea</code></li>
+<li>parsing parameters automatically based on their types</li>
+<li>expand / fold axis and parameter panels</li>
+<li>multiple transformation methods while supporting lazy converting </li>
+<li>re-initialize the whole configuration based on spec hash.</li>
+</ul>
+
+<h3>Spec</h3>
+
+<p><code>AdvancedTransformation</code> requires <code>spec</code> which includes axis and parameter details for charts.</p>
+
+<p>Let&#39;s create 2 sub-charts called <code>line</code> and <code>no-group</code>. Each sub chart can have different axis and parameter depending on their requirements.</p>
+
+<p><br/></p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="kr">class</span> <span class="nx">AwesomeVisualization</span> <span class="kr">extends</span> <span class="nx">Visualization</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">targetEl</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">(</span><span class="nx">targetEl</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span>
+
+    <span class="kr">const</span> <span class="nx">spec</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">charts</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;line&#39;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">transform</span><span class="o">:</span> <span class="p">{</span> <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="p">},</span>
+          <span class="nx">sharedAxis</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="cm">/** set if you want to share axes between sub charts, default is `false` */</span>
+          <span class="nx">axis</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;xAxis&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">dimension</span><span class="o">:</span> <span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="nx">axisType</span><span class="o">:</span> <span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;serial&#39;</span><span class="p">,</span> <span class="p">},</span>
+            <span class="s1">&#39;yAxis&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">dimension</span><span class="o">:</span> <span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="nx">axisType</span><span class="o">:</span> <span class="s1">&#39;aggregator&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;serial&#39;</span><span class="p">,</span> <span class="p">},</span>
+            <span class="s1">&#39;category&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">dimension</span><span class="o">:</span> <span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="nx">axisType</span><span class="o">:</span> <span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;categorical&#39;</span><span class="p">,</span> <span class="p">},</span>
+          <span class="p">},</span>
+          <span class="nx">parameter</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;xAxisUnit&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;unit of xAxis&#39;</span><span class="p">,</span> <span class="p">},</span>
+            <span class="s1">&#39;yAxisUnit&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;unit of yAxis&#39;</span><span class="p">,</span> <span class="p">},</span>
+            <span class="s1">&#39;lineWidth&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;width of line&#39;</span><span class="p">,</span> <span class="p">},</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+
+        <span class="s1">&#39;no-group&#39;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">transform</span><span class="o">:</span> <span class="p">{</span> <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="p">},</span>
+          <span class="nx">sharedAxis</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nx">axis</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;xAxis&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">dimension</span><span class="o">:</span> <span class="s1">&#39;single&#39;</span><span class="p">,</span> <span class="nx">axisType</span><span class="o">:</span> <span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="p">},</span>
+            <span class="s1">&#39;yAxis&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">dimension</span><span class="o">:</span> <span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="nx">axisType</span><span class="o">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="p">},</span>
+          <span class="p">},</span>
+          <span class="nx">parameter</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;xAxisUnit&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;unit of xAxis&#39;</span><span class="p">,</span> <span class="p">},</span>
+            <span class="s1">&#39;yAxisUnit&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;unit of yAxis&#39;</span><span class="p">,</span> <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">transformation</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AdvancedTransformation</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">spec</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="p">...</span>
+
+  <span class="c1">// `render` will be called whenever `axis` or `parameter` is changed </span>
+  <span class="nx">render</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">chart</span><span class="p">,</span> <span class="nx">parameter</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">transformer</span><span class="p">,</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">data</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">chart</span> <span class="o">===</span> <span class="s1">&#39;line&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">transformed</span> <span class="o">=</span> <span class="nx">transformer</span><span class="p">()</span>
+      <span class="c1">// draw line chart </span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">chart</span> <span class="o">===</span> <span class="s1">&#39;no-group&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">transformed</span> <span class="o">=</span> <span class="nx">transformer</span><span class="p">()</span>
+      <span class="c1">// draw no-group chart </span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><br/></p>
+
+<h3>Spec: <code>axis</code></h3>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Available Values (type)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>dimension</code></td>
+<td><code>single</code></td>
+<td>Axis can contains only 1 column</td>
+</tr>
+<tr>
+<td><code>dimension</code></td>
+<td><code>multiple</code></td>
+<td>Axis can contains multiple columns</td>
+</tr>
+<tr>
+<td><code>axisType</code></td>
+<td><code>key</code></td>
+<td>Column(s) in this axis will be used as <code>key</code> like in <code>PivotTransformation</code>. These columns will be served in <code>column.key</code></td>
+</tr>
+<tr>
+<td><code>axisType</code></td>
+<td><code>aggregator</code></td>
+<td>Column(s) in this axis will be used as <code>value</code> like in <code>PivotTransformation</code>. These columns will be served in <code>column.aggregator</code></td>
+</tr>
+<tr>
+<td><code>axisType</code></td>
+<td><code>group</code></td>
+<td>Column(s) in this axis will be used as <code>group</code> like in <code>PivotTransformation</code>. These columns will be served in <code>column.group</code></td>
+</tr>
+<tr>
+<td><code>axisType</code></td>
+<td>(string)</td>
+<td>Any string value can be used here. These columns will be served in <code>column.custom</code></td>
+</tr>
+<tr>
+<td><code>maxAxisCount</code> (optional)</td>
+<td>(int)</td>
+<td>The max number of columns that this axis can contain. (unlimited if <code>undefined</code>)</td>
+</tr>
+<tr>
+<td><code>minAxisCount</code> (optional)</td>
+<td>(int)</td>
+<td>The min number of columns that this axis should contain to draw chart. (<code>1</code> in case of single dimension)</td>
+</tr>
+<tr>
+<td><code>description</code> (optional)</td>
+<td>(string)</td>
+<td>Description for the axis.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+
+<p>Here is an example.</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="nx">axis</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s1">&#39;xAxis&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">dimension</span><span class="o">:</span> <span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="nx">axisType</span><span class="o">:</span> <span class="s1">&#39;key&#39;</span><span class="p">,</span>  <span class="p">},</span>
+  <span class="s1">&#39;yAxis&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">dimension</span><span class="o">:</span> <span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="nx">axisType</span><span class="o">:</span> <span class="s1">&#39;aggregator&#39;</span><span class="p">},</span>
+  <span class="s1">&#39;category&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">dimension</span><span class="o">:</span> <span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="nx">axisType</span><span class="o">:</span> <span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="nx">maxAxisCount</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="p">},</span>
+<span class="p">},</span>
+</code></pre></div>
+<p><br/></p>
+
+<h3>Spec: <code>sharedAxis</code></h3>
+
+<p>If you set <code>sharedAxis: false</code> for sub charts, then their axes are persisted in global space (shared). It&#39;s useful for when you creating multiple sub charts sharing their axes but have different parameters. For example, </p>
+
+<ul>
+<li><code>basic-column</code>, <code>stacked-column</code>, <code>percent-column</code></li>
+<li><code>pie</code> and <code>donut</code></li>
+</ul>
+
+<p><br/></p>
+
+<p>Here is an example.</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js">    <span class="kr">const</span> <span class="nx">spec</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">charts</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;column&#39;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">transform</span><span class="o">:</span> <span class="p">{</span> <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="p">},</span>
+          <span class="nx">sharedAxis</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nx">axis</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
+          <span class="nx">parameter</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
+        <span class="p">},</span>
+
+        <span class="s1">&#39;stacked&#39;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">transform</span><span class="o">:</span> <span class="p">{</span> <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="p">},</span>
+          <span class="nx">sharedAxis</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nx">axis</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+          <span class="nx">parameter</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
+        <span class="p">},</span>
+</code></pre></div>
+<p><br/></p>
+
+<h3>Spec: <code>parameter</code></h3>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Available Values (type)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>valueType</code></td>
+<td><code>string</code></td>
+<td>Parameter which has string value</td>
+</tr>
+<tr>
+<td><code>valueType</code></td>
+<td><code>int</code></td>
+<td>Parameter which has int value</td>
+</tr>
+<tr>
+<td><code>valueType</code></td>
+<td><code>float</code></td>
+<td>Parameter which has float value</td>
+</tr>
+<tr>
+<td><code>valueType</code></td>
+<td><code>boolean</code></td>
+<td>Parameter which has boolean value used with <code>checkbox</code> widget usually</td>
+</tr>
+<tr>
+<td><code>valueType</code></td>
+<td><code>JSON</code></td>
+<td>Parameter which has JSON value used with <code>textarea</code> widget usually. <code>defaultValue</code> should be <code>&quot;&quot;</code> (empty string). This</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>(string)</td>
+<td>Description of this parameter. This value will be parsed as HTML for pretty output</td>
+</tr>
+<tr>
+<td><code>widget</code></td>
+<td><code>input</code></td>
+<td>Use <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/input">input</a> widget. This is the default widget (if <code>widget</code> is undefined)</td>
+</tr>
+<tr>
+<td><code>widget</code></td>
+<td><code>checkbox</code></td>
+<td>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox">checkbox</a> widget.</td>
+</tr>
+<tr>
+<td><code>widget</code></td>
+<td><code>textarea</code></td>
+<td>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">textarea</a> widget.</td>
+</tr>
+<tr>
+<td><code>widget</code></td>
+<td><code>option</code></td>
+<td>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">select + option</a> widget. This parameter should have <code>optionValues</code> field as well.</td>
+</tr>
+<tr>
+<td><code>optionValues</code></td>
+<td>(Array<string>)</td>
+<td>Available option values used with the <code>option</code> widget</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+
+<p>Here is an example.</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="nx">parameter</span><span class="o">:</span> <span class="p">{</span>
+  <span class="c1">// string type, input widget</span>
+  <span class="s1">&#39;xAxisUnit&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;unit of xAxis&#39;</span><span class="p">,</span> <span class="p">},</span>
+
+  <span class="c1">// boolean type, checkbox widget</span>
+  <span class="s1">&#39;inverted&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">widget</span><span class="o">:</span> <span class="s1">&#39;checkbox&#39;</span><span class="p">,</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;boolean&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;invert x and y axes&#39;</span><span class="p">,</span> <span class="p">},</span>
+
+  <span class="c1">// string type, option widget with `optionValues`</span>
+  <span class="s1">&#39;graphType&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">widget</span><span class="o">:</span> <span class="s1">&#39;option&#39;</span><span class="p">,</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;graph type&#39;</span><span class="p">,</span> <span class="nx">optionValues</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothedLine&#39;</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="p">],</span> <span class="p">},</span>
+
+  <span class="c1">// HTML in `description`</span>
+  <span class="s1">&#39;dateFormat&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;format of date (&lt;a href=&quot;https://docs.amcharts.com/3/javascriptcharts/AmGraph#dateFormat&quot;&gt;doc&lt;/a&gt;) (e.g YYYY-MM-DD)&#39;</span><span class="p">,</span> <span class="p">},</span>
+
+  <span class="c1">// JSON type, textarea widget</span>
+  <span class="s1">&#39;yAxisGuides&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">widget</span><span class="o">:</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;JSON&#39;</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;guides of yAxis &#39;</span><span class="p">,</span> <span class="p">},</span>
+</code></pre></div>
+<p><br/></p>
+
+<h3>Spec: <code>transform</code></h3>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Available Values (type)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>method</code></td>
+<td><code>object</code></td>
+<td>designed for rows requiring object manipulation</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>array</code></td>
+<td>designed for rows requiring array manipulation</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>array:2-key</code></td>
+<td>designed for xyz charts (e.g bubble chart)</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>drill-down</code></td>
+<td>designed for drill-down charts</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>raw</code></td>
+<td>will return the original <code>tableData.rows</code></td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+
+<p>Whatever you specified as <code>transform.method</code>, the <code>transformer</code> value will be always function for lazy computation. </p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="c1">// advanced-transformation.util#getTransformer</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">transformSpec</span><span class="p">.</span><span class="nx">method</span> <span class="o">===</span> <span class="s1">&#39;raw&#39;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">transformer</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">rows</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">transformSpec</span><span class="p">.</span><span class="nx">method</span> <span class="o">===</span> <span class="s1">&#39;array&#39;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">transformer</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Here is actual usage.</p>
+<div class="highlight"><pre><code class="js language-js" data-lang="js"><span class="kr">class</span> <span class="nx">AwesomeVisualization</span> <span class="kr">extends</span> <span class="nx">Visualization</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(...)</span> <span class="p">{</span> <span class="cm">/** setup your spec */</span> <span class="p">}</span>
+
+  <span class="p">...</span> 
+
+  <span class="c1">// `render` will be called whenever `axis` or `parameter` are changed</span>
+  <span class="nx">render</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">chart</span><span class="p">,</span> <span class="nx">parameter</span><span class="p">,</span> <span class="nx">column</span><span class="p">,</span> <span class="nx">transformer</span><span class="p">,</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">data</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">chart</span> <span class="o">===</span> <span class="s1">&#39;line&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">transformed</span> <span class="o">=</span> <span class="nx">transformer</span><span class="p">()</span>
+      <span class="c1">// draw line chart </span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">chart</span> <span class="o">===</span> <span class="s1">&#39;no-group&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">transformed</span> <span class="o">=</span> <span class="nx">transformer</span><span class="p">()</span>
+      <span class="c1">// draw no-group chart </span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2024 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

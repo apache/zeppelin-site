@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.11.2 Documentation: How to Build Zeppelin from source</title>
+    <meta name="description" content="How to build Zeppelin from source">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.11.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.11.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.11.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.11.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.11.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/docs/0.11.2/assets/themes/zeppelin/img/zeppelin_logo.png" width="50"
+                   style="margin-top: -2px;" alt="I'm zeppelin">
+              <span style="margin-left: 5px; font-size: 27px;">Zeppelin</span>
+              <a class="navbar-brand-version" href="/docs/0.11.2"
+                 style="font-size: 15px; color: white;"> 0.11.2
+              </a>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span>Getting Started</span></li>
+                <li><a href="/docs/0.11.2/quickstart/install.html">Install</a></li>
+                <li><a href="/docs/0.11.2/quickstart/explore_ui.html">Explore UI</a></li>
+                <li><a href="/docs/0.11.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Run Mode</span></li>
+                <li><a href="/docs/0.11.2/quickstart/kubernetes.html">Kubernetes</a></li>
+                <li><a href="/docs/0.11.2/quickstart/docker.html">Docker</a></li>
+                <li><a href="/docs/0.11.2/quickstart/yarn.html">Yarn</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/quickstart/spark_with_zeppelin.html">Spark with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/flink_with_zeppelin.html">Flink with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/sql_with_zeppelin.html">SQL with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/python_with_zeppelin.html">Python with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/r_with_zeppelin.html">R with Zeppelin</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Usage<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Dynamic Form</span></li>
+                <li><a href="/docs/0.11.2/usage/dynamic_form/intro.html">What is Dynamic Form?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Display System</span></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#text">Text Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#html">HTML Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#table">Table Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#network">Network Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/angular_backend.html">Angular Display using Backend API</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/angular_frontend.html">Angular Display using Frontend API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Interpreter</span></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/overview.html">Overview</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/interpreter_binding_mode.html">Interpreter Binding Mode</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/user_impersonation.html">User Impersonation</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/dependency_management.html">Dependency Management</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/installation.html">Installing Interpreters</a></li>
+                <!--<li><a href="/docs/0.11.2/usage/interpreter/dynamic_loading.html">Dynamic Interpreter Loading (Experimental)</a></li>-->
+                <li><a href="/docs/0.11.2/usage/interpreter/execution_hooks.html">Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Other Features</span></li>
+                <li><a href="/docs/0.11.2/usage/other_features/publishing_paragraphs.html">Publishing Paragraphs</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/personalized_mode.html">Personalized Mode</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/customizing_homepage.html">Customizing Zeppelin Homepage</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/notebook_actions.html">Notebook Actions</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/cron_scheduler.html">Cron Scheduler</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/zeppelin_context.html">Zeppelin Context</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>REST API</span></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/zeppelin_server.html">Zeppelin Server API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/notebook_repository.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/credential.html">Credential API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/helium.html">Helium API</a></li>
+                <li class="title"><span>Zeppelin SDK</span></li>
+                <li><a href="/docs/0.11.2/usage/zeppelin_sdk/client_api.html">Client API</a></li>
+                <li><a href="/docs/0.11.2/usage/zeppelin_sdk/session_api.html">Session API</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Setup<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Basics</span></li>
+                <li><a href="/docs/0.11.2/setup/basics/how_to_build.html">How to Build Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/setup/basics/hadoop_integration.html">Hadoop Integration</a></li>
+                <li><a href="/docs/0.11.2/setup/basics/multi_user_support.html">Multi-user Support</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Deployment</span></li>
+                <!--<li><a href="/docs/0.11.2/setup/deployment/docker.html">Docker Image for Zeppelin</a></li>-->
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-standalone-mode">Spark Cluster Mode: Standalone</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-on-yarn-mode">Spark Cluster Mode: YARN</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-on-mesos-mode">Spark Cluster Mode: Mesos</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/flink_and_spark_cluster.html">Zeppelin with Flink, Spark Cluster</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/cdh.html">Zeppelin on CDH</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/virtual_machine.html">Zeppelin on VM: Vagrant</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Security</span></li>
+                <li><a href="/docs/0.11.2/setup/security/authentication_nginx.html">HTTP Basic Auth using NGINX</a></li>
+                <li><a href="/docs/0.11.2/setup/security/shiro_authentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.11.2/setup/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.11.2/setup/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.11.2/setup/security/http_security_headers.html">HTTP Security Headers</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Notebook Storage</span></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-google-cloud-storage">Google Cloud Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-oss">OSS Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-mongodb">MongoDB Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Operation</span></li>
+                <li><a href="/docs/0.11.2/setup/operation/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/monitoring.html">Monitoring</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/proxy_setting.html">Proxy Setting</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/upgrading.html">Upgrading</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/trouble_shooting.html">Trouble Shooting</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Interpreters</span></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/overview.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.11.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.11.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.11.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.11.2/interpreter/r.html">R</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.11.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.11.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.11.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.11.2/interpreter/groovy.html">Groovy</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.11.2/interpreter/influxdb.html">influxDB</a></li>
+                <li><a href="/docs/0.11.2/interpreter/java.html">Java</a></li>
+                <li><a href="/docs/0.11.2/interpreter/jupyter.html">Jupyter</a></li>
+                <li><a href="/docs/0.11.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.11.2/interpreter/mahout.html">Mahout</a></li>
+                <li><a href="/docs/0.11.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.11.2/interpreter/mongodb.html">MongoDB</a></li>
+                <li><a href="/docs/0.11.2/interpreter/neo4j.html">Neo4j</a></li>
+                <li><a href="/docs/0.11.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.11.2/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.11.2/interpreter/sparql.html">Sparql</a></li>
+                <li><a href="/docs/0.11.2/interpreter/submarine.html">Submarine</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span>Extending Zeppelin</span></li>
+                <li><a href="/docs/0.11.2/development/writing_zeppelin_interpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Helium (Experimental)</span></li>
+                <li><a href="/docs/0.11.2/development/helium/overview.html">Overview</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_application.html">Writing Helium Application</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_spell.html">Writing Helium Spell</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_visualization_basic.html">Writing Helium Visualization: Basics</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_visualization_transformation.html">Writing Helium Visualization: Transformation</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Contributing to Zeppelin</span></li>
+                <li><a href="/docs/0.11.2/setup/basics/how_to_build.html">How to Build Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/useful_developer_tools.html">Useful Developer Tools</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/how_to_contribute_code.html">How to Contribute (code)</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/how_to_contribute_website.html">How to Contribute (website)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>External Resources</span></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://zeppelin.apache.org/community.html">Mailing List</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://cwiki.apache.org/confluence/display/ZEPPELIN/Zeppelin+Home">Apache Zeppelin Wiki</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="http://stackoverflow.com/questions/tagged/apache-zeppelin">Stackoverflow Questions about Zeppelin</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.11.2/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit How to Build Zeppelin from source">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h2>How to Build Zeppelin from Source</h2>
+
+<div id="toc"></div>
+
+<h4>0. Requirements</h4>
+
+<p>If you want to build from source, you must first install the following dependencies:</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Git</td>
+    <td>(Any Version)</td>
+  </tr>
+  <tr>
+    <td>Maven</td>
+    <td>3.6.3 or higher</td>
+  </tr>
+  <tr>
+    <td>OpenJDK or Oracle JDK</td>
+    <td>1.8 (151+)<br>(set JAVA_HOME)</td>
+  </tr>
+</table>
+
+<p>If you haven&#39;t installed Git and Maven yet, check the <a href="#build-requirements">Build requirements</a> section and follow the step by step instructions from there.</p>
+
+<h4>1. Clone the Apache Zeppelin repository</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">git clone https://github.com/apache/zeppelin.git
+</code></pre></div>
+<h4>2. Build source</h4>
+
+<p>You can build Zeppelin with following maven command:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">./mvnw clean package -DskipTests <span class="o">[</span>Options<span class="o">]</span>
+</code></pre></div>
+<p>Check <a href="#build-profiles">build-profiles</a> section for further build options.
+If you are behind proxy, follow instructions in <a href="#proxy-setting-optional">Proxy setting</a> section.</p>
+
+<p>If you&#39;re interested in contribution, please check <a href="../../development/contribution/how_to_contribute_code.html">Contributing to Apache Zeppelin (Code)</a> and <a href="../../development/contribution/how_to_contribute_website.html">Contributing to Apache Zeppelin (Website)</a>.</p>
+
+<h4>3. Done</h4>
+
+<p>You can directly start Zeppelin by running the following command after successful build:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">./bin/zeppelin-daemon.sh start
+</code></pre></div>
+<h3>Build profiles</h3>
+
+<h4>Spark Interpreter</h4>
+
+<p>To be noticed, the spark profiles here only affect the unit test (no need to specify <code>SPARK_HOME</code>) of spark interpreter. 
+Zeppelin doesn&#39;t require you to build with different spark to make different versions of spark work in Zeppelin.
+You can run different versions of Spark in Zeppelin as long as you specify <code>SPARK_HOME</code>. Actually Zeppelin supports all the versions of Spark from 3.2 to 3.5.</p>
+
+<p>To build with a specific Spark version or scala versions, define one or more of the following profiles and options:</p>
+
+<h5><code>-Pspark-[version]</code></h5>
+
+<p>Set spark major version</p>
+
+<p>Available profiles are</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">-Pspark-3.5
+-Pspark-3.4
+-Pspark-3.3
+-Pspark-3.2
+</code></pre></div>
+<p>minor version can be adjusted by <code>-Dspark.version=x.x.x</code></p>
+
+<h5><code>-Pspark-scala-[version] (optional)</code></h5>
+
+<p>To be noticed, these profiles also only affect the unit test (no need to specify <code>SPARK_HOME</code>) of Spark interpreter. 
+Actually Zeppelin supports all the versions of scala (2.12, 2.13) in Spark interpreter as long as you specify <code>SPARK_HOME</code>.</p>
+
+<p>Available profiles are</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">-Pspark-scala-2.12
+-Pspark-scala-2.13
+</code></pre></div>
+<h4>Build hadoop with Zeppelin (<code>-Phadoop[version]</code>)</h4>
+
+<p>To be noticed, hadoop profiles only affect Zeppelin server, it doesn&#39;t affect any interpreter. 
+Zeppelin server use hadoop in some cases, such as using hdfs as notebook storage. You can check this <a href="./hadoop_integration.html">page</a> for more details about how to configure hadoop in Zeppelin.</p>
+
+<p>Set hadoop major version (default hadoop3).
+Available profiles are</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">-Phadoop2
+-Phadoop3
+</code></pre></div>
+<p>minor version can be adjusted by <code>-Dhadoop.version=x.x.x</code></p>
+
+<h5><code>-Pvendor-repo</code> (optional)</h5>
+
+<p>enable 3rd party vendor repository (Cloudera, Hortonworks)</p>
+
+<h4>-Pexamples (optional)</h4>
+
+<p>Build examples under zeppelin-examples directory</p>
+
+<h3>Build command examples</h3>
+
+<p>Here are some examples with several options:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="c"># build with spark-3.3, spark-scala-2.12</span>
+./mvnw clean package -Pspark-3.3 -Pspark-scala-2.12 -DskipTests
+
+<span class="c"># build with spark-3.4, spark-scala-2.13</span>
+./mvnw clean package -Pspark-3.4 -Pspark-scala-2.13 -DskipTests
+</code></pre></div>
+<p>Ignite Interpreter</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">./mvnw clean package -Dignite.version<span class="o">=</span>1.9.0 -DskipTests
+</code></pre></div>
+<h3>Optional configurations</h3>
+
+<p>Here are additional configurations that could be optionally tuned using the trailing <code>-D</code> option for maven commands</p>
+
+<p>Spark package</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">spark.archive <span class="c"># default spark-${spark.version}</span>
+spark.src.download.url <span class="c"># default http://d3kbcqa49mib13.cloudfront.net/${spark.archive}.tgz</span>
+spark.bin.download.url <span class="c"># default http://d3kbcqa49mib13.cloudfront.net/${spark.archive}-bin-without-hadoop.tgz</span>
+</code></pre></div>
+<p>Py4J package</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">python.py4j.version <span class="c"># default 0.10.9.7</span>
+pypi.repo.url <span class="c"># default https://pypi.python.org/packages</span>
+python.py4j.repo.folder <span class="c"># default /64/5c/01e13b68e8caafece40d549f232c9b5677ad1016071a48d04cc3895acaa3</span>
+</code></pre></div>
+<p>final URL location for Py4J package will be produced as following:</p>
+
+<p><code>${pypi.repo.url}${python.py4j.repo.folder}py4j-${python.py4j.version}.zip</code></p>
+
+<p>Frontend Maven Plugin configurations</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">plugin.frontend.nodeDownloadRoot # default https://nodejs.org/dist/
+plugin.frontend.npmDownloadRoot # default https://registry.npmjs.org/npm/-/
+plugin.frontend.yarnDownloadRoot # default https://github.com/yarnpkg/yarn/releases/download/
+</code></pre></div>
+<h2>Build requirements</h2>
+
+<h3>Install requirements</h3>
+
+<p>If you don&#39;t have requirements prepared, install it.
+(The installation method may vary according to your environment, example is for Ubuntu.)</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">sudo apt-get update
+sudo apt-get install git
+sudo apt-get install openjdk-8-jdk
+sudo apt-get install npm
+sudo apt-get install libfontconfig
+sudo apt-get install r-base-dev
+sudo apt-get install r-cran-evaluate
+</code></pre></div>
+<p><em>Notes:</em>
+ - Ensure node is installed by running <code>node --version</code><br>
+ - Ensure maven is running version 3.6.3 or higher with <code>./mvnw -version</code>
+ - Configure maven to use more memory than usual by <code>export MAVEN_OPTS=&quot;-Xmx2g -XX:MaxMetaspaceSize=512m&quot;</code></p>
+
+<h2>Proxy setting (optional)</h2>
+
+<p>If you&#39;re behind the proxy, you&#39;ll need to configure maven and npm to pass through it.</p>
+
+<p>First of all, configure maven in your <code>~/.m2/settings.xml</code>.</p>
+<div class="highlight"><pre><code class="xml language-xml" data-lang="xml"><span class="nt">&lt;settings&gt;</span>
+  <span class="nt">&lt;proxies&gt;</span>
+    <span class="nt">&lt;proxy&gt;</span>
+      <span class="nt">&lt;id&gt;</span>proxy-http<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;active&gt;</span>true<span class="nt">&lt;/active&gt;</span>
+      <span class="nt">&lt;protocol&gt;</span>http<span class="nt">&lt;/protocol&gt;</span>
+      <span class="nt">&lt;host&gt;</span>localhost<span class="nt">&lt;/host&gt;</span>
+      <span class="nt">&lt;port&gt;</span>3128<span class="nt">&lt;/port&gt;</span>
+      <span class="c">&lt;!-- &lt;username&gt;usr&lt;/username&gt;</span>
+<span class="c">      &lt;password&gt;pwd&lt;/password&gt; --&gt;</span>
+      <span class="nt">&lt;nonProxyHosts&gt;</span>localhost|127.0.0.1<span class="nt">&lt;/nonProxyHosts&gt;</span>
+    <span class="nt">&lt;/proxy&gt;</span>
+    <span class="nt">&lt;proxy&gt;</span>
+      <span class="nt">&lt;id&gt;</span>proxy-https<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;active&gt;</span>true<span class="nt">&lt;/active&gt;</span>
+      <span class="nt">&lt;protocol&gt;</span>https<span class="nt">&lt;/protocol&gt;</span>
+      <span class="nt">&lt;host&gt;</span>localhost<span class="nt">&lt;/host&gt;</span>
+      <span class="nt">&lt;port&gt;</span>3128<span class="nt">&lt;/port&gt;</span>
+      <span class="c">&lt;!-- &lt;username&gt;usr&lt;/username&gt;</span>
+<span class="c">      &lt;password&gt;pwd&lt;/password&gt; --&gt;</span>
+      <span class="nt">&lt;nonProxyHosts&gt;</span>localhost|127.0.0.1<span class="nt">&lt;/nonProxyHosts&gt;</span>
+    <span class="nt">&lt;/proxy&gt;</span>
+  <span class="nt">&lt;/proxies&gt;</span>
+<span class="nt">&lt;/settings&gt;</span>
+</code></pre></div>
+<p>Then, next commands will configure npm.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">npm config <span class="nb">set </span>proxy http://localhost:3128
+npm config <span class="nb">set </span>https-proxy http://localhost:3128
+npm config <span class="nb">set </span>registry <span class="s2">&quot;http://registry.npmjs.org/&quot;</span>
+npm config <span class="nb">set </span>strict-ssl <span class="nb">false</span>
+</code></pre></div>
+<p>Configure git as well</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">git config --global http.proxy http://localhost:3128
+git config --global https.proxy http://localhost:3128
+git config --global url.<span class="s2">&quot;http://&quot;</span>.insteadOf git://
+</code></pre></div>
+<p>To clean up, set <code>active false</code> in Maven <code>settings.xml</code> and run these commands.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">npm config rm proxy
+npm config rm https-proxy
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+git config --global --unset url.<span class="s2">&quot;http://&quot;</span>.insteadOf
+</code></pre></div>
+<p><em>Notes:</em>
+ - If you are behind NTLM proxy you can use <a href="http://cntlm.sourceforge.net/">Cntlm Authentication Proxy</a>.
+ - Replace <code>localhost:3128</code> with the standard pattern <code>http://user:pwd@host:port</code>.</p>
+
+<h2>Package</h2>
+
+<p>To package the final distribution including the compressed archive, run:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">./mvnw clean package -Pbuild-distr
+</code></pre></div>
+<p>To build a distribution with specific profiles, run:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">./mvnw clean package -Pbuild-distr -Pspark-3.4
+</code></pre></div>
+<p>The profiles <code>-Pspark-3.4</code> can be adjusted if you wish to build to a specific spark versions.  </p>
+
+<p>The archive is generated under <em><code>zeppelin-distribution/target</code></em> directory</p>
+
+<h2>Run end-to-end tests</h2>
+
+<p>Zeppelin comes with a set of end-to-end acceptance tests driving headless selenium browser</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh"><span class="c"># assumes zeppelin-server running on localhost:8080 (use -Durl=.. to override)</span>
+mvn verify
+
+<span class="c"># or take care of starting/stoping zeppelin-server from packaged zeppelin-distribuion/target</span>
+mvn verify -P using-packaged-distr
+</code></pre></div>
+<p><a href="https://github.com/igrigorik/ga-beacon"><img src="https://ga-beacon.appspot.com/UA-45176241-4/apache/zeppelin/README.md?pixel" alt="Analytics"></a></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2024 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+
