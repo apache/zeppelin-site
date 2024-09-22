@@ -26,12 +26,12 @@ The latest release of Apache Zeppelin is **0.11.2**.
 - 0.11.2 released on Sep 22, 2024 ([release notes](./releases/zeppelin-release-0.11.2.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.11.2))
 
   * Binary package with all interpreters ([Install guide](../../docs/0.11.2/quickstart/install.html)):
-  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz'">zeppelin-0.11.1-bin-all.tgz</div> (843MB,
+  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz'">zeppelin-0.11.2-bin-all.tgz</div> (843MB,
   [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz.asc),
   [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz.sha512))</p>
 
   * Binary package with Spark interpreter and interpreter net-install script ([interpreter installation guide](../../docs/0.11.2/usage/interpreter/installation.html)):
-  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz'">zeppelin-0.11.1-bin-netinst.tgz</div> (577MB,
+  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz'">zeppelin-0.11.2-bin-netinst.tgz</div> (577MB,
   [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz.asc),
   [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz.sha512))</p>
 
