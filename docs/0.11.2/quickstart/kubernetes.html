@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.11.2 Documentation: Install</title>
+    <meta name="description" content="This page will help you get started and will guide you through installing Apache Zeppelin and running it in the command line.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.11.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.11.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.11.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.11.2/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.11.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.11.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/docs/0.11.2/assets/themes/zeppelin/img/zeppelin_logo.png" width="50"
+                   style="margin-top: -2px;" alt="I'm zeppelin">
+              <span style="margin-left: 5px; font-size: 27px;">Zeppelin</span>
+              <a class="navbar-brand-version" href="/docs/0.11.2"
+                 style="font-size: 15px; color: white;"> 0.11.2
+              </a>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span>Getting Started</span></li>
+                <li><a href="/docs/0.11.2/quickstart/install.html">Install</a></li>
+                <li><a href="/docs/0.11.2/quickstart/explore_ui.html">Explore UI</a></li>
+                <li><a href="/docs/0.11.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Run Mode</span></li>
+                <li><a href="/docs/0.11.2/quickstart/kubernetes.html">Kubernetes</a></li>
+                <li><a href="/docs/0.11.2/quickstart/docker.html">Docker</a></li>
+                <li><a href="/docs/0.11.2/quickstart/yarn.html">Yarn</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/quickstart/spark_with_zeppelin.html">Spark with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/flink_with_zeppelin.html">Flink with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/sql_with_zeppelin.html">SQL with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/python_with_zeppelin.html">Python with Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/quickstart/r_with_zeppelin.html">R with Zeppelin</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Usage<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Dynamic Form</span></li>
+                <li><a href="/docs/0.11.2/usage/dynamic_form/intro.html">What is Dynamic Form?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Display System</span></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#text">Text Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#html">HTML Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#table">Table Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/basic.html#network">Network Display</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/angular_backend.html">Angular Display using Backend API</a></li>
+                <li><a href="/docs/0.11.2/usage/display_system/angular_frontend.html">Angular Display using Frontend API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Interpreter</span></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/overview.html">Overview</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/interpreter_binding_mode.html">Interpreter Binding Mode</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/user_impersonation.html">User Impersonation</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/dependency_management.html">Dependency Management</a></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/installation.html">Installing Interpreters</a></li>
+                <!--<li><a href="/docs/0.11.2/usage/interpreter/dynamic_loading.html">Dynamic Interpreter Loading (Experimental)</a></li>-->
+                <li><a href="/docs/0.11.2/usage/interpreter/execution_hooks.html">Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Other Features</span></li>
+                <li><a href="/docs/0.11.2/usage/other_features/publishing_paragraphs.html">Publishing Paragraphs</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/personalized_mode.html">Personalized Mode</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/customizing_homepage.html">Customizing Zeppelin Homepage</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/notebook_actions.html">Notebook Actions</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/cron_scheduler.html">Cron Scheduler</a></li>
+                <li><a href="/docs/0.11.2/usage/other_features/zeppelin_context.html">Zeppelin Context</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>REST API</span></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/zeppelin_server.html">Zeppelin Server API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/notebook_repository.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/credential.html">Credential API</a></li>
+                <li><a href="/docs/0.11.2/usage/rest_api/helium.html">Helium API</a></li>
+                <li class="title"><span>Zeppelin SDK</span></li>
+                <li><a href="/docs/0.11.2/usage/zeppelin_sdk/client_api.html">Client API</a></li>
+                <li><a href="/docs/0.11.2/usage/zeppelin_sdk/session_api.html">Session API</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Setup<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Basics</span></li>
+                <li><a href="/docs/0.11.2/setup/basics/how_to_build.html">How to Build Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/setup/basics/hadoop_integration.html">Hadoop Integration</a></li>
+                <li><a href="/docs/0.11.2/setup/basics/multi_user_support.html">Multi-user Support</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Deployment</span></li>
+                <!--<li><a href="/docs/0.11.2/setup/deployment/docker.html">Docker Image for Zeppelin</a></li>-->
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-standalone-mode">Spark Cluster Mode: Standalone</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-on-yarn-mode">Spark Cluster Mode: YARN</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/spark_cluster_mode.html#spark-on-mesos-mode">Spark Cluster Mode: Mesos</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/flink_and_spark_cluster.html">Zeppelin with Flink, Spark Cluster</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/cdh.html">Zeppelin on CDH</a></li>
+                <li><a href="/docs/0.11.2/setup/deployment/virtual_machine.html">Zeppelin on VM: Vagrant</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Security</span></li>
+                <li><a href="/docs/0.11.2/setup/security/authentication_nginx.html">HTTP Basic Auth using NGINX</a></li>
+                <li><a href="/docs/0.11.2/setup/security/shiro_authentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.11.2/setup/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.11.2/setup/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.11.2/setup/security/http_security_headers.html">HTTP Security Headers</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Notebook Storage</span></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-google-cloud-storage">Google Cloud Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-oss">OSS Storage</a></li>
+                <li><a href="/docs/0.11.2/setup/storage/storage.html#notebook-storage-in-mongodb">MongoDB Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Operation</span></li>
+                <li><a href="/docs/0.11.2/setup/operation/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/monitoring.html">Monitoring</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/proxy_setting.html">Proxy Setting</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/upgrading.html">Upgrading</a></li>
+                <li><a href="/docs/0.11.2/setup/operation/trouble_shooting.html">Trouble Shooting</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Interpreters</span></li>
+                <li><a href="/docs/0.11.2/usage/interpreter/overview.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.11.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.11.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.11.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.11.2/interpreter/r.html">R</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.11.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.11.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.11.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.11.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.11.2/interpreter/groovy.html">Groovy</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.11.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.11.2/interpreter/influxdb.html">influxDB</a></li>
+                <li><a href="/docs/0.11.2/interpreter/java.html">Java</a></li>
+                <li><a href="/docs/0.11.2/interpreter/jupyter.html">Jupyter</a></li>
+                <li><a href="/docs/0.11.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.11.2/interpreter/mahout.html">Mahout</a></li>
+                <li><a href="/docs/0.11.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.11.2/interpreter/mongodb.html">MongoDB</a></li>
+                <li><a href="/docs/0.11.2/interpreter/neo4j.html">Neo4j</a></li>
+                <li><a href="/docs/0.11.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.11.2/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.11.2/interpreter/sparql.html">Sparql</a></li>
+                <li><a href="/docs/0.11.2/interpreter/submarine.html">Submarine</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span>Extending Zeppelin</span></li>
+                <li><a href="/docs/0.11.2/development/writing_zeppelin_interpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Helium (Experimental)</span></li>
+                <li><a href="/docs/0.11.2/development/helium/overview.html">Overview</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_application.html">Writing Helium Application</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_spell.html">Writing Helium Spell</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_visualization_basic.html">Writing Helium Visualization: Basics</a></li>
+                <li><a href="/docs/0.11.2/development/helium/writing_visualization_transformation.html">Writing Helium Visualization: Transformation</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Contributing to Zeppelin</span></li>
+                <li><a href="/docs/0.11.2/setup/basics/how_to_build.html">How to Build Zeppelin</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/useful_developer_tools.html">Useful Developer Tools</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/how_to_contribute_code.html">How to Contribute (code)</a></li>
+                <li><a href="/docs/0.11.2/development/contribution/how_to_contribute_website.html">How to Contribute (website)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>External Resources</span></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://zeppelin.apache.org/community.html">Mailing List</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://cwiki.apache.org/confluence/display/ZEPPELIN/Zeppelin+Home">Apache Zeppelin Wiki</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="http://stackoverflow.com/questions/tagged/apache-zeppelin">Stackoverflow Questions about Zeppelin</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.11.2/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Install">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Zeppelin on Kubernetes</h1>
+
+<p>Zeppelin can run on clusters managed by <a href="https://kubernetes.io/">Kubernetes</a>. When Zeppelin runs in Pod, it creates pods for individual interpreter. Also Spark interpreter auto configured to use Spark on Kubernetes in client mode.</p>
+
+<p>Key benefits are</p>
+
+<ul>
+<li>Interpreter scale-out</li>
+<li>Spark interpreter auto configure Spark on Kubernetes</li>
+<li>Able to customize Kubernetes yaml file</li>
+<li>Spark UI access</li>
+</ul>
+
+<h2>Prerequisites</h2>
+
+<ul>
+<li>Zeppelin &gt;= 0.9.0 docker image</li>
+<li>Spark &gt;= 2.4.0 docker image (in case of using Spark Interpreter)</li>
+<li>A running Kubernetes cluster with access configured to it using <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">Kubernetes DNS</a> configured in your cluster</li>
+<li><p>Enough cpu and memory in your Kubernetes cluster. We recommend 4CPUs, 6g of memory to be able to start Spark Interpreter with few executors.</p>
+
+<ul>
+<li><p>If you&#39;re using <a href="https://kubernetes.io/docs/setup/minikube/">minikube</a>, check your cluster capacity (<code>kubectl describe node</code>) and increase if necessary</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">$ minikube delete    # otherwise configuration won&#39;t apply
+$ minikube config set cpus &lt;number&gt;
+$ minikube config set memory &lt;number in MB&gt;
+$ minikube start
+$ minikube config view
+</code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2>Quickstart</h2>
+
+<p>Let&#39;s first clone the Zeppelin repository from GitHub:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">git clone https://github.com/apache/zeppelin.git
+<span class="nb">cd </span>zeppelin
+<span class="c"># you can check out to your desired version/branch</span>
+<span class="c"># git checkout tags/v0.10.1</span>
+<span class="c"># just make sure you check the version inside &quot;./pom.xml&quot;</span>
+</code></pre></div>
+<p>Now we are going to create the <code>zeppelin-distribution</code> image. This may take some time and this image will be used as a base for the upcoming required images:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">docker build -t zeppelin-distribution:latest -f ./Dockerfile .
+</code></pre></div>
+<p>Next, we will build our <code>zeppelin-server</code> image:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh"><span class="nb">cd </span>scripts/docker/zeppelin-server
+<span class="c"># Looking at the &quot;./pom.xml&quot; we can see the version is 0.11.2</span>
+<span class="c"># Let&#39;s set the correct version in our Dockerfile:</span>
+<span class="c"># vi Dockerfile</span>
+<span class="c"># ARG version=&quot;0.11.2&quot;</span>
+<span class="c"># Once you saved the Dockerfile with the correct version we can build our image:</span>
+docker build -t zeppelin-server:0.11.2 -f ./Dockerfile .
+</code></pre></div>
+<p>The last image we build is <code>zeppelin-interpreter</code>:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh"><span class="nb">cd </span>scripts/docker/zeppelin-interpreter
+docker build -t zeppelin-interpreter:0.11.2 -f ./Dockerfile .
+</code></pre></div>
+<p>So we should now have the following images:</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh"><span class="c"># sudo if you are on Linux and Docker requires root</span>
+<span class="nv">$ </span>docker images
+
+REPOSITORY                    TAG               IMAGE ID       CREATED          SIZE
+zeppelin-interpreter          0.11.2            4f77fe989eed   3 minutes ago    622MB
+zeppelin-server               0.11.2            4f77fe989eed   3 minutes ago    622MB
+zeppelin-distribution         latest            bd2fb4b321d2   40 minutes ago   1.27GB
+</code></pre></div>
+<p>Reminder: Please adjust the images in the YAML-File of <code>zeppelin-server.yaml</code></p>
+
+<p>Start zeppelin on Kubernetes cluster,</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">kubectl apply -f zeppelin-server.yaml
+</code></pre></div>
+<p>Port forward Zeppelin server port,</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">kubectl port-forward zeppelin-server 8080:80
+</code></pre></div>
+<p>and browse <a href="http://localhost:8080">localhost:8080</a>.
+Try running some paragraphs and see if each interpreter is running as a Pod (using <code>kubectl get pods</code>), instead of a local process.</p>
+
+<p>To shut down,</p>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">kubectl delete -f zeppelin-server.yaml
+</code></pre></div>
+<h2>Spark Interpreter</h2>
+
+<p>Build spark docker image to use Spark Interpreter.
+Download spark binary distribution and run following command.
+Spark 2.4.0 or later version is required.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"># if you&#39;re using minikube, set docker-env
+$ eval $(minikube docker-env)
+
+# build docker image
+$ &lt;spark-distribution&gt;/bin/docker-image-tool.sh -m -t 2.4.0 build
+</code></pre></div>
+<p>Run <code>docker images</code> and check if <code>spark:2.4.0</code> is created.
+Configure <code>sparkContainerImage</code> of <code>zeppelin-server-conf</code> ConfigMap in <code>zeppelin-server.yaml</code>.</p>
+
+<p>Create note and configure executor number (default 1)</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">%spark.conf
+spark.executor.instances  5
+</code></pre></div>
+<p>And then start your spark interpreter</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">%spark
+sc.parallelize(1 to 100).count
+...
+</code></pre></div>
+<p>While <code>spark.master</code> property of SparkInterpreter starts with <code>k8s://</code> (default <code>k8s://https://kubernetes.default.svc</code> when Zeppelin started using zeppelin-server.yaml), Spark executors will be automatically created in your Kubernetes cluster.
+Spark UI is accessible by clicking <code>SPARK JOB</code> on the Paragraph.</p>
+
+<p>Check <a href="https://spark.apache.org/docs/latest/running-on-kubernetes.html">here</a> to know more about Running Spark on Kubernetes.</p>
+
+<h2>Build Zeppelin image manually</h2>
+
+<p>To build your own Zeppelin image, first build Zeppelin project with <code>-Pbuild-distr</code> flag.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">$ ./mvnw package -DskipTests -Pbuild-distr &lt;your flags&gt;
+</code></pre></div>
+<p>Binary package will be created under <code>zeppelin-distribution/target</code> directory. Move created package file under <code>scripts/docker/zeppelin/bin/</code> directory.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">$ mv zeppelin-distribution/target/zeppelin-*.tar.gz scripts/docker/zeppelin/bin/
+</code></pre></div>
+<p><code>scripts/docker/zeppelin/bin/Dockerfile</code> downloads package from internet. Modify the file to add package from filesystem.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">...
+
+# Find following section and comment out
+#RUN echo &quot;$LOG_TAG Download Zeppelin binary&quot; &amp;&amp; \
+#    wget -O /tmp/zeppelin-${Z_VERSION}-bin-all.tgz http://archive.apache.org/dist/zeppelin/zeppelin-${Z_VERSION}/zeppelin-${Z_VERSION}-bin-all.tgz &amp;&amp; \
+#    tar -zxvf /tmp/zeppelin-${Z_VERSION}-bin-all.tgz &amp;&amp; \
+#    rm -rf /tmp/zeppelin-${Z_VERSION}-bin-all.tgz &amp;&amp; \
+#    mv /zeppelin-${Z_VERSION}-bin-all ${ZEPPELIN_HOME}
+
+# Add following lines right after the commented line above
+ADD zeppelin-${Z_VERSION}.tar.gz /
+RUN ln -s /zeppelin-${Z_VERSION} /zeppelin
+...
+</code></pre></div>
+<p>Then build docker image.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"># configure docker env, if you&#39;re using minikube
+$ eval $(minikube docker-env)
+
+# change directory
+$ cd scripts/docker/zeppelin/bin/
+
+# build image. Replace &lt;tag&gt;.
+$ docker build -t &lt;tag&gt; .
+</code></pre></div>
+<p>Finally, set custom image <code>&lt;tag&gt;</code> just created to <code>image</code> and <code>ZEPPELIN_K8S_CONTAINER_IMAGE</code> env variable of <code>zeppelin-server</code> container spec in <code>zeppelin-server.yaml</code> file.</p>
+
+<p>Currently, single docker image is being used in both Zeppelin server and Interpreter pods. Therefore,</p>
+
+<table><thead>
+<tr>
+<th>Pod</th>
+<th>Number of instances</th>
+<th>Image</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Zeppelin Server</td>
+<td>1</td>
+<td>Zeppelin docker image</td>
+<td>User creates/deletes with kubectl command</td>
+</tr>
+<tr>
+<td>Zeppelin Interpreters</td>
+<td>n</td>
+<td>Zeppelin docker image</td>
+<td>Zeppelin Server creates/deletes</td>
+</tr>
+<tr>
+<td>Spark executors</td>
+<td>m</td>
+<td>Spark docker image</td>
+<td>Spark Interpreter creates/deletes</td>
+</tr>
+</tbody></table>
+
+<p>Currently, size of Zeppelin docker image is quite big. Zeppelin project is planning to provides lightweight images for each individual interpreter in the future.</p>
+
+<h2>How it works</h2>
+
+<h3>Zeppelin on Kubernetes</h3>
+
+<p><code>k8s/zeppelin-server.yaml</code> is provided to run Zeppelin Server with few sidecars and configurations.
+Once Zeppelin Server is started in side Kubernetes, it auto configure itself to use <code>K8sStandardInterpreterLauncher</code>.</p>
+
+<p>The launcher creates each interpreter in a Pod using templates located under <code>k8s/interpreter/</code> directory.
+Templates in the directory applied in alphabetical order. Templates are rendered by <a href="https://github.com/HubSpot/jinjava">jinjava</a>
+and all interpreter properties are accessible inside the templates.</p>
+
+<h3>Spark on Kubernetes</h3>
+
+<p>When interpreter group is <code>spark</code>, Zeppelin sets necessary spark configuration automatically to use Spark on Kubernetes.
+It uses client mode, so Spark interpreter Pod works as a Spark driver, spark executors are launched in separate Pods.
+This auto configuration can be overrided by manually setting <code>spark.master</code> property of Spark interpreter.</p>
+
+<h3>Accessing Spark UI (or Service running in interpreter Pod)</h3>
+
+<p>Zeppelin server Pod has a reverse proxy as a sidecar, and it splits traffic to Zeppelin server and Spark UI running in the other Pods.
+It assume both <code>&lt;your service domain&gt;</code> and <code>*.&lt;your service domain&gt;</code> point the nginx proxy address.
+<code>&lt;your service domain&gt;</code> is directed to ZeppelinServer, <code>*.&lt;your service domain&gt;</code> is directed to interpreter Pods.</p>
+
+<p><code>&lt;port&gt;-&lt;interpreter pod svc name&gt;.&lt;your service domain&gt;</code> is convention to access any application running in interpreter Pod.</p>
+
+<p>For example, When your service domain name is <code>local.zeppelin-project.org</code> Spark interpreter Pod is running with a name <code>spark-axefeg</code> and Spark UI is running on port 4040,</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">4040-spark-axefeg.local.zeppelin-project.org
+</code></pre></div>
+<p>is the address to access Spark UI.</p>
+
+<p>Default service domain is <code>local.zeppelin-project.org:8080</code>. <code>local.zeppelin-project.org</code> and <code>*.local.zeppelin-project.org</code> configured to resolve <code>127.0.0.1</code>.
+It allows access Zeppelin and Spark UI with <code>kubectl port-forward zeppelin-server 8080:80</code>.</p>
+
+<p>If you like to use your custom domain</p>
+
+<ol>
+<li>Configure <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress</a> in Kubernetes cluster for <code>http</code> port of the service <code>zeppelin-server</code> defined in <code>k8s/zeppelin-server.yaml</code>.</li>
+<li>Configure DNS record that your service domain and wildcard subdomain point the IP Addresses of your Ingress.</li>
+<li>Modify <code>serviceDomain</code> of <code>zeppelin-server-conf</code> ConfigMap in <code>k8s/zeppelin-server.yaml</code> file.</li>
+<li>Apply changes (e.g. <code>kubectl apply -f k8s/zeppelin-server.yaml</code>)</li>
+</ol>
+
+<h2>Persist /notebook and /conf directory</h2>
+
+<p>Notebook and configurations are not persisted by default. Please configure volume and update <code>k8s/zeppelin-server.yaml</code>
+to use the volume to persiste /notebook and /conf directory if necessary.</p>
+
+<h2>Customization</h2>
+
+<h3>Zeppelin Server Pod</h3>
+
+<p>Edit <code>k8s/zeppelin-server.yaml</code> and apply.</p>
+
+<h3>Interpreter Pod</h3>
+
+<p>Since Interpreter Pod is created/deleted by ZeppelinServer using templates under <code>k8s/interpreter</code> directory,
+to customize,</p>
+
+<ol>
+<li>Prepare <code>k8s/interpreter</code> directory with customization (edit or create new yaml file), in a Kubernetes volume.</li>
+<li>Modify <code>k8s/zeppelin-server.yaml</code> and mount prepared volume dir <code>k8s/interpreter</code> to <code>/zeppelin/k8s/interpreter/</code>.</li>
+<li>Apply modified <code>k8s/zeppelin-server.yaml</code>.</li>
+<li>Run a paragraph will create an interpreter using modified yaml files.</li>
+</ol>
+
+<p>The interpreter pod can also be customized through the interpreter settings. Here are some of the properties:</p>
+
+<table><thead>
+<tr>
+<th>Property Name</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>zeppelin.k8s.interpreter.namespace</code></td>
+<td><code>default</code></td>
+<td>Specify the namespace of the current interpreter. Users can set different namespaces for different interpreters. In order to minimize permissions, the interpreter pod can only be created in the <code>default</code> namespace by default. If users need to create an interpreter pod in other namespaces, they need to add the corresponding <code>rolebinding</code> in <code>k8s/zeppelin-server.yaml</code>.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.interpreter.serviceAccount</code></td>
+<td><code>default</code></td>
+<td>The Kubernetes service account to use.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.interpreter.container.image</code></td>
+<td><code>apache/zeppelin:&lt;ZEPPELIN_VERSION&gt;</code></td>
+<td>The interpreter image to use.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.interpreter.cores</code></td>
+<td>(optional)</td>
+<td>The number of cpu cores to use.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.interpreter.memory</code></td>
+<td>(optional)</td>
+<td>The memory to use, e.g., <code>1g</code>.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.interpreter.gpu.type</code></td>
+<td>(optional)</td>
+<td>Set the type of gpu to request when the interpreter pod is required to schedule gpu resources, e.g., <code>nvidia.com/gpu</code>.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.interpreter.gpu.nums</code></td>
+<td>(optional)</td>
+<td>Tne number of gpu to use.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.interpreter.imagePullSecrets</code></td>
+<td>(optional)</td>
+<td>Set the comma-separated list of Kubernetes secrets while pulling images, e.g., <code>mysecret1,mysecret2</code></td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.interpreter.container.imagePullPolicy</code></td>
+<td>(optional)</td>
+<td>Set the pull policy of the interpreter image, e.g., <code>Always</code></td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.spark.container.imagePullPolicy</code></td>
+<td>(optional)</td>
+<td>Set the pull policy of the spark image, e.g., <code>Always</code></td>
+</tr>
+<tr>
+<td><code>zeppelin.spark.uiWebUrl</code></td>
+<td><code>//-.</code></td>
+<td>The URL for user to access Spark UI. The default value is a <a href="https://github.com/HubSpot/jinjava">jinjava</a> template that contains three variables.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.spark.useIngress</code></td>
+<td>(optional)</td>
+<td>If true, the <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress</a> will be created when creating the spark interpreter. So users can access the Spark UI through Ingress.</td>
+</tr>
+<tr>
+<td><code>zeppelin.k8s.spark.ingress.host</code></td>
+<td><code>-.</code></td>
+<td>If <code>zeppelin.k8s.spark.useIngress</code> is <code>true</code>, it configures the <code>host</code> value of the Ingress. The default value is a <a href="https://github.com/HubSpot/jinjava">jinjava</a> template that contains three variables. Users can access the Spark UI through a customized <code>zeppelin.k8s.spark.ingress.host</code>.</td>
+</tr>
+</tbody></table>
+
+<h2>Future work</h2>
+
+<ul>
+<li>Smaller interpreter docker image.</li>
+<li>Blocking communication between interpreter Pod.</li>
+<li>Spark Interpreter Pod has Role CRUD for any pod/service in the same namespace. Which should be restricted to only Spark executors Pod.</li>
+<li>Per note interpreter mode by default when Zeppelin is running on Kubernetes</li>
+</ul>
+
+<h2>Development</h2>
+
+<p>Instead of build Zeppelin distribution package and docker image everytime during development,
+Zeppelin can run locally (such as inside your IDE in debug mode) and able to run Interpreter using <a href="https://github.com/apache/zeppelin/blob/master/zeppelin-plugins/launcher/k8s-standard/src/main/java/org/apache/zeppelin/interpreter/launcher/K8sStandardInterpreterLauncher.java">K8sStandardInterpreterLauncher</a> by configuring following environment variables.</p>
+
+<table><thead>
+<tr>
+<th>Environment variable</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>ZEPPELIN_RUN_MODE</code></td>
+<td><code>k8s</code></td>
+<td>Make Zeppelin run interpreter on Kubernetes</td>
+</tr>
+<tr>
+<td><code>ZEPPELIN_K8S_PORTFORWARD</code></td>
+<td><code>true</code></td>
+<td>Enable port forwarding from local Zeppelin instance to Interpreters running on Kubernetes</td>
+</tr>
+<tr>
+<td><code>ZEPPELIN_K8S_CONTAINER_IMAGE</code></td>
+<td><code>&lt;image&gt;:&lt;version&gt;</code></td>
+<td>Zeppelin interpreter docker image to use</td>
+</tr>
+<tr>
+<td><code>ZEPPELIN_K8S_SPARK_CONTAINER_IMAGE</code></td>
+<td><code>&lt;image&gt;:&lt;version&gt;</code></td>
+<td>Spark docker image to use</td>
+</tr>
+<tr>
+<td><code>ZEPPELIN_K8S_NAMESPACE</code></td>
+<td><code>&lt;k8s namespace&gt;</code></td>
+<td>Kubernetes namespace  to use</td>
+</tr>
+<tr>
+<td><code>KUBERNETES_AUTH_TOKEN</code></td>
+<td><code>&lt;token&gt;</code></td>
+<td>Kubernetes auth token to create resources</td>
+</tr>
+</tbody></table>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2024 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+
