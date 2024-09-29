@@ -76,6 +76,44 @@
         "artifactId": "spark-interpreter"
       }
     },
+    "spark-scala-parent": {
+      "latest": {
+        "type": "INTERPRETER",
+        "name": "spark-scala-parent",
+        "version": "0.11.2",
+        "published": "2024-08-18T11:53:44+00:00",
+        "artifact": "spark-scala-parent@0.11.2",
+        "description": "Zeppelin: Spark Scala Parent",
+        "license": "Apache-2.0",
+        "icon": "<i class=\"fa fa-rocket\"></i>",
+        "groupId": "org.apache.zeppelin",
+        "artifactId": "spark-scala-parent"
+      },
+      "0.11.1": {
+        "type": "INTERPRETER",
+        "name": "spark-scala-parent",
+        "version": "0.11.1",
+        "published": "2024-03-29T06:23:48+00:00",
+        "artifact": "spark-scala-parent@0.11.1",
+        "description": "Zeppelin: Spark Scala Parent",
+        "license": "Apache-2.0",
+        "icon": "<i class=\"fa fa-rocket\"></i>",
+        "groupId": "org.apache.zeppelin",
+        "artifactId": "spark-scala-parent"
+      },
+      "0.11.0": {
+        "type": "INTERPRETER",
+        "name": "spark-scala-parent",
+        "version": "0.11.0",
+        "published": "2024-02-16T12:19:16+00:00",
+        "artifact": "spark-scala-parent@0.11.0",
+        "description": "Zeppelin: Spark Scala Parent",
+        "license": "Apache-2.0",
+        "icon": "<i class=\"fa fa-rocket\"></i>",
+        "groupId": "org.apache.zeppelin",
+        "artifactId": "spark-scala-parent"
+      }
+    },
     "spark-shims": {
       "latest": {
         "type": "INTERPRETER",
