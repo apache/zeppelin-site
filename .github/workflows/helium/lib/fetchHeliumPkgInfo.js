@@ -5,13 +5,6 @@ import dependants from 'npm-dependants';
 
 const depList = ['zeppelin-vis', 'zeppelin-spell'];
 
-const removeExtraSquareBracket = function (jsonArray) {
-  jsonArray = jsonArray.map(function (e) {
-    return stringify(e);
-  });
-  return jsonArray.join(',');
-};
-
 const setEachVersionInfo = function (dependency, data) {
   const eachVerInfo = {};
   const versions = data.versions;
@@ -33,18 +26,18 @@ const setEachVersionInfo = function (dependency, data) {
       published: data.time[verTag],
       artifact: key._id,
       author:
-        key.author?.name == undefined && key.maintainers[0].name == undefined
-          ? 'unknown'
-          : key.author?.name || key.maintainers[0].name,
+          key.author?.name == undefined && key.maintainers[0].name == undefined
+              ? 'unknown'
+              : key.author?.name || key.maintainers[0].name,
       description: key.description == undefined ? 'unknown' : key.description,
       license: key.license == undefined ? 'unknown' : key.license,
       icon: key.helium
-        ? key.helium.icon == undefined
-          ? defaultIcon
-          : key.helium.icon
-        : key.icon == undefined
-        ? defaultIcon
-        : key.icon,
+          ? key.helium.icon == undefined
+              ? defaultIcon
+              : key.helium.icon
+          : key.icon == undefined
+              ? defaultIcon
+              : key.icon,
       config: key.helium ? key.helium.config : undefined,
       spell: key.helium ? key.helium.spell : undefined,
     };
@@ -54,20 +47,18 @@ const setEachVersionInfo = function (dependency, data) {
 
 const finalResult = {};
 const client = new RegistryClient();
-async function getDependencies(packageName) {
+async function getDependencies(packageName, dependency) {
   await client.get(
-    `https://registry.npmjs.org/${packageName}`,
-    { timeout: 1000 },
-    (error, data) => {
-      if (error) {
-        console.error(error.message);
-        return reject(error);
-      }
+      `https://registry.npmjs.org/${packageName}`,
+      { timeout: 1000 },
+      (error, data) => {
+        if (error) {
+          console.error(error.message);
+          return reject(error);
+        }
 
-      const pkgInfo = {};
-      finalResult[data.name] = setEachVersionInfo(packageName, data);
-      // var result = removeExtraSquareBracket(finalResult).replace(/]|[[]/g, '').trim()
-    }
+        finalResult[data.name] = setEachVersionInfo(dependency, data);
+      }
   );
 }
 
@@ -75,9 +66,9 @@ const delay = (timeToDelay) => new Promise((resolve) => setTimeout(resolve, time
 export async function fetchHelium() {
   depList.map(async function (dependency) {
     for await (const dependant of dependants(dependency)) {
-      await getDependencies(dependant);
+      await getDependencies(dependant, dependency);
     }
   });
-  await delay(10000);
+  await delay(12000);
   return finalResult;
 }
