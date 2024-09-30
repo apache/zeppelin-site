@@ -1192,7 +1192,7 @@
     },
     "apache-sedona": {
       "1.0.1-incubating": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.0.1-incubating",
         "published": "2021-05-26T03:29:58.497Z",
@@ -1203,7 +1203,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.0-incubating": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.1.0-incubating",
         "published": "2021-10-06T17:10:13.433Z",
@@ -1214,7 +1214,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.1-incubating": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.1.1-incubating",
         "published": "2021-11-23T19:04:44.537Z",
@@ -1225,7 +1225,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.2.0-incubating": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.2.0-incubating",
         "published": "2022-04-17T01:20:12.945Z",
@@ -1236,7 +1236,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.2.1-incubating": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.2.1-incubating",
         "published": "2022-08-31T02:49:49.058Z",
@@ -1247,7 +1247,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.3.0-incubating": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.3.0-incubating",
         "published": "2022-12-02T00:46:12.695Z",
@@ -1258,7 +1258,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.3.1-incubating": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.3.1-incubating",
         "published": "2022-12-23T10:59:01.489Z",
@@ -1269,7 +1269,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.4.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.4.0",
         "published": "2023-03-19T22:53:48.046Z",
@@ -1280,7 +1280,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.4.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.4.1",
         "published": "2023-06-25T01:25:25.603Z",
@@ -1291,7 +1291,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.5.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.5.0",
         "published": "2023-10-12T08:03:28.881Z",
@@ -1302,7 +1302,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.5.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.5.1",
         "published": "2024-01-17T17:50:34.060Z",
@@ -1313,7 +1313,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.5.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.5.2",
         "published": "2024-05-07T17:57:34.708Z",
@@ -1324,7 +1324,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.5.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.5.3",
         "published": "2024-05-10T06:36:00.807Z",
@@ -1335,7 +1335,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.6.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.6.0",
         "published": "2024-05-17T17:51:39.277Z",
@@ -1346,7 +1346,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.6.1",
         "published": "2024-08-25T03:35:17.708Z",
@@ -1372,7 +1372,7 @@
     },
     "geospark-zeppelin": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "geospark-zeppelin",
         "version": "0.0.1",
         "published": "2019-02-28T07:38:22.944Z",
@@ -1383,7 +1383,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "geospark-zeppelin",
         "version": "1.2.0",
         "published": "2019-03-03T10:34:36.560Z",
@@ -1396,7 +1396,7 @@
     },
     "sogou-map-geo": {
       "1.0.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.0",
         "published": "2018-07-10T08:15:18.760Z",
@@ -1407,7 +1407,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.1",
         "published": "2018-07-10T08:56:45.109Z",
@@ -1418,7 +1418,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.2",
         "published": "2018-07-10T10:25:47.391Z",
@@ -1429,7 +1429,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.3",
         "published": "2018-07-10T12:08:27.865Z",
@@ -1440,7 +1440,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.4",
         "published": "2018-07-10T12:16:29.034Z",
@@ -1451,7 +1451,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.5",
         "published": "2018-07-10T13:14:21.726Z",
@@ -1462,7 +1462,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.6",
         "published": "2018-07-11T01:51:24.623Z",
@@ -1473,7 +1473,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.7",
         "published": "2018-07-11T03:30:42.712Z",
@@ -1484,7 +1484,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.8",
         "published": "2018-07-11T05:37:58.867Z",
@@ -1495,7 +1495,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.9",
         "published": "2018-07-11T06:25:05.749Z",
@@ -1506,7 +1506,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.10",
         "published": "2018-07-11T06:56:08.847Z",
@@ -1517,7 +1517,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.11",
         "published": "2018-07-11T07:20:35.348Z",
@@ -1528,7 +1528,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.13": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.13",
         "published": "2018-07-11T08:16:30.781Z",
@@ -1539,7 +1539,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.14": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.14",
         "published": "2018-07-11T09:07:34.729Z",
@@ -1550,7 +1550,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.15": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.15",
         "published": "2018-07-11T09:49:49.293Z",
@@ -1561,7 +1561,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.16": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.16",
         "published": "2018-07-11T11:15:05.062Z",
@@ -1572,7 +1572,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.17": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.17",
         "published": "2018-07-11T11:39:10.139Z",
@@ -1583,7 +1583,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.18": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.18",
         "published": "2018-07-11T12:04:48.987Z",
@@ -1594,7 +1594,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.19": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.19",
         "published": "2018-07-11T12:45:08.942Z",
@@ -1605,7 +1605,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.20": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.20",
         "published": "2018-07-11T12:58:55.105Z",
@@ -1616,7 +1616,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.21": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.21",
         "published": "2018-07-12T02:38:26.001Z",
@@ -1627,7 +1627,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.22": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.22",
         "published": "2018-07-12T02:51:35.057Z",
@@ -1638,7 +1638,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.23": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.23",
         "published": "2018-07-12T03:18:07.254Z",
@@ -1649,7 +1649,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.24": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.24",
         "published": "2018-07-12T03:25:09.263Z",
@@ -1660,7 +1660,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.25": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.25",
         "published": "2018-07-12T06:34:36.735Z",
@@ -1671,7 +1671,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.26": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.26",
         "published": "2018-07-12T07:24:08.297Z",
@@ -1682,7 +1682,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.27": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.27",
         "published": "2018-07-12T08:48:13.695Z",
@@ -1693,7 +1693,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.28": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.28",
         "published": "2018-07-12T08:59:59.555Z",
@@ -1704,7 +1704,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.29": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.29",
         "published": "2018-07-12T11:52:31.785Z",
@@ -1715,7 +1715,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.30": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.30",
         "published": "2018-07-12T12:28:33.936Z",
@@ -1726,7 +1726,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.31": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.31",
         "published": "2018-07-12T12:51:02.920Z",
@@ -1737,7 +1737,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-geo",
         "version": "1.0.32",
         "published": "2018-07-12T13:26:44.816Z",
@@ -1750,7 +1750,7 @@
     },
     "sogou-map-vis": {
       "1.0.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.0",
         "published": "2018-07-06T08:22:24.716Z",
@@ -1761,7 +1761,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.1",
         "published": "2018-07-07T08:04:59.051Z",
@@ -1772,7 +1772,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.2",
         "published": "2018-07-07T14:11:53.250Z",
@@ -1783,7 +1783,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.3",
         "published": "2018-07-07T14:24:02.923Z",
@@ -1794,7 +1794,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.4",
         "published": "2018-07-07T14:41:28.937Z",
@@ -1805,7 +1805,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.5",
         "published": "2018-07-08T08:10:46.242Z",
@@ -1816,7 +1816,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.6",
         "published": "2018-07-13T03:06:41.159Z",
@@ -1827,7 +1827,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.7",
         "published": "2018-07-13T03:40:09.231Z",
@@ -1838,7 +1838,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.8",
         "published": "2018-07-13T03:54:40.428Z",
@@ -1849,7 +1849,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.9",
         "published": "2018-07-13T06:26:18.292Z",
@@ -1860,7 +1860,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.10",
         "published": "2018-07-13T09:36:16.680Z",
@@ -1871,7 +1871,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.11",
         "published": "2018-07-13T09:57:58.047Z",
@@ -1882,7 +1882,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.12": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.12",
         "published": "2018-07-13T10:06:51.172Z",
@@ -1893,7 +1893,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.13": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.13",
         "published": "2018-07-16T07:16:41.972Z",
@@ -1904,7 +1904,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.14": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.14",
         "published": "2018-07-16T08:28:52.733Z",
@@ -1915,7 +1915,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.15": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.15",
         "published": "2018-07-16T08:59:03.510Z",
@@ -1926,7 +1926,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.16": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.16",
         "published": "2018-07-16T12:04:18.774Z",
@@ -1937,7 +1937,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.17": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.17",
         "published": "2018-07-16T15:28:55.810Z",
@@ -1948,7 +1948,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.18": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.18",
         "published": "2018-07-16T15:49:44.345Z",
@@ -1959,7 +1959,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.19": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.19",
         "published": "2018-07-17T01:49:25.665Z",
@@ -1970,7 +1970,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.20": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.20",
         "published": "2018-07-17T02:25:48.828Z",
@@ -1981,7 +1981,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.21": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.21",
         "published": "2018-07-17T02:37:33.739Z",
@@ -1992,7 +1992,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.31": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.31",
         "published": "2018-07-17T08:26:16.990Z",
@@ -2003,7 +2003,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.32": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.32",
         "published": "2018-07-17T08:34:21.665Z",
@@ -2014,7 +2014,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.33": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.33",
         "published": "2018-07-17T09:30:44.205Z",
@@ -2025,7 +2025,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.34": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.34",
         "published": "2018-07-17T09:57:48.095Z",
@@ -2036,7 +2036,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.35": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.35",
         "published": "2018-07-17T11:33:46.681Z",
@@ -2047,7 +2047,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.36": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.36",
         "published": "2018-07-19T08:14:28.614Z",
@@ -2058,7 +2058,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.37": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.37",
         "published": "2018-07-19T08:51:58.942Z",
@@ -2069,7 +2069,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.38": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.38",
         "published": "2018-07-19T09:09:58.592Z",
@@ -2080,7 +2080,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.39": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.39",
         "published": "2018-07-19T09:33:22.779Z",
@@ -2091,7 +2091,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.40": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.40",
         "published": "2018-07-19T09:42:07.830Z",
@@ -2102,7 +2102,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.41": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.41",
         "published": "2018-07-19T10:59:43.954Z",
@@ -2113,7 +2113,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.42": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.42",
         "published": "2018-07-19T11:16:02.860Z",
@@ -2124,7 +2124,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.43": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.43",
         "published": "2018-07-19T11:36:49.856Z",
@@ -2135,7 +2135,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.44": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.44",
         "published": "2018-07-19T11:54:01.078Z",
@@ -2146,7 +2146,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.45": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.45",
         "published": "2018-07-19T12:04:34.388Z",
@@ -2157,7 +2157,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.46": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.46",
         "published": "2018-07-19T12:12:52.155Z",
@@ -2168,7 +2168,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.47": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.47",
         "published": "2018-07-19T12:17:54.942Z",
@@ -2179,7 +2179,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.48": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.48",
         "published": "2018-07-20T07:49:33.102Z",
@@ -2190,7 +2190,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.49": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.49",
         "published": "2018-07-20T08:09:33.198Z",
@@ -2201,7 +2201,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.50": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.50",
         "published": "2018-07-20T08:29:00.316Z",
@@ -2212,7 +2212,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.51": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.51",
         "published": "2018-07-20T08:42:49.097Z",
@@ -2223,7 +2223,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.52": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.52",
         "published": "2018-07-20T08:59:17.601Z",
@@ -2234,7 +2234,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.53": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.53",
         "published": "2018-07-20T09:01:56.716Z",
@@ -2245,7 +2245,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.54": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.54",
         "published": "2018-07-23T02:34:43.717Z",
@@ -2256,7 +2256,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.55": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.55",
         "published": "2018-07-24T08:21:08.920Z",
@@ -2267,7 +2267,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.56": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.56",
         "published": "2018-07-24T08:28:35.565Z",
@@ -2278,7 +2278,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.57": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.57",
         "published": "2018-07-24T08:55:16.757Z",
@@ -2289,7 +2289,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.58": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.58",
         "published": "2018-07-24T09:07:46.054Z",
@@ -2300,7 +2300,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.59": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.59",
         "published": "2018-07-24T09:15:23.585Z",
@@ -2311,7 +2311,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.60": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.60",
         "published": "2018-07-24T09:48:12.952Z",
@@ -2322,7 +2322,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.61": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.61",
         "published": "2018-07-24T11:34:27.864Z",
@@ -2333,7 +2333,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.62": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.62",
         "published": "2018-07-24T12:40:08.342Z",
@@ -2344,7 +2344,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.63": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.63",
         "published": "2018-07-24T12:57:00.551Z",
@@ -2355,7 +2355,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.64": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.64",
         "published": "2018-07-25T09:17:55.533Z",
@@ -2366,7 +2366,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.65": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.65",
         "published": "2018-07-25T09:35:23.470Z",
@@ -2377,7 +2377,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.66": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.66",
         "published": "2018-07-25T09:44:50.206Z",
@@ -2388,7 +2388,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.67": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.67",
         "published": "2018-07-25T10:00:29.630Z",
@@ -2399,7 +2399,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.68": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.68",
         "published": "2018-07-25T11:23:02.946Z",
@@ -2410,7 +2410,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.69": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.69",
         "published": "2018-07-25T11:49:38.602Z",
@@ -2421,7 +2421,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.70": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.70",
         "published": "2018-07-25T12:28:22.002Z",
@@ -2432,7 +2432,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.71": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.71",
         "published": "2018-07-25T13:01:27.137Z",
@@ -2443,7 +2443,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.72": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.72",
         "published": "2018-07-26T01:52:14.015Z",
@@ -2454,7 +2454,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.73": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.73",
         "published": "2018-07-26T02:07:35.585Z",
@@ -2465,7 +2465,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.74": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.74",
         "published": "2018-07-26T02:46:53.826Z",
@@ -2476,7 +2476,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.75": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.75",
         "published": "2018-07-26T02:59:05.736Z",
@@ -2487,7 +2487,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.76": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.76",
         "published": "2018-07-26T03:30:22.441Z",
@@ -2498,7 +2498,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.77": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.77",
         "published": "2018-07-26T03:34:42.161Z",
@@ -2509,7 +2509,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.78": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.78",
         "published": "2018-07-26T03:44:29.749Z",
@@ -2520,7 +2520,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.79": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.0.79",
         "published": "2018-07-26T03:52:12.297Z",
@@ -2531,7 +2531,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.0",
         "published": "2018-07-26T05:06:37.195Z",
@@ -2542,7 +2542,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.1",
         "published": "2018-07-26T05:24:35.199Z",
@@ -2553,7 +2553,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.2",
         "published": "2018-07-26T05:46:04.475Z",
@@ -2564,7 +2564,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.3",
         "published": "2018-07-26T05:51:26.273Z",
@@ -2575,7 +2575,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.4",
         "published": "2018-07-26T06:07:53.747Z",
@@ -2586,7 +2586,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.5",
         "published": "2018-07-26T06:24:51.416Z",
@@ -2597,7 +2597,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.6",
         "published": "2018-07-26T07:17:26.724Z",
@@ -2608,7 +2608,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.7",
         "published": "2018-07-27T03:32:42.330Z",
@@ -2619,7 +2619,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.8",
         "published": "2018-07-27T03:51:55.800Z",
@@ -2630,7 +2630,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.9",
         "published": "2018-07-27T06:17:09.634Z",
@@ -2641,7 +2641,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.10",
         "published": "2018-07-27T10:34:28.662Z",
@@ -2652,7 +2652,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.11",
         "published": "2018-07-30T06:49:40.451Z",
@@ -2663,7 +2663,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.12": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.12",
         "published": "2018-07-30T07:13:30.486Z",
@@ -2674,7 +2674,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.13": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.13",
         "published": "2018-07-30T07:31:04.007Z",
@@ -2685,7 +2685,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.14": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.14",
         "published": "2018-07-30T07:33:39.484Z",
@@ -2696,7 +2696,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.15": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.15",
         "published": "2018-07-30T07:40:51.318Z",
@@ -2707,7 +2707,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.16": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.16",
         "published": "2018-07-30T08:08:19.062Z",
@@ -2718,7 +2718,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.17": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.17",
         "published": "2018-07-30T08:14:50.743Z",
@@ -2729,7 +2729,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.18": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.18",
         "published": "2018-07-30T09:27:51.452Z",
@@ -2740,7 +2740,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.19": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.19",
         "published": "2018-07-30T09:33:16.084Z",
@@ -2751,7 +2751,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.20": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.20",
         "published": "2018-07-31T03:54:20.369Z",
@@ -2762,7 +2762,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.21": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.21",
         "published": "2018-07-31T04:54:54.995Z",
@@ -2773,7 +2773,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.22": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.22",
         "published": "2018-07-31T05:06:13.986Z",
@@ -2784,7 +2784,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.23": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.23",
         "published": "2018-07-31T06:02:22.887Z",
@@ -2795,7 +2795,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.24": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.24",
         "published": "2018-07-31T06:14:38.001Z",
@@ -2806,7 +2806,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.25": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.25",
         "published": "2018-07-31T06:24:26.462Z",
@@ -2817,7 +2817,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.26": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.26",
         "published": "2018-07-31T06:56:01.648Z",
@@ -2828,7 +2828,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.27": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.27",
         "published": "2018-07-31T07:41:21.417Z",
@@ -2839,7 +2839,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.28": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.28",
         "published": "2018-07-31T08:00:49.680Z",
@@ -2850,7 +2850,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.29": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.29",
         "published": "2018-07-31T08:09:54.076Z",
@@ -2861,7 +2861,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.30": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.30",
         "published": "2018-07-31T08:30:38.496Z",
@@ -2872,7 +2872,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.31": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.31",
         "published": "2018-07-31T08:40:36.020Z",
@@ -2883,7 +2883,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.32": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.32",
         "published": "2018-07-31T09:09:36.588Z",
@@ -2894,7 +2894,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.33": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.33",
         "published": "2018-07-31T09:39:11.141Z",
@@ -2905,7 +2905,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.34": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.34",
         "published": "2018-07-31T11:25:38.628Z",
@@ -2916,7 +2916,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.35": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.35",
         "published": "2018-07-31T11:39:48.242Z",
@@ -2927,7 +2927,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.36": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.36",
         "published": "2018-07-31T11:54:25.507Z",
@@ -2938,7 +2938,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.37": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.37",
         "published": "2018-07-31T12:03:47.352Z",
@@ -2949,7 +2949,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.38": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.38",
         "published": "2018-07-31T12:42:04.621Z",
@@ -2960,7 +2960,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.39": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.39",
         "published": "2018-07-31T12:55:57.933Z",
@@ -2971,7 +2971,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.40": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.40",
         "published": "2018-08-01T02:38:02.134Z",
@@ -2982,7 +2982,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.41": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.41",
         "published": "2018-08-01T02:47:23.515Z",
@@ -2993,7 +2993,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.42": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.42",
         "published": "2018-08-01T02:50:18.875Z",
@@ -3004,7 +3004,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.43": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.43",
         "published": "2018-08-01T05:42:59.925Z",
@@ -3015,7 +3015,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.44": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.44",
         "published": "2018-08-01T07:31:17.797Z",
@@ -3026,7 +3026,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.45": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.45",
         "published": "2018-08-01T07:41:22.970Z",
@@ -3037,7 +3037,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.46": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.46",
         "published": "2018-08-01T07:56:09.139Z",
@@ -3048,7 +3048,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.47": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.47",
         "published": "2018-08-01T08:07:23.299Z",
@@ -3059,7 +3059,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.48": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.48",
         "published": "2018-08-02T01:53:27.855Z",
@@ -3070,7 +3070,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.49": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.49",
         "published": "2018-08-02T02:07:19.326Z",
@@ -3081,7 +3081,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.50": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.50",
         "published": "2018-08-02T02:15:44.156Z",
@@ -3092,7 +3092,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.51": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.51",
         "published": "2018-08-02T12:25:05.684Z",
@@ -3103,7 +3103,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.1.52": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.52",
         "published": "2018-08-02T12:35:15.188Z",
@@ -3114,7 +3114,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis",
         "version": "1.1.53",
         "published": "2018-08-02T12:41:35.788Z",
@@ -3127,7 +3127,7 @@
     },
     "sogou-map-vis-geom": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.1",
         "published": "2018-08-03T09:01:03.756Z",
@@ -3138,7 +3138,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.2",
         "published": "2018-08-03T09:37:53.552Z",
@@ -3149,7 +3149,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.3",
         "published": "2018-08-03T11:07:16.183Z",
@@ -3160,7 +3160,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.4",
         "published": "2018-08-03T11:19:28.068Z",
@@ -3171,7 +3171,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.5",
         "published": "2018-08-03T11:27:44.675Z",
@@ -3182,7 +3182,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.6",
         "published": "2018-08-03T12:09:43.089Z",
@@ -3193,7 +3193,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.7",
         "published": "2018-08-03T12:19:27.325Z",
@@ -3204,7 +3204,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.8",
         "published": "2018-08-03T12:22:33.860Z",
@@ -3215,7 +3215,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.9",
         "published": "2018-08-03T12:32:11.868Z",
@@ -3226,7 +3226,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.10",
         "published": "2018-08-03T13:01:52.322Z",
@@ -3237,7 +3237,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.11",
         "published": "2018-08-03T13:09:15.580Z",
@@ -3248,7 +3248,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.12": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.12",
         "published": "2018-08-05T09:46:22.167Z",
@@ -3259,7 +3259,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.13": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.13",
         "published": "2018-08-05T09:55:53.468Z",
@@ -3270,7 +3270,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.14": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.14",
         "published": "2018-08-05T13:01:41.661Z",
@@ -3281,7 +3281,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.15": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.15",
         "published": "2018-08-06T03:16:44.024Z",
@@ -3292,7 +3292,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.16": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.16",
         "published": "2018-08-06T03:20:45.878Z",
@@ -3303,7 +3303,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.17": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.17",
         "published": "2018-08-06T05:49:38.277Z",
@@ -3314,7 +3314,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.18": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.18",
         "published": "2018-08-06T06:05:50.145Z",
@@ -3325,7 +3325,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.19": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.19",
         "published": "2018-08-06T06:53:29.441Z",
@@ -3336,7 +3336,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.20": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.20",
         "published": "2018-08-06T07:29:39.289Z",
@@ -3347,7 +3347,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.21": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.21",
         "published": "2018-08-06T07:44:36.782Z",
@@ -3358,7 +3358,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.22": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.22",
         "published": "2018-08-06T08:08:43.126Z",
@@ -3369,7 +3369,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.23": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.23",
         "published": "2018-08-06T08:23:41.546Z",
@@ -3380,7 +3380,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.24": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.24",
         "published": "2018-08-06T08:30:20.957Z",
@@ -3391,7 +3391,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.25": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.25",
         "published": "2018-08-06T09:02:29.520Z",
@@ -3402,7 +3402,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.26": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.26",
         "published": "2018-08-06T09:20:22.540Z",
@@ -3413,7 +3413,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.27": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.27",
         "published": "2018-08-06T11:21:56.704Z",
@@ -3424,7 +3424,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.28": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.28",
         "published": "2018-08-06T11:37:15.508Z",
@@ -3435,7 +3435,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.29": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.29",
         "published": "2018-08-06T11:58:05.996Z",
@@ -3446,7 +3446,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.30": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.30",
         "published": "2018-08-06T13:08:06.601Z",
@@ -3457,7 +3457,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.31": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.31",
         "published": "2018-08-06T13:32:18.978Z",
@@ -3468,7 +3468,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.33": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.33",
         "published": "2018-08-06T15:15:40.318Z",
@@ -3479,7 +3479,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.34": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.34",
         "published": "2018-08-07T01:49:36.497Z",
@@ -3490,7 +3490,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.35": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.35",
         "published": "2018-08-07T03:21:44.587Z",
@@ -3501,7 +3501,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.36": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.36",
         "published": "2018-08-07T04:58:59.704Z",
@@ -3512,7 +3512,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.37": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.37",
         "published": "2018-08-07T05:29:42.163Z",
@@ -3523,7 +3523,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.38": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.38",
         "published": "2018-08-07T05:47:57.805Z",
@@ -3534,7 +3534,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.39": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.39",
         "published": "2018-08-07T06:03:21.059Z",
@@ -3545,7 +3545,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.40": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.40",
         "published": "2018-08-07T06:06:54.001Z",
@@ -3556,7 +3556,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.41": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.41",
         "published": "2018-08-07T06:17:31.756Z",
@@ -3567,7 +3567,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.42": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.42",
         "published": "2018-08-07T06:48:49.734Z",
@@ -3578,7 +3578,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.43": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.43",
         "published": "2018-08-07T06:57:33.805Z",
@@ -3589,7 +3589,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.44": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.44",
         "published": "2018-08-07T07:22:27.786Z",
@@ -3600,7 +3600,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.45": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.45",
         "published": "2018-08-07T07:43:55.485Z",
@@ -3611,7 +3611,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.46": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.46",
         "published": "2018-08-07T07:53:11.904Z",
@@ -3622,7 +3622,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.47": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.47",
         "published": "2018-08-07T09:03:00.162Z",
@@ -3633,7 +3633,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.48": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.48",
         "published": "2018-08-07T09:32:55.656Z",
@@ -3644,7 +3644,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.49": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.49",
         "published": "2018-08-07T12:50:12.078Z",
@@ -3655,7 +3655,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.50": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.50",
         "published": "2018-08-07T13:05:26.777Z",
@@ -3666,7 +3666,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.51": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.51",
         "published": "2018-08-07T13:14:16.055Z",
@@ -3677,7 +3677,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.52": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.52",
         "published": "2018-08-07T13:16:32.605Z",
@@ -3688,7 +3688,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.53": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.53",
         "published": "2018-08-07T13:23:42.386Z",
@@ -3699,7 +3699,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.54": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.54",
         "published": "2018-08-07T13:36:20.291Z",
@@ -3710,7 +3710,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.55": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.55",
         "published": "2018-08-07T13:51:37.551Z",
@@ -3721,7 +3721,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.56": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.56",
         "published": "2018-08-07T13:54:14.094Z",
@@ -3732,7 +3732,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.57": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.57",
         "published": "2018-08-07T14:11:32.469Z",
@@ -3743,7 +3743,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.58": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.58",
         "published": "2018-08-08T02:54:55.521Z",
@@ -3754,7 +3754,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.59": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.59",
         "published": "2018-08-08T03:33:13.341Z",
@@ -3765,7 +3765,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.60": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.60",
         "published": "2018-08-08T05:03:45.402Z",
@@ -3776,7 +3776,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.61": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.61",
         "published": "2018-08-08T05:27:30.716Z",
@@ -3787,7 +3787,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.62": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.62",
         "published": "2018-08-08T05:56:21.290Z",
@@ -3798,7 +3798,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.63": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.63",
         "published": "2018-08-08T06:33:07.257Z",
@@ -3809,7 +3809,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.64": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.64",
         "published": "2018-08-08T06:42:31.117Z",
@@ -3820,7 +3820,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.65": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.65",
         "published": "2018-08-08T06:59:16.901Z",
@@ -3831,7 +3831,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.66": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.66",
         "published": "2018-08-08T07:40:54.322Z",
@@ -3842,7 +3842,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.67": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.67",
         "published": "2018-08-08T08:45:45.894Z",
@@ -3853,7 +3853,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.68": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.68",
         "published": "2018-08-08T12:22:24.968Z",
@@ -3864,7 +3864,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.69": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.69",
         "published": "2018-08-08T12:43:51.680Z",
@@ -3875,7 +3875,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.70": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.70",
         "published": "2018-08-08T13:17:43.647Z",
@@ -3886,7 +3886,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.71": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.71",
         "published": "2018-08-08T16:13:26.890Z",
@@ -3897,7 +3897,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.72": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.72",
         "published": "2018-08-08T16:22:21.995Z",
@@ -3908,7 +3908,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.73": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.73",
         "published": "2018-08-08T16:59:55.409Z",
@@ -3919,7 +3919,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.74": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.74",
         "published": "2018-08-08T17:06:30.994Z",
@@ -3930,7 +3930,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.75": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.75",
         "published": "2018-08-08T17:45:13.631Z",
@@ -3941,7 +3941,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.76": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.76",
         "published": "2018-08-08T18:16:15.113Z",
@@ -3952,7 +3952,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.77": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.77",
         "published": "2018-08-08T18:22:29.560Z",
@@ -3963,7 +3963,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.78": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.78",
         "published": "2018-08-08T18:29:40.049Z",
@@ -3974,7 +3974,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.79": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.79",
         "published": "2018-08-08T18:44:08.452Z",
@@ -3985,7 +3985,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.80": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.80",
         "published": "2018-08-08T18:51:27.174Z",
@@ -3996,7 +3996,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.81": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.81",
         "published": "2018-08-08T19:04:04.777Z",
@@ -4007,7 +4007,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.82": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.82",
         "published": "2018-08-08T19:29:03.879Z",
@@ -4018,7 +4018,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.83": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.83",
         "published": "2018-08-08T19:35:57.632Z",
@@ -4029,7 +4029,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.84": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.84",
         "published": "2018-08-08T20:11:45.793Z",
@@ -4040,7 +4040,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.85": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.85",
         "published": "2018-08-08T20:17:57.011Z",
@@ -4051,7 +4051,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.86": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.86",
         "published": "2018-08-08T20:29:27.099Z",
@@ -4062,7 +4062,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.87": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.87",
         "published": "2018-08-08T20:59:25.031Z",
@@ -4073,7 +4073,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.88": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.88",
         "published": "2018-08-08T21:11:38.907Z",
@@ -4084,7 +4084,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.89": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.89",
         "published": "2018-08-08T21:16:38.592Z",
@@ -4095,7 +4095,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.90": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.90",
         "published": "2018-08-08T21:21:37.354Z",
@@ -4106,7 +4106,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.91": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.91",
         "published": "2018-08-08T21:42:33.533Z",
@@ -4117,7 +4117,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.92": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.92",
         "published": "2018-08-08T21:54:16.024Z",
@@ -4128,7 +4128,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.93": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.93",
         "published": "2018-08-08T22:09:47.784Z",
@@ -4139,7 +4139,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.94": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.94",
         "published": "2018-08-08T22:13:21.793Z",
@@ -4150,7 +4150,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.95": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.95",
         "published": "2018-08-08T22:47:55.034Z",
@@ -4161,7 +4161,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.96": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.96",
         "published": "2018-08-09T01:44:06.018Z",
@@ -4172,7 +4172,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.97": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.97",
         "published": "2018-08-09T01:45:45.226Z",
@@ -4183,7 +4183,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.98": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.98",
         "published": "2018-08-09T02:39:41.528Z",
@@ -4194,7 +4194,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.99": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.99",
         "published": "2018-08-09T02:55:05.646Z",
@@ -4205,7 +4205,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.100": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.100",
         "published": "2018-08-09T02:57:27.591Z",
@@ -4216,7 +4216,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.101": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.101",
         "published": "2018-08-09T06:55:47.860Z",
@@ -4227,7 +4227,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.102": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.102",
         "published": "2018-08-09T07:20:50.738Z",
@@ -4238,7 +4238,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.103": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.103",
         "published": "2018-08-09T07:48:14.197Z",
@@ -4249,7 +4249,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.104": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.104",
         "published": "2018-08-09T08:26:35.412Z",
@@ -4260,7 +4260,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.105": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.105",
         "published": "2018-08-09T09:13:30.875Z",
@@ -4271,7 +4271,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.106": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.106",
         "published": "2018-08-09T09:28:13.958Z",
@@ -4282,7 +4282,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.107": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.107",
         "published": "2018-08-09T11:01:52.015Z",
@@ -4293,7 +4293,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.108": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.108",
         "published": "2018-08-09T11:13:05.303Z",
@@ -4304,7 +4304,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.109": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.109",
         "published": "2018-08-09T13:23:33.223Z",
@@ -4315,7 +4315,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.110": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.110",
         "published": "2018-08-09T13:39:31.138Z",
@@ -4326,7 +4326,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.111": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.111",
         "published": "2018-08-09T13:46:09.099Z",
@@ -4337,7 +4337,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.112": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.112",
         "published": "2018-08-09T14:05:15.497Z",
@@ -4348,7 +4348,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.113": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.113",
         "published": "2018-08-09T14:12:32.151Z",
@@ -4359,7 +4359,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.114": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.114",
         "published": "2018-08-10T02:34:49.173Z",
@@ -4370,7 +4370,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.115": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.115",
         "published": "2018-08-10T03:26:33.423Z",
@@ -4381,7 +4381,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.116": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.116",
         "published": "2018-08-10T04:49:17.661Z",
@@ -4392,7 +4392,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.117": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.117",
         "published": "2018-08-10T05:44:51.829Z",
@@ -4403,7 +4403,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.118": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.118",
         "published": "2018-08-10T06:55:44.597Z",
@@ -4414,7 +4414,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.119": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.119",
         "published": "2018-08-10T07:33:56.175Z",
@@ -4425,7 +4425,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.120": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.120",
         "published": "2018-08-10T08:07:08.777Z",
@@ -4436,7 +4436,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.121": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.121",
         "published": "2018-08-10T09:05:48.417Z",
@@ -4447,7 +4447,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.122": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.122",
         "published": "2018-08-10T10:12:24.062Z",
@@ -4458,7 +4458,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.123": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.123",
         "published": "2018-08-10T11:24:51.054Z",
@@ -4469,7 +4469,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.124": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.124",
         "published": "2018-08-10T11:34:35.422Z",
@@ -4480,7 +4480,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.125": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.125",
         "published": "2018-08-10T11:44:38.757Z",
@@ -4491,7 +4491,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.0.126": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.0.126",
         "published": "2018-08-10T13:30:47.032Z",
@@ -4502,7 +4502,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.0",
         "published": "2018-08-10T13:34:44.776Z",
@@ -4513,7 +4513,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.1",
         "published": "2018-08-12T07:09:58.350Z",
@@ -4524,7 +4524,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.2",
         "published": "2018-08-12T07:27:47.598Z",
@@ -4535,7 +4535,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.3",
         "published": "2018-08-12T11:03:43.057Z",
@@ -4546,7 +4546,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.4",
         "published": "2018-08-12T13:03:43.307Z",
@@ -4557,7 +4557,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.5",
         "published": "2018-08-12T13:21:41.190Z",
@@ -4568,7 +4568,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.6",
         "published": "2018-08-12T13:39:37.340Z",
@@ -4579,7 +4579,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.7",
         "published": "2018-08-12T14:01:36.323Z",
@@ -4590,7 +4590,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.8",
         "published": "2018-08-12T14:05:06.816Z",
@@ -4601,7 +4601,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.9",
         "published": "2018-08-12T14:23:36.507Z",
@@ -4612,7 +4612,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.10",
         "published": "2018-08-12T14:43:35.965Z",
@@ -4623,7 +4623,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.11",
         "published": "2018-08-12T15:53:47.396Z",
@@ -4634,7 +4634,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.12": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.12",
         "published": "2018-08-12T16:21:45.600Z",
@@ -4645,7 +4645,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.13": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.13",
         "published": "2018-08-12T16:49:34.528Z",
@@ -4656,7 +4656,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.14": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.14",
         "published": "2018-08-12T17:07:03.901Z",
@@ -4667,7 +4667,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.15": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.15",
         "published": "2018-08-13T02:05:01.337Z",
@@ -4678,7 +4678,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.16": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.16",
         "published": "2018-08-13T03:24:53.189Z",
@@ -4689,7 +4689,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.17": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.17",
         "published": "2018-08-13T04:47:09.959Z",
@@ -4700,7 +4700,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.18": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.18",
         "published": "2018-08-13T05:35:45.345Z",
@@ -4711,7 +4711,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.19": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.19",
         "published": "2018-08-13T05:47:29.784Z",
@@ -4722,7 +4722,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.20": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.20",
         "published": "2018-08-13T06:25:12.949Z",
@@ -4733,7 +4733,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.21": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.21",
         "published": "2018-08-13T07:05:13.504Z",
@@ -4744,7 +4744,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.22": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.22",
         "published": "2018-08-13T07:32:15.603Z",
@@ -4755,7 +4755,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.23": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.23",
         "published": "2018-08-15T11:41:27.220Z",
@@ -4766,7 +4766,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.24": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.24",
         "published": "2018-08-15T12:39:27.620Z",
@@ -4777,7 +4777,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.25": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.25",
         "published": "2018-08-15T12:58:51.924Z",
@@ -4788,7 +4788,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.26": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.26",
         "published": "2018-08-16T01:59:01.389Z",
@@ -4799,7 +4799,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.27": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.27",
         "published": "2018-08-16T02:22:05.782Z",
@@ -4810,7 +4810,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.28": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.28",
         "published": "2018-08-16T02:27:48.579Z",
@@ -4821,7 +4821,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.29": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.29",
         "published": "2018-08-16T02:56:14.458Z",
@@ -4832,7 +4832,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.30": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.30",
         "published": "2018-08-16T03:12:23.635Z",
@@ -4843,7 +4843,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.31": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.31",
         "published": "2018-08-16T03:39:06.053Z",
@@ -4854,7 +4854,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.32": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.32",
         "published": "2018-08-16T06:06:06.399Z",
@@ -4865,7 +4865,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.33": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.33",
         "published": "2018-08-16T06:11:05.868Z",
@@ -4876,7 +4876,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.34": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.34",
         "published": "2018-08-16T06:18:45.406Z",
@@ -4887,7 +4887,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.36": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.36",
         "published": "2018-08-17T02:57:22.030Z",
@@ -4898,7 +4898,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.37": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.37",
         "published": "2018-08-17T03:24:50.074Z",
@@ -4909,7 +4909,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.38": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.38",
         "published": "2018-08-17T03:46:36.804Z",
@@ -4920,7 +4920,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.39": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.39",
         "published": "2018-08-17T03:58:19.911Z",
@@ -4931,7 +4931,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.40": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.40",
         "published": "2018-08-17T05:08:09.504Z",
@@ -4942,7 +4942,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.41": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.41",
         "published": "2018-08-17T05:12:22.225Z",
@@ -4953,7 +4953,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.42": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.42",
         "published": "2018-08-17T05:58:10.448Z",
@@ -4964,7 +4964,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.43": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.43",
         "published": "2018-08-17T09:34:13.700Z",
@@ -4975,7 +4975,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.44": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.44",
         "published": "2018-08-17T09:40:14.086Z",
@@ -4986,7 +4986,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.45": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.45",
         "published": "2018-08-17T11:53:56.040Z",
@@ -4997,7 +4997,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.46": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.46",
         "published": "2018-08-17T12:17:53.348Z",
@@ -5008,7 +5008,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.47": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.47",
         "published": "2018-08-17T12:37:20.837Z",
@@ -5019,7 +5019,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.48": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.48",
         "published": "2018-08-17T12:45:16.043Z",
@@ -5030,7 +5030,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.49": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.49",
         "published": "2018-08-17T12:58:20.483Z",
@@ -5041,7 +5041,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.50": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.50",
         "published": "2018-08-20T02:35:58.852Z",
@@ -5052,7 +5052,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.51": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.51",
         "published": "2018-08-20T02:40:06.261Z",
@@ -5063,7 +5063,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.52": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.52",
         "published": "2018-08-20T03:06:38.968Z",
@@ -5074,7 +5074,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.53": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.53",
         "published": "2018-08-28T03:36:17.322Z",
@@ -5085,7 +5085,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.54": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.54",
         "published": "2018-08-28T06:25:42.456Z",
@@ -5096,7 +5096,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.55": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.55",
         "published": "2018-08-28T07:17:30.795Z",
@@ -5107,7 +5107,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.56": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.56",
         "published": "2018-09-02T14:58:58.951Z",
@@ -5118,7 +5118,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.57": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.57",
         "published": "2018-09-03T02:29:51.200Z",
@@ -5129,7 +5129,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.58": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.58",
         "published": "2018-09-03T03:06:31.721Z",
@@ -5140,7 +5140,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.59": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.59",
         "published": "2018-09-03T03:08:30.676Z",
@@ -5151,7 +5151,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.60": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.60",
         "published": "2018-09-03T03:17:20.636Z",
@@ -5162,7 +5162,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.61": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.61",
         "published": "2018-09-03T03:41:39.015Z",
@@ -5173,7 +5173,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.62": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.62",
         "published": "2018-09-03T05:55:40.358Z",
@@ -5184,7 +5184,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.63": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.63",
         "published": "2018-09-03T06:28:55.360Z",
@@ -5195,7 +5195,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.64": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.64",
         "published": "2018-09-03T07:54:08.969Z",
@@ -5206,7 +5206,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.65": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.65",
         "published": "2018-09-13T07:14:30.798Z",
@@ -5217,7 +5217,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.66": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.66",
         "published": "2018-09-13T07:51:06.782Z",
@@ -5228,7 +5228,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.67": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.67",
         "published": "2018-09-13T07:59:34.979Z",
@@ -5239,7 +5239,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.68": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.68",
         "published": "2018-09-13T08:11:13.319Z",
@@ -5250,7 +5250,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.69": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.69",
         "published": "2019-01-21T07:50:09.384Z",
@@ -5261,7 +5261,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.70": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.70",
         "published": "2019-01-21T07:55:49.069Z",
@@ -5272,7 +5272,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.71": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.71",
         "published": "2019-01-21T08:28:05.749Z",
@@ -5283,7 +5283,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "0.1.72": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.72",
         "published": "2019-01-21T08:41:35.931Z",
@@ -5294,7 +5294,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-geom",
         "version": "0.1.73",
         "published": "2019-01-21T08:52:26.060Z",
@@ -5307,7 +5307,7 @@
     },
     "sogou-map-vis-linkid": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.1",
         "published": "2018-08-02T05:39:17.292Z",
@@ -5318,7 +5318,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.2",
         "published": "2018-08-02T05:54:06.042Z",
@@ -5329,7 +5329,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.3",
         "published": "2018-08-02T09:19:50.633Z",
@@ -5340,7 +5340,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.4",
         "published": "2018-08-02T09:32:41.848Z",
@@ -5351,7 +5351,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.5",
         "published": "2018-08-02T10:52:13.758Z",
@@ -5362,7 +5362,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.6",
         "published": "2018-08-02T10:58:30.785Z",
@@ -5373,7 +5373,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.7",
         "published": "2018-08-02T11:24:11.342Z",
@@ -5384,7 +5384,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.8",
         "published": "2018-08-06T10:56:50.591Z",
@@ -5395,7 +5395,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.9",
         "published": "2018-08-06T11:12:15.710Z",
@@ -5406,7 +5406,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.10",
         "published": "2018-08-06T11:35:41.256Z",
@@ -5417,7 +5417,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.11",
         "published": "2018-08-06T13:42:49.555Z",
@@ -5428,7 +5428,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.12": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.12",
         "published": "2018-08-06T15:26:24.884Z",
@@ -5439,7 +5439,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.13": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.13",
         "published": "2018-08-07T10:58:22.797Z",
@@ -5450,7 +5450,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.14": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.14",
         "published": "2018-08-08T08:47:48.206Z",
@@ -5461,7 +5461,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.15": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.15",
         "published": "2018-08-08T09:01:50.347Z",
@@ -5472,7 +5472,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.16": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.16",
         "published": "2018-08-08T12:25:25.910Z",
@@ -5483,7 +5483,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.17": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.17",
         "published": "2018-08-08T12:53:48.510Z",
@@ -5494,7 +5494,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.18": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.18",
         "published": "2018-08-08T16:13:32.491Z",
@@ -5505,7 +5505,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.19": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.19",
         "published": "2018-08-08T16:26:06.797Z",
@@ -5516,7 +5516,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.20": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.20",
         "published": "2018-08-08T17:13:01.064Z",
@@ -5527,7 +5527,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.21": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.21",
         "published": "2018-08-08T21:25:45.367Z",
@@ -5538,7 +5538,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.22": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.22",
         "published": "2018-08-08T22:35:02.397Z",
@@ -5549,7 +5549,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.23": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.23",
         "published": "2018-08-08T22:47:52.345Z",
@@ -5560,7 +5560,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.24": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.24",
         "published": "2018-08-09T01:51:49.401Z",
@@ -5571,7 +5571,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.25": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.25",
         "published": "2018-08-09T06:39:12.874Z",
@@ -5582,7 +5582,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.26": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.26",
         "published": "2018-08-09T07:43:56.580Z",
@@ -5593,7 +5593,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.27": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.27",
         "published": "2018-08-09T08:26:28.270Z",
@@ -5604,7 +5604,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.28": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.28",
         "published": "2018-08-09T09:13:41.178Z",
@@ -5615,7 +5615,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.29": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.29",
         "published": "2018-08-09T09:34:22.288Z",
@@ -5626,7 +5626,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.30": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.30",
         "published": "2018-08-09T09:51:24.735Z",
@@ -5637,7 +5637,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.31": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.31",
         "published": "2018-08-09T11:26:08.168Z",
@@ -5648,7 +5648,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.32": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.32",
         "published": "2018-08-09T12:03:39.871Z",
@@ -5659,7 +5659,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.33": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.33",
         "published": "2018-08-09T12:08:10.057Z",
@@ -5670,7 +5670,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.34": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.34",
         "published": "2018-08-09T12:30:53.792Z",
@@ -5681,7 +5681,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.35": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.35",
         "published": "2018-08-09T12:52:20.540Z",
@@ -5692,7 +5692,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.36": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.36",
         "published": "2018-08-09T12:57:32.955Z",
@@ -5703,7 +5703,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.37": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.37",
         "published": "2018-08-09T13:07:58.482Z",
@@ -5714,7 +5714,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.38": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.38",
         "published": "2018-08-10T02:34:55.772Z",
@@ -5725,7 +5725,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.39": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.39",
         "published": "2018-08-10T03:26:36.337Z",
@@ -5736,7 +5736,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.40": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.40",
         "published": "2018-08-10T04:46:42.875Z",
@@ -5747,7 +5747,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.41": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.41",
         "published": "2018-08-10T05:44:55.565Z",
@@ -5758,7 +5758,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.42": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.42",
         "published": "2018-08-10T06:55:40.102Z",
@@ -5769,7 +5769,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.43": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.43",
         "published": "2018-08-10T07:33:53.118Z",
@@ -5780,7 +5780,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.44": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.44",
         "published": "2018-08-10T08:07:13.302Z",
@@ -5791,7 +5791,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.45": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.45",
         "published": "2018-08-12T08:34:46.850Z",
@@ -5802,7 +5802,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.46": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.46",
         "published": "2018-08-12T09:06:06.076Z",
@@ -5813,7 +5813,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.47": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.47",
         "published": "2018-08-12T11:03:37.718Z",
@@ -5824,7 +5824,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.48": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.48",
         "published": "2018-08-12T13:03:50.334Z",
@@ -5835,7 +5835,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.49": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.49",
         "published": "2018-08-12T14:43:44.450Z",
@@ -5846,7 +5846,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.50": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.50",
         "published": "2018-08-12T16:21:50.621Z",
@@ -5857,7 +5857,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.51": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.51",
         "published": "2018-08-12T16:49:29.676Z",
@@ -5868,7 +5868,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.52": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.52",
         "published": "2018-08-12T17:07:07.584Z",
@@ -5879,7 +5879,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.53": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.53",
         "published": "2018-08-13T02:05:05.518Z",
@@ -5890,7 +5890,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.54": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.54",
         "published": "2018-08-13T04:47:22.360Z",
@@ -5901,7 +5901,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.55": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.55",
         "published": "2018-08-13T05:35:51.518Z",
@@ -5912,7 +5912,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.56": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.56",
         "published": "2018-08-13T05:47:33.632Z",
@@ -5923,7 +5923,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.57": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.57",
         "published": "2018-08-13T06:25:18.807Z",
@@ -5934,7 +5934,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.58": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.58",
         "published": "2018-08-13T07:05:07.848Z",
@@ -5945,7 +5945,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.59": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.59",
         "published": "2018-08-13T07:32:19.502Z",
@@ -5956,7 +5956,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.60": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.60",
         "published": "2018-08-15T11:41:29.120Z",
@@ -5967,7 +5967,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.61": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.61",
         "published": "2018-08-15T12:39:30.184Z",
@@ -5978,7 +5978,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.62": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.62",
         "published": "2018-08-15T12:58:55.383Z",
@@ -5989,7 +5989,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.63": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.63",
         "published": "2018-08-16T03:39:10.118Z",
@@ -6000,7 +6000,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.64": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.64",
         "published": "2018-08-16T07:58:19.071Z",
@@ -6011,7 +6011,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.65": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.65",
         "published": "2018-08-16T08:13:46.643Z",
@@ -6022,7 +6022,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.0.66": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.0.66",
         "published": "2018-08-16T08:17:43.137Z",
@@ -6033,7 +6033,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.0",
         "published": "2018-08-17T05:37:55.546Z",
@@ -6044,7 +6044,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.1",
         "published": "2018-08-17T05:58:14.054Z",
@@ -6055,7 +6055,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.2",
         "published": "2018-08-28T03:38:32.723Z",
@@ -6066,7 +6066,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.3",
         "published": "2018-08-28T06:25:57.549Z",
@@ -6077,7 +6077,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.4",
         "published": "2018-08-28T07:17:36.379Z",
@@ -6088,7 +6088,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.5",
         "published": "2018-09-03T02:03:14.047Z",
@@ -6099,7 +6099,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.6",
         "published": "2018-09-03T03:41:43.329Z",
@@ -6110,7 +6110,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.7",
         "published": "2018-09-03T06:05:06.935Z",
@@ -6121,7 +6121,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.8",
         "published": "2018-09-03T06:29:00.330Z",
@@ -6132,7 +6132,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.10",
         "published": "2018-09-03T07:54:13.486Z",
@@ -6143,7 +6143,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.11",
         "published": "2018-09-03T09:28:24.349Z",
@@ -6154,7 +6154,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.12": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.12",
         "published": "2018-09-13T08:32:13.155Z",
@@ -6165,7 +6165,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "0.1.13": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.13",
         "published": "2019-02-19T03:03:41.706Z",
@@ -6176,7 +6176,7 @@
         "icon": "<i class='fa fa-globe' style='color:green'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-linkid",
         "version": "0.1.14",
         "published": "2019-02-19T03:42:40.257Z",
@@ -6189,7 +6189,7 @@
     },
     "sogou-map-vis-routeid": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.1",
         "published": "2018-08-02T07:15:50.539Z",
@@ -6200,7 +6200,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.2",
         "published": "2018-08-02T07:42:20.218Z",
@@ -6211,7 +6211,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.3",
         "published": "2018-08-02T08:41:01.209Z",
@@ -6222,7 +6222,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.4",
         "published": "2018-08-02T08:53:26.403Z",
@@ -6233,7 +6233,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.5",
         "published": "2018-08-02T11:46:30.427Z",
@@ -6244,7 +6244,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.6",
         "published": "2018-08-06T15:34:19.462Z",
@@ -6255,7 +6255,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.7",
         "published": "2018-08-08T10:43:34.612Z",
@@ -6266,7 +6266,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.8",
         "published": "2018-08-08T12:25:36.951Z",
@@ -6277,7 +6277,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.9",
         "published": "2018-08-08T12:53:55.214Z",
@@ -6288,7 +6288,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.10",
         "published": "2018-08-08T16:13:43.510Z",
@@ -6299,7 +6299,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.11",
         "published": "2018-08-08T16:22:30.590Z",
@@ -6310,7 +6310,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.12": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.12",
         "published": "2018-08-08T17:13:15.529Z",
@@ -6321,7 +6321,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.13": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.13",
         "published": "2018-08-08T21:25:48.395Z",
@@ -6332,7 +6332,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.14": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.14",
         "published": "2018-08-08T22:35:06.181Z",
@@ -6343,7 +6343,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.15": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.15",
         "published": "2018-08-08T22:47:48.341Z",
@@ -6354,7 +6354,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.16": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.16",
         "published": "2018-08-09T06:26:23.135Z",
@@ -6365,7 +6365,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.17": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.17",
         "published": "2018-08-09T06:49:34.867Z",
@@ -6376,7 +6376,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.18": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.18",
         "published": "2018-08-09T07:50:27.680Z",
@@ -6387,7 +6387,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.19": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.19",
         "published": "2018-08-09T08:26:19.202Z",
@@ -6398,7 +6398,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.20": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.20",
         "published": "2018-08-09T08:38:28.235Z",
@@ -6409,7 +6409,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.21": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.21",
         "published": "2018-08-09T09:13:41.382Z",
@@ -6420,7 +6420,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.22": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.22",
         "published": "2018-08-09T11:01:56.679Z",
@@ -6431,7 +6431,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.23": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.23",
         "published": "2018-08-09T11:26:12.878Z",
@@ -6442,7 +6442,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.24": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.24",
         "published": "2018-08-10T02:35:06.732Z",
@@ -6453,7 +6453,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.25": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.25",
         "published": "2018-08-10T03:26:39.757Z",
@@ -6464,7 +6464,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.26": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.26",
         "published": "2018-08-10T04:46:44.236Z",
@@ -6475,7 +6475,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.27": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.27",
         "published": "2018-08-10T05:44:59.213Z",
@@ -6486,7 +6486,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.28": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.28",
         "published": "2018-08-10T06:55:36.568Z",
@@ -6497,7 +6497,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.29": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.29",
         "published": "2018-08-10T07:33:49.941Z",
@@ -6508,7 +6508,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.30": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.30",
         "published": "2018-08-10T08:07:17.014Z",
@@ -6519,7 +6519,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.31": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.31",
         "published": "2018-08-12T08:34:53.777Z",
@@ -6530,7 +6530,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.32": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.32",
         "published": "2018-08-12T09:16:35.990Z",
@@ -6541,7 +6541,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.33": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.33",
         "published": "2018-08-12T11:03:32.530Z",
@@ -6552,7 +6552,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.34": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.34",
         "published": "2018-08-12T13:03:54.906Z",
@@ -6563,7 +6563,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.35": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.35",
         "published": "2018-08-12T14:43:53.463Z",
@@ -6574,7 +6574,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.36": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.36",
         "published": "2018-08-12T16:21:56.528Z",
@@ -6585,7 +6585,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.37": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.37",
         "published": "2018-08-12T16:49:25.918Z",
@@ -6596,7 +6596,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.38": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.38",
         "published": "2018-08-12T17:07:12.237Z",
@@ -6607,7 +6607,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.39": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.39",
         "published": "2018-08-13T02:05:09.522Z",
@@ -6618,7 +6618,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.40": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.40",
         "published": "2018-08-13T04:47:36.285Z",
@@ -6629,7 +6629,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.41": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.41",
         "published": "2018-08-13T05:36:20.562Z",
@@ -6640,7 +6640,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.42": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.42",
         "published": "2018-08-13T05:47:38.058Z",
@@ -6651,7 +6651,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.43": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.43",
         "published": "2018-08-13T06:25:20.828Z",
@@ -6662,7 +6662,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.44": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.44",
         "published": "2018-08-13T07:05:07.661Z",
@@ -6673,7 +6673,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.45": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.45",
         "published": "2018-08-13T07:32:23.144Z",
@@ -6684,7 +6684,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.46": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.46",
         "published": "2018-08-15T11:41:31.887Z",
@@ -6695,7 +6695,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.47": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.47",
         "published": "2018-08-15T12:39:38.145Z",
@@ -6706,7 +6706,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.48": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.48",
         "published": "2018-08-15T12:58:57.970Z",
@@ -6717,7 +6717,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.49": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.49",
         "published": "2018-08-16T01:47:11.371Z",
@@ -6728,7 +6728,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.50": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.50",
         "published": "2018-08-16T03:39:21.804Z",
@@ -6739,7 +6739,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.0.51": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.0.51",
         "published": "2018-08-16T08:20:07.791Z",
@@ -6750,7 +6750,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.0",
         "published": "2018-08-17T05:38:00.235Z",
@@ -6761,7 +6761,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.1",
         "published": "2018-08-17T05:58:17.685Z",
@@ -6772,7 +6772,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.2",
         "published": "2018-08-21T14:05:09.957Z",
@@ -6783,7 +6783,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.3",
         "published": "2018-08-21T14:41:33.884Z",
@@ -6794,7 +6794,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.4",
         "published": "2018-08-28T03:38:42.748Z",
@@ -6805,7 +6805,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.5",
         "published": "2018-08-28T06:25:53.386Z",
@@ -6816,7 +6816,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.6",
         "published": "2018-08-28T07:17:42.062Z",
@@ -6827,7 +6827,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.7",
         "published": "2018-09-03T02:03:41.184Z",
@@ -6838,7 +6838,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.8",
         "published": "2018-09-03T03:41:50.889Z",
@@ -6849,7 +6849,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.9",
         "published": "2018-09-03T06:05:11.025Z",
@@ -6860,7 +6860,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.10": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.10",
         "published": "2018-09-03T06:29:04.443Z",
@@ -6871,7 +6871,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.11": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.11",
         "published": "2018-09-03T07:54:38.973Z",
@@ -6882,7 +6882,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "0.1.12": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.12",
         "published": "2018-09-03T09:28:31.289Z",
@@ -6893,7 +6893,7 @@
         "icon": "<i class='fa fa-globe' style='color:blue'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "sogou-map-vis-routeid",
         "version": "0.1.13",
         "published": "2018-09-13T08:34:08.862Z",
@@ -6906,7 +6906,7 @@
     },
     "ultimate-area-chart": {
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-area-chart",
         "version": "0.0.1",
         "published": "2017-04-12T09:58:18.693Z",
@@ -6919,7 +6919,7 @@
     },
     "ultimate-column-chart": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-column-chart",
         "version": "0.0.1",
         "published": "2017-04-12T10:00:25.424Z",
@@ -6930,7 +6930,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAB1ElEQVRoQ+1azUrDQBCebFMPtWlJPejRd1AQvFihIPgMpVS0dw9SFC/tQZDiG7RgKX0JpWC9in2HHlXQHFJyaDcb2dAFtY2bkByWMntbMkP225nv29kfDVakaSuCA5QCUmnXG0DACzu5jLHnfu1uyO3VAtKpe0YmM9H1FJWBsSdOlrruTa/WaigJpLSzC1vmhgwHPI5e4OPLaiIQ6VTFMKh06h5GJMYEJu6KEVFRfpEjItHL7YsiIeQgSuL3TlvNKPYy20Q4wssDQshV3lh3ZD+k1NVtx8n2zlqJVgaJASnkjPPjvf28DMib9QmD0SsgkICZwoj8lF/OEUwtGalCfsfUwtRC+f2fLMgR5MgSjvhFp0aeQiqtb8Y8diiOc3hfidQSQPh+IkzjtZrSQMqlozA4oD94QCB8pgLPteLWWiK1MCKqkR0jghH5cxqPZJ+vGqha8xsn5UoUVC1ULVQtgGVHpqhaqFoB19O4squ4sqfTqeuCkdNle9XpjII1sX/djwiyb5qmzN3//m5ZS7e6ZtaAtbR0CGDZNkxndPHlgz8QIMVQo5gbiecTvFu9v9xmlFWj+BOddLsnt2Ph4z+qidAYsKGSj2oiYFgwTfQOMM5A4vp+A403Sm9lQCHKAAAAAElFTkSuQmCC\" >"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-column-chart",
         "version": "0.0.2",
         "published": "2018-01-23T03:11:59.022Z",
@@ -6943,7 +6943,7 @@
     },
     "ultimate-column-chart-negative-values": {
       "0.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-column-chart-negative-values",
         "version": "0.0.2",
         "published": "2017-06-27T19:04:41.438Z",
@@ -6954,7 +6954,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAB1ElEQVRoQ+1azUrDQBCebFMPtWlJPejRd1AQvFihIPgMpVS0dw9SFC/tQZDiG7RgKX0JpWC9in2HHlXQHFJyaDcb2dAFtY2bkByWMntbMkP225nv29kfDVakaSuCA5QCUmnXG0DACzu5jLHnfu1uyO3VAtKpe0YmM9H1FJWBsSdOlrruTa/WaigJpLSzC1vmhgwHPI5e4OPLaiIQ6VTFMKh06h5GJMYEJu6KEVFRfpEjItHL7YsiIeQgSuL3TlvNKPYy20Q4wssDQshV3lh3ZD+k1NVtx8n2zlqJVgaJASnkjPPjvf28DMib9QmD0SsgkICZwoj8lF/OEUwtGalCfsfUwtRC+f2fLMgR5MgSjvhFp0aeQiqtb8Y8diiOc3hfidQSQPh+IkzjtZrSQMqlozA4oD94QCB8pgLPteLWWiK1MCKqkR0jghH5cxqPZJ+vGqha8xsn5UoUVC1ULVQtgGVHpqhaqFoB19O4squ4sqfTqeuCkdNle9XpjII1sX/djwiyb5qmzN3//m5ZS7e6ZtaAtbR0CGDZNkxndPHlgz8QIMVQo5gbiecTvFu9v9xmlFWj+BOddLsnt2Ph4z+qidAYsKGSj2oiYFgwTfQOMM5A4vp+A403Sm9lQCHKAAAAAElFTkSuQmCC\" >"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-column-chart-negative-values",
         "version": "0.0.3",
         "published": "2017-07-06T18:58:27.137Z",
@@ -6967,7 +6967,7 @@
     },
     "ultimate-dual-column-chart": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-dual-column-chart",
         "version": "0.0.1",
         "published": "2017-06-09T16:15:22.329Z",
@@ -6978,7 +6978,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAB1ElEQVRoQ+1azUrDQBCebFMPtWlJPejRd1AQvFihIPgMpVS0dw9SFC/tQZDiG7RgKX0JpWC9in2HHlXQHFJyaDcb2dAFtY2bkByWMntbMkP225nv29kfDVakaSuCA5QCUmnXG0DACzu5jLHnfu1uyO3VAtKpe0YmM9H1FJWBsSdOlrruTa/WaigJpLSzC1vmhgwHPI5e4OPLaiIQ6VTFMKh06h5GJMYEJu6KEVFRfpEjItHL7YsiIeQgSuL3TlvNKPYy20Q4wssDQshV3lh3ZD+k1NVtx8n2zlqJVgaJASnkjPPjvf28DMib9QmD0SsgkICZwoj8lF/OEUwtGalCfsfUwtRC+f2fLMgR5MgSjvhFp0aeQiqtb8Y8diiOc3hfidQSQPh+IkzjtZrSQMqlozA4oD94QCB8pgLPteLWWiK1MCKqkR0jghH5cxqPZJ+vGqha8xsn5UoUVC1ULVQtgGVHpqhaqFoB19O4squ4sqfTqeuCkdNle9XpjII1sX/djwiyb5qmzN3//m5ZS7e6ZtaAtbR0CGDZNkxndPHlgz8QIMVQo5gbiecTvFu9v9xmlFWj+BOddLsnt2Ph4z+qidAYsKGSj2oiYFgwTfQOMM5A4vp+A403Sm9lQCHKAAAAAElFTkSuQmCC\" >"
       },
       "0.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-dual-column-chart",
         "version": "0.0.2",
         "published": "2017-06-09T16:52:33.969Z",
@@ -6989,7 +6989,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAB1ElEQVRoQ+1azUrDQBCebFMPtWlJPejRd1AQvFihIPgMpVS0dw9SFC/tQZDiG7RgKX0JpWC9in2HHlXQHFJyaDcb2dAFtY2bkByWMntbMkP225nv29kfDVakaSuCA5QCUmnXG0DACzu5jLHnfu1uyO3VAtKpe0YmM9H1FJWBsSdOlrruTa/WaigJpLSzC1vmhgwHPI5e4OPLaiIQ6VTFMKh06h5GJMYEJu6KEVFRfpEjItHL7YsiIeQgSuL3TlvNKPYy20Q4wssDQshV3lh3ZD+k1NVtx8n2zlqJVgaJASnkjPPjvf28DMib9QmD0SsgkICZwoj8lF/OEUwtGalCfsfUwtRC+f2fLMgR5MgSjvhFp0aeQiqtb8Y8diiOc3hfidQSQPh+IkzjtZrSQMqlozA4oD94QCB8pgLPteLWWiK1MCKqkR0jghH5cxqPZJ+vGqha8xsn5UoUVC1ULVQtgGVHpqhaqFoB19O4squ4sqfTqeuCkdNle9XpjII1sX/djwiyb5qmzN3//m5ZS7e6ZtaAtbR0CGDZNkxndPHlgz8QIMVQo5gbiecTvFu9v9xmlFWj+BOddLsnt2Ph4z+qidAYsKGSj2oiYFgwTfQOMM5A4vp+A403Sm9lQCHKAAAAAElFTkSuQmCC\" >"
       },
       "0.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-dual-column-chart",
         "version": "0.0.3",
         "published": "2017-06-16T14:17:57.853Z",
@@ -7000,7 +7000,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAB1ElEQVRoQ+1azUrDQBCebFMPtWlJPejRd1AQvFihIPgMpVS0dw9SFC/tQZDiG7RgKX0JpWC9in2HHlXQHFJyaDcb2dAFtY2bkByWMntbMkP225nv29kfDVakaSuCA5QCUmnXG0DACzu5jLHnfu1uyO3VAtKpe0YmM9H1FJWBsSdOlrruTa/WaigJpLSzC1vmhgwHPI5e4OPLaiIQ6VTFMKh06h5GJMYEJu6KEVFRfpEjItHL7YsiIeQgSuL3TlvNKPYy20Q4wssDQshV3lh3ZD+k1NVtx8n2zlqJVgaJASnkjPPjvf28DMib9QmD0SsgkICZwoj8lF/OEUwtGalCfsfUwtRC+f2fLMgR5MgSjvhFp0aeQiqtb8Y8diiOc3hfidQSQPh+IkzjtZrSQMqlozA4oD94QCB8pgLPteLWWiK1MCKqkR0jghH5cxqPZJ+vGqha8xsn5UoUVC1ULVQtgGVHpqhaqFoB19O4squ4sqfTqeuCkdNle9XpjII1sX/djwiyb5qmzN3//m5ZS7e6ZtaAtbR0CGDZNkxndPHlgz8QIMVQo5gbiecTvFu9v9xmlFWj+BOddLsnt2Ph4z+qidAYsKGSj2oiYFgwTfQOMM5A4vp+A403Sm9lQCHKAAAAAElFTkSuQmCC\" >"
       },
       "0.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-dual-column-chart",
         "version": "0.0.4",
         "published": "2017-06-27T19:04:04.764Z",
@@ -7011,7 +7011,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAB1ElEQVRoQ+1azUrDQBCebFMPtWlJPejRd1AQvFihIPgMpVS0dw9SFC/tQZDiG7RgKX0JpWC9in2HHlXQHFJyaDcb2dAFtY2bkByWMntbMkP225nv29kfDVakaSuCA5QCUmnXG0DACzu5jLHnfu1uyO3VAtKpe0YmM9H1FJWBsSdOlrruTa/WaigJpLSzC1vmhgwHPI5e4OPLaiIQ6VTFMKh06h5GJMYEJu6KEVFRfpEjItHL7YsiIeQgSuL3TlvNKPYy20Q4wssDQshV3lh3ZD+k1NVtx8n2zlqJVgaJASnkjPPjvf28DMib9QmD0SsgkICZwoj8lF/OEUwtGalCfsfUwtRC+f2fLMgR5MgSjvhFp0aeQiqtb8Y8diiOc3hfidQSQPh+IkzjtZrSQMqlozA4oD94QCB8pgLPteLWWiK1MCKqkR0jghH5cxqPZJ+vGqha8xsn5UoUVC1ULVQtgGVHpqhaqFoB19O4squ4sqfTqeuCkdNle9XpjII1sX/djwiyb5qmzN3//m5ZS7e6ZtaAtbR0CGDZNkxndPHlgz8QIMVQo5gbiecTvFu9v9xmlFWj+BOddLsnt2Ph4z+qidAYsKGSj2oiYFgwTfQOMM5A4vp+A403Sm9lQCHKAAAAAElFTkSuQmCC\" >"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-dual-column-chart",
         "version": "0.0.5",
         "published": "2017-07-06T18:57:35.252Z",
@@ -7024,7 +7024,7 @@
     },
     "ultimate-heatmap-chart": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-heatmap-chart",
         "version": "0.0.1",
         "published": "2017-04-12T10:05:54.251Z",
@@ -7035,7 +7035,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Gantt-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEHklEQVRoQ+1aXWgcVRT+dmbcmexmN5N2szW1abNJTahdI0TpQ6RJQKggNqCoCP3Blz70pSg0Gh8KBUGjKSh96YMvohRERaUVQUFIUxpQasCY/iQ22Wy3ZOtmNzvJ/mR2M7ORu0iImzk7q01/DHde5+y59zv3nO+bc+46sEEexwbBgRUgx0+fe12As8cOmMNMhx3G/LSd3b15X7jQ33tkkK21AqT39PeDglzT5fFWLVObSKd0h1fK5qrF1CJl4/V4pOxixjSMgqUfSRIcriq3uJBKGZQPp+wUJFF0ZLOLJmUTm9PchmG829975OQaIKp/a9fe7ifIYA4P/Y7mOhkvdbfQNldCCDbWw+tWLG0WMjrGpqPo2B0gfURiScxn9aIf6jlz9rx+M/rn+xwIP5G/c4SnVkmx8BphAfnfsJao1HapajVJeYlECi5ZgMf1EGljmgXs2bUZvlpr+mXvM3qepGfmOJc3YBQKcCtOcp3LI2P58anwe2vo980Pv/xkU+2mg807tonUr6+ENcjuKvh8NeQC49ci2N+xDYF6r6UN22RsPo2GOpX0wQhBNwz4a+ig/jj0S+7GdKR/DZC+gY9Pbq/f8tbRA/utQwng1BcjUP0+tO7aTm7i3NeXcOjZFrQ11d0fQeRASuLOT2RVQO7oW4unFk+tu/QZz1LrsUeb+pp3BmSKWy+OJhDXcuvS/L3QufWO/EzeCOWu/jFlrSOBhvq+V59/hgQyMhGFIApQq13kJj77YQLBtgC8qttaR7QMxkZDOHH4SdJHTEsV1T/w8GbS5vPvfsqFItH/Joiss6txKWjw15IL9J65hI7OIKn+8fg8hofGMHD06bvTIVbCWhzIqtjzE6m0seKpVRKpB6LY7eg3dDtRbHb8qodknHc+/RW72wJQiV4ikVjA9athHN7XSvrQ0lmYBRPtLfRcqyz92gliJQr2zdBMJWa2Nj5Vxt42WkfKCqJdY1UJ/Q7bTBpHp2bBRLPnRVpHxq/dhBaL4/gr7SRgcoqyXsXOgayKPT8RFgyeWiXlyGtkPWtkZ2ND377OPWQ/wgZriiSVnRJGZrXiYE12SpbUGYou4PzwrbKzsdszCRj5HIIBul2YDM8Yc3Pxsx+88fJrbKGVqzdWI61NO95+qj1IzilZsyMJArlJ5pBNCZn6i6JgCSSe1PHz9QQEkRxoIp3NI79UgEo0Z8yxpmVg6tqFgWPPda8Bci8EsZL7ka8GJzA5m0NH5+OkIF4c/A1abIYDsW117ViLn0hJkvHUYgFZj69fnlr/JrVkp/PEI1t81gIAQFGUYue2lF8iadHtdkHXdbArNquH6Qvzk8lkSR/JvAtJXUG5a0BNS8PUk5b0y4SlKC73+ylIauOy6G6028cyjG9PHev56B+CaPejB/39hvm/1l9zuh9+d3X4DAAAAABJRU5ErkJggg==\" >"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-heatmap-chart",
         "version": "0.0.2",
         "published": "2018-01-23T03:46:12.597Z",
@@ -7048,7 +7048,7 @@
     },
     "ultimate-line-chart": {
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-line-chart",
         "version": "0.0.1",
         "published": "2017-04-12T09:57:45.479Z",
@@ -7061,7 +7061,7 @@
     },
     "ultimate-pie-chart": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-pie-chart",
         "version": "0.0.1",
         "published": "2017-04-12T09:59:02.580Z",
@@ -7072,7 +7072,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAHAklEQVRoQ92ae0xTVxjAv3NvC4ULLbblrSgIRofgqlGnMJ1u0cTEbSwxW+bE6NR/dGb44KFG4/jDIDObJCbLeMzpmNtEh8sSdeqmImOLgCKIPOTdIVBBSil90Nu7nGKhQMu9tw+WrH/2fvc73+98j/Odcy6C/8kPuZPj47z9s40E+Q5hRklmhp6JEJJj/Uvqm/0YBGAUCoeMAmGfTiT8xYTMeVnpZ6vdNb7LINvPpSUOG5gcAUnE0mazFzZMKpYwARSFKJGPxc6gS1dgbmQEDGqHQD2oBf2QzvK/gfJhekXeqgGJ7+4TB/KKXIFyGmRz7oFPvUlhpslM+4kpCuaFz4KgGVKQ+vtPsufZyVOw7s3XISQ4cPRZ34t+aGpug1blM9Bph2DQn6KVYuqrE4fP7nEGiDfI5tyD7wtI4mvGzIijQsNgfsQcu8bbGmMPxPY5hnpS9xSaWtphwI+ilVLxoaz0/JN8gHiBbMlNrUQIFGEyOSxf8ApYQ4dtQDYQ6/sY6O/yKlCpeqEjUNZ65Pj5SDbd1uecQHASm4CsIwlSlBAXD7MCg7jqt8hxBbEqbe/ohJKycngh8qaVUkrBpSiwguBQEpJkob+PL7lWsZizF/iElr1Zwd65V1YOKp0eGoNlaWyhNiWIJR8IdCFUKkeJcfHgJRDy8oRVmK9HrO8ZjUa4dacMuvr6oT48aEoYhyA4nGhC2BQyQ0quVSxxCsBVEOv7V2/cgc4BDTQGB8Q7CjOHIFvzUnViyk+0fukypz3hLhDsmWs370K7iaY/OXlRYG9W7YIk56VWCghSsXFlglM5MXEgZ0NrYom+euMutAaI24589t2ciWNMAsF5QSL0w+pFCt7VyVH8uQME68YLaOlfFVAbETopXyaBbC1IU4fOkIldzQtXq5ajScH50qTTTwqxcSC47SAR8UVS4iq3hJS7csQWqqtbBb/dKoG68KAztu3MOJDtBRmaiOBgv5WxcS5VKU/kiK3O0rJyqHreS+/OGkv8URDcxZqMTMmG5StZeye+lO7KEdtW5terv0NdVNgma9c8CoIrlZiiFG+vSORrJ6u8u0HwgBevXIMmkVCVkXnB0i+NgmwrSDcooud5zY+YzWoYXwFPgNyvqIKHyk5mV/YlYhQEr+LDQLZ6IqzwIJ4Awb0YDq+KsLiEnCNZf1o8Yq1WH721nu9kc5L3BAge+Nz3l6FSFlt8OjM7yQKyJffgbZkkYNWGZa+xdsOcLJ8g5CmQn4qvQw0Zps7MOh1gMTw5L7UxKjQs2t1l1xPriO0cXb95Fyq13oZD2bmiEY/kHXwRHxkdsGhutDMTzvoO9sjSJfEgDZCwyvIRqK1/Cg+6TMz+nG+JaQPhYyAf2eeCwOkDedJAw63bwxAzLwZCgvltk6eCamvrAGV3tan42IfCafEINsYTMI9r66B/sHkMBCd7uDwwes2ri/l4lbesu2GqqmpARzdoLh3eLp6W8mtL7E6Yh1WVYGCethVl7JozLQviRNe5C6akpBS8pA1nig6k7LGAeLpFsReDrsL096uhuroG/OX18YX79lWPNY3fZBgUc2M80jQ6SiZXYJqaW6Cnt4W5fPS9sabx5epeKaEoxUYPtPFTVQVnYSoqKsBEtqiKMnaMb+M9ubFiK298YUbDKqRhU+HeFMt1xLgmcVtBumZ2cIjbt7psIHzXGVx2h4xK+vLRD0bPuKbl8IELCFcYvd4A9++Xj1Yrq+7Jx0H5aeowmVzs6cXR2QJQU/sYNNqOcd6YFFr4D08c0HH1iFXOUc50dfdAY0MjeAU2pBWlpIy7CLK7kcIbLaFAsHrjCvccmfIFsRdmmkEtVD+qAtJXaVnJJ+p0fIidn6aW+FLidW44xHYGxBYmKjISunu6wUB3TwophzlifTByrSBoCpXKyf8qX2xhBCID4+PXugiv4vYmhvWih0TEhXC5HCUsjHP5eoGvZ4ymYSitqYbmFgFDA6RPzAtbfayHDSNXb0Sh2Ici1zh59cYXAMtr9Tr440ElaPQ6o9FkSi7cmf3jVHpYQaxNpQkJHpEEIU5YyP8ylC9Ih6oHSmseAW02DwgYU3z+jlNtbDo4gViV4GqGEFodLg+EZfMXuPXE3uoFDNDT3w8Mw9w5vzP7DTYA1mR3pGDkgpT4mmG4fzDAZkyfRgN17a3Q/KwTEEIDJrN5F1socS6/bIPj00kBQR7HQBKKgpiZsyAowP4nHPZ0YeN7+vugUdkBaq32JQB9rHDn51+yjc27anFR+LJrziFJMpamactHNTKJhPHx8kYysXicit6BAdAZDUyvWm0JaZIkjTRNPxZ4ob0FyVn3uIznSIZXjrANhNcePYOSCEDvIoTCGWAsnzmNxTF6zjDMP2ZgikWI+ZlLErON6XSOcFU83XL/AulaPmAVvMQfAAAAAElFTkSuQmCC\" >"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-pie-chart",
         "version": "0.0.2",
         "published": "2018-01-23T02:47:47.769Z",
@@ -7085,7 +7085,7 @@
     },
     "ultimate-range-chart": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-range-chart",
         "version": "0.0.1",
         "published": "2017-04-12T10:02:44.987Z",
@@ -7096,7 +7096,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEaUlEQVRoQ+2af0xbVRTHz/vVH64gzFgt44eAmDBUhjYqmTHMKMlMiEuMGqZSulGCzMTNZNBtMRAWJsoSlkh0jHaAQ/zLsEVdzGJkLEM3Ya4zcTWDLZO2QzoLbmBL+9671zxcDaMIj9e+tJD2v6Y993w/53t773knJWCVvAiBo3JPSwvGcKm9aVfnSuWaBTGZW/oIgP4jTbvq4yBRrkDckSgbEJI+7shijmw9snsDTRL5ADgJk2A7tq25X24HI+5IubW2FWG8Q8kwXoamuWmfL5GmqG8R+Eo7jYf+kgsooiCGo7X7KSD3FhUUkA8m3zereXrGB6dtPyOv3/+9xdD44ooAKbPU4MK8RyFbt+4uvQLM8bNngEO4oKey2SYHTNARBwHAYYDrUpPwKr+GS53Qv1b0PChoJmSZEwNnkddJXKMnE5xScywW92+LYj5kx4DHCYDTUpPwSjaJTfvz3S3PPgcalTpkmS/P9CH/OPOVwpMoqyMRaVEM1lrvY5lZ6sezHr4L5I9JD3x3YQhIiszsNDZJdn1JRyLVa5m69272z3AnBZCslBRQ0DQ43G4YumLHaqWyrbW0/m2pji8VF9FTS0i2rdNcjHg4gTBSCe8pgvQrGOZAW9n+hqXEhPN5xEGCYso7zA8FWD5JrlNqPrRsIOFUV0psHERK1eSMiTsiZ3WFtWc7aIp4GWNcBJiwYQL6uys+Ov5/eWPSEWOXuYJnUXvimjX+dO0DlOf2rcCYx3MPQ9FtVuOBqoVgYg7kzrPMxfnN58TUbTg1+BMXQPyrCzkTcyBl7TX192o075cUbiTnV37oih1GXK4LR40f6Be8RyrNLRNAQLLc+17M+myqB/Jy02B+vybEBns21VVdyFLBAd0gwvArAER9QMdm3HwnRZf8yqYNT4SItY/+DpeGh2+Qw9o3Yv5mf9NSs4UE6H3p6UJYm5D4n94Ax8I3534AjucPthsad8c8iCBwR0/dFzOBwOvZulQiTauFyakpsI9eB5bnHRZDY/qKOLWCIk1d+6oBoNrPsnkKRjFKk2Tv4bcadq6oe0TMobAitlYcJFKPulIqGamYmLvZpYItC6S8Y2cSzynqKJIoRhivJylygEe85dj25qhfpKJBBAgS1OcZmspcn5HFJCdowHnTDSNOF0dQZIfV0FgptZqRiBMPYq1tVSoVVSXPbKTmThKFrvTk+R8BYbSp23RQ8oAvXBjRvRbKcX+en5OTkpueEZKzz3YRu254ehWj2o/DFSQ1/s7IdOnudyZ7DF54Ug/BKfvchL9cG4HLvzmBdqyVqiPsONFba3vXHlu2bl2+/pHckKRfnxuAW9N/N3RVfFgXtiKJC4gGMX22r4rn0SfF+qeIuV3p1TEXDF62c4jEOXLNdcWwiQYRFqvuqeuZ9vpKU+/XzrbYDvc4THm9nFLFvPfp1oao/T4EbcsCEQKE5wU1Q5cgjAsAE6d4QIej6UTQrWWDiLE5Gt+Jg0Sj6ovlXF2OrJq/OcXaNpGi5x99qVCZXaMquwAAAABJRU5ErkJggg==\" >"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-range-chart",
         "version": "0.0.2",
         "published": "2018-01-23T03:42:31.049Z",
@@ -7109,7 +7109,7 @@
     },
     "ultimate-scatter-chart": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-scatter-chart",
         "version": "0.0.1",
         "published": "2017-04-12T10:01:36.918Z",
@@ -7120,7 +7120,7 @@
         "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Heat-Map\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAGrElEQVRoQ+1aa1ATVxQ+dzcJIFgDWAj4QFDxgYivPkBrsXVsZzrW+LcjECDQ6Y9WmJGA086onekUQqdg+6eFAAGc/ugfqe20teMDbAFtVUBRBrBApUhQeRSQQJLd27mrS8Oy0A1L4rTD/svuveee75y9537n2yD4n1yI4Eg/WlCAMTQV52aa/6u4OCBpOQUXEUBNUW7m8QUgTzkCCxlxTsAhk0GLAB9GgOLJfQy4GgM6eUpvrPJUombMyKHiI/EIoSQApEYAVRV6Y7mYU4kmAykQSREhoUxwQABNxvQNDDAdvfdowHCiIs0ouu8SSrJ0gNEBADyEMS4/lfZJ9UygpfgiCoREmAI4vUqjGfdSKuk7PT1kjS/LUnLfFWaCjNsdswVWPhs8xY+7D/rgUlMjsJjdI3QyuTTncwB4e82yZTBhtzNdFos3C3BQLINSfREFoivLad0UFh65OWIN55xlsB/OXbsKFG3zNycXDvEeJ5UYfgnXhMbGRUVTYtGsvXXD0WnpvVyRanyJf64ry1CzjGpw7/YdoPEP5G7f6LgDtzs720pTc9cJ7Uj1RRRIosmAnRcixk+dOzstumScWDZ4Z37v7YH6W81QoTdy65CLvCYUoi4e2vvapM98oJzH8Q+l+iIKRF/+/vkgtf8r8TFbOXstd/+Ahva2cXNqro9zxOYChMxPKskZ27Y20mfDyjDOXHVTA9wfHKw26T7aI8yIVF9EgbxVlLXFi6Yve6mUlEqpREOjowqKRunm5Lxi54V0pdm15NWK3bhpMuLOz+tvN+NOy716c0rezinzyrLTWAYXqf38HDa7AyZsNmaCYV78Kj2/UQhEqi8zVi3yLjOsUgssUtMKqsqcnNslXITfiK5udmJHV5azinGwWqDwEE3Zq5z33vR98u++yD4Q+fIbrglxaAICFU+Kg6Ozt1cxW/kVKw5y7skGwm1gk0FLAxzBANwrhABqGcx+MNvZIMdpsbnzAmS+nZqLvQUgc4maO+c8tYyQskorYAmN7E2zVSyp4D0OJKHYkIEofAIwembSSQQ1FGXTygHkUSAJJUdOIky9Fx2+Gq8ICkJ+Pj5gGRyAxvZ267B1zE5RE2FzBSObxktNPc+xZuJm39T9PD4yZj1boc/TTjt4JbQUsmi8VBBkXKIpq3CJr987+2N3qcTm8bRfyLA9QuNdAZJUYqiLDl8dy7cGwrk2hx2+rr4wjWF7hMa7AiShOKsqIjT0jZ1RmzkaI7wGRobh+yv14GDxVmfy6BEa7xoQQ4aKpvMP7n5ZoVIop00lzdWNjo7RCn3eYueHHqHxrgDhOkPWqzlIvSQ4PmbbFDCTbbFIu+sRGu8KEDKWOKWg0RmaooND/AMVfj4+lGXgoW3o0SPVbExZSkvh0XOEgOGccqh0iIJXaYoKZhimzsGCWaypciVQHgfiinOujF0A4kq0PDF2ISNiUeakTRrhypT8mvnOAlcksDKGccBfYoVBdkaeVKFjCEGGs/MYQ2FlmjFTLiCitrAMS3Tn3f/QfjyMAQ5XpuZPfpiSDSTRZLipQPT65zZuUAT7B3Br9Q0OwK8tt+0sxlfKU/Mm5VJXQXEgWNz0zKJFXlvWrPXS+AfAqNUK3X197M2uDgoB+rBcn3eM2JVF4xOLDccpmj76ZtxOlZ/3FBESRsetcKau1sYwTHZlmrFQCEKKGp9oMtQsXuT7/IG4Xd7C+Twb4LmZLBqvK825Fbl8+cYdkRtEg321rQVau+82l6cao50HSFHjebF7Nm35TH3txPCjkS8q9PkZstR4MWbq7DAfNWdxWqoaLyZ2C6N1ta0Ft/3ZzUmyMtX47JHYqCi/1SHLRDNCxO9rba1TGK1UNZ7jZRRq0O7aDcLXll/sQuN1pufB/e8q0/K18tT4EsO3QWr16/u2vyDaY/z42xXm4fDQDxWpxv3OSKWq8Ymm7JHNERF+Ys0YacROX6px2Bgmi+xBWWo8H7X1K8Jgx7r1U7JC0t7a3T2GKLRJKIDrJKrxnOKCoEC4TwiIiw3X7f0jw+3mlNyoWauWFOpMDJDqQ2HqM2+VUhUSuNSL3OvtfzhhtdlsLEDiTB9EparxpNcHQIfVvr42TcBS1ajVyvYO9jsYhmlzsDiBPxxlnyOPqXnOKtbBEmq+j/zGLPxEKWyFc5V2hBvu8b5CWpqm4xiW7cMsnBeW9HkB4upB547xC0DcEVU5NrmMpOcUtmDAfQhgxo/2chZx51wM0EX+1fQYyNFPrwOmfDBgizsXdYdthKCx6OPMTNGvse5Y0N02/waolwR+1g+bGwAAAABJRU5ErkJggg==\" >"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "ultimate-scatter-chart",
         "version": "0.0.2",
         "published": "2018-01-23T03:43:29.010Z",
@@ -7133,7 +7133,7 @@
     },
     "volume-leaflet": {
       "1.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "volume-leaflet",
         "version": "1.0.1",
         "published": "2017-05-02T18:50:05.500Z",
@@ -7144,7 +7144,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "volume-leaflet",
         "version": "1.0.2",
         "published": "2017-11-03T13:54:18.512Z",
@@ -7155,7 +7155,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "volume-leaflet",
         "version": "1.0.3",
         "published": "2017-12-11T20:16:56.719Z",
@@ -7168,7 +7168,7 @@
     },
     "zeppelin-aggrid": {
       "0.1.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-aggrid",
         "version": "0.1.0",
         "published": "2018-02-19T21:16:27.226Z",
@@ -7179,7 +7179,7 @@
         "icon": "<i class='fa fa-table fa-rotate-270'></i>"
       },
       "0.1.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-aggrid",
         "version": "0.1.1",
         "published": "2018-02-19T21:47:14.621Z",
@@ -7190,7 +7190,7 @@
         "icon": "<i class='fa fa-table fa-rotate-270'></i>"
       },
       "0.2.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-aggrid",
         "version": "0.2.0",
         "published": "2018-09-20T20:59:24.998Z",
@@ -7201,7 +7201,7 @@
         "icon": "<i class='fa fa-table fa-rotate-270'></i>"
       },
       "0.2.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-aggrid",
         "version": "0.2.1",
         "published": "2018-09-20T21:11:45.674Z",
@@ -7212,7 +7212,7 @@
         "icon": "<i class='fa fa-table fa-rotate-270'></i>"
       },
       "0.2.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-aggrid",
         "version": "0.2.2",
         "published": "2018-11-01T21:48:19.427Z",
@@ -7223,7 +7223,7 @@
         "icon": "<i class='fa fa-table fa-rotate-270'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-aggrid",
         "version": "0.2.3",
         "published": "2018-12-27T18:37:01.097Z",
@@ -7236,7 +7236,7 @@
     },
     "zeppelin-bubblechart": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-bubblechart",
         "version": "0.0.1",
         "published": "2017-01-08T09:56:42.707Z",
@@ -7247,7 +7247,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "0.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-bubblechart",
         "version": "0.0.2",
         "published": "2017-01-08T09:58:44.775Z",
@@ -7258,7 +7258,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "0.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-bubblechart",
         "version": "0.0.3",
         "published": "2017-01-08T10:41:15.275Z",
@@ -7269,7 +7269,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-bubblechart",
         "version": "0.0.4",
         "published": "2017-01-23T20:42:34.373Z",
@@ -7399,7 +7399,7 @@
     },
     "zeppelin-highcharts-bubble": {
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-bubble",
         "version": "0.0.2",
         "published": "2017-02-14T12:30:44.199Z",
@@ -7412,7 +7412,7 @@
     },
     "zeppelin-highcharts-columnrange": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-columnrange",
         "version": "0.0.1",
         "published": "2017-02-11T08:09:32.044Z",
@@ -7423,7 +7423,7 @@
         "icon": "<i class=\"fa fa-align-center\"></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-columnrange",
         "version": "0.0.4",
         "published": "2017-02-11T17:05:07.668Z",
@@ -7436,7 +7436,7 @@
     },
     "zeppelin-highcharts-heatmap": {
       "0.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-heatmap",
         "version": "0.0.4",
         "published": "2017-02-11T07:47:56.338Z",
@@ -7447,7 +7447,7 @@
         "icon": "<i class=\"fa fa-th\"></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-heatmap",
         "version": "0.0.5",
         "published": "2017-02-14T12:46:02.732Z",
@@ -7460,7 +7460,7 @@
     },
     "zeppelin-highcharts-scatterplot": {
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-scatterplot",
         "version": "0.0.2",
         "published": "2017-02-14T12:17:22.411Z",
@@ -7473,7 +7473,7 @@
     },
     "zeppelin-highcharts-spline": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.1",
         "published": "2017-01-16T08:53:38.470Z",
@@ -7484,7 +7484,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "0.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.2",
         "published": "2017-01-16T10:49:56.230Z",
@@ -7495,7 +7495,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "0.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.3",
         "published": "2017-01-20T05:39:22.177Z",
@@ -7506,7 +7506,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "0.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.4",
         "published": "2017-01-20T07:13:35.958Z",
@@ -7517,7 +7517,7 @@
         "icon": "&#8967;"
       },
       "0.0.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.5",
         "published": "2017-01-20T09:07:45.758Z",
@@ -7528,7 +7528,7 @@
         "icon": "&#8967;"
       },
       "0.0.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.6",
         "published": "2017-01-22T13:33:58.177Z",
@@ -7539,7 +7539,7 @@
         "icon": "&#8967;"
       },
       "0.0.7": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.7",
         "published": "2017-01-22T13:38:48.895Z",
@@ -7550,7 +7550,7 @@
         "icon": "<i class=\"fa fa-vine\"></i>"
       },
       "0.0.8": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.8",
         "published": "2017-01-23T05:36:57.596Z",
@@ -7561,7 +7561,7 @@
         "icon": "<i class=\"fa fa-vine\"></i>"
       },
       "0.0.9": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.0.9",
         "published": "2017-02-12T05:47:43.594Z",
@@ -7572,7 +7572,7 @@
         "icon": "<i class=\"fa fa-vine\"></i>"
       },
       "0.1.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.1.0",
         "published": "2017-02-12T05:56:54.943Z",
@@ -7583,7 +7583,7 @@
         "icon": "<i class=\"fa fa-vine\"></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highcharts-spline",
         "version": "0.1.1",
         "published": "2017-02-12T06:00:23.310Z",
@@ -7596,7 +7596,7 @@
     },
     "zeppelin-highmaps": {
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-highmaps",
         "version": "1.0.0",
         "published": "2018-01-30T15:46:40.265Z",
@@ -7623,7 +7623,7 @@
     },
     "zeppelin-leaflet": {
       "1.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-leaflet",
         "version": "1.0.2",
         "published": "2017-10-31T09:31:51.660Z",
@@ -7634,7 +7634,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-leaflet",
         "version": "1.0.3",
         "published": "2017-11-01T12:47:14.830Z",
@@ -7645,7 +7645,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "1.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-leaflet",
         "version": "1.0.4",
         "published": "2017-11-05T08:24:52.404Z",
@@ -7656,7 +7656,7 @@
         "icon": "<i class='fa fa-globe'></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-leaflet",
         "version": "1.0.5",
         "published": "2019-06-14T08:51:38.202Z",
@@ -7697,7 +7697,7 @@
     },
     "zeppelin-number": {
       "1.0.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-number",
         "version": "1.0.0",
         "published": "2018-07-22T18:55:33.637Z",
@@ -7708,7 +7708,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-number",
         "version": "1.0.1",
         "published": "2018-07-25T19:27:29.007Z",
@@ -7721,7 +7721,7 @@
     },
     "zeppelin-plotly-bubble": {
       "0.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-plotly-bubble",
         "version": "0.0.1",
         "published": "2017-09-20T09:18:12.714Z",
@@ -7732,7 +7732,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-plotly-bubble",
         "version": "0.0.2",
         "published": "2017-11-07T09:38:48.307Z",
@@ -7745,7 +7745,7 @@
     },
     "zeppelin-season-table": {
       "1.0.0": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-season-table",
         "version": "1.0.0",
         "published": "2017-09-06T18:48:38.146Z",
@@ -7756,7 +7756,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "1.0.1": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-season-table",
         "version": "1.0.1",
         "published": "2017-09-07T06:41:58.860Z",
@@ -7767,7 +7767,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "1.0.2": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-season-table",
         "version": "1.0.2",
         "published": "2017-09-07T12:13:52.038Z",
@@ -7778,7 +7778,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "1.0.3": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-season-table",
         "version": "1.0.3",
         "published": "2017-09-08T02:11:43.043Z",
@@ -7789,7 +7789,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "1.0.4": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-season-table",
         "version": "1.0.4",
         "published": "2017-09-08T07:57:27.600Z",
@@ -7800,7 +7800,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "1.0.5": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-season-table",
         "version": "1.0.5",
         "published": "2017-09-11T05:50:20.415Z",
@@ -7811,7 +7811,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "1.0.6": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-season-table",
         "version": "1.0.6",
         "published": "2017-09-11T06:22:13.210Z",
@@ -7822,7 +7822,7 @@
         "icon": "<i class=\"fa fa-question-circle\"></i>"
       },
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin-season-table",
         "version": "1.0.7",
         "published": "2017-09-11T08:41:21.586Z",
@@ -7909,7 +7909,7 @@
     },
     "zeppelin_horizontalbar": {
       "latest": {
-        "type": "SPELL",
+        "type": "VISUALIZATION",
         "name": "zeppelin_horizontalbar",
         "version": "1.0.0",
         "published": "2019-02-12T05:39:14.040Z",
