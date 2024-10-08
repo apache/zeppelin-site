@@ -6,12 +6,6 @@ import xml2jsImport from 'xml2js';
 
 const xml2js = Promise.promisifyAll(xml2jsImport);
 
-const zeppelinList = [];
-const pomUriList = [];
-const responseList = [];
-const bodyList = [];
-const finalArtifactList = [];
-
 function filterLessThanOneYear(standard) {
   const duration = moment.duration({ year: 1 });
   const oneYearAgo = moment().subtract(duration).format();
@@ -21,30 +15,33 @@ function filterLessThanOneYear(standard) {
 }
 
 async function searchOnlyZeppelinRelatedArtifact(uri) {
+  const zeppelinList = [];
   const options = {
     uri: uri,
     json: true,
   };
 
-  return fetch(uri).then(async (result) => {
-    const response = (await result.json()).response;
-    const body = response.docs;
+  const result = await fetch(uri);
+  const responseText = await result.text();
+  console.log(`Root URI: ${uri}`);
+  console.log(`Root URI Fetch Result: ${responseText}`);
+  const response = JSON.parse(responseText).response;
+  const body = response.docs;
 
-    for (const artifact in body) {
-      const artifactId = body[artifact].a;
-      const groupId = body[artifact].g;
-      let published = body[artifact].timestamp;
-      published = moment(published).format();
+  for (const artifact in body) {
+    const artifactId = body[artifact].a;
+    const groupId = body[artifact].g;
+    let published = body[artifact].timestamp;
+    published = moment(published).format();
 
-      if (filterLessThanOneYear(published)) {
-        zeppelinList.push({
-          groupId,
-          artifactId,
-        });
-      }
+    if (filterLessThanOneYear(published)) {
+      zeppelinList.push({
+        groupId,
+        artifactId,
+      });
     }
-    return zeppelinList;
-  });
+  }
+  return zeppelinList;
 }
 
 function createSlashedGroupId(groupId) {
@@ -59,7 +56,7 @@ function createSlashedGroupId(groupId) {
 }
 
 function createPomUrl(groupId, artifactId, version) {
-  const baseUri = 'http://repo1.maven.org/maven2/';
+  const baseUri = 'https://repo1.maven.org/maven2/';
   const slashedGroupId = createSlashedGroupId(groupId);
 
   if (slashedGroupId) {
@@ -71,214 +68,210 @@ function createPomUrl(groupId, artifactId, version) {
 
 async function getAllVersionInfo(zeppelinList) {
   // get all version of an artifact
-  return _.map(zeppelinList, function (resources) {
-    const baseUri =
-      'http://search.maven.org/solrsearch/select?q=g:%22' +
-      resources.groupId +
-      '%22+AND+a:%22' +
-      resources.artifactId +
-      '%22&core=gav&rows=20';
-    const options = {
-      uri: baseUri,
-      json: true,
-    };
+  return Promise.all(
+      zeppelinList.map(async (resources) => {
+        const baseUri =
+            'https://search.maven.org/solrsearch/select?q=g:%22' +
+            resources.groupId +
+            '%22+AND+a:%22' +
+            resources.artifactId +
+            '%22&core=gav&rows=20';
+        const options = {
+          uri: baseUri,
+          json: true,
+        };
 
-    return fetch(baseUri).then(async (result) => {
-      const response = (await result.json()).response;
-      const body = response.docs;
-      const pomUriListEachVer = {};
+        const result = await fetch(baseUri);
 
-      for (const ver in body) {
-        const artifactId = body[ver].a;
-        const groupId = body[ver].g.split('.');
-        const version = body[ver].v;
-        let published = body[ver].timestamp;
-        published = moment(published).format();
+        const responseText = await result.text();
+        console.log(`Base URI: ${baseUri}`);
+        console.log(`Base URI Fetch Result: ${responseText}`);
+        const response = JSON.parse(responseText).response;
+        const body = response.docs;
+        const pomUriListEachVer = {};
 
-        if (filterLessThanOneYear(published) && createSlashedGroupId(groupId)) {
-          const pomUri = createPomUrl(groupId, artifactId, version);
+        for (const ver in body) {
+          const artifactId = body[ver].a;
+          const groupId = body[ver].g.split('.');
+          const version = body[ver].v;
+          let published = body[ver].timestamp;
+          published = moment(published).format();
 
-          pomUriListEachVer[version] = {
-            artifactId,
-            version,
-            published,
-            pomUri,
-          };
+          if (filterLessThanOneYear(published) && createSlashedGroupId(groupId)) {
+            const pomUri = createPomUrl(groupId, artifactId, version);
+
+            pomUriListEachVer[version] = {
+              artifactId,
+              version,
+              published,
+              pomUri,
+            };
+          }
         }
-      }
-      pomUriList.push(pomUriListEachVer);
-      return pomUriList;
-    });
-  });
+        return pomUriListEachVer;
+      })
+  ).then((resolve) => resolve);
 }
 
-function getEachPomFileContent(pomUriList) {
-  return _.map(pomUriList, function (result) {
-    return Promise.all(
-      _.map(result, function (ver) {
-        const options = {
-          uri: ver.pomUri,
-        };
-        const artifactId = ver.artifactId;
-        const published = ver.published;
-        const version = ver.version;
+async function getEachPomFileContent(pomUriList) {
+  return Promise.all(
+      pomUriList.map(async function (result) {
+        return Promise.all(
+            _.map(result, async function (ver) {
+              const options = {
+                uri: ver.pomUri,
+              };
+              const artifactId = ver.artifactId;
+              const published = ver.published;
+              const version = ver.version;
 
-        const pomUri = ver.pomUri.replace('http', 'https');
-        return fetch(pomUri).then(async (result) => {
-          const response = await result.text();
+              const pomUri = ver.pomUri;
+              const result = await fetch(pomUri);
+              const response = await result.text();
+              console.log(`Pom URI: ${pomUri}`);
+              console.log(`Pom URI Fetch Result: ${response}`);
 
-          const eachVersionResponse = {
-            version: version,
-            artifactId: artifactId,
-            published: published,
-            response: response,
-          };
-          return eachVersionResponse;
+              const eachVersionResponse = {
+                version: version,
+                artifactId: artifactId,
+                published: published,
+                response: response,
+              };
+              return eachVersionResponse;
+            })
+        ).then((resolve) => resolve);
+      })
+  ).then((resolve) => resolve);
+}
+
+async function parseXmlToJson(responseList) {
+  return Promise.all(
+      _.map(responseList, async function (response) {
+        return Promise.all(
+            _.map(response, async function (ver) {
+              // parse each pom.xml to JSON format
+              const result = await xml2js.parseStringAsync(ver.response, { explicitArray: false });
+              const projectDeps = result.project.dependencies;
+              const projectDepManages = result.project.dependencyManagement;
+              const name = result.project.artifactId;
+              const groupId = result.project.groupId
+                  ? result.project.groupId
+                  : result.project.parent.groupId;
+              const artifactId = result.project.artifactId;
+              const version = result.project.version
+                  ? result.project.version
+                  : result.project.parent.version;
+              const description = result.project.description
+                  ? result.project.description
+                  : result.project.name;
+              const published = ver.published;
+
+              let dependencies;
+              if (projectDeps) {
+                dependencies = projectDeps.dependency;
+              } else if (projectDepManages) {
+                dependencies = projectDepManages.dependencies.dependency;
+              } else {
+                dependencies = undefined;
+              }
+
+              const eachVerBodyList = {
+                name: name,
+                groupId: groupId,
+                artifactId: artifactId,
+                version: version,
+                description: description,
+                published: published,
+                dependencies: dependencies,
+              };
+              return eachVerBodyList;
+            })
+        ).then((resolve) => resolve);
+      })
+  ).then((resolve) => resolve);
+}
+
+async function filterWithGivenArtifact(bodyList) {
+  return Promise.all(
+      _.map(bodyList, async function (version) {
+        return Promise.all(
+            _.map(version, function (dep, index) {
+              const type = 'INTERPRETER';
+              const license = 'Apache-2.0';
+              const icon = '<i class="fa fa-rocket"></i>';
+              const dependency = dep.dependencies;
+              const name = dep.name;
+              const groupId = dep.groupId;
+              const artifactId = dep.artifactId;
+              const version = index == 0 ? 'latest' : dep.version;
+              const artifact = artifactId + '@' + dep.version;
+              const description = dep.description ? dep.description : name;
+              const published = dep.published;
+
+              const interpreters = [
+                'spark-interpreter',
+                'zeppelin-jupyter-interpreter',
+                'zeppelin-display',
+                'zeppelin-flink',
+                'spark-scala-',
+                'sap',
+                'spark1-shims',
+                'spark2-shims',
+                'spark3-shims',
+                'spark-scala-parent',
+                'spark-shims',
+                'zeppelin-beam',
+                'zeppelin-kylin',
+                'zeppelin-ignite_',
+                'zeppelin-flink_',
+                'zeppelin-lens',
+                'zeppelin-cassandra_',
+                'zeppelin-solr',
+                'zeppelin-viyadb',
+                'snappydata-zeppelin',
+              ];
+              const result = dependency
+                  ? _.findWhere(dependency, { artifactId: 'zeppelin-interpreter' }) ||
+                  interpreters.some((interpreter) => dep.name.includes(interpreter))
+                  : undefined;
+
+              return result
+                  ? {
+                    type: type,
+                    name: name,
+                    version: version,
+                    published: published,
+                    artifact: artifact,
+                    description: description,
+                    license: license,
+                    icon: icon,
+                    groupId: groupId,
+                    artifactId: artifactId,
+                  }
+                  : undefined;
+            })
+        ).then((resultArtifact) => {
+          const resultByVersion = _.indexBy(_.omit(resultArtifact, _.isUndefined), 'version');
+          for (const key in resultByVersion) {
+            const obj = resultByVersion[key];
+            if (obj.version == 'latest') {
+              obj.version = obj.artifact.split('@')[1];
+            }
+          }
+          return resultByVersion;
         });
       })
-    ).then(function (result) {
-      responseList.push(result);
-    });
-  });
+  ).then((resolve) => resolve);
 }
-
-function parseXmlToJson(responseList) {
-  return _.map(responseList, function (response) {
-    return Promise.all(
-      _.map(response, function (ver) {
-        // parse each pom.xml to JSON format
-        return xml2js
-          .parseStringAsync(ver.response, { explicitArray: false })
-          .then(function (result) {
-            const projectDeps = result.project.dependencies;
-            const projectDepManages = result.project.dependencyManagement;
-            const name = result.project.artifactId;
-            const groupId = result.project.groupId
-              ? result.project.groupId
-              : result.project.parent.groupId;
-            const artifactId = result.project.artifactId;
-            const version = result.project.version
-              ? result.project.version
-              : result.project.parent.version;
-            const description = result.project.description
-              ? result.project.description
-              : result.project.name;
-            const published = ver.published;
-
-            let dependencies;
-            if (projectDeps) {
-              dependencies = projectDeps.dependency;
-            } else if (projectDepManages) {
-              dependencies = projectDepManages.dependencies.dependency;
-            } else {
-              dependencies = undefined;
-            }
-
-            const eachVerBodyList = {
-              name: name,
-              groupId: groupId,
-              artifactId: artifactId,
-              version: version,
-              description: description,
-              published: published,
-              dependencies: dependencies,
-            };
-            return eachVerBodyList;
-          });
-      })
-    ).then(function (result) {
-      bodyList.push(result);
-    });
-  });
-}
-
-function filterWithGivenArtifact(bodyList) {
-  return _.map(bodyList, function (version) {
-    return Promise.all(
-      _.map(version, function (dep, index) {
-        const type = 'INTERPRETER';
-        const license = 'Apache-2.0';
-        const icon = '<i class="fa fa-rocket"></i>';
-        const dependency = dep.dependencies;
-        const name = dep.name;
-        const groupId = dep.groupId;
-        const artifactId = dep.artifactId;
-        const version = index == 0 ? 'latest' : dep.version;
-        const artifact = artifactId + '@' + dep.version;
-        const description = dep.description ? dep.description : name;
-        const published = dep.published;
-
-        const interpreters = [
-          'spark-interpreter',
-          'zeppelin-jupyter-interpreter',
-          'zeppelin-display',
-          'zeppelin-flink',
-          'spark-scala-',
-          'sap',
-          'spark1-shims',
-          'spark2-shims',
-          'spark3-shims',
-          'spark-scala-parent',
-          'spark-shims',
-          'zeppelin-beam',
-          'zeppelin-kylin',
-          'zeppelin-ignite_',
-          'zeppelin-flink_',
-          'zeppelin-lens',
-          'zeppelin-cassandra_',
-          'zeppelin-solr',
-          'zeppelin-viyadb',
-          'snappydata-zeppelin',
-        ];
-        const result = dependency
-          ? _.findWhere(dependency, { artifactId: 'zeppelin-interpreter' }) ||
-            interpreters.some((interpreter) => dep.name.includes(interpreter))
-          : undefined;
-
-        return result
-          ? {
-              type: type,
-              name: name,
-              version: version,
-              published: published,
-              artifact: artifact,
-              description: description,
-              license: license,
-              icon: icon,
-              groupId: groupId,
-              artifactId: artifactId,
-            }
-          : undefined;
-      })
-    ).then(function (result) {
-      const resultByVersion = _.indexBy(_.omit(result, _.isUndefined), 'version');
-      for (const key in resultByVersion) {
-        const obj = resultByVersion[key];
-        if (obj.version == 'latest') {
-          obj.version = obj.artifact.split('@')[1];
-        }
-      }
-
-      finalArtifactList.push(resultByVersion);
-    });
-  });
-}
-
-const delay = (timeToDelay) => new Promise((resolve) => setTimeout(resolve, timeToDelay));
-const result = {};
 
 export async function getBasicMavenHandler(callback) {
-  const uri = 'http://search.maven.org/solrsearch/select?q=zeppelin&rows=200';
-  await searchOnlyZeppelinRelatedArtifact(uri);
-  await delay(5000);
-  await getAllVersionInfo(zeppelinList);
-  await delay(3000);
-  await getEachPomFileContent(pomUriList);
-  await delay(3000);
-  await parseXmlToJson(responseList);
-  await delay(3000);
-  await filterWithGivenArtifact(bodyList);
-  await delay(3000);
+  const result = {};
+  const uri = 'https://search.maven.org/solrsearch/select?q=zeppelin&rows=200';
+  const zeppelinList = await searchOnlyZeppelinRelatedArtifact(uri);
+  const pomUriList = await getAllVersionInfo(zeppelinList);
+  const responseList = await getEachPomFileContent(pomUriList);
+  const bodyList = await parseXmlToJson(responseList);
+  const finalArtifactList = await filterWithGivenArtifact(bodyList);
   _.map(finalArtifactList, function (artifact) {
     if (!_.isEmpty(artifact)) {
       for (const key in artifact) {
