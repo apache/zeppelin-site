@@ -328,18 +328,6 @@
         "icon": "<i class=\"fa fa-rocket\"></i>",
         "groupId": "org.apache.iotdb",
         "artifactId": "zeppelin-iotdb"
-      },
-      "1.3.0": {
-        "type": "INTERPRETER",
-        "name": "zeppelin-iotdb",
-        "version": "1.3.0",
-        "published": "2023-12-27T04:17:42+00:00",
-        "artifact": "zeppelin-iotdb@1.3.0",
-        "description": "Zeppelin IoTDB support",
-        "license": "Apache-2.0",
-        "icon": "<i class=\"fa fa-rocket\"></i>",
-        "groupId": "org.apache.iotdb",
-        "artifactId": "zeppelin-iotdb"
       }
     },
     "zeppelin-jupyter-interpreter": {
