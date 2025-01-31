@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.12.0 Documentation: Apache Zeppelin Tutorial</title>
+    <meta name="description" content="This tutorial page contains a short walk-through tutorial that uses Apache Spark backend. Please note that this tutorial is valid for Spark 1.3 and higher.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.12.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.12.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.12.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/docs/0.12.0/assets/themes/zeppelin/img/zeppelin_logo.png" width="50"
+                   style="margin-top: -2px;" alt="I'm zeppelin">
+              <span style="margin-left: 5px; font-size: 27px;">Zeppelin</span>
+              <a class="navbar-brand-version" href="/docs/0.12.0"
+                 style="font-size: 15px; color: white;"> 0.12.0
+              </a>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span>Getting Started</span></li>
+                <li><a href="/docs/0.12.0/quickstart/install.html">Install</a></li>
+                <li><a href="/docs/0.12.0/quickstart/explore_ui.html">Explore UI</a></li>
+                <li><a href="/docs/0.12.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Run Mode</span></li>
+                <li><a href="/docs/0.12.0/quickstart/kubernetes.html">Kubernetes</a></li>
+                <li><a href="/docs/0.12.0/quickstart/docker.html">Docker</a></li>
+                <li><a href="/docs/0.12.0/quickstart/yarn.html">Yarn</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.12.0/quickstart/spark_with_zeppelin.html">Spark with Zeppelin</a></li>
+                <li><a href="/docs/0.12.0/quickstart/flink_with_zeppelin.html">Flink with Zeppelin</a></li>
+                <li><a href="/docs/0.12.0/quickstart/sql_with_zeppelin.html">SQL with Zeppelin</a></li>
+                <li><a href="/docs/0.12.0/quickstart/python_with_zeppelin.html">Python with Zeppelin</a></li>
+                <li><a href="/docs/0.12.0/quickstart/r_with_zeppelin.html">R with Zeppelin</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Usage<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Dynamic Form</span></li>
+                <li><a href="/docs/0.12.0/usage/dynamic_form/intro.html">What is Dynamic Form?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Display System</span></li>
+                <li><a href="/docs/0.12.0/usage/display_system/basic.html#text">Text Display</a></li>
+                <li><a href="/docs/0.12.0/usage/display_system/basic.html#html">HTML Display</a></li>
+                <li><a href="/docs/0.12.0/usage/display_system/basic.html#table">Table Display</a></li>
+                <li><a href="/docs/0.12.0/usage/display_system/basic.html#network">Network Display</a></li>
+                <li><a href="/docs/0.12.0/usage/display_system/angular_backend.html">Angular Display using Backend API</a></li>
+                <li><a href="/docs/0.12.0/usage/display_system/angular_frontend.html">Angular Display using Frontend API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Interpreter</span></li>
+                <li><a href="/docs/0.12.0/usage/interpreter/overview.html">Overview</a></li>
+                <li><a href="/docs/0.12.0/usage/interpreter/interpreter_binding_mode.html">Interpreter Binding Mode</a></li>
+                <li><a href="/docs/0.12.0/usage/interpreter/user_impersonation.html">User Impersonation</a></li>
+                <li><a href="/docs/0.12.0/usage/interpreter/dependency_management.html">Dependency Management</a></li>
+                <li><a href="/docs/0.12.0/usage/interpreter/installation.html">Installing Interpreters</a></li>
+                <!--<li><a href="/docs/0.12.0/usage/interpreter/dynamic_loading.html">Dynamic Interpreter Loading (Experimental)</a></li>-->
+                <li><a href="/docs/0.12.0/usage/interpreter/execution_hooks.html">Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Other Features</span></li>
+                <li><a href="/docs/0.12.0/usage/other_features/publishing_paragraphs.html">Publishing Paragraphs</a></li>
+                <li><a href="/docs/0.12.0/usage/other_features/personalized_mode.html">Personalized Mode</a></li>
+                <li><a href="/docs/0.12.0/usage/other_features/customizing_homepage.html">Customizing Zeppelin Homepage</a></li>
+                <li><a href="/docs/0.12.0/usage/other_features/notebook_actions.html">Notebook Actions</a></li>
+                <li><a href="/docs/0.12.0/usage/other_features/cron_scheduler.html">Cron Scheduler</a></li>
+                <li><a href="/docs/0.12.0/usage/other_features/zeppelin_context.html">Zeppelin Context</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>REST API</span></li>
+                <li><a href="/docs/0.12.0/usage/rest_api/interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.12.0/usage/rest_api/zeppelin_server.html">Zeppelin Server API</a></li>
+                <li><a href="/docs/0.12.0/usage/rest_api/notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.12.0/usage/rest_api/notebook_repository.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.12.0/usage/rest_api/configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.12.0/usage/rest_api/credential.html">Credential API</a></li>
+                <li><a href="/docs/0.12.0/usage/rest_api/helium.html">Helium API</a></li>
+                <li class="title"><span>Zeppelin SDK</span></li>
+                <li><a href="/docs/0.12.0/usage/zeppelin_sdk/client_api.html">Client API</a></li>
+                <li><a href="/docs/0.12.0/usage/zeppelin_sdk/session_api.html">Session API</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Setup<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Basics</span></li>
+                <li><a href="/docs/0.12.0/setup/basics/how_to_build.html">How to Build Zeppelin</a></li>
+                <li><a href="/docs/0.12.0/setup/basics/hadoop_integration.html">Hadoop Integration</a></li>
+                <li><a href="/docs/0.12.0/setup/basics/multi_user_support.html">Multi-user Support</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Deployment</span></li>
+                <!--<li><a href="/docs/0.12.0/setup/deployment/docker.html">Docker Image for Zeppelin</a></li>-->
+                <li><a href="/docs/0.12.0/setup/deployment/spark_cluster_mode.html#spark-standalone-mode">Spark Cluster Mode: Standalone</a></li>
+                <li><a href="/docs/0.12.0/setup/deployment/spark_cluster_mode.html#spark-on-yarn-mode">Spark Cluster Mode: YARN</a></li>
+                <li><a href="/docs/0.12.0/setup/deployment/spark_cluster_mode.html#spark-on-mesos-mode">Spark Cluster Mode: Mesos</a></li>
+                <li><a href="/docs/0.12.0/setup/deployment/flink_and_spark_cluster.html">Zeppelin with Flink, Spark Cluster</a></li>
+                <li><a href="/docs/0.12.0/setup/deployment/cdh.html">Zeppelin on CDH</a></li>
+                <li><a href="/docs/0.12.0/setup/deployment/virtual_machine.html">Zeppelin on VM: Vagrant</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Security</span></li>
+                <li><a href="/docs/0.12.0/setup/security/authentication_nginx.html">HTTP Basic Auth using NGINX</a></li>
+                <li><a href="/docs/0.12.0/setup/security/shiro_authentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.12.0/setup/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.12.0/setup/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.12.0/setup/security/http_security_headers.html">HTTP Security Headers</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Notebook Storage</span></li>
+                <li><a href="/docs/0.12.0/setup/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.12.0/setup/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.12.0/setup/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.12.0/setup/storage/storage.html#notebook-storage-in-google-cloud-storage">Google Cloud Storage</a></li>
+                <li><a href="/docs/0.12.0/setup/storage/storage.html#notebook-storage-in-oss">OSS Storage</a></li>
+                <li><a href="/docs/0.12.0/setup/storage/storage.html#notebook-storage-in-mongodb">MongoDB Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Operation</span></li>
+                <li><a href="/docs/0.12.0/setup/operation/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.12.0/setup/operation/monitoring.html">Monitoring</a></li>
+                <li><a href="/docs/0.12.0/setup/operation/proxy_setting.html">Proxy Setting</a></li>
+                <li><a href="/docs/0.12.0/setup/operation/upgrading.html">Upgrading</a></li>
+                <li><a href="/docs/0.12.0/setup/operation/trouble_shooting.html">Trouble Shooting</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li class="title"><span>Interpreters</span></li>
+                <li><a href="/docs/0.12.0/usage/interpreter/overview.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.12.0/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.12.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.12.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.12.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.12.0/interpreter/r.html">R</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.12.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.12.0/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.12.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.12.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.12.0/interpreter/groovy.html">Groovy</a></li>
+                <li><a href="/docs/0.12.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.12.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.12.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.12.0/interpreter/influxdb.html">influxDB</a></li>
+                <li><a href="/docs/0.12.0/interpreter/java.html">Java</a></li>
+                <li><a href="/docs/0.12.0/interpreter/jupyter.html">Jupyter</a></li>
+                <li><a href="/docs/0.12.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.12.0/interpreter/mahout.html">Mahout</a></li>
+                <li><a href="/docs/0.12.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.12.0/interpreter/mongodb.html">MongoDB</a></li>
+                <li><a href="/docs/0.12.0/interpreter/neo4j.html">Neo4j</a></li>
+                <li><a href="/docs/0.12.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.12.0/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.12.0/interpreter/sparql.html">Sparql</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span>Extending Zeppelin</span></li>
+                <li><a href="/docs/0.12.0/development/writing_zeppelin_interpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Helium (Experimental)</span></li>
+                <li><a href="/docs/0.12.0/development/helium/overview.html">Overview</a></li>
+                <li><a href="/docs/0.12.0/development/helium/writing_application.html">Writing Helium Application</a></li>
+                <li><a href="/docs/0.12.0/development/helium/writing_spell.html">Writing Helium Spell</a></li>
+                <li><a href="/docs/0.12.0/development/helium/writing_visualization_basic.html">Writing Helium Visualization: Basics</a></li>
+                <li><a href="/docs/0.12.0/development/helium/writing_visualization_transformation.html">Writing Helium Visualization: Transformation</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>Contributing to Zeppelin</span></li>
+                <li><a href="/docs/0.12.0/setup/basics/how_to_build.html">How to Build Zeppelin</a></li>
+                <li><a href="/docs/0.12.0/development/contribution/useful_developer_tools.html">Useful Developer Tools</a></li>
+                <li><a href="/docs/0.12.0/development/contribution/how_to_contribute_code.html">How to Contribute (code)</a></li>
+                <li><a href="/docs/0.12.0/development/contribution/how_to_contribute_website.html">How to Contribute (website)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span>External Resources</span></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://zeppelin.apache.org/community.html">Mailing List</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://cwiki.apache.org/confluence/display/ZEPPELIN/Zeppelin+Home">Apache Zeppelin Wiki</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="http://stackoverflow.com/questions/tagged/apache-zeppelin">Stackoverflow Questions about Zeppelin</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.12.0/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+
+<!--<div class="hero-unit Apache Zeppelin Tutorial">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Zeppelin Tutorial</h1>
+
+<div id="toc"></div>
+
+<p>This tutorial walks you through some of the fundamental Zeppelin concepts. We will assume you have already installed Zeppelin. If not, please see <a href="./install.html">here</a> first.</p>
+
+<p>Current main backend processing engine of Zeppelin is <a href="https://spark.apache.org">Apache Spark</a>. If you&#39;re new to this system, you might want to start by getting an idea of how it processes data to get the most out of Zeppelin.</p>
+
+<h2>Tutorial with Local File</h2>
+
+<h3>Data Refine</h3>
+
+<p>Before you start Zeppelin tutorial, you will need to download <a href="http://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank.zip">bank.zip</a>. </p>
+
+<p>First, to transform csv format data into RDD of <code>Bank</code> objects, run following script. This will also remove header using <code>filter</code> function.</p>
+<div class="highlight"><pre><code class="language-scala" data-lang="scala">
+<span class="k">val</span> <span class="nv">bankText</span> <span class="k">=</span> <span class="nv">sc</span><span class="o">.</span><span class="py">textFile</span><span class="o">(</span><span class="s">"yourPath/bank/bank-full.csv"</span><span class="o">)</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Bank</span><span class="o">(</span><span class="n">age</span><span class="k">:</span><span class="kt">Integer</span><span class="o">,</span> <span class="n">job</span><span class="k">:</span><span class="kt">String</span><span class="o">,</span> <span class="n">marital</span> <span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">education</span> <span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">balance</span> <span class="k">:</span> <span class="kt">Integer</span><span class="o">)</span>
+
+<span class="c1">// split each line, filter out header (starts with "age"), and map it into Bank case class</span>
+<span class="k">val</span> <span class="nv">bank</span> <span class="k">=</span> <span class="nv">bankText</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">s</span><span class="k">=&gt;</span><span class="nv">s</span><span class="o">.</span><span class="py">split</span><span class="o">(</span><span class="s">";"</span><span class="o">)).</span><span class="py">filter</span><span class="o">(</span><span class="n">s</span><span class="k">=&gt;</span><span class="nf">s</span><span class="o">(</span><span class="mi">0</span><span class="o">)!=</span><span class="s">"\"age\""</span><span class="o">).</span><span class="py">map</span><span class="o">(</span>
+    <span class="n">s</span><span class="k">=&gt;</span><span class="nc">Bank</span><span class="o">(</span><span class="nf">s</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="py">toInt</span><span class="o">,</span> 
+            <span class="nf">s</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="py">replaceAll</span><span class="o">(</span><span class="s">"\""</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+            <span class="nf">s</span><span class="o">(</span><span class="mi">2</span><span class="o">).</span><span class="py">replaceAll</span><span class="o">(</span><span class="s">"\""</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+            <span class="nf">s</span><span class="o">(</span><span class="mi">3</span><span class="o">).</span><span class="py">replaceAll</span><span class="o">(</span><span class="s">"\""</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+            <span class="nf">s</span><span class="o">(</span><span class="mi">5</span><span class="o">).</span><span class="py">replaceAll</span><span class="o">(</span><span class="s">"\""</span><span class="o">,</span> <span class="s">""</span><span class="o">).</span><span class="py">toInt</span>
+        <span class="o">)</span>
+<span class="o">)</span>
+
+<span class="c1">// convert to DataFrame and create temporal table</span>
+<span class="nv">bank</span><span class="o">.</span><span class="py">toDF</span><span class="o">().</span><span class="py">registerTempTable</span><span class="o">(</span><span class="s">"bank"</span><span class="o">)</span>
+</code></pre></div>
+<h3>Data Retrieval</h3>
+
+<p>Suppose we want to see age distribution from <code>bank</code>. To do this, run:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="o">%</span><span class="k">sql</span> <span class="k">select</span> <span class="n">age</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">from</span> <span class="n">bank</span> <span class="k">where</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="k">group</span> <span class="k">by</span> <span class="n">age</span> <span class="k">order</span> <span class="k">by</span> <span class="n">age</span>
+</code></pre></div>
+<p>You can make input box for setting age condition by replacing <code>30</code> with <code>${maxAge=30}</code>.</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="o">%</span><span class="k">sql</span> <span class="k">select</span> <span class="n">age</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">from</span> <span class="n">bank</span> <span class="k">where</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="err">$</span><span class="p">{</span><span class="n">maxAge</span><span class="o">=</span><span class="mi">30</span><span class="p">}</span> <span class="k">group</span> <span class="k">by</span> <span class="n">age</span> <span class="k">order</span> <span class="k">by</span> <span class="n">age</span>
+</code></pre></div>
+<p>Now we want to see age distribution with certain marital status and add combo box to select marital status. Run:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="o">%</span><span class="k">sql</span> <span class="k">select</span> <span class="n">age</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">from</span> <span class="n">bank</span> <span class="k">where</span> <span class="n">marital</span><span class="o">=</span><span class="nv">"${marital=single,single|divorced|married}"</span> <span class="k">group</span> <span class="k">by</span> <span class="n">age</span> <span class="k">order</span> <span class="k">by</span> <span class="n">age</span>
+</code></pre></div>
+<p><br /></p>
+
+<h2>Tutorial with Streaming Data</h2>
+
+<h3>Data Refine</h3>
+
+<p>Since this tutorial is based on Twitter&#39;s sample tweet stream, you must configure authentication with a Twitter account. To do this, take a look at <a href="https://databricks-training.s3.amazonaws.com/realtime-processing-with-spark-streaming.html#twitter-credential-setup">Twitter Credential Setup</a>. After you get API keys, you should fill out credential related values(<code>apiKey</code>, <code>apiSecret</code>, <code>accessToken</code>, <code>accessTokenSecret</code>) with your API keys on following script.</p>
+
+<p>This will create a RDD of <code>Tweet</code> objects and register these stream data as a table:</p>
+<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.apache.spark.streaming._</span>
+<span class="k">import</span> <span class="nn">org.apache.spark.streaming.twitter._</span>
+<span class="k">import</span> <span class="nn">org.apache.spark.storage.StorageLevel</span>
+<span class="k">import</span> <span class="nn">scala.io.Source</span>
+<span class="k">import</span> <span class="nn">scala.collection.mutable.HashMap</span>
+<span class="k">import</span> <span class="nn">java.io.File</span>
+<span class="k">import</span> <span class="nn">org.apache.log4j.Logger</span>
+<span class="k">import</span> <span class="nn">org.apache.log4j.Level</span>
+<span class="k">import</span> <span class="nn">sys.process.stringSeqToProcess</span>
+
+<span class="cm">/** Configures the Oauth Credentials for accessing Twitter */</span>
+<span class="k">def</span> <span class="nf">configureTwitterCredentials</span><span class="o">(</span><span class="n">apiKey</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">apiSecret</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">accessToken</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">accessTokenSecret</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">configs</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">[</span><span class="kt">String</span>, <span class="kt">String</span><span class="o">]</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
+    <span class="s">"apiKey"</span> <span class="o">-&gt;</span> <span class="n">apiKey</span><span class="o">,</span> <span class="s">"apiSecret"</span> <span class="o">-&gt;</span> <span class="n">apiSecret</span><span class="o">,</span> <span class="s">"accessToken"</span> <span class="o">-&gt;</span> <span class="n">accessToken</span><span class="o">,</span> <span class="s">"accessTokenSecret"</span> <span class="o">-&gt;</span> <span class="n">accessTokenSecret</span><span class="o">)</span>
+  <span class="nf">println</span><span class="o">(</span><span class="s">"Configuring Twitter OAuth"</span><span class="o">)</span>
+  <span class="nv">configs</span><span class="o">.</span><span class="py">foreach</span><span class="o">{</span> <span class="nf">case</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="nf">if</span> <span class="o">(</span><span class="nv">value</span><span class="o">.</span><span class="py">trim</span><span class="o">.</span><span class="py">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="o">(</span><span class="s">"Error setting authentication - value for "</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s">" not set"</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="k">val</span> <span class="nv">fullKey</span> <span class="k">=</span> <span class="s">"twitter4j.oauth."</span> <span class="o">+</span> <span class="nv">key</span><span class="o">.</span><span class="py">replace</span><span class="o">(</span><span class="s">"api"</span><span class="o">,</span> <span class="s">"consumer"</span><span class="o">)</span>
+    <span class="nv">System</span><span class="o">.</span><span class="py">setProperty</span><span class="o">(</span><span class="n">fullKey</span><span class="o">,</span> <span class="nv">value</span><span class="o">.</span><span class="py">trim</span><span class="o">)</span>
+    <span class="nf">println</span><span class="o">(</span><span class="s">"\tProperty "</span> <span class="o">+</span> <span class="n">fullKey</span> <span class="o">+</span> <span class="s">" set as ["</span> <span class="o">+</span> <span class="nv">value</span><span class="o">.</span><span class="py">trim</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">)</span>
+  <span class="o">}</span>
+  <span class="nf">println</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="c1">// Configure Twitter credentials</span>
+<span class="k">val</span> <span class="nv">apiKey</span> <span class="k">=</span> <span class="s">"xxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+<span class="k">val</span> <span class="nv">apiSecret</span> <span class="k">=</span> <span class="s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+<span class="k">val</span> <span class="nv">accessToken</span> <span class="k">=</span> <span class="s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+<span class="k">val</span> <span class="nv">accessTokenSecret</span> <span class="k">=</span> <span class="s">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+<span class="nf">configureTwitterCredentials</span><span class="o">(</span><span class="n">apiKey</span><span class="o">,</span> <span class="n">apiSecret</span><span class="o">,</span> <span class="n">accessToken</span><span class="o">,</span> <span class="n">accessTokenSecret</span><span class="o">)</span>
+
+<span class="k">import</span> <span class="nn">org.apache.spark.streaming.twitter._</span>
+<span class="k">val</span> <span class="nv">ssc</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">StreamingContext</span><span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="nc">Seconds</span><span class="o">(</span><span class="mi">2</span><span class="o">))</span>
+<span class="k">val</span> <span class="nv">tweets</span> <span class="k">=</span> <span class="nv">TwitterUtils</span><span class="o">.</span><span class="py">createStream</span><span class="o">(</span><span class="n">ssc</span><span class="o">,</span> <span class="nc">None</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">twt</span> <span class="k">=</span> <span class="nv">tweets</span><span class="o">.</span><span class="py">window</span><span class="o">(</span><span class="nc">Seconds</span><span class="o">(</span><span class="mi">60</span><span class="o">))</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Tweet</span><span class="o">(</span><span class="n">createdAt</span><span class="k">:</span><span class="kt">Long</span><span class="o">,</span> <span class="n">text</span><span class="k">:</span><span class="kt">String</span><span class="o">)</span>
+<span class="nv">twt</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">status</span><span class="k">=&gt;</span>
+  <span class="nc">Tweet</span><span class="o">(</span><span class="nv">status</span><span class="o">.</span><span class="py">getCreatedAt</span><span class="o">().</span><span class="py">getTime</span><span class="o">()/</span><span class="mi">1000</span><span class="o">,</span> <span class="nv">status</span><span class="o">.</span><span class="py">getText</span><span class="o">())</span>
+<span class="o">).</span><span class="py">foreachRDD</span><span class="o">(</span><span class="n">rdd</span><span class="k">=&gt;</span>
+  <span class="c1">// Below line works only in spark 1.3.0.</span>
+  <span class="c1">// For spark 1.1.x and spark 1.2.x,</span>
+  <span class="c1">// use rdd.registerTempTable("tweets") instead.</span>
+  <span class="nv">rdd</span><span class="o">.</span><span class="py">toDF</span><span class="o">().</span><span class="py">registerAsTable</span><span class="o">(</span><span class="s">"tweets"</span><span class="o">)</span>
+<span class="o">)</span>
+
+<span class="nv">twt</span><span class="o">.</span><span class="py">print</span>
+
+<span class="nv">ssc</span><span class="o">.</span><span class="py">start</span><span class="o">()</span>
+</code></pre></div>
+<h3>Data Retrieval</h3>
+
+<p>For each following script, every time you click run button you will see different result since it is based on real-time data.</p>
+
+<p>Let&#39;s begin by extracting maximum 10 tweets which contain the word <strong>girl</strong>.</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="o">%</span><span class="k">sql</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tweets</span> <span class="k">where</span> <span class="nb">text</span> <span class="k">like</span> <span class="s1">'%girl%'</span> <span class="k">limit</span> <span class="mi">10</span>
+</code></pre></div>
+<p>This time suppose we want to see how many tweets have been created per sec during last 60 sec. To do this, run:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="o">%</span><span class="k">sql</span> <span class="k">select</span> <span class="n">createdAt</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">from</span> <span class="n">tweets</span> <span class="k">group</span> <span class="k">by</span> <span class="n">createdAt</span> <span class="k">order</span> <span class="k">by</span> <span class="n">createdAt</span>
+</code></pre></div>
+<p>You can make user-defined function and use it in Spark SQL. Let&#39;s try it by making function named <code>sentiment</code>. This function will return one of the three attitudes( positive, negative, neutral ) towards the parameter.</p>
+<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">def</span> <span class="nf">sentiment</span><span class="o">(</span><span class="n">s</span><span class="k">:</span><span class="kt">String</span><span class="o">)</span> <span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">positive</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">(</span><span class="s">"like"</span><span class="o">,</span> <span class="s">"love"</span><span class="o">,</span> <span class="s">"good"</span><span class="o">,</span> <span class="s">"great"</span><span class="o">,</span> <span class="s">"happy"</span><span class="o">,</span> <span class="s">"cool"</span><span class="o">,</span> <span class="s">"the"</span><span class="o">,</span> <span class="s">"one"</span><span class="o">,</span> <span class="s">"that"</span><span class="o">)</span>
+    <span class="k">val</span> <span class="nv">negative</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">(</span><span class="s">"hate"</span><span class="o">,</span> <span class="s">"bad"</span><span class="o">,</span> <span class="s">"stupid"</span><span class="o">,</span> <span class="s">"is"</span><span class="o">)</span>
+
+    <span class="k">var</span> <span class="n">st</span> <span class="k">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="k">val</span> <span class="nv">words</span> <span class="k">=</span> <span class="nv">s</span><span class="o">.</span><span class="py">split</span><span class="o">(</span><span class="s">" "</span><span class="o">)</span>    
+    <span class="nv">positive</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="n">p</span> <span class="k">=&gt;</span>
+        <span class="nv">words</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="n">w</span> <span class="k">=&gt;</span>
+            <span class="nf">if</span><span class="o">(</span><span class="n">p</span><span class="o">==</span><span class="n">w</span><span class="o">)</span> <span class="n">st</span> <span class="k">=</span> <span class="n">st</span><span class="o">+</span><span class="mi">1</span>
+        <span class="o">)</span>
+    <span class="o">)</span>
+
+    <span class="nv">negative</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="n">p</span><span class="k">=&gt;</span>
+        <span class="nv">words</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="n">w</span><span class="k">=&gt;</span>
+            <span class="nf">if</span><span class="o">(</span><span class="n">p</span><span class="o">==</span><span class="n">w</span><span class="o">)</span> <span class="n">st</span> <span class="k">=</span> <span class="n">st</span><span class="o">-</span><span class="mi">1</span>
+        <span class="o">)</span>
+    <span class="o">)</span>
+    <span class="nf">if</span><span class="o">(</span><span class="n">st</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span>
+        <span class="s">"positivie"</span>
+    <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">st</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">)</span>
+        <span class="s">"negative"</span>
+    <span class="k">else</span>
+        <span class="s">"neutral"</span>
+<span class="o">}</span>
+
+<span class="c1">// Below line works only in spark 1.3.0.</span>
+<span class="c1">// For spark 1.1.x and spark 1.2.x,</span>
+<span class="c1">// use sqlc.registerFunction("sentiment", sentiment _) instead.</span>
+<span class="nv">sqlc</span><span class="o">.</span><span class="py">udf</span><span class="o">.</span><span class="py">register</span><span class="o">(</span><span class="s">"sentiment"</span><span class="o">,</span> <span class="n">sentiment</span> <span class="k">_</span><span class="o">)</span>
+
+</code></pre></div>
+<p>To check how people think about girls using <code>sentiment</code> function we&#39;ve made above, run this:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="o">%</span><span class="k">sql</span> <span class="k">select</span> <span class="n">sentiment</span><span class="p">(</span><span class="nb">text</span><span class="p">),</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">from</span> <span class="n">tweets</span> <span class="k">where</span> <span class="nb">text</span> <span class="k">like</span> <span class="s1">'%girl%'</span> <span class="k">group</span> <span class="k">by</span> <span class="n">sentiment</span><span class="p">(</span><span class="nb">text</span><span class="p">)</span>
+</code></pre></div>
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2025 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45176241-5', 'zeppelin.apache.org');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+
