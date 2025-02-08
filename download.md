@@ -26,19 +26,19 @@ The latest release of Apache Zeppelin is **0.12.0**.
 - 0.12.0 released on Jan 31, 2025 ([release notes](./releases/zeppelin-release-0.12.0.html)) ([git tag](https://github.com/apache/zeppelin/tree/v0.12.0))
 
   * Binary package with all interpreters ([Install guide](../../docs/0.12.0/quickstart/install.html)):
-  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-all.tgz'">zeppelin-0.12.0-bin-all.tgz</div> (843MB,
-  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz.asc),
-  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz.sha512))</p>
+  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-all.tgz'">zeppelin-0.12.0-bin-all.tgz</div> (
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-all.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-all.tgz.sha512))</p>
 
-  * Binary package with Spark interpreter and interpreter net-install script ([interpreter installation guide](../../docs/0.11.2/usage/interpreter/installation.html)):
-  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz'">zeppelin-0.11.2-bin-netinst.tgz</div> (577MB,
-  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz.asc),
-  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz.sha512))</p>
+  * Binary package with Spark interpreter and interpreter net-install script ([interpreter installation guide](../../docs/0.12.0/usage/interpreter/installation.html)):
+  <p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-netinst.tgz'">zeppelin-0.12.0-bin-netinst.tgz</div> (
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-netinst.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-netinst.tgz.sha512))</p>
 
   * Source:
-  <a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz'">zeppelin-0.11.2.tgz</a> (10MB,
-  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz.asc),
-  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz.sha512))
+  <a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0.tgz'">zeppelin-0.12.0.tgz</a> (10MB,
+  [pgp](https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0.tgz.asc),
+  [sha](https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0.tgz.sha512))
 
 # Using the official docker image
 
@@ -47,7 +47,7 @@ Make sure that [docker](https://www.docker.com/community-edition) is installed i
 Use this command to launch Apache Zeppelin in a container.
 
 ```bash
-docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.11.2
+docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.12.0
 
 ```
 To persist `logs` and `notebook` directories, use the [volume](https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only) option for docker container.
