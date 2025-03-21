@@ -1308,12 +1308,23 @@
         "license": "BSD-2-Clause",
         "icon": "<i class='fa fa-globe'></i>"
       },
-      "latest": {
+      "1.7.0": {
         "type": "VISUALIZATION",
         "name": "apache-sedona",
         "version": "1.7.0",
         "published": "2024-12-03T00:40:16.921Z",
         "artifact": "apache-sedona@1.7.0",
+        "author": "Apache Sedona, original authors are listed on https://github.com/myuwono/zeppelin-leaflet",
+        "description": "Zeppelin visualization support for Sedona",
+        "license": "BSD-2-Clause",
+        "icon": "<i class='fa fa-globe'></i>"
+      },
+      "latest": {
+        "type": "VISUALIZATION",
+        "name": "apache-sedona",
+        "version": "1.7.1",
+        "published": "2025-03-16T05:54:51.518Z",
+        "artifact": "apache-sedona@1.7.1",
         "author": "Apache Sedona, original authors are listed on https://github.com/myuwono/zeppelin-leaflet",
         "description": "Zeppelin visualization support for Sedona",
         "license": "BSD-2-Clause",
