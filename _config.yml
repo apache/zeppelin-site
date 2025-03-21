@@ -110,12 +110,7 @@ JB :
   #        
   analytics :
     provider: false
-    # provider : google_universal
-    google_classic :
-        tracking_id : 'UA-45176241-2'
-    google_universal : 
-        tracking_id : 'UA-45176241-5'
-        domain : 'zeppelin.apache.org'
+    # provider : matomo
     getclicky :
       site_id : 
     mixpanel :
