@@ -1,7 +1,17 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
-@import url(//fonts.googleapis.com/css?family=Patua+One);
-@import url(//fonts.googleapis.com/css?family=Open+Sans);
-@import url(//fonts.googleapis.com/css?family=Raleway:300,400);
+/*@import url(//fonts.googleapis.com/css?family=Patua+One);*/
+/*@import url(//fonts.googleapis.com/css?family=Open+Sans);*/
+/*@import url(//fonts.googleapis.com/css?family=Raleway:300,400);*/
+
+@font-face {
+  font-family: 'Patua One';
+  src: url('assets/fonts/PatuaOne-Regular.ttf') format('truetype');
+}
+
+/*@font-face {*/
+/*  font-family: 'Open Sans';*/
+/*  src: url('assets/fonts/OpenSans-Regular.ttf') format('truetype');*/
+/*}*/
 
 body {
   padding-top: 50px;
