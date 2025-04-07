@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.2 Documentation: Generic JDBC Interpreter for Apache Zeppelin</title>
+    <meta name="description" content="Generic JDBC Interpreter lets you create a JDBC connection to any data source. You can use Postgres, MySql, MariaDB, Redshift, Apache Hive, Apache Phoenix, Apache Drill and Apache Tajo using JDBC interpreter.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+              <span style="vertical-align:middle">Zeppelin</span>
+            </a>
+            <a class="navbar-brand-version" href="/docs/0.7.2">
+              <span><small>0.7.2</small></span>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.2/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.2/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.2/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.2/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.2/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.2/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.2/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.2/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.2/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.2/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.2/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.2/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.2/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.2/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.2/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.2/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.2/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.2/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.2/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.2/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.2/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.2/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.2/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.2/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.2/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.2/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.2/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.2/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-notebookRepo.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.2/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.2/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.2/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.7.2/security/helium_authorization.html">Helium Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.2/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.2/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.2/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.2/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.2/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Generic JDBC Interpreter for Apache Zeppelin">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Generic JDBC Interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p>JDBC interpreter lets you create a JDBC connection to any data sources seamlessly.</p>
+
+<p>Inserts, Updates, and Upserts are applied immediately after running each statement.</p>
+
+<p>By now, it has been tested with:</p>
+
+<div class="row" style="margin: 30px auto;">
+  <div class="col-md-6">
+    <img src="../assets/themes/zeppelin/img/docs-img/tested_databases.png" width="300px"/>
+  </div>
+  <div class="col-md-6">
+    <li style="padding-bottom: 5px; list-style: circle">
+      <a href="http://www.postgresql.org/" target="_blank">Postgresql</a> -
+      <a href="https://jdbc.postgresql.org/" target="_blank">JDBC Driver</a>
+    </li>
+    <li style="padding-bottom: 5px; list-style: circle">
+      <a href="https://www.mysql.com/" target="_blank">Mysql</a> -
+      <a href="https://dev.mysql.com/downloads/connector/j/" target="_blank">JDBC Driver</a>
+    </li>
+    <li style="padding-bottom: 5px; list-style: circle">
+      <a href="https://mariadb.org/" target="_blank">MariaDB</a> -
+      <a href="https://mariadb.com/kb/en/mariadb/about-mariadb-connector-j/" target="_blank">JDBC Driver</a>
+    </li>
+    <li style="padding-bottom: 5px; list-style: circle">
+      <a href="https://aws.amazon.com/documentation/redshift/" target="_blank">Redshift</a> -
+      <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html" target="_blank">JDBC Driver</a>
+    </li>
+    <li style="padding-bottom: 5px; list-style: circle">
+      <a href="https://hive.apache.org/" target="_blank">Apache Hive</a> - 
+      <a href="https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-JDBC" target="_blank">JDBC Driver</a>
+    </li>
+    <li style="padding-bottom: 5px; list-style: circle">
+      <a href="https://phoenix.apache.org/" target="_blank">Apache Phoenix</a> itself is a JDBC driver
+    </li>
+    <li style="padding-bottom: 5px; list-style: circle">
+      <a href="https://drill.apache.org/" target="_blank">Apache Drill</a> - 
+      <a href="https://drill.apache.org/docs/using-the-jdbc-driver" target="_blank">JDBC Driver</a>
+    </li>
+    <li style="padding-bottom: 5px; list-style: circle">
+      <a href="http://tajo.apache.org/" target="_blank">Apache Tajo</a> - 
+      <a href="https://tajo.apache.org/docs/current/jdbc_driver.html" target="_blank">JDBC Driver</a>
+    </li>
+  </div>
+</div>
+
+<p>If you are using other databases not in the above list, please feel free to share your use case. It would be helpful to improve the functionality of JDBC interpreter.</p>
+
+<h2>Create a new JDBC Interpreter</h2>
+
+<p>First, click <code>+ Create</code> button at the top-right corner in the interpreter setting page.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/click_create_button.png" width="600px"/></p>
+
+<p>Fill <code>Interpreter name</code> field with whatever you want to use as the alias(e.g. mysql, mysql2, hive, redshift, and etc..). Please note that this alias will be used as <code>%interpreter_name</code> to call the interpreter in the paragraph. 
+Then select <code>jdbc</code> as an <code>Interpreter group</code>. </p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/select_name_and_group.png" width="200px"/></p>
+
+<p>The default driver of JDBC interpreter is set as <code>PostgreSQL</code>. It means Zeppelin includes <code>PostgreSQL</code> driver jar in itself.
+So you don&#39;t need to add any dependencies(e.g. the artifact name or path for <code>PostgreSQL</code> driver jar) for <code>PostgreSQL</code> connection.
+The JDBC interpreter properties are defined by default like below.</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Default Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>common.max_count</td>
+    <td>1000</td>
+    <td>The maximun number of SQL result to display</td>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>org.postgresql.Driver</td>
+    <td>JDBC Driver Name</td>
+  </tr>
+  <tr>
+    <td>default.password</td>
+    <td></td>
+    <td>The JDBC user password</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:postgresql://localhost:5432/</td>
+    <td>The URL for JDBC</td>
+  </tr>
+  <tr>
+    <td>default.user</td>
+    <td>gpadmin</td>
+    <td>The JDBC user name</td>
+  </tr>
+</table>
+
+<p>If you want to connect other databases such as <code>Mysql</code>, <code>Redshift</code> and <code>Hive</code>, you need to edit the property values.
+You can also use <a href="../security/datasource_authorization.html">Credential</a> for JDBC authentication.
+If <code>default.user</code> and <code>default.password</code> properties are deleted(using X button) for database connection in the interpreter setting page,
+the JDBC interpreter will get the account information from <a href="../security/datasource_authorization.html">Credential</a>.</p>
+
+<p>The below example is for <code>Mysql</code> connection.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/edit_properties.png" width="600px" /></p>
+
+<p>The last step is <strong>Dependency Setting</strong>. Since Zeppelin only includes <code>PostgreSQL</code> driver jar by default, you need to add each driver&#39;s maven coordinates or JDBC driver&#39;s jar file path for the other databases.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/edit_dependencies.png" width="600px" /></p>
+
+<p>That&#39;s it. You can find more JDBC connection setting examples(<a href="#mysql">Mysql</a>, <a href="#mariadb">MariaDB</a>, <a href="#redshift">Redshift</a>, <a href="#apache-hive">Apache Hive</a>, <a href="#apache-phoenix">Apache Phoenix</a>, and <a href="#apache-tajo">Apache Tajo</a>) in <a href="#examples">this section</a>.</p>
+
+<h2>More properties</h2>
+
+<p>There are more JDBC interpreter properties you can specify like below.</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Property Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>common.max_result</td>
+    <td>Max number of SQL result to display to prevent the browser overload. This is  common properties for all connections</td>
+  </tr>
+  <tr>
+    <td>zeppelin.jdbc.auth.type</td>
+    <td>Types of authentications' methods supported are <code>SIMPLE</code>, and <code>KERBEROS</code></td>
+  </tr>
+  <tr>
+    <td>zeppelin.jdbc.principal</td>
+    <td>The principal name to load from the keytab</td>
+  </tr>
+  <tr>
+    <td>zeppelin.jdbc.keytab.location</td>
+    <td>The path to the keytab file</td>
+  </tr>
+  <tr>
+      <td>zeppelin.jdbc.auth.kerberos.proxy.enable</td>
+      <td>When auth type is Kerberos, enable/disable Kerberos proxy with the login user to get the connection. Default value is true.</td>
+  </tr>
+  <tr>
+    <td>default.jceks.file</td>
+    <td>jceks store path (e.g: jceks://file/tmp/zeppelin.jceks)</td>
+  </tr>
+  <tr>
+    <td>default.jceks.credentialKey</td>
+    <td>jceks credential key</td>
+  </tr>
+</table>
+
+<p>You can also add more properties by using this <a href="http://docs.oracle.com/javase/7/docs/api/java/sql/DriverManager.html#getConnection%28java.lang.String,%20java.util.Properties%29">method</a>.
+For example, if a connection needs a schema parameter, it would have to add the property as follows:</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>name</th>
+    <th>value</th>
+  </tr>
+  <tr>
+    <td>default.schema</td>
+    <td>schema_name</td>
+  </tr>
+</table>
+
+<h2>Binding JDBC interpter to notebook</h2>
+
+<p>To bind the interpreters created in the interpreter setting page, click the gear icon at the top-right corner.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/click_interpreter_binding_button.png" width="600px" /></p>
+
+<p>Select(blue) or deselect(white) the interpreter buttons depending on your use cases. 
+If you need to use more than one interpreter in the notebook, activate several buttons.
+Don&#39;t forget to click <code>Save</code> button, or you will face <code>Interpreter *** is not found</code> error.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/jdbc_interpreter_binding.png" width="550px" /></p>
+
+<h2>How to use</h2>
+
+<h3>Run the paragraph with JDBC interpreter</h3>
+
+<p>To test whether your databases and Zeppelin are successfully connected or not, type <code>%jdbc_interpreter_name</code>(e.g. <code>%mysql</code>) at the top of the paragraph and run <code>show databases</code>.</p>
+<div class="highlight"><pre><code class="sql language-sql" data-lang="sql"><span class="o">%</span><span class="n">jdbc_interpreter_name</span>
+<span class="k">show</span> <span class="n">databases</span>
+</code></pre></div>
+<p>If the paragraph is <code>FINISHED</code> without any errors, a new paragraph will be automatically added after the previous one with <code>%jdbc_interpreter_name</code>.
+So you don&#39;t need to type this prefix in every paragraphs&#39; header.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/run_paragraph_with_jdbc.png" width="600px" /></p>
+
+<h3>Apply Zeppelin Dynamic Forms</h3>
+
+<p>You can leverage <a href="../manual/dynamicform.html">Zeppelin Dynamic Form</a> inside your queries. You can use both the <code>text input</code> and <code>select form</code> parametrization features.</p>
+<div class="highlight"><pre><code class="sql language-sql" data-lang="sql"><span class="o">%</span><span class="n">jdbc_interpreter_name</span>
+<span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="n">performer</span>
+<span class="k">FROM</span> <span class="n">demo</span><span class="p">.</span><span class="n">performers</span>
+<span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;{{performer=Sheryl Crow|Doof|Fanfarlo|Los Paranoia}}&#39;</span>
+</code></pre></div>
+<h2>Examples</h2>
+
+<p>Here are some examples you can refer to. Including the below connectors, you can connect every databases as long as it can be configured with it&#39;s JDBC driver.</p>
+
+<h3>Postgres</h3>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/postgres_setting.png" width="600px" /></p>
+
+<h5>Properties</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>org.postgresql.Driver</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:postgresql://localhost:5432/</td>
+  </tr>
+  <tr>
+    <td>default.user</td>
+    <td>mysql_user</td>
+  </tr>
+  <tr>
+    <td>default.password</td>
+    <td>mysql_password</td>
+  </tr>
+</table>
+
+<p><a href="https://jdbc.postgresql.org/documentation/documentation.html">Postgres JDBC Driver Docs</a></p>
+
+<h5>Dependencies</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Artifact</th>
+    <th>Excludes</th>
+  </tr>
+  <tr>
+    <td>org.postgresql:postgresql:9.4.1211</td>
+    <td></td>
+  </tr>
+</table>
+
+<p><a href="https://mvnrepository.com/artifact/org.postgresql/postgresql">Maven Repository: org.postgresql:postgresql</a></p>
+
+<h3>Mysql</h3>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/mysql_setting.png" width="600px" /></p>
+
+<h5>Properties</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>com.mysql.jdbc.Driver</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:mysql://localhost:3306/</td>
+  </tr>
+  <tr>
+    <td>default.user</td>
+    <td>mysql_user</td>
+  </tr>
+  <tr>
+    <td>default.password</td>
+    <td>mysql_password</td>
+  </tr>
+</table>
+
+<p><a href="https://dev.mysql.com/downloads/connector/j/">Mysql JDBC Driver Docs</a></p>
+
+<h5>Dependencies</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Artifact</th>
+    <th>Excludes</th>
+  </tr>
+  <tr>
+    <td>mysql:mysql-connector-java:5.1.38</td>
+    <td></td>
+  </tr>
+</table>
+
+<p><a href="https://mvnrepository.com/artifact/mysql/mysql-connector-java">Maven Repository: mysql:mysql-connector-java</a></p>
+
+<h3>MariaDB</h3>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/mariadb_setting.png" width="600px" /></p>
+
+<h5>Properties</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>org.mariadb.jdbc.Driver</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:mariadb://localhost:3306</td>
+  </tr>
+  <tr>
+    <td>default.user</td>
+    <td>mariadb_user</td>
+  </tr>
+  <tr>
+    <td>default.password</td>
+    <td>mariadb_password</td>
+  </tr>
+</table>
+
+<p><a href="https://mariadb.com/kb/en/mariadb/about-mariadb-connector-j/">MariaDB JDBC Driver Docs</a></p>
+
+<h5>Dependencies</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Artifact</th>
+    <th>Excludes</th>
+  </tr>
+  <tr>
+    <td>org.mariadb.jdbc:mariadb-java-client:1.5.4</td>
+    <td></td>
+  </tr>
+</table>
+
+<p><a href="https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client">Maven Repository: org.mariadb.jdbc:mariadb-java-client</a></p>
+
+<h3>Redshift</h3>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/redshift_setting.png" width="600px" /></p>
+
+<h5>Properties</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>com.amazon.redshift.jdbc42.Driver</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:redshift://your-redshift-instance-address.redshift.amazonaws.com:5439/your-database</td>
+  </tr>
+  <tr>
+    <td>default.user</td>
+    <td>redshift_user</td>
+  </tr>
+  <tr>
+    <td>default.password</td>
+    <td>redshift_password</td>
+  </tr>
+</table>
+
+<p><a href="http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html">AWS Redshift JDBC Driver Docs</a></p>
+
+<h5>Dependencies</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Artifact</th>
+    <th>Excludes</th>
+  </tr>
+  <tr>
+    <td>com.amazonaws:aws-java-sdk-redshift:1.11.51</td>
+    <td></td>
+  </tr>
+</table>
+
+<p><a href="https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-redshift">Maven Repository: com.amazonaws:aws-java-sdk-redshift</a></p>
+
+<h3>Apache Hive</h3>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/hive_setting.png" width="600px" /></p>
+
+<h5>Properties</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>org.apache.hive.jdbc.HiveDriver</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:hive2://localhost:10000</td>
+  </tr>
+  <tr>
+    <td>default.user</td>
+    <td>hive_user</td>
+  </tr>
+  <tr>
+    <td>default.password</td>
+    <td>hive_password</td>
+  </tr>
+</table>
+
+<p><a href="https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-JDBC">Apache Hive 1 JDBC Driver Docs</a>
+<a href="https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-JDBC">Apache Hive 2 JDBC Driver Docs</a></p>
+
+<h5>Dependencies</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Artifact</th>
+    <th>Excludes</th>
+  </tr>
+  <tr>
+    <td>org.apache.hive:hive-jdbc:0.14.0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>org.apache.hadoop:hadoop-common:2.6.0</td>
+    <td></td>
+  </tr>
+</table>
+
+<p><a href="https://mvnrepository.com/artifact/org.apache.hive/hive-jdbc">Maven Repository : org.apache.hive:hive-jdbc</a></p>
+
+<h3>Apache Phoenix</h3>
+
+<p>Phoenix supports <code>thick</code> and <code>thin</code> connection types:</p>
+
+<ul>
+<li><a href="#thick-client-connection">Thick client</a> is faster, but must connect directly to ZooKeeper and HBase RegionServers.</li>
+<li><a href="#thin-client-connection">Thin client</a> has fewer dependencies and connects through a <a href="http://phoenix.apache.org/server.html">Phoenix Query Server</a> instance.</li>
+</ul>
+
+<p>Use the appropriate <code>default.driver</code>, <code>default.url</code>, and the dependency artifact for your connection type.</p>
+
+<h4>Thick client connection</h4>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/phoenix_thick_setting.png" width="600px" /></p>
+
+<h5>Properties</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>org.apache.phoenix.jdbc.PhoenixDriver</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:phoenix:localhost:2181:/hbase-unsecure</td>
+  </tr>
+  <tr>
+    <td>default.user</td>
+    <td>phoenix_user</td>
+  </tr>
+  <tr>
+    <td>default.password</td>
+    <td>phoenix_password</td>
+  </tr>
+</table>
+
+<h5>Dependencies</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Artifact</th>
+    <th>Excludes</th>
+  </tr>
+  <tr>
+    <td>org.apache.phoenix:phoenix-core:4.4.0-HBase-1.0</td>
+    <td></td>
+  </tr>
+</table>
+
+<p><a href="https://mvnrepository.com/artifact/org.apache.phoenix/phoenix-core">Maven Repository: org.apache.phoenix:phoenix-core</a></p>
+
+<h4>Thin client connection</h4>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/phoenix_thin_setting.png" width="600px" /></p>
+
+<h5>Properties</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>org.apache.phoenix.queryserver.client.Driver</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:phoenix:thin:url=http://localhost:8765;serialization=PROTOBUF</td>
+  </tr>
+  <tr>
+    <td>default.user</td>
+    <td>phoenix_user</td>
+  </tr>
+  <tr>
+    <td>default.password</td>
+    <td>phoenix_password</td>
+  </tr>
+</table>
+
+<h5>Dependencies</h5>
+
+<p>Before Adding one of the below dependencies, check the Phoenix version first.</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Artifact</th>
+    <th>Excludes</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>org.apache.phoenix:phoenix-server-client:4.7.0-HBase-1.1</td>
+    <td></td>
+    <td>For Phoenix <code>4.7</code></td>
+  </tr>
+  <tr>
+    <td>org.apache.phoenix:phoenix-queryserver-client:4.8.0-HBase-1.2</td>
+    <td></td>
+    <td>For Phoenix <code>4.8+</code></td>
+  </tr>
+</table>
+
+<p><a href="https://mvnrepository.com/artifact/org.apache.phoenix/phoenix-queryserver-client">Maven Repository: org.apache.phoenix:phoenix-queryserver-client</a></p>
+
+<h3>Apache Tajo</h3>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/tajo_setting.png" width="600px" /></p>
+
+<h5>Properties</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>default.driver</td>
+    <td>org.apache.tajo.jdbc.TajoDriver</td>
+  </tr>
+  <tr>
+    <td>default.url</td>
+    <td>jdbc:tajo://localhost:26002/default</td>
+  </tr>
+</table>
+
+<p><a href="https://tajo.apache.org/docs/current/jdbc_driver.html">Apache Tajo JDBC Driver Docs</a></p>
+
+<h5>Dependencies</h5>
+
+<table class="table-configuration">
+  <tr>
+    <th>Artifact</th>
+    <th>Excludes</th>
+  </tr>
+  <tr>
+    <td>org.apache.tajo:tajo-jdbc:0.11.0</td>
+    <td></td>
+  </tr>
+</table>
+
+<p><a href="https://mvnrepository.com/artifact/org.apache.tajo/tajo-jdbc">Maven Repository: org.apache.tajo:tajo-jdbc</a></p>
+
+<h2>Bug reporting</h2>
+
+<p>If you find a bug using JDBC interpreter, please create a <a href="https://issues.apache.org/jira/browse/ZEPPELIN">JIRA</a> ticket.</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.2 Documentation: How can you publish your paragraph</title>
+    <meta name="description" content="Apache Zeppelin provides a feature for publishing your notebook paragraph results. Using this feature, you can show Zeppelin notebook paragraph results in your own website.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+              <span style="vertical-align:middle">Zeppelin</span>
+            </a>
+            <a class="navbar-brand-version" href="/docs/0.7.2">
+              <span><small>0.7.2</small></span>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.2/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.2/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.2/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.2/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.2/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.2/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.2/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.2/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.2/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.2/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.2/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.2/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.2/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.2/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.2/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.2/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.2/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.2/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.2/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.2/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.2/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.2/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.2/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.2/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.2/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.2/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.2/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.2/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-notebookRepo.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.2/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.2/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.2/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.7.2/security/helium_authorization.html">Helium Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.2/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.2/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.2/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.2/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.2/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit How can you publish your paragraph">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>How can you publish your paragraph ?</h1>
+
+<div id="toc"></div>
+
+<p>Apache Zeppelin provides a feature for publishing your notebook paragraph results. Using this feature, you can show Zeppelin notebook paragraph results in your own website. 
+It&#39;s very straightforward. Just use <code>&lt;iframe&gt;</code> tag in your page.</p>
+
+<h2>Copy a Paragraph Link</h2>
+
+<p>A first step to publish your paragraph result is <strong>Copy a Paragraph Link</strong>.</p>
+
+<ul>
+<li><p>After running a paragraph in your Zeppelin notebook, click a gear button located on the right side. Then, click <strong>Link this Paragraph</strong> menu like below image.
+<center><img src="../assets/themes/zeppelin/img/docs-img/link-the-paragraph.png" height="100%" width="100%"></center></p></li>
+<li><p>Just copy the provided link. 
+<center><img src="../assets/themes/zeppelin/img/docs-img/copy-the-link.png" height="100%" width="100%"></center></p></li>
+</ul>
+
+<h2>Embed the Paragraph to Your Website</h2>
+
+<p>For publishing the copied paragraph, you may use <code>&lt;iframe&gt;</code> tag in your website page.
+For example,</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;iframe src=&quot;http://&lt; ip-address &gt;:&lt; port &gt;/#/notebook/2B3QSZTKR/paragraph/...?asIframe&quot; height=&quot;&quot; width=&quot;&quot; &gt;&lt;/iframe&gt;
+</code></pre></div>
+<p>Finally, you can show off your beautiful visualization results in your website. 
+<center><img src="../assets/themes/zeppelin/img/docs-img/your-website.png" height="90%" width="90%"></center></p>
+
+<blockquote>
+<p><strong>Note</strong>: To embed the paragraph in a website, Apache Zeppelin needs to be reachable by that website. And please use this feature with caution and in a trusted environment only, as Zeppelin entire Webapp could be accessible by whoever visits your website. </p>
+</blockquote>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

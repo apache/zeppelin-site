@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Interpreters</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.5.6-incubating/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.5.6-incubating/assets/themes/zeppelin/js/docs.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.5.6-incubating/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.5.6-incubating/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.5.6-incubating">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>(0.5.6-incubating)</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Overview</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/index.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Install</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/install/install.html">Install</a></li>
+                <li><a href="/docs/0.5.6-incubating/install/yarn_install.html">YARN Install</a></li>
+                <li><a href="/docs/0.5.6-incubating/install/virtual_machine.html">Virtual Machine Install</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Tutorial</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/tutorial/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Guide</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/manual/dynamicform.html">Dynamic Form</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.6-incubating/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/postgresql.html">Postgresql, hawq</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.5.6-incubating/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.5.6-incubating/pleasecontribute.html">Tajo</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.6-incubating/displaysystem/display.html">Text</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/display.html#html">Html</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/table.html">Table</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/angular.html">Angular</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Manual</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/manual/notebookashomepage.html">Notebook as Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Notebook Storage</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/storage/storage.html#Git">Git Storage</a></li>
+                <li><a href="/docs/0.5.6-incubating/storage/storage.html#S3">S3 Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>REST API</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.5.6-incubating/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Development</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.5.6-incubating/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.5.6-incubating/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      
+<!--<div class="hero-unit Interpreters">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h2>Interpreters in zeppelin</h2>
+
+<p>This section explain the role of Interpreters, interpreters group and interpreters settings in Zeppelin.
+Zeppelin interpreter concept allows any language/data-processing-backend to be plugged into Zeppelin.
+Currently Zeppelin supports many interpreters such as Scala(with Apache Spark), Python(with Apache Spark), SparkSQL, Hive, Markdown and Shell.</p>
+
+<h3>What is zeppelin interpreter?</h3>
+
+<p>Zeppelin Interpreter is the plug-in which enable zeppelin user to use a specific language/data-processing-backend. For example to use scala code in Zeppelin, you need <code>spark</code> interpreter.</p>
+
+<p>When you click on the <code>+Create</code> button in the interpreter page the interpreter drop-down list box will present all the available interpreters on your server.</p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/interpreter_create.png"></p>
+
+<h3>What is zeppelin interpreter setting?</h3>
+
+<p>Zeppelin interpreter setting is the configuration of a given interpreter on zeppelin server. For example, the properties requried for hive  JDBC interpreter to connect to the Hive server.</p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/interpreter_setting.png"></p>
+
+<h3>What is zeppelin interpreter group?</h3>
+
+<p>Every Interpreter belongs to an InterpreterGroup. InterpreterGroup is a unit of start/stop interpreter.
+By default, every interpreter belong to a single group but the group might contain more interpreters. For example, spark interpreter group include spark support, pySpark, 
+SparkSQL and the dependency loader.</p>
+
+<p>Technically, Zeppelin interpreters from the same group are running in the same JVM.</p>
+
+<p>Interpreters belong to a single group a registered together and all of their properties are listed in the interpreter setting.
+<img src="/assets/themes/zeppelin/img/screenshots/interpreter_setting_spark.png"></p>
+
+<h3>Programming langages for interpreter</h3>
+
+<p>If the interpreter uses a specific programming language (like Scala, Python, SQL), it is generally a good idea to add syntax highlighting support for that to the notebook paragraph editor.  </p>
+
+<p>To check out the list of languages supported, see the mode-*.js files under zeppelin-web/bower_components/ace-builds/src-noconflict or from github https://github.com/ajaxorg/ace-builds/tree/master/src-noconflict  </p>
+
+<p>To add a new set of syntax highlighting,<br>
+1. add the mode-*.js file to zeppelin-web/bower.json (when built, zeppelin-web/src/index.html will be changed automatically)<br>
+2. add to the list of <code>editorMode</code> in zeppelin-web/src/app/notebook/paragraph/paragraph.controller.js - it follows the pattern &#39;ace/mode/x&#39; where x is the name<br>
+3. add to the code that checks for <code>%</code> prefix and calls <code>session.setMode(editorMode.x)</code> in <code>setParagraphMode</code> in zeppelin-web/src/app/notebook/paragraph/paragraph.controller.js  </p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

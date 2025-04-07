@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ignite Interpreter</title>
+    <meta name="description" content="Ignite user guide">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.5.6-incubating/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.5.6-incubating/assets/themes/zeppelin/js/docs.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.5.6-incubating/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.5.6-incubating/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.5.6-incubating">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>(0.5.6-incubating)</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Overview</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/index.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Install</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/install/install.html">Install</a></li>
+                <li><a href="/docs/0.5.6-incubating/install/yarn_install.html">YARN Install</a></li>
+                <li><a href="/docs/0.5.6-incubating/install/virtual_machine.html">Virtual Machine Install</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Tutorial</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/tutorial/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Guide</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/manual/dynamicform.html">Dynamic Form</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.6-incubating/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/postgresql.html">Postgresql, hawq</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.5.6-incubating/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.5.6-incubating/pleasecontribute.html">Tajo</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.6-incubating/displaysystem/display.html">Text</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/display.html#html">Html</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/table.html">Table</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/angular.html">Angular</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Manual</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/manual/notebookashomepage.html">Notebook as Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Notebook Storage</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/storage/storage.html#Git">Git Storage</a></li>
+                <li><a href="/docs/0.5.6-incubating/storage/storage.html#S3">S3 Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>REST API</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.5.6-incubating/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Development</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.5.6-incubating/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.5.6-incubating/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      
+<!--<div class="hero-unit Ignite Interpreter">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>Ignite Interpreter for Apache Zeppelin</h2>
+
+<h3>Overview</h3>
+
+<p><a href="https://ignite.apache.org/">Apache Ignite</a> In-Memory Data Fabric is a high-performance, integrated and distributed in-memory platform for computing and transacting on large-scale data sets in real-time, orders of magnitude faster than possible with traditional disk-based or flash technologies.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/ignite-logo.png" alt="Apache Ignite"></p>
+
+<p>You can use Zeppelin to retrieve distributed data from cache using Ignite SQL interpreter. Moreover, Ignite interpreter allows you to execute any Scala code in cases when SQL doesn&#39;t fit to your requirements. For example, you can populate data into your caches or execute distributed computations.</p>
+
+<h3>Installing and Running Ignite example</h3>
+
+<p>In order to use Ignite interpreters, you may install Apache Ignite in some simple steps:</p>
+
+<ol>
+<li><p>Download Ignite <a href="https://ignite.apache.org/download.html#sources">source release</a> or <a href="https://ignite.apache.org/download.html#binaries">binary release</a> whatever you want. But you must download Ignite as the same version of Zeppelin&#39;s. If it is not, you can&#39;t use scala code on Zeppelin. You can find ignite version in Zepplin at the pom.xml which is placed under <code>path/to/your-Zeppelin/ignite/pom.xml</code> ( Of course, in Zeppelin source release ). Please check <code>ignite.version</code> .<br>Currently, Zeppelin provides ignite only in Zeppelin source release. So, if you download Zeppelin binary release( <code>zeppelin-0.5.0-incubating-bin-spark-xxx-hadoop-xx</code> ), you can not use ignite interpreter on Zeppelin. We are planning to include ignite in a future binary release.</p></li>
+<li><p>Examples are shipped as a separate Maven project, so to start running you simply need to import provided <dest_dir>/apache-ignite-fabric-1.2.0-incubating-bin/pom.xml file into your favourite IDE, such as Eclipse. </p></li>
+</ol>
+
+<ul>
+<li>In case of Eclipse, Eclipse -&gt; File -&gt; Import -&gt; Existing Maven Projects</li>
+<li>Set examples directory path to Eclipse and select the pom.xml.</li>
+<li><p>Then start <code>org.apache.ignite.examples.ExampleNodeStartup</code> (or whatever you want) to run at least one or more ignite node. When you run example code, you may notice that the number of node is increase one by one. </p>
+
+<blockquote>
+<p><strong>Tip. If you want to run Ignite examples on the cli not IDE, you can export executable Jar file from IDE. Then run it by using below command.</strong></p>
+</blockquote>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">$ nohup java -jar &lt;/path/to/your Jar file name&gt; 
+</code></pre></div></li>
+</ul>
+
+<h3>Configuring Ignite Interpreter</h3>
+
+<p>At the &quot;Interpreters&quot; menu, you may edit Ignite interpreter or create new one. Zeppelin provides these properties for Ignite.</p>
+
+<p><table class="table-configuration">
+  <tr>
+      <th>Property Name</th>
+      <th>value</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td>ignite.addresses</td>
+      <td>127.0.0.1:47500..47509</td>
+      <td>Coma separated list of Ignite cluster hosts. See <a href="https://apacheignite.readme.io/v1.2/docs/cluster-config">Ignite Cluster Configuration</a> section for more details.</td>
+  </tr>
+  <tr>
+      <td>ignite.clientMode</td>
+      <td>true</td>
+      <td>You can connect to the Ignite cluster as client or server node. See <a href="https://apacheignite.readme.io/v1.2/docs/clients-vs-servers">Ignite Clients vs. Servers</a> section for details. Use true or false values in order to connect in client or server mode respectively.</td>
+  </tr>
+  <tr>
+      <td>ignite.config.url</td>
+      <td></td>
+      <td>Configuration URL. Overrides all other settings.</td>
+   </tr
+   <tr>
+      <td>ignite.jdbc.url</td>
+      <td>jdbc:ignite:cfg://default-ignite-jdbc.xml</td>
+      <td>Ignite JDBC connection URL.</td>
+   </tr>
+   <tr>
+      <td>ignite.peerClassLoadingEnabled</td>
+      <td>true</td>
+      <td>Enables peer-class-loading. See <a href="https://apacheignite.readme.io/v1.2/docs/zero-deployment">Zero Deployment</a> section for details. Use true or false values in order to enable or disable P2P class loading respectively.</td>
+  </tr>
+ </table></p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/ignite-interpreter-setting.png" alt="Configuration of Ignite Interpreter"></p>
+
+<h3>Interpreter Binding for Zeppelin Notebook</h3>
+
+<p>After configuring Ignite interpreter, create your own notebook. Then you can bind interpreters like below image.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/ignite-interpreter-binding.png" alt="Binding Interpreters"></p>
+
+<p>For more interpreter binding information see <a href="http://zeppelin.incubator.apache.org/docs/manual/interpreters.html">here</a>.</p>
+
+<h3>How to use Ignite SQL interpreter</h3>
+
+<p>In order to execute SQL query, use <code>%ignite.ignitesql</code> prefix. <br>
+Supposing you are running <code>org.apache.ignite.examples.streaming.wordcount.StreamWords</code>, then you can use &quot;words&quot; cache( Of course you have to specify this cache name to the Ignite interpreter setting section <code>ignite.jdbc.url</code> of Zeppelin ). 
+For example, you can select top 10 words in the words cache using the following query</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">  %ignite.ignitesql 
+  select _val, count(_val) as cnt from String group by _val order by cnt desc limit 10 
+</code></pre></div>
+<p><img src="../assets/themes/zeppelin/img/docs-img/ignite-sql-example.png" alt="IgniteSql on Zeppelin"></p>
+
+<p>As long as your Ignite version and Zeppelin Ignite version is same, you can also use scala code. Please check the Zeppelin Ignite version before you download your own Ignite. </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">  %ignite
+  import org.apache.ignite._
+  import org.apache.ignite.cache.affinity._
+  import org.apache.ignite.cache.query._
+  import org.apache.ignite.configuration._
+
+  import scala.collection.JavaConversions._
+
+  val cache: IgniteCache[AffinityUuid, String] = ignite.cache(&quot;words&quot;)
+
+  val qry = new SqlFieldsQuery(&quot;select avg(cnt), min(cnt), max(cnt) from (select count(_val) as cnt from String group by _val)&quot;, true)
+
+  val res = cache.query(qry).getAll()
+
+  collectionAsScalaIterable(res).foreach(println _)
+</code></pre></div>
+<p><img src="../assets/themes/zeppelin/img/docs-img/ignite-scala-example.png" alt="Using Scala Code"></p>
+
+<p>Apache Ignite also provides a guide docs for Zeppelin <a href="https://apacheignite.readme.io/docs/data-analysis-with-apache-zeppelin">&quot;Ignite with Apache Zeppelin&quot;</a></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

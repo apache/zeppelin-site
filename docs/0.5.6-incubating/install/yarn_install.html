@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Install Zeppelin to connect with existing YARN cluster</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.5.6-incubating/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.5.6-incubating/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.5.6-incubating/assets/themes/zeppelin/js/docs.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.5.6-incubating/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.5.6-incubating/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.5.6-incubating">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>(0.5.6-incubating)</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Overview</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/index.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Install</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/install/install.html">Install</a></li>
+                <li><a href="/docs/0.5.6-incubating/install/yarn_install.html">YARN Install</a></li>
+                <li><a href="/docs/0.5.6-incubating/install/virtual_machine.html">Virtual Machine Install</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Tutorial</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/tutorial/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Guide</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/manual/dynamicform.html">Dynamic Form</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.6-incubating/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/postgresql.html">Postgresql, hawq</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.5.6-incubating/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.5.6-incubating/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.5.6-incubating/pleasecontribute.html">Tajo</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.6-incubating/displaysystem/display.html">Text</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/display.html#html">Html</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/table.html">Table</a></li>
+                <li><a href="/docs/0.5.6-incubating/displaysystem/angular.html">Angular</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Manual</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/manual/notebookashomepage.html">Notebook as Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Notebook Storage</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/storage/storage.html#Git">Git Storage</a></li>
+                <li><a href="/docs/0.5.6-incubating/storage/storage.html#S3">S3 Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>REST API</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.5.6-incubating/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Development</b><span></li -->
+                <li><a href="/docs/0.5.6-incubating/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.5.6-incubating/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.5.6-incubating/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      
+<!--<div class="hero-unit Install Zeppelin to connect with existing YARN cluster">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h2>Introduction</h2>
+
+<p>This page describes how to pre-configure a bare metal node, build &amp; configure Zeppelin on it, configure Zeppelin and connect it to existing YARN cluster running Hortonworks flavour of Hadoop. It also describes steps to configure Spark &amp; Hive interpreter of Zeppelin. </p>
+
+<h2>Prepare Node</h2>
+
+<h3>Zeppelin user (Optional)</h3>
+
+<p>This step is optional, however its nice to run Zeppelin under its own user. In case you do not like to use Zeppelin (hope not) the user could be deleted along with all the pacakges that were installed for Zeppelin, Zeppelin binary itself and associated directories.</p>
+
+<p>Create a zeppelin user and switch to zeppelin user or if zeppelin user is already created then login as zeppelin.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">useradd zeppelin
+su - zeppelin 
+whoami
+</code></pre></div>
+<p>Assuming a zeppelin user is created then running whoami command must return </p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">zeppelin
+</code></pre></div>
+<p>Its assumed in the rest of the document that zeppelin user is indeed created and below installation instructions are performed as zeppelin user.</p>
+
+<h3>List of Prerequisites</h3>
+
+<ul>
+<li>CentOS 6.x</li>
+<li>Git</li>
+<li>Java 1.7 </li>
+<li>Apache Maven</li>
+<li>Hadoop client</li>
+<li>Spark</li>
+<li>Internet connection is required. </li>
+</ul>
+
+<p>Its assumed that the node has CentOS 6.x installed on it. Although any version of Linux distribution should work fine. The working directory of all prerequisite pacakges is /home/zeppelin/prerequisites, although any location could be used.</p>
+
+<h4>Git</h4>
+
+<p>Intall latest stable version of Git. This document describes installation of version 2.4.8</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+yum install  gcc perl-ExtUtils-MakeMaker
+yum remove git
+<span class="nb">cd</span> /home/zeppelin/prerequisites
+wget https://github.com/git/git/archive/v2.4.8.tar.gz
+tar xzf git-2.0.4.tar.gz
+<span class="nb">cd </span>git-2.0.4
+make <span class="nv">prefix</span><span class="o">=</span>/home/zeppelin/prerequisites/git all
+make <span class="nv">prefix</span><span class="o">=</span>/home/zeppelin/prerequisites/git install
+<span class="nb">echo</span> <span class="s2">&quot;export PATH=$PATH:/home/zeppelin/prerequisites/bin&quot;</span> &gt;&gt; /home/zeppelin/.bashrc
+<span class="nb">source</span> /home/zeppelin/.bashrc
+git --version
+</code></pre></div>
+<p>Assuming all the packages are successfully installed, running the version option with git command should display</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">git version 2.4.8
+</code></pre></div>
+<h4>Java</h4>
+
+<p>Zeppelin works well with 1.7.x version of Java runtime. Download JDK version 7 and a stable update and follow below instructions to install it.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="nb">cd</span> /home/zeppelin/prerequisites/
+<span class="c">#Download JDK 1.7, Assume JDK 7 update 79 is downloaded.</span>
+tar -xf jdk-7u79-linux-x64.tar.gz
+<span class="nb">echo</span> <span class="s2">&quot;export JAVA_HOME=/home/zeppelin/prerequisites/jdk1.7.0_79&quot;</span> &gt;&gt; /home/zeppelin/.bashrc
+<span class="nb">source</span> /home/zeppelin/.bashrc
+<span class="nb">echo</span> <span class="nv">$JAVA_HOME</span>
+</code></pre></div>
+<p>Assuming all the packages are successfully installed, echoing JAVA_HOME environment variable should display</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">/home/zeppelin/prerequisites/jdk1.7.0_79
+</code></pre></div>
+<h4>Apache Maven</h4>
+
+<p>Download and install a stable version of Maven.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="nb">cd</span> /home/zeppelin/prerequisites/
+wget ftp://mirror.reverse.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+tar -xf apache-maven-3.3.3-bin.tar.gz 
+<span class="nb">cd </span>apache-maven-3.3.3
+<span class="nb">export </span><span class="nv">MAVEN_HOME</span><span class="o">=</span>/home/zeppelin/prerequisites/apache-maven-3.3.3
+<span class="nb">echo</span> <span class="s2">&quot;export PATH=$PATH:/home/zeppelin/prerequisites/apache-maven-3.3.3/bin&quot;</span> &gt;&gt; /home/zeppelin/.bashrc
+<span class="nb">source</span> /home/zeppelin/.bashrc
+mvn -version
+</code></pre></div>
+<p>Assuming all the packages are successfully installed, running the version option with mvn command should display</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">Apache Maven 3.3.3 <span class="o">(</span>7994120775791599e205a5524ec3e0dfe41d4a06<span class="p">;</span> 2015-04-22T04:57:37-07:00<span class="o">)</span>
+Maven home: /home/zeppelin/prerequisites/apache-maven-3.3.3
+Java version: 1.7.0_79, vendor: Oracle Corporation
+Java home: /home/zeppelin/prerequisites/jdk1.7.0_79/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: <span class="s2">&quot;linux&quot;</span>, version: <span class="s2">&quot;2.6.32-358.el6.x86_64&quot;</span>, arch: <span class="s2">&quot;amd64&quot;</span>, family: <span class="s2">&quot;unix&quot;</span>
+</code></pre></div>
+<h4>Hadoop client</h4>
+
+<p>Zeppelin can work with multiple versions &amp; distributions of Hadoop. A complete list is available <a href="https://github.com/apache/incubator-zeppelin#build">here.</a> This document assumes Hadoop 2.7.x client libraries including configuration files are installed on Zeppelin node. It also assumes /etc/hadoop/conf contains various Hadoop configuration files. The location of Hadoop configuration files may vary, hence use appropriate location.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">hadoop version
+Hadoop 2.7.1.2.3.1.0-2574
+Subversion git@github.com:hortonworks/hadoop.git -r f66cf95e2e9367a74b0ec88b2df33458b6cff2d0
+Compiled by jenkins on 2015-07-25T22:36Z
+Compiled with protoc 2.5.0
+From <span class="nb">source </span>with checksum 54f9bbb4492f92975e84e390599b881d
+This <span class="nb">command </span>was run using /usr/hdp/2.3.1.0-2574/hadoop/lib/hadoop-common-2.7.1.2.3.1.0-2574.jar
+</code></pre></div>
+<h4>Spark</h4>
+
+<p>Zeppelin can work with multiple versions of Spark. A complete list <a href="https://github.com/apache/incubator-zeppelin#build">is available here.</a> This document assumes Spark 1.6.1 is installed on Zeppelin node at /home/zeppelin/prerequisites/spark.</p>
+
+<h2>Build</h2>
+
+<p>Checkout source code from <a href="https://github.com/apache/incubator-zeppelin">https://github.com/apache/incubator-zeppelin</a></p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="nb">cd</span> /home/zeppelin/
+git clone https://github.com/apache/incubator-zeppelin.git
+</code></pre></div>
+<p>Zeppelin package is available at /home/zeppelin/incubator-zeppelin after the checkout completes.</p>
+
+<h3>Cluster mode</h3>
+
+<p>As its assumed Hadoop 2.7.x is installed on the YARN cluster &amp; Spark 1.6.1 is installed on Zeppelin node. Hence appropriate options are chosen to build Zeppelin. This is very important as Zeppelin will bundle corresponding Hadoop &amp; Spark libraries and they must match the ones present on YARN cluster &amp; Zeppelin Spark installation. </p>
+
+<p>Zeppelin is a maven project and hence must be built with Apache Maven.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="nb">cd</span> /home/zeppelin/incubator-zeppelin
+mvn clean package -Pspark-1.3 -Dspark.version<span class="o">=</span>1.3.1 -Dhadoop.version<span class="o">=</span>2.7.0 -Phadoop-2.6 -Pyarn -DskipTests
+</code></pre></div>
+<p>Building Zeppelin for first time downloads various dependencies and hence takes few minutes to complete. </p>
+
+<h2>Zeppelin Configuration</h2>
+
+<p>Zeppelin configurations needs to be modified to connect to YARN cluster. Create a copy of zeppelin environment XML</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">cp /home/zeppelin/incubator-zeppelin/conf/zeppelin-env.sh.template /home/zeppelin/incubator-zeppelin/conf/zeppelin-env.sh 
+</code></pre></div>
+<p>Set the following properties</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/home/zeppelin/prerequisites/jdk1.7.0_79
+<span class="nb">export </span><span class="nv">HADOOP_CONF_DIR</span><span class="o">=</span>/etc/hadoop/conf
+<span class="nb">export </span><span class="nv">ZEPPELIN_JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;-Dhdp.version=2.3.1.0-2574&quot;</span>
+</code></pre></div>
+<p>As /etc/hadoop/conf contains various configurations of YARN cluster, Zeppelin can now submit Spark/Hive jobs on YARN cluster form its web interface. The value of hdp.version is set to 2.3.1.0-2574. This can be obtained by running the following command</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">hdp-select status hadoop-client <span class="p">|</span> sed <span class="s1">&#39;s/hadoop-client - \(.*\)/\1/&#39;</span>
+<span class="c"># It returned  2.3.1.0-2574</span>
+</code></pre></div>
+<h2>Start/Stop</h2>
+
+<h3>Start Zeppelin</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">cd /home/zeppelin/incubator-zeppelin
+bin/zeppelin-daemon.sh start
+</code></pre></div>
+<p>After successful start, visit http://[zeppelin-server-host-name]:8080 with your web browser.</p>
+
+<h3>Stop Zeppelin</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin/zeppelin-daemon.sh stop
+</code></pre></div>
+<h2>Interpreter</h2>
+
+<p>Zeppelin provides to various distributed processing frameworks to process data that ranges from Spark, Hive, Tajo, Ignite and Lens to name a few. This document describes to configure Hive &amp; Spark interpreters.</p>
+
+<h3>Hive</h3>
+
+<p>Zeppelin supports Hive interpreter and hence copy hive-site.xml that should be present at /etc/hive/conf to the configuration folder of Zeppelin. Once Zeppelin is built it will have conf folder under /home/zeppelin/incubator-zeppelin.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">cp /etc/hive/conf/hive-site.xml  /home/zeppelin/incubator-zeppelin/conf
+</code></pre></div>
+<p>Once Zeppelin server has started successfully, visit http://[zeppelin-server-host-name]:8080 with your web browser. Click on Interpreter tab next to Notebook dropdown. Look for Hive configurations and set them appropriately. By default hive.hiveserver2.url will be pointing to localhost and hive.hiveserver2.password/hive.hiveserver2.user are set to hive/hive. Set them as per Hive installation on YARN cluster. 
+Click on Save button. Once these configurations are updated, Zeppelin will prompt you to restart the interpreter. Accept the prompt and the interpreter will reload the configurations.</p>
+
+<h3>Spark</h3>
+
+<p>Look for Spark configrations and click edit button to add the following properties to make Spark Interpreter to run on YARN.</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Property Name</th>
+    <th>Property Value</th>
+    <th>Remarks</th>
+  </tr>
+  <tr>
+    <td>master</td>
+    <td>yarn-client</td>
+    <td>In yarn-client mode, the driver runs in the client process, and the application master is only used for requesting resources from YARN.</td>
+  </tr>
+  <tr>
+    <td>spark.driver.extraJavaOptions</td>
+    <td>-Dhdp.version=2.3.1.0-2574</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>spark.yarn.am.extraJavaOptions</td>
+    <td>-Dhdp.version=2.3.1.0-2574</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>spark.yarn.isPython</td>
+    <td>true</td>
+    <td>Distributes libraries required for pyspark in yarn-client mode if set to 'true'.</td>
+  </tr>
+</table>
+
+<p>Click on Save button. Once these configurations are updated, Zeppelin will prompt you to restart the interpreter. Accept the prompt and the interpreter will reload the configurations.</p>
+
+<p>Spark &amp; Hive notebooks can be written with Zeppelin now. The resulting Spark &amp; Hive jobs will run on configured YARN cluster.</p>
+
+<h2>Debug</h2>
+
+<p>Zeppelin does not emit any kind of error messages on web interface when notebook/paragrah is run. If a paragraph fails it only displays ERROR. The reason for failure needs to be looked into log files which is present in logs directory under zeppelin installation base directory. Zeppelin creates a log file for each kind of interpreter.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="o">[</span>zeppelin@zeppelin-3529 logs<span class="o">]</span><span class="nv">$ </span><span class="nb">pwd</span>
+/home/zeppelin/incubator-zeppelin/logs
+<span class="o">[</span>zeppelin@zeppelin-3529 logs<span class="o">]</span><span class="nv">$ </span>ls -l
+total 844
+-rw-rw-r-- 1 zeppelin zeppelin  14648 Aug  3 14:45 zeppelin-interpreter-hive-zeppelin-zeppelin-3529.log
+-rw-rw-r-- 1 zeppelin zeppelin 625050 Aug  3 16:05 zeppelin-interpreter-spark-zeppelin-zeppelin-3529.log
+-rw-rw-r-- 1 zeppelin zeppelin 200394 Aug  3 21:15 zeppelin-zeppelin-zeppelin-3529.log
+-rw-rw-r-- 1 zeppelin zeppelin  16162 Aug  3 14:03 zeppelin-zeppelin-zeppelin-3529.out
+<span class="o">[</span>zeppelin@zeppelin-3529 logs<span class="o">]</span><span class="nv">$ </span>
+</code></pre></div>
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

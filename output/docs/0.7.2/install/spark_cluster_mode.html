@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.2 Documentation: Apache Zeppelin on Spark cluster mode</title>
+    <meta name="description" content="This document will guide you how you can build and configure the environment on 3 types of Spark cluster manager(Standalone, Hadoop Yarn, Apache Mesos) with Apache Zeppelin using docker scripts.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.2/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+              <span style="vertical-align:middle">Zeppelin</span>
+            </a>
+            <a class="navbar-brand-version" href="/docs/0.7.2">
+              <span><small>0.7.2</small></span>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.2/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.2/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.2/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.2/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.2/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.2/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.2/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.2/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.2/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.2/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.2/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.2/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.2/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.2/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.2/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.2/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.2/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.2/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.2/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.2/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.2/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.2/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.2/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.2/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.2/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.2/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.2/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.2/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.2/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.2/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-notebookRepo.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.2/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.2/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.2/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.2/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.7.2/security/helium_authorization.html">Helium Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.2/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.2/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.2/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.2/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.2/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.2/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.2/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Apache Zeppelin on Spark cluster mode">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Apache Zeppelin on Spark Cluster Mode</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p><a href="http://spark.apache.org/">Apache Spark</a> has supported three cluster manager types(<a href="http://spark.apache.org/docs/latest/spark-standalone.html">Standalone</a>, <a href="http://spark.apache.org/docs/latest/running-on-mesos.html">Apache Mesos</a> and <a href="http://spark.apache.org/docs/latest/running-on-yarn.html">Hadoop YARN</a>) so far.
+This document will guide you how you can build and configure the environment on 3 types of Spark cluster manager with Apache Zeppelin using <a href="https://www.docker.com/">Docker</a> scripts.
+So <a href="https://docs.docker.com/engine/installation/">install docker</a> on the machine first.</p>
+
+<h2>Spark standalone mode</h2>
+
+<p><a href="http://spark.apache.org/docs/latest/spark-standalone.html">Spark standalone</a> is a simple cluster manager included with Spark that makes it easy to set up a cluster.
+You can simply set up Spark standalone environment with below steps.</p>
+
+<blockquote>
+<p><strong>Note :</strong> Since Apache Zeppelin and Spark use same <code>8080</code> port for their web UI, you might need to change <code>zeppelin.server.port</code> in <code>conf/zeppelin-site.xml</code>.</p>
+</blockquote>
+
+<h3>1. Build Docker file</h3>
+
+<p>You can find docker script files under <code>scripts/docker/spark-cluster-managers</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">cd $ZEPPELIN_HOME/scripts/docker/spark-cluster-managers/spark_standalone
+docker build -t &quot;spark_standalone&quot; .
+</code></pre></div>
+<h3>2. Run docker</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">docker run -it \
+-p 8080:8080 \
+-p 7077:7077 \
+-p 8888:8888 \
+-p 8081:8081 \
+-h sparkmaster \
+--name spark_standalone \
+spark_standalone bash;
+</code></pre></div>
+<p>Note that <code>sparkmaster</code> hostname used here to run docker container should be defined in your <code>/etc/hosts</code>.</p>
+
+<h3>3. Configure Spark interpreter in Zeppelin</h3>
+
+<p>Set Spark master as <code>spark://&lt;hostname&gt;:7077</code> in Zeppelin <strong>Interpreters</strong> setting page.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/standalone_conf.png" /></p>
+
+<h3>4. Run Zeppelin with Spark interpreter</h3>
+
+<p>After running single paragraph with Spark interpreter in Zeppelin, browse <code>https://&lt;hostname&gt;:8080</code> and check whether Spark cluster is running well or not.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/spark_ui.png" /></p>
+
+<p>You can also simply verify that Spark is running well in Docker with below command.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">ps -ef | grep spark
+</code></pre></div>
+<h2>Spark on YARN mode</h2>
+
+<p>You can simply set up <a href="http://spark.apache.org/docs/latest/running-on-yarn.html">Spark on YARN</a> docker environment with below steps.</p>
+
+<blockquote>
+<p><strong>Note :</strong> Since Apache Zeppelin and Spark use same <code>8080</code> port for their web UI, you might need to change <code>zeppelin.server.port</code> in <code>conf/zeppelin-site.xml</code>.</p>
+</blockquote>
+
+<h3>1. Build Docker file</h3>
+
+<p>You can find docker script files under <code>scripts/docker/spark-cluster-managers</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">cd $ZEPPELIN_HOME/scripts/docker/spark-cluster-managers/spark_yarn_cluster
+docker build -t &quot;spark_yarn&quot; .
+</code></pre></div>
+<h3>2. Run docker</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">docker run -it \
+ -p 5000:5000 \
+ -p 9000:9000 \
+ -p 9001:9001 \
+ -p 8088:8088 \
+ -p 8042:8042 \
+ -p 8030:8030 \
+ -p 8031:8031 \
+ -p 8032:8032 \
+ -p 8033:8033 \
+ -p 8080:8080 \
+ -p 7077:7077 \
+ -p 8888:8888 \
+ -p 8081:8081 \
+ -p 50010:50010 \
+ -p 50075:50075 \
+ -p 50020:50020 \
+ -p 50070:50070 \
+ --name spark_yarn \
+ -h sparkmaster \
+ spark_yarn bash;
+</code></pre></div>
+<p>Note that <code>sparkmaster</code> hostname used here to run docker container should be defined in your <code>/etc/hosts</code>.</p>
+
+<h3>3. Verify running Spark on YARN.</h3>
+
+<p>You can simply verify the processes of Spark and YARN are running well in Docker with below command.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">ps -ef
+</code></pre></div>
+<p>You can also check each application web UI for HDFS on <code>http://&lt;hostname&gt;:50070/</code>, YARN on <code>http://&lt;hostname&gt;:8088/cluster</code> and Spark on <code>http://&lt;hostname&gt;:8080/</code>.</p>
+
+<h3>4. Configure Spark interpreter in Zeppelin</h3>
+
+<p>Set following configurations to <code>conf/zeppelin-env.sh</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">export MASTER=yarn-client
+export HADOOP_CONF_DIR=[your_hadoop_conf_path]
+export SPARK_HOME=[your_spark_home_path]
+</code></pre></div>
+<p><code>HADOOP_CONF_DIR</code>(Hadoop configuration path) is defined in <code>/scripts/docker/spark-cluster-managers/spark_yarn_cluster/hdfs_conf</code>.</p>
+
+<p>Don&#39;t forget to set Spark <code>master</code> as <code>yarn-client</code> in Zeppelin <strong>Interpreters</strong> setting page like below.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/zeppelin_yarn_conf.png" /></p>
+
+<h3>5. Run Zeppelin with Spark interpreter</h3>
+
+<p>After running a single paragraph with Spark interpreter in Zeppelin, browse <code>http://&lt;hostname&gt;:8088/cluster/apps</code> and check Zeppelin application is running well or not.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/yarn_applications.png" /></p>
+
+<h2>Spark on Mesos mode</h2>
+
+<p>You can simply set up <a href="http://spark.apache.org/docs/latest/running-on-mesos.html">Spark on Mesos</a> docker environment with below steps.</p>
+
+<h3>1. Build Docker file</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">cd $ZEPPELIN_HOME/scripts/docker/spark-cluster-managers/spark_mesos
+docker build -t &quot;spark_mesos&quot; .
+</code></pre></div>
+<h3>2. Run docker</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">docker run --net=host -it \
+-p 8080:8080 \
+-p 7077:7077 \
+-p 8888:8888 \
+-p 8081:8081 \
+-p 8082:8082 \
+-p 5050:5050 \
+-p 5051:5051 \
+-p 4040:4040 \
+-h sparkmaster \
+--name spark_mesos \
+spark_mesos bash;
+</code></pre></div>
+<p>Note that <code>sparkmaster</code> hostname used here to run docker container should be defined in your <code>/etc/hosts</code>.</p>
+
+<h3>3. Verify running Spark on Mesos.</h3>
+
+<p>You can simply verify the processes of Spark and Mesos are running well in Docker with below command.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">ps -ef
+</code></pre></div>
+<p>You can also check each application web UI for Mesos on <code>http://&lt;hostname&gt;:5050/cluster</code> and Spark on <code>http://&lt;hostname&gt;:8080/</code>.</p>
+
+<h3>4. Configure Spark interpreter in Zeppelin</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">export MASTER=mesos://127.0.1.1:5050
+export MESOS_NATIVE_JAVA_LIBRARY=[PATH OF libmesos.so]
+export SPARK_HOME=[PATH OF SPARK HOME]
+</code></pre></div>
+<p>Don&#39;t forget to set Spark <code>master</code> as <code>mesos://127.0.1.1:5050</code> in Zeppelin <strong>Interpreters</strong> setting page like below.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/zeppelin_mesos_conf.png" /></p>
+
+<h3>5. Run Zeppelin with Spark interpreter</h3>
+
+<p>After running a single paragraph with Spark interpreter in Zeppelin, browse <code>http://&lt;hostname&gt;:5050/#/frameworks</code> and check Zeppelin application is running well or not.</p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/mesos_frameworks.png" /></p>
+
+<h3>Troubleshooting for Spark on Mesos</h3>
+
+<ul>
+<li>If you have problem with hostname, use <code>--add-host</code> option when executing <code>dockerrun</code></li>
+</ul>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">## use `--add-host=moby:127.0.0.1` option to resolve
+## since docker container couldn&#39;t resolve `moby`
+
+: java.net.UnknownHostException: moby: moby: Name or service not known
+        at java.net.InetAddress.getLocalHost(InetAddress.java:1496)
+        at org.apache.spark.util.Utils$.findLocalInetAddress(Utils.scala:789)
+        at org.apache.spark.util.Utils$.org$apache$spark$util$Utils$$localIpAddress$lzycompute(Utils.scala:782)
+        at org.apache.spark.util.Utils$.org$apache$spark$util$Utils$$localIpAddress(Utils.scala:782)
+</code></pre></div>
+<ul>
+<li>If you have problem with mesos master, try <code>mesos://127.0.0.1</code> instead of <code>mesos://127.0.1.1</code></li>
+</ul>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">I0103 20:17:22.329269   340 sched.cpp:330] New master detected at master@127.0.1.1:5050
+I0103 20:17:22.330749   340 sched.cpp:341] No credentials provided. Attempting to register without authentication
+W0103 20:17:22.333531   340 sched.cpp:736] Ignoring framework registered message because it was sentfrom &#39;master@127.0.0.1:5050&#39; instead of the leading master &#39;master@127.0.1.1:5050&#39;
+W0103 20:17:24.040252   339 sched.cpp:736] Ignoring framework registered message because it was sentfrom &#39;master@127.0.0.1:5050&#39; instead of the leading master &#39;master@127.0.1.1:5050&#39;
+W0103 20:17:26.150250   339 sched.cpp:736] Ignoring framework registered message because it was sentfrom &#39;master@127.0.0.1:5050&#39; instead of the leading master &#39;master@127.0.1.1:5050&#39;
+W0103 20:17:26.737604   339 sched.cpp:736] Ignoring framework registered message because it was sentfrom &#39;master@127.0.0.1:5050&#39; instead of the leading master &#39;master@127.0.1.1:5050&#39;
+W0103 20:17:35.241714   336 sched.cpp:736] Ignoring framework registered message because it was sentfrom &#39;master@127.0.0.1:5050&#39; instead of the leading master &#39;master@127.0.1.1:5050&#39;
+</code></pre></div>
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

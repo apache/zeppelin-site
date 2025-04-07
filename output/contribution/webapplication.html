@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Web Application</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/themes/zeppelin/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/themes/zeppelin/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/themes/zeppelin/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/themes/zeppelin/img/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/themes/zeppelin/img/favicon/manifest.json">
+    <link rel="mask-icon" href="/assets/themes/zeppelin/img/favicon/safari-pinned-tab.svg" color="#438bc9">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--    <script src="https://s3.amazonaws.com/apache-zeppelin/post/medium.js"></script>-->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/moment.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/helium.controller.js"></script>
+    <script src="/assets/themes/zeppelin/js/medium.controller.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" style="margin-top: -6px;" width="50" alt="I'm zeppelin">
+          <span style="margin-left: 5px;"> Apache Zeppelin </span>
+      </a>
+    </div>
+    <nav class="navbar-collapse collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/latest/quickstart/install.html">Quick Start</a></li>
+        <!-- Download -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Download<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/download.html">Download Zeppelin</a></li>
+            <li><a href="/supported_interpreters.html">Supported Interpreters</a></li>
+          </ul>
+        </li>
+        <!-- Docs -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Docs<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="title"><span><b>Release</b></span></li>
+            <li><a href="/docs/0.11.2">0.11.2</a></li>
+            <li><a href="/docs/0.11.1">0.11.1</a></li>
+            <li><a href="/docs/0.11.0">0.11.0</a></li>
+            <li><a href="/docs/0.10.1">0.10.1</a></li>
+            <li><a href="/docs/0.10.0">0.10.0</a></li>
+            <li><a href="/docs/0.9.0">0.9.0</a></li>
+            <li><a href="/docs/0.8.2">0.8.2</a></li>
+            <li><a href="documentation.html">Older Versions</a></li>
+            <li class="title"><span><b><a href="security.html">Security</a></b><span></li>
+          </ul>
+        </li>
+
+        <li><a href="/helium_packages.html">Helium</a></li>
+
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Community<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/community.html">Contributors</a></li>
+            <li><a href="https://github.com/apache/zeppelin">GitHub</a></li>
+          </ul>
+        </li>
+          <!-- Apache -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apache<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a></li>
+            <li><a href="http://www.apache.org/licenses/">Apache License</a></li>
+            <li><a href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+            <li><a href="/assets.html">Assets</a></li>
+            <li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav><!--/.navbar-collapse -->
+  </div>
+</div>
+
+
+
+
+    <div class="content">
+      
+
+<div class="row">
+  
+    <div class="sideMenu col-sm-3">
+      
+      
+      
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+          
+            <li><a href="/contribution/zeppelinweb/goodPracticeGuide01.html">1 - Defining Components</a></li>
+          
+        
+      
+    
+  
+    
+      
+        
+          
+            <li><a href="/contribution/zeppelinweb/goodPracticeGuide02.html">2 - Event Dispatching</a></li>
+          
+        
+      
+    
+  
+    
+      
+        
+          
+            <li><a href="/contribution/zeppelinweb/goodPracticeGuide03.html">3 - Making A Controller</a></li>
+          
+        
+      
+    
+  
+    
+      
+        
+          
+            <li><a href="/contribution/zeppelinweb/goodPracticeGuide04.html">4 - Using ng-bind</a></li>
+          
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+      
+        
+          
+            <li class="active"><a href="/contribution/webapplication.html" class="active">Web Application</a></li>
+          
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+
+
+
+
+    </div>
+    <div class="col-sm-9">
+      <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Contributing to Zeppelin-Web</h1>
+
+<h2>Dev Mode</h2>
+
+<p>When working on Zeppelin&#39;s WebApplication, it is recommended to run in dev mode.</p>
+
+<p>For that, start Zeppelin server normally, then use <code>yarn run dev</code> in <em>zeppelin-web</em> directory.</p>
+
+<p>This will launch a Zeppelin WebApplication on port <strong>9000</strong> that will update on code changes.</p>
+
+<h2>Technologies</h2>
+
+<p>Zeppelin WebApplication is using <strong>AngularJS</strong> as main Framework, and <strong>Grunt</strong> and <strong>Bower</strong> as helpers.</p>
+
+<p>So you might want to get familiar with it.
+<a href="http://www.sitepoint.com/kickstart-your-angularjs-development-with-yeoman-grunt-and-bower/">Here is a good start</a>
+(There is obviously plenty more ressources to learn)</p>
+
+<h2>Good Practices</h2>
+
+<p>On the side menu of this page, you will find documentation about some of the best practices we want to apply
+in this project.</p>
+
+<p>This is a great way for people to learn more about angularJS, and to keep the code clean and optimized.</p>
+
+<p>Please try to follow those <strong>Good Practices Guides</strong> when making a PR or reviewing one.</p>
+
+<h2>Coding style</h2>
+
+<ul>
+<li>We follow mainly the <a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google Javascript Guide</a></li>
+<li>We use a 2 spaces indentation</li>
+<li>We use single quotes</li>
+</ul>
+
+<p>But don&#39;t worry, Eslint and Jscs will make you remember it for the most part.</p>
+
+<p>We try not to have <strong>JQuery except in directives</strong>, If you want to include a library,
+please search for its <strong>angularJS</strong> directive first.</p>
+
+<p>If you still need to use it, then please use <code>angular.element()</code> instead of <code>$()</code></p>
+
+<h2>Folder Structure &amp; Code Organization</h2>
+
+<ul>
+<li><code>src</code> folder: Contains the Source code for Zeppelin WebApplication</li>
+<li><code>dist</code> folder: Contains the compiled code after using <strong>yarn run build</strong></li>
+</ul>
+
+<h3>Src and Code Organization</h3>
+
+<p>The <code>src</code> folder is organized as such:</p>
+
+<pre>
+ src/
+ ├──  app/
+ │   ├──  name/
+ │   │    ├──  name.controller.js
+ |   |    ├──  name.html
+ |   |    ├──  subComponent1/
+ |   |    |    ├──  subComponent1.html
+ |   |    |    ├──  subComponent1.css
+ │   |    |    └──  subComponent1.controller.js
+ │   │    └──  name.css
+ │   ├──  app.js
+ │   └──  app.controller.js
+ ├──  assets/
+ │   ├──  images/
+ │   └──  styles/
+ |        ├──  looknfeel/
+ │        └──  printMode.css
+ ├──  components/
+ │   ├──  component1/
+ |   |    ├──  component1.html
+ │   |    └──  component1.controller.js
+ │   └──  component2/
+ ├──  fonts/
+ |    ├──  *.{eot,svg,ttf,woff,otf}
+ │    └──  *.css
+ ├──  favicon.ico
+ ├──  index.html
+ ├──  index.js
+ └──  404.html
+</pre>
+
+<p>The code is now organized in a component type of architecture, where everything is logically grouped.</p>
+
+<h4>File type name convention</h4>
+
+<p>In order to understand what is contained inside the .js files without opening it, we use some name conventions:</p>
+
+<ul>
+<li>.controller.js</li>
+<li>.directive.js</li>
+<li>.service.js</li>
+</ul>
+
+<h3>Component Architecture</h3>
+
+<p>When we talk about Component architecture, we think about grouping files together in a logical way.</p>
+
+<p>A component can then be made of multiple files like <code>.html</code>, <code>.css</code> or any other file type mentioned above.</p>
+
+<p>Related components can be grouped as sub-component as long as they are used in that component only.</p>
+
+<h4>App folder</h4>
+
+<p>Contains the application <code>app.js</code> and page related components.</p>
+
+<ul>
+<li>Home Page</li>
+<li>Interpreter Page</li>
+<li>Notebook Page
+etc...</li>
+</ul>
+
+<p>The only restriction being that a component in the <code>app</code> folder is <strong>not used anywhere else</strong></p>
+
+<h4>Components folder</h4>
+
+<p>The <code>components</code> folder is here to contains any reusable component (used more than once)</p>
+
+<h3>Fonts</h3>
+
+<p>Fonts files and their css are mixed together in the <code>fonts</code> folder</p>
+
+<h2>New files includes</h2>
+
+<p>As we do not use yeoman to generate controllers or other type of files with this new structure,
+we need to do some includes manually in <code>index.html</code> in order to use dev mode and compile correctly.</p>
+
+<ul>
+<li>Non-bower <code>.js</code> files needs to be injected between the tag <code>&lt;!-- build:js({.tmp,src}) scripts/scripts.js --&gt;</code></li>
+<li>Css files needs to be injected between the tag <code>&lt;!-- build:css(.tmp) styles/main.css --&gt;</code></li>
+</ul>
+
+<h2>Add plugins with Bower</h2>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">bower install &lt;plugin&gt; --save
+</code></pre></figure>
+<p>The file index.html will automatically update with the new bower_component</p>
+
+<p><br/></p>
+
+<p><strong>Example</strong>: <code>./bower install angular-nvd3</code></p>
+
+<p>You should find that line in the index.html file
+<code>
+&lt;script src=&quot;bower_components/angular-nvd3/dist/angular-nvd3.js&quot;&gt;&lt;/script&gt;
+</code>`</p>
+
+    </div>
+  
+</div>
+
+
+    </div>
+
+    
+
+
+
+    
+
+    <footer>
+      <!-- <p>&copy; 2025 The Apache Software Foundation</p>-->
+    </footer>
+  </body>
+</html>
+

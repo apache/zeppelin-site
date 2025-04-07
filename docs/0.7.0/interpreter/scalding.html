@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.0 Documentation: Scalding Interpreter for Apache Zeppelin</title>
+    <meta name="description" content="Scalding is an open source Scala library for writing MapReduce jobs.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.7.0">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.7.0</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.0/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.0/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.0/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.0/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.0/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.0/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.0/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.0/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.0/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.0/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.0/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.0/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.0/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.0/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.0/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.0/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.0/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.0/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.0/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.0/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.0/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.0/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.0/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.0/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.0/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.0/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.0/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.0/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.0/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.0/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.0/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.0/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.0/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.0/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.0/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.0/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.0/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Scalding Interpreter for Apache Zeppelin">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Scalding Interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<p><a href="https://github.com/twitter/scalding">Scalding</a> is an open source Scala library for writing MapReduce jobs.</p>
+
+<h2>Building the Scalding Interpreter</h2>
+
+<p>You have to first build the Scalding interpreter by enable the <strong>scalding</strong> profile as follows:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">mvn clean package -Pscalding -DskipTests
+</code></pre></div>
+<h2>Enabling the Scalding Interpreter</h2>
+
+<p>In a notebook, to enable the <strong>Scalding</strong> interpreter, click on the <strong>Gear</strong> icon,select <strong>Scalding</strong>, and hit <strong>Save</strong>.</p>
+
+<p><center></p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/scalding-InterpreterBinding.png" alt="Interpreter Binding"></p>
+
+<p><img src="../assets/themes/zeppelin/img/docs-img/scalding-InterpreterSelection.png" alt="Interpreter Selection"></p>
+
+<p></center></p>
+
+<h2>Configuring the Interpreter</h2>
+
+<p>Scalding interpreter runs in two modes:</p>
+
+<ul>
+<li>local</li>
+<li>hdfs</li>
+</ul>
+
+<p>In the local mode, you can access files on the local server and scalding transformation are done locally.</p>
+
+<p>In hdfs mode you can access files in HDFS and scalding transformation are run as hadoop map-reduce jobs.</p>
+
+<p>Zeppelin comes with a pre-configured Scalding interpreter in local mode.</p>
+
+<p>To run the scalding interpreter in the hdfs mode you have to do the following:</p>
+
+<p><strong>Set the classpath with ZEPPELIN_CLASSPATH_OVERRIDES</strong></p>
+
+<p>In conf/zeppelin<em>env.sh, you have to set
+ZEPPELIN</em>CLASSPATH_OVERRIDES to the contents of &#39;hadoop classpath&#39;
+and directories with custom jar files you need for your scalding commands.</p>
+
+<p><strong>Set arguments to the scalding repl</strong></p>
+
+<p>The default arguments are: &quot;--local --repl&quot;</p>
+
+<p>For hdfs mode you need to add: &quot;--hdfs --repl&quot;</p>
+
+<p>If you want to add custom jars, you need to add:
+&quot;-libjars directory/<em>:directory/</em>&quot;</p>
+
+<p>For reducer estimation, you need to add something like:
+&quot;-Dscalding.reducer.estimator.classes=com.twitter.scalding.reducer_estimation.InputSizeReducerEstimator&quot;</p>
+
+<p><strong>Set max.open.instances</strong></p>
+
+<p>If you want to control the maximum number of open interpreters, you have to select &quot;scoped&quot; interpreter for note
+option and set max.open.instances argument.</p>
+
+<h2>Testing the Interpreter</h2>
+
+<h3>Local mode</h3>
+
+<p>In example, by using the <a href="https://gist.github.com/johnynek/a47699caa62f4f38a3e2">Alice in Wonderland</a> tutorial, 
+we will count words (of course!), and plot a graph of the top 10 words in the book.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">%scalding
+
+import scala.io.Source
+
+// Get the Alice in Wonderland book from gutenberg.org:
+val alice = Source.fromURL(&quot;http://www.gutenberg.org/files/11/11.txt&quot;).getLines
+val aliceLineNum = alice.zipWithIndex.toList
+val alicePipe = TypedPipe.from(aliceLineNum)
+
+// Now get a list of words for the book:
+val aliceWords = alicePipe.flatMap { case (text, _) =&gt; text.split(&quot;\\s+&quot;).toList }
+
+// Now lets add a count for each word:
+val aliceWithCount = aliceWords.filterNot(_.equals(&quot;&quot;)).map { word =&gt; (word, 1L) }
+
+// let&#39;s sum them for each word:
+val wordCount = aliceWithCount.group.sum
+
+print (&quot;Here are the top 10 words\n&quot;)
+val top10 = wordCount
+  .groupAll
+  .sortBy { case (word, count) =&gt; -count }
+  .take(10)
+top10.dump
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">%scalding
+
+val table = &quot;words\t count\n&quot; + top10.toIterator.map{case (k, (word, count)) =&gt; s&quot;$word\t$count&quot;}.mkString(&quot;\n&quot;)
+print(&quot;%table &quot; + table)
+</code></pre></div>
+<p>If you click on the icon for the pie chart, you should be able to see a chart like this:
+<img src="../assets/themes/zeppelin/img/docs-img/scalding-pie.png" alt="Scalding - Pie - Chart"></p>
+
+<h3>HDFS mode</h3>
+
+<p><strong>Test mode</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">%scalding
+mode
+</code></pre></div>
+<p>This command should print:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">res4: com.twitter.scalding.Mode = Hdfs(true,Configuration: core-default.xml, core-site.xml, mapred-default.xml, mapred-site.xml, yarn-default.xml, yarn-site.xml, hdfs-default.xml, hdfs-site.xml)
+</code></pre></div>
+<p><strong>Test HDFS read</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">val testfile = TypedPipe.from(TextLine(&quot;/user/x/testfile&quot;))
+testfile.dump
+</code></pre></div>
+<p>This command should print the contents of the hdfs file /user/x/testfile.</p>
+
+<p><strong>Test map-reduce job</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">val testfile = TypedPipe.from(TextLine(&quot;/user/x/testfile&quot;))
+val a = testfile.groupAll.size.values
+a.toList
+</code></pre></div>
+<p>This command should create a map reduce job.</p>
+
+<h2>Future Work</h2>
+
+<ul>
+<li>Better user feedback (hadoop url, progress updates)</li>
+<li>Ability to cancel jobs</li>
+<li>Ability to dynamically load jars without restarting the interpreter</li>
+<li>Multiuser scalability (run scalding interpreters on different servers)</li>
+</ul>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

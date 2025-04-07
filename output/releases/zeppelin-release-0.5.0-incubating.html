@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Zeppelin Release 0.5.0-incubating</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/themes/zeppelin/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/themes/zeppelin/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/themes/zeppelin/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/themes/zeppelin/img/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/themes/zeppelin/img/favicon/manifest.json">
+    <link rel="mask-icon" href="/assets/themes/zeppelin/img/favicon/safari-pinned-tab.svg" color="#438bc9">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--    <script src="https://s3.amazonaws.com/apache-zeppelin/post/medium.js"></script>-->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/moment.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/helium.controller.js"></script>
+    <script src="/assets/themes/zeppelin/js/medium.controller.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" style="margin-top: -6px;" width="50" alt="I'm zeppelin">
+          <span style="margin-left: 5px;"> Apache Zeppelin </span>
+      </a>
+    </div>
+    <nav class="navbar-collapse collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/latest/quickstart/install.html">Quick Start</a></li>
+        <!-- Download -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Download<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/download.html">Download Zeppelin</a></li>
+            <li><a href="/supported_interpreters.html">Supported Interpreters</a></li>
+          </ul>
+        </li>
+        <!-- Docs -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Docs<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="title"><span><b>Release</b></span></li>
+            <li><a href="/docs/0.11.2">0.11.2</a></li>
+            <li><a href="/docs/0.11.1">0.11.1</a></li>
+            <li><a href="/docs/0.11.0">0.11.0</a></li>
+            <li><a href="/docs/0.10.1">0.10.1</a></li>
+            <li><a href="/docs/0.10.0">0.10.0</a></li>
+            <li><a href="/docs/0.9.0">0.9.0</a></li>
+            <li><a href="/docs/0.8.2">0.8.2</a></li>
+            <li><a href="documentation.html">Older Versions</a></li>
+            <li class="title"><span><b><a href="security.html">Security</a></b><span></li>
+          </ul>
+        </li>
+
+        <li><a href="/helium_packages.html">Helium</a></li>
+
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Community<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/community.html">Contributors</a></li>
+            <li><a href="https://github.com/apache/zeppelin">GitHub</a></li>
+          </ul>
+        </li>
+          <!-- Apache -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apache<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a></li>
+            <li><a href="http://www.apache.org/licenses/">Apache License</a></li>
+            <li><a href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+            <li><a href="/assets.html">Assets</a></li>
+            <li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav><!--/.navbar-collapse -->
+  </div>
+</div>
+
+
+
+
+    <div class="content">
+      
+
+<!--<div class="hero-unit Zeppelin Release 0.5.0-incubating">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h3>Zeppelin Release 0.5.0-incubating</h3>
+
+<p>Zeppelin 0.5.0-incubating is the first release under Apache incubation, with contributions from 42 developers and more than 600 commits.</p>
+
+<p>To download Zeppelin 0.5.0-incubating visit the <a href="../../download.html">download</a> page.</p>
+
+<p>You can visit <a href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316221&version=12329850">issue tracker</a> for full list of issues being resolved.</p>
+
+<h3>Contributors</h3>
+
+<p>The following developers contributed to this release:</p>
+
+<ul>
+<li>Akshat Aranya - New features and Improvements in UI.</li>
+<li>Alexander Bezzubov -Improvements and Bug fixes in Core, UI, Build system. New feature and Improvements in Spark interpreter. Documentation in roadmap.</li>
+<li>Anthony Corbacho - Improvements in Website. Bug fixes Build system. Improvements and Bug fixes in UI. Documentation in roadmap.</li>
+<li>Brennon York - Improvements and Bug fixes in Build system.</li>
+<li>CORNEAU Damien - New feature, Improvements and Bug fixes in UI and Build system.</li>
+<li>Corey Huang - Improvements in Build system. New feature in Core.</li>
+<li>Digeratus - Improvements in Tutorials.</li>
+<li>Dimitrios Liapis - Improvements in Documentation.</li>
+<li>DuyHai DOAN - New feature in Build system.</li>
+<li>Emmanuelle Raffenne - Bug fixes in UI.</li>
+<li>Eran Medan - Improvements in Documentation.</li>
+<li>Eugene Morozov - Bug fixes in Core.</li>
+<li>Felix Cheung - Improvements in Spark interpreter. Improvements in Documentation. New features, Improvements and Bug fixes in UI.</li>
+<li>Hung Lin - Improvements in Core.</li>
+<li>Hyungu Roh - Bug fixes in UI.</li>
+<li>Ilya Ganelin - Improvements in Tutorials.</li>
+<li>JaeHwa Jung - New features in Tajo interpreter.</li>
+<li>Jakob Homan - Improvements in Website.</li>
+<li>James Carman - Improvements in Build system.</li>
+<li>Jongyoul Lee - Improvements in Core, Build system and Spark interpreter. Bug fixes in Spark Interpreter. New features in Build system and Spark interpreter. Improvements in Documentation.</li>
+<li>Juarez Bochi - Bug fixes in Build system.</li>
+<li>Julien Buret - Bug fixes in Spark interpreter.</li>
+<li>Jérémy Subtil - Bug fixes in Build system.</li>
+<li>Kevin (SangWoo) Kim - New features in Core, Tutorials. Improvements in Documentation. New features, Improvements and Bug fixes in UI.</li>
+<li>Kyoung-chan Lee - Improvements in Documentation.</li>
+<li>Lee moon soo - Improvements in Tutorials. New features, Improvements and Bug fixes in Core, UI, Build system and Spark interpreter. New features in Flink interpreter. Improvments in Documentation.</li>
+<li>Mina Lee - Improvements and Bug fixes in UI. New features in UI. Improvements in Core, Website.</li>
+<li>Rajat Gupta - Bug fixes in Spark interpreter.</li>
+<li>Ram Venkatesh - Improvements in Core, Build system, Spark interpreter and Markdown interpreter. New features and Bug fixes in Hive interpreter.</li>
+<li>Sebastian YEPES - Improvements in Core.</li>
+<li>Seckin Savasci - Improvements in Build system.</li>
+<li>Timothy Shelton - Bug fixes in UI.</li>
+<li>Vincent Botta - New features in UI.</li>
+<li>Young boom - Improvements in UI.</li>
+<li>bobbych - Improvements in Spark interpreter.</li>
+<li>debugger87 - Bug fixes in Core.</li>
+<li>dobachi - Improvements in UI.</li>
+<li>epahomov - Improvements in Core and Spark interpreter.</li>
+<li>kevindai0126 - Improvements in Core.</li>
+<li>rahul agarwal - Bug fixes in Core.</li>
+<li>whisperstream - Improvements in Spark interpreter.</li>
+<li>yundai - Improvements in Core.</li>
+</ul>
+
+<p>Thanks to everyone who made this release possible!</p>
+
+  </div>
+</div>
+
+
+    </div>
+
+    
+
+
+
+    
+
+    <footer>
+      <!-- <p>&copy; 2025 The Apache Software Foundation</p>-->
+    </footer>
+  </body>
+</html>
+

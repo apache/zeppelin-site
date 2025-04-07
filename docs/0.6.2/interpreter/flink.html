@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Flink Interpreter</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.2">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.2</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.2/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.2/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.2/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.2/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.2/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.2/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.2/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.2/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.2/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.2/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.2/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.2/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.2/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.6.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.2/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.2/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.2/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.2/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.2/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.2/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.2/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.2/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.2/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.2/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.2/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.2/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.2/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.2/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.2/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Flink Interpreter">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Flink interpreter for Apache Zeppelin</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p><a href="https://flink.apache.org">Apache Flink</a> is an open source platform for distributed stream and batch data processing. Flink’s core is a streaming dataflow engine that provides data distribution, communication, and fault tolerance for distributed computations over data streams. Flink also builds batch processing on top of the streaming engine, overlaying native iteration support, managed memory, and program optimization.</p>
+
+<h2>How to start local Flink cluster, to test the interpreter</h2>
+
+<p>Zeppelin comes with pre-configured flink-local interpreter, which starts Flink in a local mode on your machine, so you do not need to install anything.</p>
+
+<h2>How to configure interpreter to point to Flink cluster</h2>
+
+<p>At the &quot;Interpreters&quot; menu, you have to create a new Flink interpreter and provide next properties:</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>property</th>
+    <th>value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>host</td>
+    <td>local</td>
+    <td>host name of running JobManager. 'local' runs flink in local mode (default)</td>
+  </tr>
+  <tr>
+    <td>port</td>
+    <td>6123</td>
+    <td>port of running JobManager</td>
+  </tr>
+</table>
+
+<p>For more information about Flink configuration, you can find it <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.0/setup/config.html">here</a>.</p>
+
+<h2>How to test it&#39;s working</h2>
+
+<p>In example, by using the <a href="https://www.zeppelinhub.com/viewer/notebooks/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL05GTGFicy96ZXBwZWxpbi1ub3RlYm9va3MvbWFzdGVyL25vdGVib29rcy8yQVFFREs1UEMvbm90ZS5qc29u">Zeppelin notebook</a> is from Till Rohrmann&#39;s presentation <a href="http://www.slideshare.net/tillrohrmann/data-analysis-49806564">Interactive data analysis with Apache Flink</a> for Apache Flink Meetup.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">%sh
+rm 10.txt.utf-8
+wget http://www.gutenberg.org/ebooks/10.txt.utf-8
+</code></pre></div>
+<div class="highlight"><pre><code class="scala"><span class="o">%</span><span class="n">flink</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">WordCount</span><span class="o">(</span><span class="n">word</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">frequency</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">bible</span><span class="k">:</span><span class="kt">DataSet</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="n">env</span><span class="o">.</span><span class="n">readTextFile</span><span class="o">(</span><span class="s">&quot;10.txt.utf-8&quot;</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">partialCounts</span><span class="k">:</span> <span class="kt">DataSet</span><span class="o">[</span><span class="kt">WordCount</span><span class="o">]</span> <span class="k">=</span> <span class="n">bible</span><span class="o">.</span><span class="n">flatMap</span><span class="o">{</span>
+    <span class="n">line</span> <span class="k">=&gt;</span>
+        <span class="s">&quot;&quot;&quot;\b\w+\b&quot;&quot;&quot;</span><span class="o">.</span><span class="n">r</span><span class="o">.</span><span class="n">findAllIn</span><span class="o">(</span><span class="n">line</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="n">word</span> <span class="k">=&gt;</span> <span class="nc">WordCount</span><span class="o">(</span><span class="n">word</span><span class="o">,</span> <span class="mi">1</span><span class="o">))</span>
+<span class="c1">//        line.split(&quot; &quot;).map(word =&gt; WordCount(word, 1))</span>
+<span class="o">}</span>
+<span class="k">val</span> <span class="n">wordCounts</span> <span class="k">=</span> <span class="n">partialCounts</span><span class="o">.</span><span class="n">groupBy</span><span class="o">(</span><span class="s">&quot;word&quot;</span><span class="o">).</span><span class="n">reduce</span><span class="o">{</span>
+    <span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">WordCount</span><span class="o">(</span><span class="n">left</span><span class="o">.</span><span class="n">word</span><span class="o">,</span> <span class="n">left</span><span class="o">.</span><span class="n">frequency</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">frequency</span><span class="o">)</span>
+<span class="o">}</span>
+<span class="k">val</span> <span class="n">result10</span> <span class="k">=</span> <span class="n">wordCounts</span><span class="o">.</span><span class="n">first</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">collect</span><span class="o">()</span>
+</code></pre></div>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

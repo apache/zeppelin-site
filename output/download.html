@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Download</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/themes/zeppelin/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/themes/zeppelin/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/themes/zeppelin/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/themes/zeppelin/img/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/themes/zeppelin/img/favicon/manifest.json">
+    <link rel="mask-icon" href="/assets/themes/zeppelin/img/favicon/safari-pinned-tab.svg" color="#438bc9">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--    <script src="https://s3.amazonaws.com/apache-zeppelin/post/medium.js"></script>-->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/moment.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/helium.controller.js"></script>
+    <script src="/assets/themes/zeppelin/js/medium.controller.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" style="margin-top: -6px;" width="50" alt="I'm zeppelin">
+          <span style="margin-left: 5px;"> Apache Zeppelin </span>
+      </a>
+    </div>
+    <nav class="navbar-collapse collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/latest/quickstart/install.html">Quick Start</a></li>
+        <!-- Download -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Download<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/download.html">Download Zeppelin</a></li>
+            <li><a href="/supported_interpreters.html">Supported Interpreters</a></li>
+          </ul>
+        </li>
+        <!-- Docs -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Docs<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="title"><span><b>Release</b></span></li>
+            <li><a href="/docs/0.11.2">0.11.2</a></li>
+            <li><a href="/docs/0.11.1">0.11.1</a></li>
+            <li><a href="/docs/0.11.0">0.11.0</a></li>
+            <li><a href="/docs/0.10.1">0.10.1</a></li>
+            <li><a href="/docs/0.10.0">0.10.0</a></li>
+            <li><a href="/docs/0.9.0">0.9.0</a></li>
+            <li><a href="/docs/0.8.2">0.8.2</a></li>
+            <li><a href="documentation.html">Older Versions</a></li>
+            <li class="title"><span><b><a href="security.html">Security</a></b><span></li>
+          </ul>
+        </li>
+
+        <li><a href="/helium_packages.html">Helium</a></li>
+
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Community<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/community.html">Contributors</a></li>
+            <li><a href="https://github.com/apache/zeppelin">GitHub</a></li>
+          </ul>
+        </li>
+          <!-- Apache -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apache<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a></li>
+            <li><a href="http://www.apache.org/licenses/">Apache License</a></li>
+            <li><a href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+            <li><a href="/assets.html">Assets</a></li>
+            <li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav><!--/.navbar-collapse -->
+  </div>
+</div>
+
+
+
+
+    <div class="content">
+      
+
+<!--<div class="hero-unit Download">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Download Apache Zeppelin</h1>
+
+<p>The latest release of Apache Zeppelin is <strong>0.12.0</strong>.</p>
+
+<ul>
+<li><p>0.12.0 released on Jan 31, 2025 (<a href="./releases/zeppelin-release-0.12.0.html">release notes</a>) (<a href="https://github.com/apache/zeppelin/tree/v0.12.0">git tag</a>)</p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.12.0/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-all.tgz'">zeppelin-0.12.0-bin-all.tgz</div> (
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-all.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.12.0/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-netinst.tgz'">zeppelin-0.12.0-bin-netinst.tgz</div> (
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0.tgz'">zeppelin-0.12.0.tgz</a> (10MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.12.0/zeppelin-0.12.0.tgz.sha512">sha</a>)</li>
+</ul></li>
+</ul>
+
+<h1>Using the official docker image</h1>
+
+<p>Make sure that <a href="https://www.docker.com/community-edition">docker</a> is installed in your local machine.  </p>
+
+<p>Use this command to launch Apache Zeppelin in a container.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.12.0
+
+</code></pre></figure>
+<p>To persist <code>logs</code> and <code>notebook</code> directories, use the <a href="https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only">volume</a> option for docker container.
+You can also use <a href="https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only">volume</a> for Spark and Flink binary distribution.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -u $(id -u) -p 8080:8080 --rm -v $PWD/logs:/logs -v $PWD/notebook:/notebook \
+  -v /usr/lib/spark-3.5.1:/opt/spark -v /usr/lib/flink-1.18.1:/opt/flink \
+  -e FLINK_HOME=/opt/flink -e SPARK_HOME=/opt/spark \
+  -e ZEPPELIN_LOG_DIR=&#39;/logs&#39; -e ZEPPELIN_NOTEBOOK_DIR=&#39;/notebook&#39; --name zeppelin apache/zeppelin:0.12.0
+</code></pre></figure>
+<p>If you have trouble accessing <code>localhost:8080</code> in the browser, Please clear browser cache.</p>
+
+<h2>Verify the integrity of the files</h2>
+
+<p>It is essential that you <a href="https://www.apache.org/info/verification.html">verify</a> the integrity of the downloaded files using the PGP or MD5 signatures. This signature should be matched against the <a href="https://downloads.apache.org/zeppelin/KEYS">KEYS</a> file.</p>
+
+<h2>Build from source</h2>
+
+<p>For developers, to get latest <em>0.12.0-SNAPSHOT</em> check <a href="https://github.com/apache/zeppelin/blob/master/README.md">README</a>.</p>
+
+<h2>Old releases</h2>
+
+<ul>
+<li><p>0.11.2 released on Sep 22, 2024 (<a href="./releases/zeppelin-release-0.11.2.html">release notes</a>) (<a href="https://github.com/apache/zeppelin/tree/v0.11.2">git tag</a>)</p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.11.2/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz'">zeppelin-0.11.2-bin-all.tgz</div> (843MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.11.2/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz'">zeppelin-0.11.2-bin-netinst.tgz</div> (577MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz'">zeppelin-0.11.2.tgz</a> (10MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.2/zeppelin-0.11.2.tgz.sha512">sha</a>)</li>
+</ul></li>
+<li><p>0.11.1 released on Apr 2, 2024 (<a href="./releases/zeppelin-release-0.11.1.html">release notes</a>) (<a href="https://github.com/apache/zeppelin/tree/v0.11.1">git tag</a>)</p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.11.1/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-all.tgz'">zeppelin-0.11.1-bin-all.tgz</div> (843MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-all.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.11.1/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-netinst.tgz'">zeppelin-0.11.1-bin-netinst.tgz</div> (577MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1.tgz'">zeppelin-0.11.1.tgz</a> (10MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.1/zeppelin-0.11.1.tgz.sha512">sha</a>)</li>
+</ul></li>
+<li><p>0.11.0 released on Feb 12, 2024 (<a href="./releases/zeppelin-release-0.11.0.html">release notes</a>) (<a href="https://github.com/apache/zeppelin/tree/v0.11.0">git tag</a>)</p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.11.0/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz'">zeppelin-0.11.0-bin-all.tgz</div> (843MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.11.0/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz'">zeppelin-0.11.0-bin-netinst.tgz</div> (577MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz'">zeppelin-0.11.0.tgz</a> (10MB,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.asc">pgp</a>,
+<a href="https://downloads.apache.org/zeppelin/zeppelin-0.11.0/zeppelin-0.11.0.tgz.sha512">sha</a>)</li>
+</ul></li>
+<li><p>0.10.1 released on Feb 29, 2022 (<a href="./releases/zeppelin-release-0.10.1.html">release notes</a>) (<a href="https://gitbox.apache.org/repos/asf?p=zeppelin.git;h=refs/tags/v0.10.1">git tag</a>) </p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.10.1/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-all.tgz'">zeppelin-0.10.1-bin-all.tgz</div> (1.5g,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-all.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-all.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.10.1/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-netinst.tgz'">zeppelin-0.10.1-bin-netinst.tgz</div> (568 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-netinst.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1.tgz'">zeppelin-0.10.1.tgz</a> (9.1 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.1/zeppelin-0.10.1.tgz.sha512">sha</a>)</li>
+</ul></li>
+<li><p>0.10.0 released on Aug 24, 2021 (<a href="./releases/zeppelin-release-0.10.0.html">release notes</a>) (<a href="https://gitbox.apache.org/repos/asf?p=zeppelin.git;h=refs/tags/v0.10.0">git tag</a>)</p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.10.0/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0-bin-all.tgz'">zeppelin-0.10.0-bin-all.tgz</div> (1.5g,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0-bin-all.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0-bin-all.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.10.0/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0-bin-netinst.tgz'">zeppelin-0.10.0-bin-netinst.tgz</div> (568 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0-bin-netinst.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0.tgz'">zeppelin-0.10.0.tgz</a> (9.1 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.10.0/zeppelin-0.10.0.tgz.sha512">sha</a>)</li>
+</ul></li>
+<li><p>0.9.0 released on Dec 26, 2020 (<a href="./releases/zeppelin-release-0.9.0.html">release notes</a>) (<a href="https://gitbox.apache.org/repos/asf?p=zeppelin.git;h=refs/tags/v0.9.0">git tag</a>)</p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.9.0/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-all.tgz'">zeppelin-0.9.0-bin-all.tgz</div> (1.5g,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-all.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-all.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.9.0/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-netinst.tgz'">zeppelin-0.9.0-bin-netinst.tgz</div> (568 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-netinst.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0.tgz'">zeppelin-0.9.0.tgz</a> (9.1 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.9.0/zeppelin-0.9.0.tgz.sha512">sha</a>)</li>
+</ul></li>
+<li><p>0.8.2 released on Sep 29, 2018 (<a href="./releases/zeppelin-release-0.8.2.html">release notes</a>) (<a href="https://git-wip-us.apache.org/repos/asf?p=zeppelin.git;h=refs/tags/v0.8.2">git tag</a>)</p>
+
+<ul>
+<li>Binary package with all interpreters (<a href="../../docs/0.8.2/quickstart/install.html">Install guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-all.tgz'">zeppelin-0.8.2-bin-all.tgz</div> (952 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-all.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-all.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-all.tgz.sha512">sha</a>)</p></li>
+<li>Binary package with Spark interpreter and interpreter net-install script (<a href="../../docs/0.8.2/usage/interpreter/installation.html">interpreter installation guide</a>):
+<p><div class="btn btn-md btn-primary" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-netinst.tgz'">zeppelin-0.8.2-bin-netinst.tgz</div> (318 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-netinst.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-netinst.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-netinst.tgz.sha512">sha</a>)</p></li>
+<li>Source:
+<a style="cursor:pointer" onclick="window.location.href='http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2.tgz'">zeppelin-0.8.2.tgz</a> (62 MB,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2.tgz.asc">pgp</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2.tgz.md5">md5</a>,
+<a href="https://www.apache.org/dist/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2.tgz.sha512">sha</a>)</li>
+</ul></li>
+</ul>
+
+<h2>Supported interpreters</h2>
+
+<p>Thanks to many Zeppelin contributors, we can provide much more interpreters in every release.</p>
+
+<p>Please check the <a href="./supported_interpreters.html">Supported Interpreters</a> before you download Zeppelin package.</p>
+
+  </div>
+</div>
+
+
+    </div>
+
+    
+
+
+
+    
+
+    <footer>
+      <!-- <p>&copy; 2025 The Apache Software Foundation</p>-->
+    </footer>
+  </body>
+</html>
+

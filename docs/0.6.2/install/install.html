@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.2/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.2/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.2/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.2/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.2/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.2/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.2">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.2</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.2/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.2/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.2/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.2/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.2/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.2/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.2/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.2/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.2/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.2/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.2/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.2/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.2/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.2/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.2/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.2/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.6.2/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.2/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.2/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.2/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.2/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.2/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.2/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.2/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.2/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.2/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.2/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.2/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.2/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.2/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.2/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.2/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.2/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.2/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.2/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.2/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.2/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.2/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.2/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.2/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.2/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.2/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.2/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Getting Started">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Quick Start</h1>
+
+<p>Welcome to your first trial to explore Apache Zeppelin! 
+This page will help you to get started and here is the list of topics covered.</p>
+
+<div id="toc"></div>
+
+<h2>Installation</h2>
+
+<p>Apache Zeppelin officially supports and is tested on next environments.</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Oracle JDK</td>
+    <td>1.7 <br /> (set <code>JAVA_HOME</code>)</td>
+  </tr>
+  <tr>
+    <td>OS</td>
+    <td>Mac OSX <br /> Ubuntu 14.X <br /> CentOS 6.X <br /> Windows 7 Pro SP1</td>
+  </tr>
+</table>
+
+<p>There are two options to install Apache Zeppelin on your machine. One is <a href="#downloading-binary-package">downloading pre-built binary package</a> from the archive. 
+You can download not only the latest stable version but also the older one if you need. 
+The other option is <a href="#building-from-source">building from the source</a>.
+Although it can be unstable somehow since it is on development status, you can explore newly added feature and change it as you want.</p>
+
+<h3>Downloading Binary Package</h3>
+
+<p>If you want to install Apache Zeppelin with a stable binary package, please visit <a href="http://zeppelin.apache.org/download.html">Apache Zeppelin download Page</a>. </p>
+
+<p>If you have downloaded <code>netinst</code> binary, <a href="../manual/interpreterinstallation.html">install additional interpreters</a> before you start Zeppelin. Or simply run <code>./bin/install-interpreter.sh --all</code>.</p>
+
+<p>After unpacking, jump to <a href="#starting-apache-zeppelin-with-command-line">Starting Apache Zeppelin with Command Line</a> section.</p>
+
+<h3>Building from Source</h3>
+
+<p>If you want to build from the source, the software below needs to be installed on your system.</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Git</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Maven</td>
+    <td>3.1.x or higher</td>
+  </tr>
+</table>
+
+<p>If you don&#39;t have it installed yet, please check <a href="https://github.com/apache/zeppelin/blob/master/README.md#before-build">Before Build</a> section and follow step by step instructions from there.</p>
+
+<h4>1. Clone Apache Zeppelin repository</h4>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">git clone https://github.com/apache/zeppelin.git
+</code></pre></div>
+<h4>2. Build source with options</h4>
+
+<p>Each interpreters requires different build options. For the further information about options, please see <a href="https://github.com/apache/zeppelin#build">Build</a> section.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">mvn clean package -DskipTests [Options]
+</code></pre></div>
+<p>Here are some examples with several options</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"># build with spark-2.0, scala-2.11
+./dev/change_scala_version.sh 2.11
+mvn clean package -Pspark-2.0 -Phadoop-2.4 -Pyarn -Ppyspark -Psparkr -Pscala-2.11
+
+# build with spark-1.6, scala-2.10
+mvn clean package -Pspark-1.6 -Phadoop-2.4 -Pyarn -Ppyspark -Psparkr
+
+# spark-cassandra integration
+mvn clean package -Pcassandra-spark-1.5 -Dhadoop.version=2.6.0 -Phadoop-2.6 -DskipTests
+
+# with CDH
+mvn clean package -Pspark-1.5 -Dhadoop.version=2.6.0-cdh5.5.0 -Phadoop-2.6 -Pvendor-repo -DskipTests
+
+# with MapR
+mvn clean package -Pspark-1.5 -Pmapr50 -DskipTests
+</code></pre></div>
+<p>For the further information about building with source, please see <a href="https://github.com/apache/zeppelin/blob/master/README.md">README.md</a> in Zeppelin repository.</p>
+
+<h2>Starting Apache Zeppelin with Command Line</h2>
+
+<h4>Start Zeppelin</h4>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin/zeppelin-daemon.sh start
+</code></pre></div>
+<p>If you are using Windows </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin\zeppelin.cmd
+</code></pre></div>
+<p>After successful start, visit <a href="http://localhost:8080">http://localhost:8080</a> with your web browser.</p>
+
+<h4>Stop Zeppelin</h4>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin/zeppelin-daemon.sh stop
+</code></pre></div>
+<h4>(Optional) Start Apache Zeppelin with a service manager</h4>
+
+<blockquote>
+<p><strong>Note :</strong> The below description was written based on Ubuntu Linux.</p>
+</blockquote>
+
+<p>Apache Zeppelin can be auto started as a service with an init script, such as services managed by <strong>upstart</strong>.</p>
+
+<p>The following is an example of upstart script to be saved as <code>/etc/init/zeppelin.conf</code>
+This also allows the service to be managed with commands such as</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo service zeppelin start  
+sudo service zeppelin stop  
+sudo service zeppelin restart
+</code></pre></div>
+<p>Other service managers could use a similar approach with the <code>upstart</code> argument passed to the <code>zeppelin-daemon.sh</code> script.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin/zeppelin-daemon.sh upstart
+</code></pre></div>
+<p><strong>zeppelin.conf</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">description &quot;zeppelin&quot;
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+stop on shutdown
+
+# Respawn the process on unexpected termination
+respawn
+
+# respawn the job up to 7 times within a 5 second period.
+# If the job exceeds these values, it will be stopped and marked as failed.
+respawn limit 7 5
+
+# zeppelin was installed in /usr/share/zeppelin in this example
+chdir /usr/share/zeppelin
+exec bin/zeppelin-daemon.sh upstart
+</code></pre></div>
+<h2>What is the next?</h2>
+
+<p>Congratulation on your successful Apache Zeppelin installation! Here are two next steps you might need.</p>
+
+<h4>If you are new to Apache Zeppelin</h4>
+
+<ul>
+<li>For an in-depth overview of Apache Zeppelin UI, head to <a href="../quickstart/explorezeppelinui.html">Explore Apache Zeppelin UI</a>.</li>
+<li>After getting familiar with Apache Zeppelin UI, have fun with a short walk-through <a href="../quickstart/tutorial.html">Tutorial</a> that uses Apache Spark backend.</li>
+<li>If you need more configuration setting for Apache Zeppelin, jump to the next section: <a href="#apache-zeppelin-configuration">Apache Zeppelin Configuration</a>.</li>
+</ul>
+
+<h4>If you need more information about Spark or JDBC interpreter setting</h4>
+
+<ul>
+<li>Apache Zeppelin provides deep integration with <a href="http://spark.apache.org/">Apache Spark</a>. For the further informtation, see <a href="../interpreter/spark.html">Spark Interpreter for Apache Zeppelin</a>. </li>
+<li>Also, you can use generic JDBC connections in Apache Zeppelin. Go to <a href="../interpreter/jdbc.html">Generic JDBC Interpreter for Apache Zeppelin</a>.</li>
+</ul>
+
+<h4>If you are in multi-user environment</h4>
+
+<ul>
+<li>You can set permissions for your notebooks and secure data resource in multi-user environment. Go to <strong>More</strong> -&gt; <strong>Security</strong> section.</li>
+</ul>
+
+<h2>Apache Zeppelin Configuration</h2>
+
+<p>You can configure Apache Zeppelin with both <strong>environment variables</strong> in <code>conf/zeppelin-env.sh</code> (<code>conf\zeppelin-env.cmd</code> for Windows) and <strong>Java properties</strong> in <code>conf/zeppelin-site.xml</code>. If both are defined, then the <strong>environment variables</strong> will take priority.</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>zeppelin-env.sh</th>
+    <th>zeppelin-site.xml</th>
+    <th>Default value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_PORT</td>
+    <td>zeppelin.server.port</td>
+    <td>8080</td>
+    <td>Zeppelin server port</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_MEM</td>
+    <td>N/A</td>
+    <td>-Xmx1024m -XX:MaxPermSize=512m</td>
+    <td>JVM mem options</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_INTP_MEM</td>
+    <td>N/A</td>
+    <td>ZEPPELIN_MEM</td>
+    <td>JVM mem options for interpreter process</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_JAVA_OPTS</td>
+    <td>N/A</td>
+    <td></td>
+    <td>JVM options</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_ALLOWED_ORIGINS</td>
+    <td>zeppelin.server.allowed.origins</td>
+    <td>*</td>
+    <td>Enables a way to specify a ',' separated list of allowed origins for rest and websockets. <br /> i.e. http://localhost:8080 </td>
+  </tr>
+    <tr>
+    <td>N/A</td>
+    <td>zeppelin.anonymous.allowed</td>
+    <td>true</td>
+    <td>Anonymous user is allowed by default.</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SERVER_CONTEXT_PATH</td>
+    <td>zeppelin.server.context.path</td>
+    <td>/</td>
+    <td>A context path of the web application</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL</td>
+    <td>zeppelin.ssl</td>
+    <td>false</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL_CLIENT_AUTH</td>
+    <td>zeppelin.ssl.client.auth</td>
+    <td>false</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL_KEYSTORE_PATH</td>
+    <td>zeppelin.ssl.keystore.path</td>
+    <td>keystore</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL_KEYSTORE_TYPE</td>
+    <td>zeppelin.ssl.keystore.type</td>
+    <td>JKS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL_KEYSTORE_PASSWORD</td>
+    <td>zeppelin.ssl.keystore.password</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL_KEY_MANAGER_PASSWORD</td>
+    <td>zeppelin.ssl.key.manager.password</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL_TRUSTSTORE_PATH</td>
+    <td>zeppelin.ssl.truststore.path</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL_TRUSTSTORE_TYPE</td>
+    <td>zeppelin.ssl.truststore.type</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_SSL_TRUSTSTORE_PASSWORD</td>
+    <td>zeppelin.ssl.truststore.password</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_HOMESCREEN</td>
+    <td>zeppelin.notebook.homescreen</td>
+    <td></td>
+    <td>A notebook id displayed in Apache Zeppelin homescreen <br />i.e. 2A94M5J1Z</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_HOMESCREEN_HIDE</td>
+    <td>zeppelin.notebook.homescreen.hide</td>
+    <td>false</td>
+    <td>This value can be "true" when to hide the notebook id set by <code>ZEPPELIN_NOTEBOOK_HOMESCREEN</code> on the Apache Zeppelin homescreen. <br />For the further information, please read <a href="../manual/notebookashomepage.html">Customize your Zeppelin homepage</a>.</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_WAR_TEMPDIR</td>
+    <td>zeppelin.war.tempdir</td>
+    <td>webapps</td>
+    <td>A location of jetty temporary directory</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_DIR</td>
+    <td>zeppelin.notebook.dir</td>
+    <td>notebook</td>
+    <td>The root directory where notebook directories are saved</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_S3_BUCKET</td>
+    <td>zeppelin.notebook.s3.bucket</td>
+    <td>zeppelin</td>
+    <td>S3 Bucket where notebook files will be saved</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_S3_USER</td>
+    <td>zeppelin.notebook.s3.user</td>
+    <td>user</td>
+    <td>A user name of S3 bucket<br />i.e. <code>bucket/user/notebook/2A94M5J1Z/note.json</code></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_S3_ENDPOINT</td>
+    <td>zeppelin.notebook.s3.endpoint</td>
+    <td>s3.amazonaws.com</td>
+    <td>Endpoint for the bucket</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_S3_KMS_KEY_ID</td>
+    <td>zeppelin.notebook.s3.kmsKeyID</td>
+    <td></td>
+    <td>AWS KMS Key ID to use for encrypting data in S3 (optional)</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_S3_EMP</td>
+    <td>zeppelin.notebook.s3.encryptionMaterialsProvider</td>
+    <td></td>
+    <td>Class name of a custom S3 encryption materials provider implementation to use for encrypting data in S3 (optional)</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_AZURE_CONNECTION_STRING</td>
+    <td>zeppelin.notebook.azure.connectionString</td>
+    <td></td>
+    <td>The Azure storage account connection string<br />i.e. <code>DefaultEndpointsProtocol=https;AccountName=&lt;accountName&gt;;AccountKey=&lt;accountKey&gt;</code></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_AZURE_SHARE</td>
+    <td>zeppelin.notebook.azure.share</td>
+    <td>zeppelin</td>
+    <td>Share where the notebook files will be saved</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_AZURE_USER</td>
+    <td>zeppelin.notebook.azure.user</td>
+    <td>user</td>
+    <td>An optional user name of Azure file share<br />i.e. <code>share/user/notebook/2A94M5J1Z/note.json</code></td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_NOTEBOOK_STORAGE</td>
+    <td>zeppelin.notebook.storage</td>
+    <td>org.apache.zeppelin.notebook.repo.VFSNotebookRepo</td>
+    <td>Comma separated list of notebook storage</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_INTERPRETERS</td>
+    <td>zeppelin.interpreters</td>
+  <description></description>
+    <td>org.apache.zeppelin.spark.SparkInterpreter,<br />org.apache.zeppelin.spark.PySparkInterpreter,<br />org.apache.zeppelin.spark.SparkSqlInterpreter,<br />org.apache.zeppelin.spark.DepInterpreter,<br />org.apache.zeppelin.markdown.Markdown,<br />org.apache.zeppelin.shell.ShellInterpreter,<br />
+    ...
+    </td>
+    <td>
+      Comma separated interpreter configurations [Class] <br/>
+      <span style="font-style:italic">NOTE: This property is deprecated since Zeppelin-0.6.0 and will not be supported from Zeppelin-0.7.0</span>
+    </td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_INTERPRETER_DIR</td>
+    <td>zeppelin.interpreter.dir</td>
+    <td>interpreter</td>
+    <td>Interpreter directory</td>
+  </tr>
+  <tr>
+    <td>ZEPPELIN_WEBSOCKET_MAX_TEXT_MESSAGE_SIZE</td>
+    <td>zeppelin.websocket.max.text.message.size</td>
+    <td>1024000</td>
+    <td>Size in characters of the maximum text message to be received by websocket.</td>
+  </tr>
+</table>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

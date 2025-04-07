@@ -1,0 +1,99 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" style="margin-top: -6px;" width="50" alt="I'm zeppelin">
+          <span style="margin-left: 5px;"> Apache Zeppelin </span>
+      </a>
+    </div>
+    <nav class="navbar-collapse collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/latest/quickstart/install.html">Quick Start</a></li>
+        <!-- Download -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Download<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/download.html">Download Zeppelin</a></li>
+            <li><a href="/supported_interpreters.html">Supported Interpreters</a></li>
+          </ul>
+        </li>
+        <!-- Docs -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Docs<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="title"><span><b>Release</b></span></li>
+            <li><a href="/docs/0.11.2">0.11.2</a></li>
+            <li><a href="/docs/0.11.1">0.11.1</a></li>
+            <li><a href="/docs/0.11.0">0.11.0</a></li>
+            <li><a href="/docs/0.10.1">0.10.1</a></li>
+            <li><a href="/docs/0.10.0">0.10.0</a></li>
+            <li><a href="/docs/0.9.0">0.9.0</a></li>
+            <li><a href="/docs/0.8.2">0.8.2</a></li>
+            <li><a href="documentation.html">Older Versions</a></li>
+            <li class="title"><span><b><a href="security.html">Security</a></b><span></li>
+          </ul>
+        </li>
+
+        <li><a href="/helium_packages.html">Helium</a></li>
+
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Community<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/community.html">Contributors</a></li>
+            <li><a href="https://github.com/apache/zeppelin">GitHub</a></li>
+          </ul>
+        </li>
+          <!-- Apache -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apache<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a></li>
+            <li><a href="http://www.apache.org/licenses/">Apache License</a></li>
+            <li><a href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+            <li><a href="/assets.html">Assets</a></li>
+            <li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav><!--/.navbar-collapse -->
+  </div>
+</div>
+
+{% if page.title == "Zeppelin" %}
+<div class="jumbotron">
+  <div class="container" style="padding-bottom: 5px; margin-top: -15px;">
+    <div>
+      <div class="zeppelin">
+        <div class="zeppelin2"></div>
+      </div>
+    </div>
+    <div style="margin-top: -250px; position: relative;">
+      <h1 class="zeppelin-title">Apache Zeppelin</h1>
+      <p class="description">
+          Web-based notebook that enables data-driven, <br/>
+          interactive data analytics and collaborative documents with SQL, Scala, Python, R and more.
+      </p>
+    </div>
+    <div class="border row">
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center newBtn" style="margin-top:8px;">
+        <a href="/docs/latest/quickstart/install.html" class="btn btn-primary btn-lg" role="button"
+           style="margin:5px 25px 5px 25px;font-size:15px;">
+          GET STARTED
+        </a>
+        <a href="/download.html" class="btn btn-primary btn-lg" role="button"
+           style="margin:5px 25px 5px 25px;font-size:15px;">
+          DOWNLOAD
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% include_relative technologies_deployments.md %}
+{% include_relative whats_new.md %}
+{% endif %}

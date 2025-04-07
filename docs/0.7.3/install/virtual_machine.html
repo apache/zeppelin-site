@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.3 Documentation: Apache Zeppelin on Vagrant Virtual Machine</title>
+    <meta name="description" content="Apache Zeppelin provides a script for running a virtual machine for development through Vagrant. The script will create a virtual machine with core dependencies pre-installed, required for developing Apache Zeppelin.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.3/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.3/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.3/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.3/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.3/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.3/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="navbar-brand-main" href="http://zeppelin.apache.org">
+              <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+              <span style="vertical-align:middle">Zeppelin</span>
+            </a>
+            <a class="navbar-brand-version" href="/docs/0.7.3">
+              <span><small>0.7.3</small></span>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.3/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.3/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.3/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.3/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.3/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.3/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.3/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.3/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.3/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.3/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.3/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.3/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.3/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.3/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.3/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.3/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.3/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.3/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.3/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.3/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.3/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.3/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.3/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.3/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.3/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.3/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.3/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.3/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.3/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.3/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.3/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.3/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.3/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.3/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.3/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.3/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.3/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.3/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.3/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.3/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.3/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.3/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-notebookRepo.html">Notebook Repository API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.3/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.3/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.3/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.3/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li><a href="/docs/0.7.3/security/http_security_headers.html">HTTP Security Headers</a></li>
+                <li><a href="/docs/0.7.3/security/helium_authorization.html">Helium Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.3/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.3/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.3/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.3/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.3/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.3/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.3/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Apache Zeppelin on Vagrant Virtual Machine">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Apache Zeppelin on Vagrant Virtual Machine</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p>Apache Zeppelin distribution includes a script directory</p>
+
+<p><code>scripts/vagrant/zeppelin-dev</code></p>
+
+<p>This script creates a virtual machine that launches a repeatable, known set of core dependencies required for developing Zeppelin. It can also be used to run an existing Zeppelin build if you don&#39;t plan to build from source.
+For PySpark users, this script includes several helpful <a href="#python-extras">Python Libraries</a>.
+For SparkR users, this script includes several helpful <a href="#r-extras">R Libraries</a>.</p>
+
+<h3>Prerequisites</h3>
+
+<p>This script requires three applications, <a href="http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip" title="Ansible">Ansible</a>, <a href="http://www.vagrantup.com" title="Vagrant">Vagrant</a> and <a href="https://www.virtualbox.org/" title="Virtual Box">Virtual Box</a>.  All of these applications are freely available as Open Source projects and extremely easy to set up on most operating systems.</p>
+
+<h2>Create a Zeppelin Ready VM</h2>
+
+<p>If you are running Windows and don&#39;t yet have python installed, <a href="https://www.python.org/downloads/release/python-2710/">install Python 2.7.x</a> first.</p>
+
+<ol>
+<li>Download and Install Vagrant:  <a href="http://www.vagrantup.com/downloads.html">Vagrant Downloads</a></li>
+<li><p>Install Ansible:  <a href="http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip">Ansible Python pip install</a></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo easy_install pip
+sudo pip install ansible
+ansible --version
+</code></pre></div>
+<p>After then, please check whether it reports <strong>ansible version 1.9.2 or higher</strong>.</p></li>
+<li><p>Install Virtual Box: <a href="https://www.virtualbox.org/" title="Virtual Box">Virtual Box Downloads</a></p></li>
+<li><p>Type <code>vagrant up</code>  from within the <code>/scripts/vagrant/zeppelin-dev</code> directory</p></li>
+</ol>
+
+<p>Thats it ! You can now run <code>vagrant ssh</code> and this will place you into the guest machines terminal prompt.</p>
+
+<p>If you don&#39;t wish to build Zeppelin from scratch, run the z-manager installer script while running in the guest VM:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">curl -fsSL https://raw.githubusercontent.com/NFLabs/z-manager/master/zeppelin-installer.sh | bash
+</code></pre></div>
+<h2>Building Zeppelin</h2>
+
+<p>You can now </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">git clone git://git.apache.org/zeppelin.git
+</code></pre></div>
+<p>into a directory on your host machine, or directly in your virtual machine.</p>
+
+<p>Cloning Zeppelin into the <code>/scripts/vagrant/zeppelin-dev</code> directory from the host, will allow the directory to be shared between your host and the guest machine.</p>
+
+<p>Cloning the project again may seem counter intuitive, since this script likely originated from the project repository.  Consider copying just the vagrant/zeppelin-dev script from the Zeppelin project as a stand alone directory, then once again clone the specific branch you wish to build.</p>
+
+<p>Synced folders enable Vagrant to sync a folder on the host machine to the guest machine, allowing you to continue working on your project&#39;s files on your host machine, but use the resources in the guest machine to compile or run your project. <em><a href="https://docs.vagrantup.com/v2/synced-folders/index.html">(1) Synced Folder Description from Vagrant Up</a></em></p>
+
+<p>By default, Vagrant will share your project directory (the directory with the Vagrantfile) to <code>/vagrant</code>.  Which means you should be able to build within the guest machine after you
+<code>cd /vagrant/zeppelin</code></p>
+
+<h2>What&#39;s in this VM?</h2>
+
+<p>Running the following commands in the guest machine should display these expected versions:</p>
+
+<p><code>node --version</code> should report <em>v0.12.7</em>
+<code>mvn --version</code> should report <em>Apache Maven 3.3.9</em> and <em>Java version: 1.7.0_85</em></p>
+
+<p>The virtual machine consists of:</p>
+
+<ul>
+<li>Ubuntu Server 14.04 LTS</li>
+<li>Node.js 0.12.7</li>
+<li>npm 2.11.3</li>
+<li>ruby 1.9.3 + rake, make and bundler (only required if building jekyll documentation)</li>
+<li>Maven 3.3.9</li>
+<li>Git</li>
+<li>Unzip</li>
+<li>libfontconfig to avoid phatomJs missing dependency issues</li>
+<li>openjdk-7-jdk</li>
+<li>Python addons: pip, matplotlib, scipy, numpy, pandas</li>
+<li><a href="https://www.r-project.org/">R</a> and R Packages required to run the R Interpreter and the related R tutorial notebook, including:  Knitr, devtools, repr, rCharts, ggplot2, googleVis, mplot, htmltools, base64enc, data.table</li>
+</ul>
+
+<h2>How to build &amp; run Zeppelin</h2>
+
+<p>This assumes you&#39;ve already cloned the project either on the host machine in the zeppelin-dev directory (to be shared with the guest machine) or cloned directly into a directory while running inside the guest machine.  The following build steps will also include Python and R support via PySpark and SparkR:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">cd /zeppelin
+mvn clean package -Pspark-1.6 -Ppyspark -Phadoop-2.4 -Psparkr -DskipTests
+./bin/zeppelin-daemon.sh start
+</code></pre></div>
+<p>On your host machine browse to <code>http://localhost:8080/</code></p>
+
+<p>If you <a href="#tweaking-the-virtual-machine">turned off port forwarding</a> in the <code>Vagrantfile</code> browse to <code>http://192.168.51.52:8080</code></p>
+
+<h2>Tweaking the Virtual Machine</h2>
+
+<p>If you plan to run this virtual machine along side other Vagrant images, you may wish to bind the virtual machine to a specific IP address, and not use port fowarding from your local host.</p>
+
+<p>Comment out the <code>forward_port</code> line, and uncomment the <code>private_network</code> line in Vagrantfile.  The subnet that works best for your local network will vary so adjust <code>192.168.*.*</code> accordingly.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">#config.vm.network &quot;forwarded_port&quot;, guest: 8080, host: 8080
+config.vm.network &quot;private_network&quot;, ip: &quot;192.168.51.52&quot;
+</code></pre></div>
+<p><code>vagrant halt</code> followed by <code>vagrant up</code> will restart the guest machine bound to the IP address of <code>192.168.51.52</code>.
+This approach usually is typically required if running other virtual machines that discover each other directly by IP address, such as Spark Masters and Slaves as well as Cassandra Nodes, Elasticsearch Nodes, and other Spark data sources.  You may wish to launch nodes in virtual machines with IP addresses in a subnet that works for your local network, such as: 192.168.51.53, 192.168.51.54, 192.168.51.53, etc..</p>
+
+<h2>Extras</h2>
+
+<h3>Python Extras</h3>
+
+<p>With Zeppelin running, <strong>Numpy</strong>, <strong>SciPy</strong>, <strong>Pandas</strong> and <strong>Matplotlib</strong> will be available.  Create a pyspark notebook, and try the below code.</p>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="o">%</span><span class="n">pyspark</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+
+<span class="k">print</span> <span class="s">&quot;numpy &quot;</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span>
+<span class="k">print</span> <span class="s">&quot;scipy &quot;</span> <span class="o">+</span> <span class="n">scipy</span><span class="o">.</span><span class="n">__version__</span>
+<span class="k">print</span> <span class="s">&quot;pandas &quot;</span> <span class="o">+</span> <span class="n">pandas</span><span class="o">.</span><span class="n">__version__</span>
+<span class="k">print</span> <span class="s">&quot;matplotlib &quot;</span> <span class="o">+</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span>
+</code></pre></div>
+<p>To Test plotting using Matplotlib into a rendered <code>%html</code> SVG image, try</p>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="o">%</span><span class="n">pyspark</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&#39;Agg&#39;</span><span class="p">)</span>   <span class="c"># turn off interactive charting so this works for server side SVG rendering</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">StringIO</span>
+
+<span class="c"># clear out any previous plots on this note</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;svg&#39;</span><span class="p">)</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;%html &lt;div style=&#39;width:600px&#39;&gt;&quot;</span> <span class="o">+</span> <span class="n">img</span><span class="o">.</span><span class="n">buf</span> <span class="o">+</span> <span class="s">&quot;&lt;/div&gt;&quot;</span>
+
+<span class="c"># Example data</span>
+<span class="n">people</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Tom&#39;</span><span class="p">,</span> <span class="s">&#39;Dick&#39;</span><span class="p">,</span> <span class="s">&#39;Harry&#39;</span><span class="p">,</span> <span class="s">&#39;Slim&#39;</span><span class="p">,</span> <span class="s">&#39;Jim&#39;</span><span class="p">)</span>
+<span class="n">y_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">))</span>
+<span class="n">performance</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">))</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span> <span class="n">performance</span><span class="p">,</span> <span class="n">xerr</span><span class="o">=</span><span class="n">error</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span> <span class="n">people</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Performance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;How fast do you want to go today?&#39;</span><span class="p">)</span>
+
+<span class="n">show</span><span class="p">(</span><span class="n">plt</span><span class="p">)</span>
+</code></pre></div>
+<h3>R Extras</h3>
+
+<p>With zeppelin running, an R Tutorial notebook will be available.  The R packages required to run the examples and graphs in this tutorial notebook were installed by this virtual machine.
+The installed R Packages include: Knitr, devtools, repr, rCharts, ggplot2, googleVis, mplot, htmltools, base64enc, data.table</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

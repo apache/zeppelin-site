@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Notebook as Homepage</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.0">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.0</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.0/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.0/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.0/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.0/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.0/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.0/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.0/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.0/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.0/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.0/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.0/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.0/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.0/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.0/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.0/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.0/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.0/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.0/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.0/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.0/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.0/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.0/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.0/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.0/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.0/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.0/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.0/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.0/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+    <div class="content">
+      
+<!--<div class="hero-unit Notebook as Homepage">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Customize Apache Zeppelin homepage</h1>
+
+<div id="toc"></div>
+
+<p>Apache Zeppelin allows you to use one of the notebooks you create as your Zeppelin Homepage.
+With that you can brand your Zeppelin installation, adjust the instruction to your users needs and even translate to other languages.</p>
+
+<h2>How to set a notebook as your Zeppelin homepage</h2>
+
+<p>The process for creating your homepage is very simple as shown below:</p>
+
+<ol>
+<li>Create a notebook using Zeppelin</li>
+<li>Set the notebook id in the config file</li>
+<li>Restart Zeppelin</li>
+</ol>
+
+<h3>Create a notebook using Zeppelin</h3>
+
+<p>Create a new notebook using Zeppelin,
+you can use <code>%md</code> interpreter for markdown content or any other interpreter you like.
+You can also use the display system to generate <a href="../displaysystem/basicdisplaysystem.html#text">text</a>, <a href="../displaysystem/basicdisplaysystem.html#html">html</a>, <a href="../displaysystem/basicdisplaysystem.html#table">table</a> or
+Angular (<a href="../displaysystem/back-end-angular.html">backend API</a>, <a href="../displaysystem/front-end-angular.html">frontend API</a>).</p>
+
+<p>Run (shift+Enter) the notebook and see the output. Optionally, change the notebook view to report to hide
+the code sections.</p>
+
+<h3>Set the notebook id in the config file</h3>
+
+<p>To set the notebook id in the config file, you should copy it from the last word in the notebook url.
+For example,</p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/homepage_notebook_id.png" width="400px" /></p>
+
+<p>Set the notebook id to the <code>ZEPPELIN_NOTEBOOK_HOMESCREEN</code> environment variable
+or <code>zeppelin.notebook.homescreen</code> property.</p>
+
+<p>You can also set the <code>ZEPPELIN_NOTEBOOK_HOMESCREEN_HIDE</code> environment variable
+or <code>zeppelin.notebook.homescreen.hide</code> property to hide the new notebook from the notebook list.</p>
+
+<h3>Restart Zeppelin</h3>
+
+<p>Restart your Zeppelin server</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">./bin/zeppelin-deamon stop
+./bin/zeppelin-deamon start
+</code></pre></div>
+<p>That&#39;s it! Open your browser and navigate to Apache Zeppelin and see your customized homepage.</p>
+
+<p><br /></p>
+
+<h2>Show notebooks list in your custom homepage</h2>
+
+<p>If you want to display the list of notebooks on your custom Apache Zeppelin homepage all
+you need to do is use our %angular support.</p>
+
+<p>Add the following code to a paragraph in you home page and run it... walla! you have your notebooks list.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">println</span><span class="p">(</span>
+<span class="s2">&quot;&quot;&quot;%angular</span>
+<span class="s2">  &lt;div class=&quot;</span><span class="nx">col</span><span class="o">-</span><span class="nx">md</span><span class="o">-</span><span class="mi">4</span><span class="s2">&quot; ng-controller=&quot;</span><span class="nx">HomeCtrl</span> <span class="nx">as</span> <span class="nx">home</span><span class="s2">&quot;&gt;</span>
+<span class="s2">    &lt;h4&gt;Notebooks&lt;/h4&gt;</span>
+<span class="s2">    &lt;div&gt;</span>
+<span class="s2">      &lt;h5&gt;&lt;a href=&quot;&quot; data-toggle=&quot;</span><span class="nx">modal</span><span class="s2">&quot; data-target=&quot;</span><span class="err">#</span><span class="nx">noteNameModal</span><span class="s2">&quot; style=&quot;</span><span class="nx">text</span><span class="o">-</span><span class="nx">decoration</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span><span class="s2">&quot;&gt;</span>
+<span class="s2">        &lt;i style=&quot;</span><span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">15</span><span class="nx">px</span><span class="p">;</span><span class="s2">&quot; class=&quot;</span><span class="nx">icon</span><span class="o">-</span><span class="nx">notebook</span><span class="s2">&quot;&gt;&lt;/i&gt; Create new note&lt;/a&gt;&lt;/h5&gt;</span>
+<span class="s2">        &lt;ul style=&quot;</span><span class="nx">list</span><span class="o">-</span><span class="nx">style</span><span class="o">-</span><span class="nx">type</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span><span class="s2">&quot;&gt;</span>
+<span class="s2">          &lt;li ng-repeat=&quot;</span><span class="nx">note</span> <span class="k">in</span> <span class="nx">home</span><span class="p">.</span><span class="nx">notes</span><span class="p">.</span><span class="nx">list</span> <span class="nx">track</span> <span class="nx">by</span> <span class="nx">$index</span><span class="s2">&quot;&gt;&lt;i style=&quot;</span><span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span><span class="s2">&quot; class=&quot;</span><span class="nx">icon</span><span class="o">-</span><span class="nx">doc</span><span class="s2">&quot;&gt;&lt;/i&gt;</span>
+<span class="s2">            &lt;a style=&quot;</span><span class="nx">text</span><span class="o">-</span><span class="nx">decoration</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span><span class="s2">&quot; href=&quot;</span><span class="err">#</span><span class="o">/</span><span class="nx">notebook</span><span class="o">/</span><span class="s2">&quot;&gt;&lt;/a&gt;</span>
+<span class="s2">          &lt;/li&gt;</span>
+<span class="s2">        &lt;/ul&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">  &lt;/div&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>After running the notebook you will see output similar to this one:
+<img src="/assets/themes/zeppelin/img/screenshots/homepage_notebook_list.png" /></p>
+
+<p>The main trick here relays in linking the <code>&lt;div&gt;</code> to the controller:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;col-md-4&quot;</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">controller</span><span class="o">=</span><span class="s2">&quot;HomeCtrl as home&quot;</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Once we have <code>home</code> as our controller variable in our <code>&lt;div&gt;&lt;/div&gt;</code> 
+we can use <code>home.notes.list</code> to get access to the notebook list.</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,19 @@
+github:
+  homepage: https://zeppelin.apache.org
+
+notifications:
+  commits: commits@zeppelin.apache.org
+  issues: reviews@zeppelin.apache.org
+  pullrequests: reviews@zeppelin.apache.org
+  jira_options: link label
+
+jekyll:
+  whoami: master
+  target: asf-staging
+
+staging:
+  profile: ~
+  whoami:  asf-staging
+
+publish:
+  whoami:  asf-site

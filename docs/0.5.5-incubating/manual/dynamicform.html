@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dynamic Form</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.5.5-incubating/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.5.5-incubating/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.5.5-incubating/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.5.5-incubating">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            Zeppelin <small>(0.5.5-incubating)</small>            
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Overview</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/index.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Install</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/install/install.html">Install</a></li>
+                <li><a href="/docs/0.5.5-incubating/install/yarn_install.html">YARN Install</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Tutorial</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/tutorial/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Guide</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/manual/dynamicform.html">Dynamic Form</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.5-incubating/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Hive</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Markdown</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/postgresql.html">Postgresql, hawq</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Tajo</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.5-incubating/displaysystem/display.html">Text</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/display.html#html">Html</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/table.html">Table</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/angular.html">Angular</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Manual</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/manual/notebookashomepage.html">Notebook as Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Notebook Storage</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/storage/storage.html">S3 Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>REST API</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.5.5-incubating/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Development</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.5.5-incubating/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.5.5-incubating/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      
+<!--<div class="hero-unit Dynamic Form">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h2>Dynamic Form</h2>
+
+<p>Zeppelin dynamically creates input forms. Depending on language backend, there&#39;re two different ways to create dynamic form.
+Custom language backend can select which type of form creation it wants to use.</p>
+
+<p><br /></p>
+
+<h3>Using form Templates</h3>
+
+<p>This mode creates form using simple template language. It&#39;s simple and easy to use. For example Markdown, Shell, SparkSql language backend uses it.</p>
+
+<p><br /></p>
+
+<h4>Text input form</h4>
+
+<p>To create text input form, use <em>${formName}</em> templates.</p>
+
+<p>for example</p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/form_input.png" /></p>
+
+<p>Also you can provide default value, using <em>${formName=defaultValue}</em>.</p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/form_input_default.png" /></p>
+
+<p><br /></p>
+
+<h4>Select form</h4>
+
+<p>To create select form, use <em>${formName=defaultValue,option1|option2...}</em></p>
+
+<p>for example</p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/form_select.png" /></p>
+
+<p>Also you can separate option&#39;s display name and value, using <em>${formName=defaultValue,option1(DisplayName)|option2(DisplayName)...}</em></p>
+
+<p><img src="/assets/themes/zeppelin/img/screenshots/form_select_displayname.png" /></p>
+
+<p><br /></p>
+
+<h3>Creates Programmatically</h3>
+
+<p>Some language backend uses programmatic way to create form. For example <a href="../interpreter/spark.html#zeppelincontext">ZeppelinContext</a> provides form creation API</p>
+
+<p>Here&#39;re some examples.</p>
+
+<p>Text input form</p>
+
+<p>You can do this in Scala</p>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">spark</span>
+<span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">))</span>
+</code></pre></div>
+<p>Or Python</p>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="o">%</span><span class="n">pyspark</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p><img src="/assets/themes/zeppelin/img/screenshots/form_input_prog.png" /></p>
+
+<p>Text input form with default value</p>
+
+<p>Scala</p>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">spark</span>
+<span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;sun&quot;</span><span class="o">))</span>
+</code></pre></div>
+<p>Python</p>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="o">%</span><span class="n">pyspark</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;sun&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p><img src="/assets/themes/zeppelin/img/screenshots/form_input_default_prog.png" /></p>
+
+<p>Select form</p>
+
+<p>Scala</p>
+<div class="highlight"><pre><code class="scala language-scala" data-lang="scala"><span class="o">%</span><span class="n">spark</span>
+<span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;day&quot;</span><span class="o">,</span> <span class="nc">Seq</span><span class="o">((</span><span class="s">&quot;1&quot;</span><span class="o">,</span><span class="s">&quot;mon&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;2&quot;</span><span class="o">,</span><span class="s">&quot;tue&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;3&quot;</span><span class="o">,</span><span class="s">&quot;wed&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;4&quot;</span><span class="o">,</span><span class="s">&quot;thurs&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;5&quot;</span><span class="o">,</span><span class="s">&quot;fri&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;6&quot;</span><span class="o">,</span><span class="s">&quot;sat&quot;</span><span class="o">),</span>
+                                    <span class="o">(</span><span class="s">&quot;7&quot;</span><span class="o">,</span><span class="s">&quot;sun&quot;</span><span class="o">))))</span>
+</code></pre></div>
+<p>Python</p>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="o">%</span><span class="n">pyspark</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="o">+</span><span class="n">z</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;day&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;mon&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="s">&quot;tue&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="s">&quot;wed&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="s">&quot;thurs&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;5&quot;</span><span class="p">,</span><span class="s">&quot;fri&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;6&quot;</span><span class="p">,</span><span class="s">&quot;sat&quot;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s">&quot;7&quot;</span><span class="p">,</span><span class="s">&quot;sun&quot;</span><span class="p">)]))</span>
+</code></pre></div>
+<p><img src="/assets/themes/zeppelin/img/screenshots/form_select_prog.png" /></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2015 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

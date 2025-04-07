@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>2 - Event Dispatching</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/themes/zeppelin/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/themes/zeppelin/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/themes/zeppelin/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/themes/zeppelin/img/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/themes/zeppelin/img/favicon/manifest.json">
+    <link rel="mask-icon" href="/assets/themes/zeppelin/img/favicon/safari-pinned-tab.svg" color="#438bc9">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--    <script src="https://s3.amazonaws.com/apache-zeppelin/post/medium.js"></script>-->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/moment.min.js"></script>
+    <script src="/assets/themes/zeppelin/js/helium.controller.js"></script>
+    <script src="/assets/themes/zeppelin/js/medium.controller.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" style="margin-top: -6px;" width="50" alt="I'm zeppelin">
+          <span style="margin-left: 5px;"> Apache Zeppelin </span>
+      </a>
+    </div>
+    <nav class="navbar-collapse collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/latest/quickstart/install.html">Quick Start</a></li>
+        <!-- Download -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Download<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/download.html">Download Zeppelin</a></li>
+            <li><a href="/supported_interpreters.html">Supported Interpreters</a></li>
+          </ul>
+        </li>
+        <!-- Docs -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Docs<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="title"><span><b>Release</b></span></li>
+            <li><a href="/docs/0.11.2">0.11.2</a></li>
+            <li><a href="/docs/0.11.1">0.11.1</a></li>
+            <li><a href="/docs/0.11.0">0.11.0</a></li>
+            <li><a href="/docs/0.10.1">0.10.1</a></li>
+            <li><a href="/docs/0.10.0">0.10.0</a></li>
+            <li><a href="/docs/0.9.0">0.9.0</a></li>
+            <li><a href="/docs/0.8.2">0.8.2</a></li>
+            <li><a href="documentation.html">Older Versions</a></li>
+            <li class="title"><span><b><a href="security.html">Security</a></b><span></li>
+          </ul>
+        </li>
+
+        <li><a href="/helium_packages.html">Helium</a></li>
+
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Community<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/community.html">Contributors</a></li>
+            <li><a href="https://github.com/apache/zeppelin">GitHub</a></li>
+          </ul>
+        </li>
+          <!-- Apache -->
+        <li class="docs">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apache<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a></li>
+            <li><a href="http://www.apache.org/licenses/">Apache License</a></li>
+            <li><a href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+            <li><a href="/assets.html">Assets</a></li>
+            <li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav><!--/.navbar-collapse -->
+  </div>
+</div>
+
+
+
+
+    <div class="content">
+      
+
+<div class="row">
+  
+    <div class="sideMenu col-sm-3">
+      
+      
+      
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+          
+            <li><a href="/contribution/zeppelinweb/goodPracticeGuide01.html">1 - Defining Components</a></li>
+          
+        
+      
+    
+  
+    
+      
+        
+          
+            <li class="active"><a href="/contribution/zeppelinweb/goodPracticeGuide02.html" class="active">2 - Event Dispatching</a></li>
+          
+        
+      
+    
+  
+    
+      
+        
+          
+            <li><a href="/contribution/zeppelinweb/goodPracticeGuide03.html">3 - Making A Controller</a></li>
+          
+        
+      
+    
+  
+    
+      
+        
+          
+            <li><a href="/contribution/zeppelinweb/goodPracticeGuide04.html">4 - Using ng-bind</a></li>
+          
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+      
+        
+          
+            <li><a href="/contribution/webapplication.html">Web Application</a></li>
+          
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+    
+      
+        
+      
+    
+  
+
+
+
+
+    </div>
+    <div class="col-sm-9">
+      <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Event Dispatching in Angular</h1>
+
+<p><br/>
+AngularJS provides an Event dispatching system allowing the communication between controllers or services and controllers.</p>
+
+<p><code>$broadcast</code> dispatches the event downwards through the child scopes</p>
+
+<p><code>$emit</code> dispatches the event upwards through the scope hierarchy</p>
+
+<p><code>$on</code> catches the event passing by that scope</p>
+
+<p><br/>
+You can usually see it being used from <code>$rootScope</code> or <code>$scope</code></p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$scope.$broadcast(&#39;eventName&#39;, arg);
+$rootScope.$broadcast(&#39;eventName&#39;, arg);
+
+$scope.$emit(&#39;eventName&#39;, arg);
+$rootScope.$emit(&#39;eventName&#39;, arg);
+
+$scope.$on(&#39;eventToCatch&#39;, function);
+$rootScope.$on(&#39;eventToCatch&#39;, function);
+</code></pre></figure>
+<p>Now, there are a few things to know about using it from <code>$rootScope</code>:</p>
+
+<ul>
+<li>Both <code>$rootScope.$emit</code> and <code>$rootScope.$broadcast</code> go through child scopes since <code>$rootScope</code> doesn&#39;t have a parent</li>
+<li><code>$rootScope.$emit</code> can only be received by <code>$rootScope.$on</code></li>
+<li><code>$rootScope.$broadcast</code> can be received by <code>$rootScope.$on</code> and <code>$scope.$on</code></li>
+<li><code>$rootScope.$on</code> listener needs to be removed by hand (Memory leak if forgotten)</li>
+</ul>
+
+<h4>How we are using it in the project</h4>
+
+<ul>
+<li>Usage of event dispatching should be limited if possible</li>
+<li>We only use <code>$rootScope.$broadcast</code> and <code>$scope.$on</code> for event dispatching/catching</li>
+<li>We are grouping all the <code>$scope.$on</code> functions at the end of the compponent using it (controller or service)</li>
+</ul>
+
+<h4>Performances</h4>
+
+<p>Using <code>$broadcast</code> might not seem optimum if we consider the description we have above.</p>
+
+<p>However, it is optimized to only go through branches that have a matching event binding.
+(cf. <a href="http://www.bennadel.com/blog/2724-scope-broadcast-is-surprisingly-efficient-in-angularjs.htm">this post</a>)</p>
+
+    </div>
+  
+</div>
+
+
+    </div>
+
+    
+
+
+
+    
+
+    <footer>
+      <!-- <p>&copy; 2025 The Apache Software Foundation</p>-->
+    </footer>
+  </body>
+</html>
+

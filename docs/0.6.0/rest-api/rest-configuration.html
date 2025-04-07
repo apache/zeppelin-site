@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Configuration REST API</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.6.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.6.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.6.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.6.0/assets/themes/zeppelin/js/toc.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.6.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.6.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.6.0">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.6.0</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.6.0/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.6.0/install/install.html">Install</a></li>
+                <li><a href="/docs/0.6.0/install/install.html#apache-zeppelin-configuration">Configuration</a></li>
+                <li><a href="/docs/0.6.0/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.6.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.6.0/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.6.0/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.6.0/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.6.0/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.6.0/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.6.0/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.6.0/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.6.0/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.6.0/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.6.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.6.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.6.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.6.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.6.0/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.6.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.6.0/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.6.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.6.0/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.6.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.6.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.6.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.6.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.6.0/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.6.0/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.6.0/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.6.0/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.6.0/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.6.0/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.6.0/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.6.0/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.6.0/security/authentication.html">Authentication for NGINX</a></li>
+                <li><a href="/docs/0.6.0/security/shiroauthentication.html">Shiro Authentication</a></li>
+                <li><a href="/docs/0.6.0/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.6.0/security/interpreter_authorization.html">Interpreter & Data Resource Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.6.0/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.6.0/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.6.0/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+    <div class="content">
+      
+<!--<div class="hero-unit Configuration REST API">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Apache Zeppelin Configuration REST API</h1>
+
+<div id="toc"></div>
+
+<h2>Overview</h2>
+
+<p>Apache Zeppelin provides several REST APIs for interaction and remote activation of zeppelin functionality.
+All REST APIs are available starting with the following endpoint <code>http://[zeppelin-server]:[zeppelin-port]/api</code>. 
+Note that Apache Zeppelin REST APIs receive or return JSON objects, it is recommended for you to install some JSON viewers such as <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc">JSONView</a>.</p>
+
+<p>If you work with Apache Zeppelin and find a need for an additional REST API, please <a href="http://zeppelin.apache.org/community.html">file an issue or send us an email</a>.
+nd a need for an additional REST API, please <a href="../../community.html">file an issue or send us mail</a>.</p>
+
+<h2>Configuration REST API list</h2>
+
+<h3>List all key/value pair of configurations</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method return all key/value pair of configurations on the server.<br/>
+       Note: For security reason, some pairs would not be shown.</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/configurations/all</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response
+      </td>
+      <td>
+        <pre>
+{
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: {
+    &quot;zeppelin.war.tempdir&quot;: &quot;webapps&quot;,
+    &quot;zeppelin.notebook.homescreen.hide&quot;: &quot;false&quot;,
+    &quot;zeppelin.interpreter.remoterunner&quot;: &quot;bin/interpreter.sh&quot;,
+    &quot;zeppelin.notebook.s3.user&quot;: &quot;user&quot;,
+    &quot;zeppelin.server.port&quot;: &quot;8089&quot;,
+    &quot;zeppelin.dep.localrepo&quot;: &quot;local-repo&quot;,
+    &quot;zeppelin.ssl.truststore.type&quot;: &quot;JKS&quot;,
+    &quot;zeppelin.ssl.keystore.path&quot;: &quot;keystore&quot;,
+    &quot;zeppelin.notebook.s3.bucket&quot;: &quot;zeppelin&quot;,
+    &quot;zeppelin.server.addr&quot;: &quot;0.0.0.0&quot;,
+    &quot;zeppelin.ssl.client.auth&quot;: &quot;false&quot;,
+    &quot;zeppelin.server.context.path&quot;: &quot;/&quot;,
+    &quot;zeppelin.ssl.keystore.type&quot;: &quot;JKS&quot;,
+    &quot;zeppelin.ssl.truststore.path&quot;: &quot;truststore&quot;,
+    &quot;zeppelin.interpreters&quot;: &quot;org.apache.zeppelin.spark.SparkInterpreter,org.apache.zeppelin.spark.PySparkInterpreter,org.apache.zeppelin.spark.SparkRInterpreter,org.apache.zeppelin.spark.SparkSqlInterpreter,org.apache.zeppelin.spark.DepInterpreter,org.apache.zeppelin.markdown.Markdown,org.apache.zeppelin.angular.AngularInterpreter,org.apache.zeppelin.shell.ShellInterpreter,org.apache.zeppelin.flink.FlinkInterpreter,org.apache.zeppelin.lens.LensInterpreter,org.apache.zeppelin.ignite.IgniteInterpreter,org.apache.zeppelin.ignite.IgniteSqlInterpreter,org.apache.zeppelin.cassandra.CassandraInterpreter,org.apache.zeppelin.geode.GeodeOqlInterpreter,org.apache.zeppelin.postgresql.PostgreSqlInterpreter,org.apache.zeppelin.kylin.KylinInterpreter,org.apache.zeppelin.elasticsearch.ElasticsearchInterpreter,org.apache.zeppelin.scalding.ScaldingInterpreter&quot;,
+    &quot;zeppelin.ssl&quot;: &quot;false&quot;,
+    &quot;zeppelin.notebook.autoInterpreterBinding&quot;: &quot;true&quot;,
+    &quot;zeppelin.notebook.homescreen&quot;: &quot;&quot;,
+    &quot;zeppelin.notebook.storage&quot;: &quot;org.apache.zeppelin.notebook.repo.VFSNotebookRepo&quot;,
+    &quot;zeppelin.interpreter.connect.timeout&quot;: &quot;30000&quot;,
+    &quot;zeppelin.anonymous.allowed&quot;: &quot;true&quot;,
+    &quot;zeppelin.server.allowed.origins&quot;:&quot;*&quot;,
+    &quot;zeppelin.encoding&quot;: &quot;UTF-8&quot;
+  }
+}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<h3>List all prefix matched key/value pair of configurations</h3>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method return all prefix matched key/value pair of configurations on the server.<br/>
+      Note: For security reason, some pairs would not be shown.</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/configurations/prefix/[prefix]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response
+      </td>
+      <td><pre>
+{
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;message&quot;: &quot;&quot;,
+  &quot;body&quot;: {
+    &quot;zeppelin.ssl.keystore.type&quot;: &quot;JKS&quot;,
+    &quot;zeppelin.ssl.truststore.path&quot;: &quot;truststore&quot;,
+    &quot;zeppelin.ssl.truststore.type&quot;: &quot;JKS&quot;,
+    &quot;zeppelin.ssl.keystore.path&quot;: &quot;keystore&quot;,
+    &quot;zeppelin.ssl&quot;: &quot;false&quot;,
+    &quot;zeppelin.ssl.client.auth&quot;: &quot;false&quot;
+  }
+}</pre>
+      </td>
+    </tr>
+  </table></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2016 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

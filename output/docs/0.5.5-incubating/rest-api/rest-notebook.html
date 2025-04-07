@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Notebook REST API</title>
+    <meta name="description" content="">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.5.5-incubating/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.5.5-incubating/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.5.5-incubating/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.5.5-incubating/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.5.5-incubating">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            Zeppelin <small>(0.5.5-incubating)</small>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Overview</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/index.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Install</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/install/install.html">Install</a></li>
+                <li><a href="/docs/0.5.5-incubating/install/yarn_install.html">YARN Install</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Tutorial</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/tutorial/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Guide</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/manual/dynamicform.html">Dynamic Form</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.5-incubating/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Hive</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Markdown</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/postgresql.html">Postgresql, hawq</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Shell</a></li>
+                <li><a href="/docs/0.5.5-incubating/interpreter/spark.html">Spark</a></li>
+                <li><a href="/docs/0.5.5-incubating/pleasecontribute.html">Tajo</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.5.5-incubating/displaysystem/display.html">Text</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/display.html#html">Html</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/table.html">Table</a></li>
+                <li><a href="/docs/0.5.5-incubating/displaysystem/angular.html">Angular</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <!-- li><span><b>Manual</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/manual/notebookashomepage.html">Notebook as Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Notebook Storage</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/storage/storage.html">S3 Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>REST API</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.5.5-incubating/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li role="separator" class="divider"></li>
+                <!-- li><span><b>Development</b><span></li -->
+                <li><a href="/docs/0.5.5-incubating/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.5.5-incubating/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.5.5-incubating/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      
+<!--<div class="hero-unit Notebook REST API">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h2>Zeppelin REST API</h2>
+
+<p>Zeppelin provides several REST API&#39;s for interaction and remote activation of zeppelin functionality.</p>
+
+<p>All REST API are available starting with the following endpoint <code>http://[zeppelin-server]:[zeppelin-port]/api</code></p>
+
+<p>Note that zeppein REST API receive or return JSON objects, it it recommended you install some JSON view such as 
+ <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc">JSONView</a></p>
+
+<p>If you work with zeppelin and find a need for an additional REST API please <a href="../../community.html">file an issue or send us mail</a> </p>
+
+<p><br /></p>
+
+<h3>Notebook REST API list</h3>
+
+<p>Notebooks REST API supports the following operations: List, Create, Delete &amp; Clone as detailed in the following table </p>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <th>List notebooks</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>This <code>GET</code> method list the available notebooks on your server.
+          Notebook JSON contains the <code>name</code> and <code>id</code> of all notebooks.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;:&quot;OK&quot;,&quot;message&quot;:&quot;&quot;,&quot;body&quot;:[{&quot;name&quot;:&quot;Homepage&quot;,&quot;id&quot;:&quot;2AV4WUEMK&quot;},{&quot;name&quot;:&quot;Zeppelin Tutorial&quot;,&quot;id&quot;:&quot;2A94M5J1Z&quot;}]}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <th>Create notebook</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method create a new notebook using the given name or default name if none given.
+          The body field of the returned JSON contain the new notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON input </td>
+      <td><pre>{&quot;name&quot;: &quot;name of new notebook&quot;}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;CREATED&quot;,&quot;message&quot;: &quot;&quot;,&quot;body&quot;: &quot;2AZPHY918&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <th>Delete notebook</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>This <code>DELETE</code> method delete a notebook by the given notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;:&quot;OK&quot;,&quot;message&quot;:&quot;&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+<p><br/></p>
+
+<p><table class="table-configuration">
+    <col width="200">
+    <tr>
+      <th>Clone notebook</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>This <code>POST</code> method clone a notebook by the given id and create a new notebook using the given name 
+          or default name if none given.
+          The body field of the returned JSON contain the new notebook id.
+      </td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td><code>http://[zeppelin-server]:[zeppelin-port]/api/notebook/[notebookId]</code></td>
+    </tr>
+    <tr>
+      <td>Success code</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <td> Fail code</td>
+      <td> 500 </td>
+    </tr>
+    <tr>
+      <td> sample JSON input </td>
+      <td><pre>{&quot;name&quot;: &quot;name of new notebook&quot;}</pre></td>
+    </tr>
+    <tr>
+      <td> sample JSON response </td>
+      <td><pre>{&quot;status&quot;: &quot;CREATED&quot;,&quot;message&quot;: &quot;&quot;,&quot;body&quot;: &quot;2AZPHY918&quot;}</pre></td>
+    </tr>
+  </table></p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2015 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+

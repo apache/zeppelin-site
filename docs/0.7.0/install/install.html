@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Apache Zeppelin 0.7.0 Documentation: Quick Start</title>
+    <meta name="description" content="This page will help you get started and will guide you through installing Apache Zeppelin and running it in the command line.">
+    <meta name="author" content="The Apache Software Foundation">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Le styles -->
+    <link href="/docs/0.7.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/docs/0.7.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
+    <link href="/docs/0.7.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/docs.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/anchor.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/toc.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/lunr.min.js"></script>
+    <script src="/docs/0.7.0/assets/themes/zeppelin/js/search.js"></script>    
+
+    <!-- atom & rss feed -->
+    <link href="/docs/0.7.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/docs/0.7.0/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push["setDoNotTrack", true];
+      _paq.push["disableCookies"];
+      _paq.push['trackPageView'];
+      _paq.push['enableLinkTracking'];
+      function {
+        var u="https://analytics.apache.org/";
+        _paq.push['setTrackerUrl', u+'matomo.php'];
+        _paq.push['setSiteId', '69'];
+        var d=document, g=d.createElement'script', s=d.getElementsByTagName'script'[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBeforeg,s;
+      };
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    
+        <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/docs/0.7.0">
+            <img src="/assets/themes/zeppelin/img/zeppelin_logo.png" width="50" alt="I'm zeppelin">
+            <span style="vertical-align:middle">Zeppelin</span>
+            <span style="vertical-align:baseline"><small>0.7.0</small></span>
+          </a>
+        </div>
+        <nav class="navbar-collapse collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quick Start <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/docs/0.7.0/index.html">What is Apache Zeppelin ?</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Getting Started</b><span></li>
+                <li><a href="/docs/0.7.0/install/install.html">Install</a></li>
+                <li><a href="/docs/0.7.0/install/configuration.html">Configuration</a></li>
+                <li><a href="/docs/0.7.0/quickstart/explorezeppelinui.html">Explore Zeppelin UI</a></li>
+                <li><a href="/docs/0.7.0/quickstart/tutorial.html">Tutorial</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Basic Feature Guide</b><span></li>
+                <li><a href="/docs/0.7.0/manual/dynamicform.html">Dynamic Form</a></li>
+                <li><a href="/docs/0.7.0/manual/publish.html">Publish your Paragraph</a></li>
+                <li><a href="/docs/0.7.0/manual/notebookashomepage.html">Customize Zeppelin Homepage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>More</b><span></li>
+                <li><a href="/docs/0.7.0/install/upgrade.html">Upgrade Zeppelin Version</a></li>
+                <li><a href="/docs/0.7.0/install/build.html">Build from source</a></li>
+                <li><a href="/docs/0.7.0/quickstart/install_with_flink_and_spark_cluster.html">Install Zeppelin with Flink and Spark Clusters Tutorial</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Interpreter <b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu">
+                <li><a href="/docs/0.7.0/manual/interpreters.html">Overview</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Usage</b><span></li>
+                <li><a href="/docs/0.7.0/manual/interpreterinstallation.html">Interpreter Installation</a></li>
+                <!--<li><a href="/docs/0.7.0/manual/dynamicinterpreterload.html">Dynamic Interpreter Loading</a></li>-->
+                <li><a href="/docs/0.7.0/manual/dependencymanagement.html">Interpreter Dependency Management</a></li>
+                <li><a href="/docs/0.7.0/manual/userimpersonation.html">Interpreter User Impersonation</a></li>
+                <li><a href="/docs/0.7.0/manual/interpreterexechooks.html">Interpreter Execution Hooks (Experimental)</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Available Interpreters</b><span></li>
+                <li><a href="/docs/0.7.0/interpreter/alluxio.html">Alluxio</a></li>
+                <li><a href="/docs/0.7.0/interpreter/beam.html">Beam</a></li>
+                <li><a href="/docs/0.7.0/interpreter/bigquery.html">BigQuery</a></li>
+                <li><a href="/docs/0.7.0/interpreter/cassandra.html">Cassandra</a></li>
+                <li><a href="/docs/0.7.0/interpreter/elasticsearch.html">Elasticsearch</a></li>
+                <li><a href="/docs/0.7.0/interpreter/flink.html">Flink</a></li>
+                <li><a href="/docs/0.7.0/interpreter/geode.html">Geode</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hbase.html">HBase</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hdfs.html">HDFS</a></li>
+                <li><a href="/docs/0.7.0/interpreter/hive.html">Hive</a></li>
+                <li><a href="/docs/0.7.0/interpreter/ignite.html">Ignite</a></li>
+                <li><a href="/docs/0.7.0/interpreter/jdbc.html">JDBC</a></li>
+                <li><a href="/docs/0.7.0/interpreter/kylin.html">Kylin</a></li>
+                <li><a href="/docs/0.7.0/interpreter/lens.html">Lens</a></li>
+                <li><a href="/docs/0.7.0/interpreter/livy.html">Livy</a></li>
+                <li><a href="/docs/0.7.0/interpreter/markdown.html">Markdown</a></li>
+                <li><a href="/docs/0.7.0/interpreter/pig.html">Pig</a></li>
+                <li><a href="/docs/0.7.0/interpreter/python.html">Python</a></li>
+                <li><a href="/docs/0.7.0/interpreter/postgresql.html">Postgresql, HAWQ</a></li>
+                <li><a href="/docs/0.7.0/interpreter/r.html">R</a></li>
+                <li><a href="/docs/0.7.0/interpreter/scalding.html">Scalding</a></li>
+                <li><a href="/docs/0.7.0/interpreter/scio.html">Scio</a></li>
+                <li><a href="/docs/0.7.0/interpreter/shell.html">Shell</a></li>
+                <li><a href="/docs/0.7.0/interpreter/spark.html">Spark</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Display System <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="title"><span><b>Basic Display System</b><span></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#text">Text</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#html">Html</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/basicdisplaysystem.html#table">Table</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Angular API</b><span></li>
+                <li><a href="/docs/0.7.0/displaysystem/back-end-angular.html">Angular (backend API)</a></li>
+                <li><a href="/docs/0.7.0/displaysystem/front-end-angular.html">Angular (frontend API)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+              <ul class="dropdown-menu scrollable-menu" style="right: 0; left: auto;">
+                <li class="title"><span><b>Notebook Storage</b><span></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-local-git-repository">Git Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-s3">S3 Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#notebook-storage-in-azure">Azure Storage</a></li>
+                <li><a href="/docs/0.7.0/storage/storage.html#storage-in-zeppelinhub">ZeppelinHub Storage</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>REST API</b><span></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-interpreter.html">Interpreter API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-notebook.html">Notebook API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-configuration.html">Configuration API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-credential.html">Credential API</a></li>
+                <li><a href="/docs/0.7.0/rest-api/rest-helium.html">Helium API</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Security</b><span></li>
+                <li><a href="/docs/0.7.0/security/shiroauthentication.html">Shiro Authentication</a></li>                
+                <li><a href="/docs/0.7.0/security/notebook_authorization.html">Notebook Authorization</a></li>
+                <li><a href="/docs/0.7.0/security/datasource_authorization.html">Data Source Authorization</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Advanced</b><span></li>
+                <li><a href="/docs/0.7.0/install/virtual_machine.html">Zeppelin on Vagrant VM</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-standalone-mode">Zeppelin on Spark Cluster Mode (Standalone)</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-on-yarn-mode">Zeppelin on Spark Cluster Mode (YARN)</a></li>
+                <li><a href="/docs/0.7.0/install/spark_cluster_mode.html#spark-on-mesos-mode">Zeppelin on Spark Cluster Mode (Mesos)</a></li>
+                <li><a href="/docs/0.7.0/install/cdh.html">Zeppelin on CDH</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="title"><span><b>Contibute</b><span></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelininterpreter.html">Writing Zeppelin Interpreter</a></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelinvisualization.html">Writing Zeppelin Visualization (Experimental)</a></li>
+                <li><a href="/docs/0.7.0/development/writingzeppelinapplication.html">Writing Zeppelin Application (Experimental)</a></li>
+                <li><a href="/docs/0.7.0/development/howtocontribute.html">How to contribute (code)</a></li>
+                <li><a href="/docs/0.7.0/development/howtocontributewebsite.html">How to contribute (website)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/docs/0.7.0/search.html" class="nav-search-link">
+                <span class="fa fa-search nav-search-icon"></span>
+              </a>
+            </li>
+          </ul>
+        </nav><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="content">
+      
+<!--<div class="hero-unit Quick Start">
+  <h1></h1>
+</div>
+-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h1>Quick Start</h1>
+
+<div id="toc"></div>
+
+<p>Welcome to Apache Zeppelin! On this page are instructions to help you get started.</p>
+
+<h2>Installation</h2>
+
+<p>Apache Zeppelin officially supports and is tested on the following environments:</p>
+
+<table class="table-configuration">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Oracle JDK</td>
+    <td>1.7 <br /> (set <code>JAVA_HOME</code>)</td>
+  </tr>
+  <tr>
+    <td>OS</td>
+    <td>Mac OSX <br /> Ubuntu 14.X <br /> CentOS 6.X <br /> Windows 7 Pro SP1</td>
+  </tr>
+</table>
+
+<h3>Downloading Binary Package</h3>
+
+<p>Two binary packages are available on the <a href="http://zeppelin.apache.org/download.html">Apache Zeppelin Download Page</a>. Only difference between these two binaries is interpreters are included in the package file.</p>
+
+<ul>
+<li><h4>Package with <code>all</code> interpreters.</h4>
+
+<p>Just unpack it in a directory of your choice and you&#39;re ready to go.</p></li>
+<li><h4>Package with <code>net-install</code> interpreters.</h4>
+
+<p>Unpack and follow <a href="../manual/interpreterinstallation.html">install additional interpreters</a> to install interpreters. If you&#39;re unsure, just run <code>./bin/install-interpreter.sh --all</code> and install all interpreters.</p></li>
+</ul>
+
+<h2>Starting Apache Zeppelin</h2>
+
+<h4>Starting Apache Zeppelin from the Command Line</h4>
+
+<p>On all unix like platforms:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin/zeppelin-daemon.sh start
+</code></pre></div>
+<p>If you are on Windows:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin\zeppelin.cmd
+</code></pre></div>
+<p>After Zeppelin has started successfully, go to <a href="http://localhost:8080">http://localhost:8080</a> with your web browser.</p>
+
+<h4>Stopping Zeppelin</h4>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin/zeppelin-daemon.sh stop
+</code></pre></div>
+<h4>Start Apache Zeppelin with a service manager</h4>
+
+<blockquote>
+<p><strong>Note :</strong> The below description was written based on Ubuntu Linux.</p>
+</blockquote>
+
+<p>Apache Zeppelin can be auto-started as a service with an init script, using a service manager like <strong>upstart</strong>.</p>
+
+<p>This is an example upstart script saved as <code>/etc/init/zeppelin.conf</code>
+This allows the service to be managed with commands such as</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo service zeppelin start  
+sudo service zeppelin stop  
+sudo service zeppelin restart
+</code></pre></div>
+<p>Other service managers could use a similar approach with the <code>upstart</code> argument passed to the <code>zeppelin-daemon.sh</code> script.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">bin/zeppelin-daemon.sh upstart
+</code></pre></div>
+<p><strong>zeppelin.conf</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">description &quot;zeppelin&quot;
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+stop on shutdown
+
+# Respawn the process on unexpected termination
+respawn
+
+# respawn the job up to 7 times within a 5 second period.
+# If the job exceeds these values, it will be stopped and marked as failed.
+respawn limit 7 5
+
+# zeppelin was installed in /usr/share/zeppelin in this example
+chdir /usr/share/zeppelin
+exec bin/zeppelin-daemon.sh upstart
+</code></pre></div>
+<h2>Next Steps</h2>
+
+<p>Congratulations, you have successfully installed Apache Zeppelin! Here are few steps you might find useful:</p>
+
+<h4>New to Apache Zeppelin...</h4>
+
+<ul>
+<li>For an in-depth overview, head to <a href="../quickstart/explorezeppelinui.html">Explore Apache Zeppelin UI</a>.</li>
+<li>And then, try run <a href="http://localhost:8080/#/notebook/2A94M5J1Z">tutorial</a> notebook in your Zeppelin.</li>
+<li>And see how to change <a href="./configuration.html">configurations</a> like port number, etc.</li>
+</ul>
+
+<h4>Zeppelin with Apache Spark ...</h4>
+
+<ul>
+<li>To know more about deep integration with <a href="http://spark.apache.org/">Apache Spark</a>, check <a href="../interpreter/spark.html">Spark Interpreter</a>.</li>
+</ul>
+
+<h4>Zeppelin with JDBC data sources ...</h4>
+
+<ul>
+<li>Check <a href="../interpreter/jdbc.html">JDBC Interpreter</a> to know more about configure and uses multiple JDBC data sources.</li>
+</ul>
+
+<h4>Zeppelin with Python ...</h4>
+
+<ul>
+<li>Check <a href="../interpreter/python.html">Python interpreter</a> to know more about Matplotlib, Pandas, Conda/Docker environment integration.</li>
+</ul>
+
+<h4>Multi-user environment ...</h4>
+
+<ul>
+<li>Turn on <a href="../security/shiroauthentication.html">authentication</a>.</li>
+<li>Manage your <a href="../security/notebook_authorization.html">notebook permission</a>.</li>
+<li>For more informations, go to <strong>More</strong> -&gt; <strong>Security</strong> section.</li>
+</ul>
+
+<h4>Other useful informations ...</h4>
+
+<ul>
+<li>Learn how <a href="../displaysystem/basicdisplaysystem.html">Display System</a> works.</li>
+<li>Use <a href="#start-apache-zeppelin-with-a-service-manager">Service Manager</a> to start Zeppelin.</li>
+<li>If you&#39;re using previous version please see <a href="./upgrade.html">Upgrade Zeppelin version</a>.</li>
+</ul>
+
+<h2>Building Apache Zeppelin from Source</h2>
+
+<p>If you want to build from source instead of using binary package, follow the instructions <a href="./build.html">here</a>.</p>
+
+  </div>
+</div>
+
+
+      <hr>
+      <footer>
+        <!-- <p>&copy; 2017 The Apache Software Foundation</p>-->
+      </footer>
+    </div>
+
+    
+
+
+
+
+
+  </body>
+</html>
+
