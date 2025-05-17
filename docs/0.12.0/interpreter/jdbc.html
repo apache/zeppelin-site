@@ -16,12 +16,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="/docs/0.12.0/assets/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le styles -->
     <link href="/docs/0.12.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/docs/0.12.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
-    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
     <!-- Le fav and touch icons -->
     <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -31,13 +31,13 @@
     -->
 
     <!-- Js -->
-    <script src="/docs/0.12.0/assets/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/jquery-1.10.2.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/docs.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/anchor.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/toc.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/lunr.min.js"></script>
-    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>    
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>
 
     <!-- atom & rss feed -->
     <link href="/docs/0.12.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    
+
         <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container navbar-container">
         <div class="navbar-header">
@@ -264,7 +264,7 @@
 
 
     <div class="content">
-      
+
 
 <!--<div class="hero-unit Generic JDBC Interpreter for Apache Zeppelin">
   <h1></h1>
@@ -321,26 +321,26 @@ limitations under the License.
       <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html" target="_blank" rel="noopener noreferrer">JDBC Driver</a>
     </li>
     <li style="padding-bottom: 5px; list-style: circle">
-      <a href="https://hive.apache.org/" target="_blank" rel="noopener noreferrer">Apache Hive</a> - 
+      <a href="https://hive.apache.org/" target="_blank" rel="noopener noreferrer">Apache Hive</a> -
       <a href="https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-JDBC" target="_blank" rel="noopener noreferrer">JDBC Driver</a>
     </li>
     <li style="padding-bottom: 5px; list-style: circle">
-      <a href="https://trino.io/" target="_blank" rel="noopener noreferrer">Presto/Trino</a> - 
+      <a href="https://trino.io/" target="_blank" rel="noopener noreferrer">Presto/Trino</a> -
       <a href="https://trino.io/docs/current/installation/jdbc.html" target="_blank" rel="noopener noreferrer">JDBC Driver</a>
     </li>
     <li style="padding-bottom: 5px; list-style: circle">
-      <a href="https://impala.apache.org/" target="_blank" rel="noopener noreferrer">Impala</a> - 
+      <a href="https://impala.apache.org/" target="_blank" rel="noopener noreferrer">Impala</a> -
       <a href="https://impala.apache.org/docs/build/html/topics/impala_jdbc.html" target="_blank" rel="noopener noreferrer">JDBC Driver</a>
     </li>
     <li style="padding-bottom: 5px; list-style: circle">
       <a href="https://phoenix.apache.org/" target="_blank" rel="noopener noreferrer">Apache Phoenix</a> itself is a JDBC driver
     </li>
     <li style="padding-bottom: 5px; list-style: circle">
-      <a href="https://drill.apache.org/" target="_blank" rel="noopener noreferrer">Apache Drill</a> - 
+      <a href="https://drill.apache.org/" target="_blank" rel="noopener noreferrer">Apache Drill</a> -
       <a href="https://drill.apache.org/docs/using-the-jdbc-driver" target="_blank" rel="noopener noreferrer">JDBC Driver</a>
     </li>
     <li style="padding-bottom: 5px; list-style: circle">
-      <a href="http://tajo.apache.org/" target="_blank" rel="noopener noreferrer">Apache Tajo</a> - 
+      <a href="http://tajo.apache.org/" target="_blank" rel="noopener noreferrer">Apache Tajo</a> -
       <a href="https://tajo.apache.org/docs/current/jdbc_driver.html" target="_blank" rel="noopener noreferrer">JDBC Driver</a>
     </li>
   </div>
@@ -354,8 +354,8 @@ limitations under the License.
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/click_create_button.png" width="600px"/></p>
 
-<p>Fill <code>Interpreter name</code> field with whatever you want to use as the alias(e.g. mysql, mysql2, hive, redshift, and etc..). 
-Please note that this alias will be used as <code>%interpreter_name</code> to call the interpreter in the paragraph. 
+<p>Fill <code>Interpreter name</code> field with whatever you want to use as the alias(e.g. mysql, mysql2, hive, redshift, and etc..).
+Please note that this alias will be used as <code>%interpreter_name</code> to call the interpreter in the paragraph.
 Then select <code>jdbc</code> as an <code>Interpreter group</code>. </p>
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/select_name_and_group.png" width="200px"/></p>
@@ -594,8 +594,8 @@ So you don&#39;t need to type this prefix in every paragraphs&#39; header.</p>
 
 <span class="c1">-- single line comment</span>
 <span class="k">show</span> <span class="n">tables</span><span class="p">;</span>
-<span class="cm">/* multiple 
-   line 
+<span class="cm">/* multiple
+   line
    comment
  */</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_1</span><span class="p">;</span>
@@ -972,8 +972,8 @@ Refer <a href="../interpreter/jdbc.html#impersonation">impersonation</a> if you 
 
 <h5>Impersonation</h5>
 
-<p>When Zeppelin server is running with authentication enabled, then the interpreter can utilize Hive&#39;s user proxy feature 
-i.e. send extra parameter for creating and running a session (&quot;hive.server2.proxy.user=&quot;: &quot;${loggedInUser}&quot;). 
+<p>When Zeppelin server is running with authentication enabled, then the interpreter can utilize Hive&#39;s user proxy feature
+i.e. send extra parameter for creating and running a session (&quot;hive.server2.proxy.user=&quot;: &quot;${loggedInUser}&quot;).
 This is particularly useful when multiple users are sharing a notebook.</p>
 
 <p>To enable this set following:</p>
@@ -1354,12 +1354,12 @@ The following example shows one use of this facility:</p>
 <h4>In later JDBC cell:</h4>
 <div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="o">%</span><span class="n">jdbc_interpreter_name</span>
 
-<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">patents_list</span> <span class="k">where</span> 
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">patents_list</span> <span class="k">where</span>
 <span class="n">priority_country</span> <span class="o">=</span> <span class="s1">'{country_code}'</span> <span class="k">and</span> <span class="n">filing_date</span> <span class="k">like</span> <span class="s1">'2015-%'</span>
 </code></pre></div>
-<p>Object interpolation is disabled by default, and can be enabled for all instances of the JDBC interpreter by 
-setting the value of the property <code>zeppelin.jdbc.interpolation</code> to <code>true</code> (see <em>More Properties</em> above). 
-More details of this feature can be found in the Spark interpreter documentation under 
+<p>Object interpolation is disabled by default, and can be enabled for all instances of the JDBC interpreter by
+setting the value of the property <code>zeppelin.jdbc.interpolation</code> to <code>true</code> (see <em>More Properties</em> above).
+More details of this feature can be found in the Spark interpreter documentation under
 <a href="../usage/other_features/zeppelin_context.html">Zeppelin-Context</a></p>
 
 <h2>Bug reporting</h2>
@@ -1376,7 +1376,7 @@ More details of this feature can be found in the Spark interpreter documentation
       </footer>
     </div>
 
-    
+
 
 
 

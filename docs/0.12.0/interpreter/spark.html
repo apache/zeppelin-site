@@ -16,12 +16,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="/docs/0.12.0/assets/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le styles -->
     <link href="/docs/0.12.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/docs/0.12.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
-    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
     <!-- Le fav and touch icons -->
     <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -31,13 +31,13 @@
     -->
 
     <!-- Js -->
-    <script src="/docs/0.12.0/assets/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/jquery-1.10.2.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/docs.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/anchor.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/toc.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/lunr.min.js"></script>
-    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>    
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>
 
     <!-- atom & rss feed -->
     <link href="/docs/0.12.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    
+
         <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container navbar-container">
         <div class="navbar-header">
@@ -264,7 +264,7 @@
 
 
     <div class="content">
-      
+
 
 <!--<div class="hero-unit Apache Spark Interpreter for Apache Zeppelin">
   <h1></h1>
@@ -585,7 +585,7 @@ Create a new Spark interpreter <code>spark34</code> for Spark 3.4 and set its <c
 
 <h4>Set <code>SPARK_HOME</code> via <a href="../usage/interpreter/overview.html#inline-generic-confinterpreter">inline generic configuration</a></h4>
 
-<p>Besides setting <code>SPARK_HOME</code> in interpreter setting page, you can also use inline generic configuration to put the 
+<p>Besides setting <code>SPARK_HOME</code> in interpreter setting page, you can also use inline generic configuration to put the
 configuration with code together for more flexibility. e.g.
 <center>
 <img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/spark_inline_configuration.png" width="80%">
@@ -608,10 +608,10 @@ configuration with code together for more flexibility. e.g.
 <p>That&#39;s it. Zeppelin will work with any version of Spark and any deployment type without rebuilding Zeppelin in this way.
 For the further information about Spark &amp; Zeppelin version compatibility, please refer to &quot;Available Interpreters&quot; section in <a href="https://zeppelin.apache.org/download.html">Zeppelin download page</a>.</p>
 
-<p>Note that without setting <code>SPARK_HOME</code>, it&#39;s running in local mode with included version of Spark. The included version may vary depending on the build profile. And this included version Spark has limited function, so it 
+<p>Note that without setting <code>SPARK_HOME</code>, it&#39;s running in local mode with included version of Spark. The included version may vary depending on the build profile. And this included version Spark has limited function, so it
 is always recommended to set <code>SPARK_HOME</code>.</p>
 
-<p>Yarn client mode and local mode will run driver in the same machine with zeppelin server, this would be dangerous for production. Because it may run out of memory when there&#39;s many Spark interpreters running at the same time. So we suggest you 
+<p>Yarn client mode and local mode will run driver in the same machine with zeppelin server, this would be dangerous for production. Because it may run out of memory when there&#39;s many Spark interpreters running at the same time. So we suggest you
 only allow yarn-cluster mode via setting <code>zeppelin.spark.only_yarn_cluster</code> in <code>zeppelin-site.xml</code>.</p>
 
 <h4>Configure yarn mode for Spark 3.x</h4>
@@ -633,7 +633,7 @@ only allow yarn-cluster mode via setting <code>zeppelin.spark.only_yarn_cluster<
     <td>Yarn Cluster</td>
     <td>yarn</td>
     <td>cluster</td>
-  </tr>  
+  </tr>
 </table>
 
 <h2>Interpreter binding mode</h2>
@@ -655,7 +655,7 @@ Spark interpreters are created, so we recommend to always use yarn-cluster mode 
 
 <h2>Yarn Mode</h2>
 
-<p>Zeppelin support both yarn client and yarn cluster mode (yarn cluster mode is supported from 0.8.0). For yarn mode, you must specify <code>SPARK_HOME</code> &amp; <code>HADOOP_CONF_DIR</code>. 
+<p>Zeppelin support both yarn client and yarn cluster mode (yarn cluster mode is supported from 0.8.0). For yarn mode, you must specify <code>SPARK_HOME</code> &amp; <code>HADOOP_CONF_DIR</code>.
 Usually you only have one hadoop cluster, so you can set <code>HADOOP_CONF_DIR</code> in <code>zeppelin-env.sh</code> which is applied to all Spark interpreters. If you want to use spark against multiple hadoop cluster, then you need to define
 <code>HADOOP_CONF_DIR</code> in interpreter setting or via inline generic configuration.</p>
 
@@ -747,7 +747,7 @@ For examples:</p>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">people</span>
 </code></pre></div>
 <p>You can write multiple sql statements in one paragraph. Each sql statement is separated by semicolon.
-Sql statement in one paragraph would run sequentially. 
+Sql statement in one paragraph would run sequentially.
 But sql statements in different paragraphs can run concurrently by the following configuration.</p>
 
 <ol>
@@ -855,7 +855,7 @@ you need to enable user impersonation for more security control. In order the en
 <p><strong>Step 2</strong> Enable interpreter user impersonation in Spark interpreter&#39;s interpreter setting. (Enable shiro first of course)
 <img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/spark_user_impersonation.png"></p>
 
-<p><strong>Step 3(Optional)</strong> If you are using kerberos cluster, then you need to set <code>zeppelin.server.kerberos.keytab</code> and <code>zeppelin.server.kerberos.principal</code> to the user(aka. user in Step 1) you want to 
+<p><strong>Step 3(Optional)</strong> If you are using kerberos cluster, then you need to set <code>zeppelin.server.kerberos.keytab</code> and <code>zeppelin.server.kerberos.principal</code> to the user(aka. user in Step 1) you want to
 impersonate in <code>zeppelin-site.xml</code>.</p>
 
 <h2>Community</h2>
@@ -872,7 +872,7 @@ impersonate in <code>zeppelin-site.xml</code>.</p>
       </footer>
     </div>
 
-    
+
 
 
 

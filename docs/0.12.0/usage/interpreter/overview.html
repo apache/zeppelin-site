@@ -16,12 +16,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="/docs/0.12.0/assets/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le styles -->
     <link href="/docs/0.12.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/docs/0.12.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
-    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
     <!-- Le fav and touch icons -->
     <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -31,13 +31,13 @@
     -->
 
     <!-- Js -->
-    <script src="/docs/0.12.0/assets/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/jquery-1.10.2.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/docs.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/anchor.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/toc.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/lunr.min.js"></script>
-    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>    
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>
 
     <!-- atom & rss feed -->
     <link href="/docs/0.12.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    
+
         <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container navbar-container">
         <div class="navbar-header">
@@ -264,7 +264,7 @@
 
 
     <div class="content">
-      
+
 
 <!--<div class="hero-unit Interpreter in Apache Zeppelin">
   <h1></h1>
@@ -318,7 +318,7 @@ Currently, Zeppelin supports many interpreters such as Scala (with Apache Spark)
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/screenshots/interpreter_setting.png" width="500px"></p>
 
-<p>Properties are exported as environment variables on the system if the property name consists of upper-case characters, numbers or underscores ([A-Z<em>0-9]). Otherwise, the property is set as a common interpreter property. 
+<p>Properties are exported as environment variables on the system if the property name consists of upper-case characters, numbers or underscores ([A-Z<em>0-9]). Otherwise, the property is set as a common interpreter property.
 e.g. You can define `SPARK</em>HOME<code>and</code>HADOOP<em>CONF</em>DIR` in spark&#39;s interpreter setting, they are be passed to Spark interpreter process as environment variable which is used by Spark. </p>
 
 <p>You may use parameters from the context of the interpreter by adding #{contextParameterName} in the interpreter property value. The parameter can be of the following types: string, number, boolean.</p>
@@ -366,7 +366,7 @@ By default, every interpreter belongs to a separate group, but the group might c
 <h2>Interpreter Binding Mode</h2>
 
 <p>In the Interpreter Settings, one can choose one of the <code>shared</code>, <code>scoped</code>, or <code>isolated</code> interpreter binding modes.
-In <code>shared</code> mode, every note/user using this interpreter will share a single interpreter instance. 
+In <code>shared</code> mode, every note/user using this interpreter will share a single interpreter instance.
 <code>scoped</code> and <code>isolated</code> mode can be used under 2 dimensions: <code>per user</code> or <code>per note</code>.
 e.g. In <code>scoped per note</code> mode, each note will create a new interpreter instance in the same interpreter process. In <code>isolated per note</code> mode, each note will create a new interpreter process.</p>
 
@@ -389,7 +389,7 @@ This approach works, but is not convenient. Inline generic configuration can pro
 
 <p><code>ConfInterpreter</code> is a generic interpreter that can be used by any interpreter. You can use it just like defining a java property file.
 It can be used to make custom settings for any interpreter. However, <code>ConfInterpreter</code> needs to run before that interpreter process is launched. When that interpreter process is launched is determined by the interpreter binding mode setting.
-So users need to understand the <a href="../usage/interpreter/interpreter_bindings_mode.html">interpreter binding mode setting</a> of Zeppelin and be aware of when the interpreter process is launched. E.g., if we set the Spark interpreter setting as isolated per note, then under this setting, each note will launch one interpreter process. 
+So users need to understand the <a href="../usage/interpreter/interpreter_bindings_mode.html">interpreter binding mode setting</a> of Zeppelin and be aware of when the interpreter process is launched. E.g., if we set the Spark interpreter setting as isolated per note, then under this setting, each note will launch one interpreter process.
 In this scenario, users need to put <code>ConfInterpreter</code> as the first paragraph as in the below example. Otherwise, the customized setting cannot be applied (actually it would report <code>ERROR</code>).</p>
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/screenshots/conf_interpreter.png" width="600px"></p>
@@ -418,9 +418,9 @@ In this scenario, users need to put <code>ConfInterpreter</code> as the first pa
 <h2>Interpreter Process Recovery (Experimental)</h2>
 
 <p>Before 0.8.0, shutting down Zeppelin also meant to shutdown all the running interpreter processes. Usually, an administrator will shutdown the Zeppelin server for maintenance or upgrades, but would not want to shut down the running interpreter processes.
-In such cases, interpreter process recovery is necessary. Starting from 0.8.0, users can enable interpreter process recovery via the setting <code>zeppelin.recovery.storage.class</code> as 
+In such cases, interpreter process recovery is necessary. Starting from 0.8.0, users can enable interpreter process recovery via the setting <code>zeppelin.recovery.storage.class</code> as
 <code>org.apache.zeppelin.interpreter.recovery.FileSystemRecoveryStorage</code> or other implementations if available in the future. By default it is <code>org.apache.zeppelin.interpreter.recovery.NullRecoveryStorage</code>,
- which means recovery is not enabled. <code>zeppelin.recovery.dir</code> is used for specify where to store the recovery metadata. 
+ which means recovery is not enabled. <code>zeppelin.recovery.dir</code> is used for specify where to store the recovery metadata.
 Enabling recovery means shutting down Zeppelin would not terminate interpreter processes, and when Zeppelin is restarted, it would try to reconnect to the existing running interpreter processes. If you want to kill all the interpreter processes after terminating Zeppelin even when recovery is enabled, you can run <code>bin/stop-interpreter.sh</code>.</p>
 
 <p>In 0.8.x, Zeppelin server would reconnect to the running interpreter process only when you run paragraph again, but it won&#39;t recover the running paragraph. E.g. if you restart zeppelin server when some paragraph is still running,
@@ -445,7 +445,7 @@ Only one of them can be specified, you can not specify them together.</p>
       </footer>
     </div>
 
-    
+
 
 
 

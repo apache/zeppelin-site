@@ -16,12 +16,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="/docs/0.12.0/assets/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le styles -->
     <link href="/docs/0.12.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/docs/0.12.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
-    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
     <!-- Le fav and touch icons -->
     <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -31,13 +31,13 @@
     -->
 
     <!-- Js -->
-    <script src="/docs/0.12.0/assets/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/jquery-1.10.2.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/docs.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/anchor.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/toc.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/lunr.min.js"></script>
-    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>    
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>
 
     <!-- atom & rss feed -->
     <link href="/docs/0.12.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    
+
         <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container navbar-container">
         <div class="navbar-header">
@@ -264,7 +264,7 @@
 
 
     <div class="content">
-      
+
 
 <!--<div class="hero-unit R Interpreter for Apache Zeppelin">
   <h1></h1>
@@ -325,7 +325,7 @@ limitations under the License.
 <ul>
 <li>Other visualization libraries: </li>
 </ul>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">  R <span class="nt">-e</span> <span class="s2">"install.packages(c('devtools','mplot', 'googleVis'), repos = 'http://cran.us.r-project.org'); 
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">  R <span class="nt">-e</span> <span class="s2">"install.packages(c('devtools','mplot', 'googleVis'), repos = 'http://cran.us.r-project.org');
   require(devtools); install_github('ramnathv/rCharts')"</span>
 </code></pre></div>
 <p>We recommend you to also install the following optional R libraries for happy data analytics:</p>
@@ -353,7 +353,7 @@ limitations under the License.
     <td>%r.r</td>
     <td>RInterpreter</td>
     <td>Vanilla r interpreter, with least dependencies, only R environment and knitr are required.
-    It is always recommended to use the fully qualified interpreter name <code>%r.r</code>, because <code>%r</code> is ambiguous, 
+    It is always recommended to use the fully qualified interpreter name <code>%r.r</code>, because <code>%r</code> is ambiguous,
     it could mean <code>%spark.r</code> when current note's default interpreter is <code>%spark</code> and <code>%r.r</code> when the default interpreter is <code>%r</code></td>
   </tr>
   <tr>
@@ -435,7 +435,7 @@ The port <code>6789</code> exposed in the above command is for R shiny app. You 
 
 <h2>Interpreter binding mode</h2>
 
-<p>The default <a href="../usage/interpreter/interpreter_binding_mode.html">interpreter binding mode</a> is <code>globally shared</code>. That means all notes share the same R interpreter. 
+<p>The default <a href="../usage/interpreter/interpreter_binding_mode.html">interpreter binding mode</a> is <code>globally shared</code>. That means all notes share the same R interpreter.
 So we would recommend you to ues <code>isolated per note</code> which means each note has own R interpreter without affecting each other. But it may run out of your machine resource if too many R
 interpreters are created. You can <a href="../interpreter/r.html#run-r-in-yarn-cluster">run R in yarn mode</a> to avoid this problem. </p>
 
@@ -577,8 +577,8 @@ Take a look at the tutorial note <code>R Tutorial/2. Shiny App</code> for how to
 </span></code></pre></div>
 <h2>Run R in yarn cluster</h2>
 
-<p>Zeppelin support to <a href="../quickstart/yarn.html">run interpreter in yarn cluster</a>. But there&#39;s one critical problem to run R in yarn cluster: how to manage the R environment in yarn container. 
-Because yarn cluster is a distributed cluster which is composed of many nodes, and your R interpreter can start in any node. 
+<p>Zeppelin support to <a href="../quickstart/yarn.html">run interpreter in yarn cluster</a>. But there&#39;s one critical problem to run R in yarn cluster: how to manage the R environment in yarn container.
+Because yarn cluster is a distributed cluster which is composed of many nodes, and your R interpreter can start in any node.
 It is not practical to manage R environment in each node.</p>
 
 <p>So in order to run R in yarn cluster, we would suggest you to use conda to manage your R environment, and Zeppelin can ship your
@@ -614,7 +614,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.9 
+  - python=3.9
   - jupyter
   - grpcio
   - protobuf
@@ -652,7 +652,7 @@ zeppelin.yarn.dist.archives hdfs:///tmp/r_env.tar.gz#environment
 zeppelin.interpreter.conda.env.name environment
 </code></pre></div>
 <p><code>zeppelin.yarn.dist.archives</code> is the R conda environment tar file which is created in step 1. This tar will be shipped to yarn container and untar in the working directory of yarn container.
-<code>hdfs:///tmp/r_env.tar.gz</code> is the R conda archive file you created in step 2. <code>environment</code> in <code>hdfs:///tmp/r_env.tar.gz#environment</code> is the folder name after untar. 
+<code>hdfs:///tmp/r_env.tar.gz</code> is the R conda archive file you created in step 2. <code>environment</code> in <code>hdfs:///tmp/r_env.tar.gz#environment</code> is the folder name after untar.
 This folder name should be the same as <code>zeppelin.interpreter.conda.env.name</code>.</p>
 
 <h3>Step 3</h3>
@@ -669,7 +669,7 @@ This folder name should be the same as <code>zeppelin.interpreter.conda.env.name
       </footer>
     </div>
 
-    
+
 
 
 

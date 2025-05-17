@@ -16,12 +16,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="/docs/0.12.0/assets/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le styles -->
     <link href="/docs/0.12.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/docs/0.12.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
-    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
     <!-- Le fav and touch icons -->
     <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -31,13 +31,13 @@
     -->
 
     <!-- Js -->
-    <script src="/docs/0.12.0/assets/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/jquery-1.10.2.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/docs.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/anchor.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/toc.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/lunr.min.js"></script>
-    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>    
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>
 
     <!-- atom & rss feed -->
     <link href="/docs/0.12.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    
+
         <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container navbar-container">
         <div class="navbar-header">
@@ -264,7 +264,7 @@
 
 
     <div class="content">
-      
+
 
 <!--<div class="hero-unit Flink Interpreter for Apache Zeppelin">
   <h1></h1>
@@ -293,7 +293,7 @@ limitations under the License.
 
 <h2>Overview</h2>
 
-<p><a href="https://flink.apache.org">Apache Flink</a> is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams. 
+<p><a href="https://flink.apache.org">Apache Flink</a> is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams.
 Flink has been designed to run in all common cluster environments, perform computations at in-memory speed and at any scale.</p>
 
 <p>In Zeppelin 0.9, we refactor the Flink interpreter in Zeppelin to support the latest version of Flink. <strong>Currently, only Flink 1.15+ is supported, old versions of flink won&#39;t work.</strong>
@@ -364,7 +364,7 @@ Apache Flink is supported in Zeppelin with the Flink interpreter group which con
     <td>* Support both streaming sql and batch sql in one notebook <br/>
 * Support sql comment (single line comment/multiple line comment) <br/>
 * Support advanced configuration (jobName, parallelism) <br/>
-* Support multiple insert statements 
+* Support multiple insert statements
   </td>
   </tr>
     <td>Multi-tenancy</td>
@@ -379,8 +379,8 @@ Apache Flink is supported in Zeppelin with the Flink interpreter group which con
 
 <h2>Play Flink in Zeppelin docker</h2>
 
-<p>For beginner, we would suggest you to play Flink in Zeppelin docker. 
-First you need to download Flink, because there&#39;s no Flink binary distribution shipped with Zeppelin. 
+<p>For beginner, we would suggest you to play Flink in Zeppelin docker.
+First you need to download Flink, because there&#39;s no Flink binary distribution shipped with Zeppelin.
 e.g. Here we download Flink 1.12.2 to<code>/mnt/disk1/flink-1.12.2</code>,
 and we mount it to Zeppelin docker container and run the following command to start Zeppelin docker.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">docker run <span class="nt">-u</span> <span class="si">$(</span><span class="nb">id</span> <span class="nt">-u</span><span class="si">)</span> <span class="nt">-p</span> 8080:8080 <span class="nt">-p</span> 8081:8081 <span class="nt">--rm</span> <span class="nt">-v</span> /mnt/disk1/flink-1.12.2:/opt/flink <span class="nt">-e</span> <span class="nv">FLINK_HOME</span><span class="o">=</span>/opt/flink  <span class="nt">--name</span> zeppelin apache/zeppelin:0.10.0
@@ -392,7 +392,7 @@ and we mount it to Zeppelin docker container and run the following command to st
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/flink_docker_tutorial.gif"></p>
 
-<p>You can also mount notebook folder to replace the built-in zeppelin tutorial notebook. 
+<p>You can also mount notebook folder to replace the built-in zeppelin tutorial notebook.
 e.g. Here&#39;s a repo of Flink sql cookbook on Zeppelin: <a href="https://github.com/zjffdu/flink-sql-cookbook-on-zeppelin/">https://github.com/zjffdu/flink-sql-cookbook-on-zeppelin/</a></p>
 
 <p>You can clone this repo and mount it to docker,</p>
@@ -415,10 +415,10 @@ e.g. Here&#39;s a repo of Flink sql cookbook on Zeppelin: <a href="https://githu
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/flink_architecture.png"></p>
 
-<p>The above diagram is the architecture of Flink on Zeppelin. Flink interpreter on the left side is actually a Flink client 
-which is responsible for compiling and managing Flink job lifecycle, such as submit, cancel job, 
-monitoring job progress and so on. The Flink cluster on the right side is the place where executing Flink job. 
-It could be a MiniCluster (local mode), Standalone cluster (remote mode), 
+<p>The above diagram is the architecture of Flink on Zeppelin. Flink interpreter on the left side is actually a Flink client
+which is responsible for compiling and managing Flink job lifecycle, such as submit, cancel job,
+monitoring job progress and so on. The Flink cluster on the right side is the place where executing Flink job.
+It could be a MiniCluster (local mode), Standalone cluster (remote mode),
 Yarn session cluster (yarn mode) or Yarn application session cluster (yarn-application mode)</p>
 
 <p>There are 2 important components in Flink interpreter: Scala shell &amp; Python shell</p>
@@ -507,7 +507,7 @@ You can also add and set other Flink properties which are not listed in the tabl
     <td>zeppelin.flink.run.asLoginUser</td>
     <td>true</td>
     <td>Whether run Flink job as the Zeppelin login user, it is only applied when running Flink job in hadoop yarn cluster and shiro is enabled</td>
-  </tr> 
+  </tr>
   <tr>
     <td>flink.udf.jars</td>
     <td></td>
@@ -637,7 +637,7 @@ Because by default it is only 4 TM with 1 slot in this MiniCluster which may not
 <h3>Yarn Application Mode</h3>
 
 <p>In the above yarn mode, there will be a separated Flink interpreter process on the Zeppelin server host. However, this may run out of resources when there are too many interpreter processes.
-So in practise, we would recommend you to use yarn application mode if you are using Flink 1.11 or afterwards (yarn application mode is only supported after Flink 1.11). 
+So in practise, we would recommend you to use yarn application mode if you are using Flink 1.11 or afterwards (yarn application mode is only supported after Flink 1.11).
 In this mode Flink interpreter runs in the JobManager which is in yarn container.
 In order to run Flink in yarn application mode, you need to make the following settings:</p>
 
@@ -649,8 +649,8 @@ In order to run Flink in yarn application mode, you need to make the following s
 
 <h2>Flink Scala</h2>
 
-<p>Scala is the default language of Flink on Zeppelin（<code>%flink</code>), and it is also the entry point of Flink interpreter. Underneath Flink interpreter will create Scala shell 
-which would create several built-in variables, including ExecutionEnvironment，StreamExecutionEnvironment and so on. 
+<p>Scala is the default language of Flink on Zeppelin（<code>%flink</code>), and it is also the entry point of Flink interpreter. Underneath Flink interpreter will create Scala shell
+which would create several built-in variables, including ExecutionEnvironment，StreamExecutionEnvironment and so on.
 So don&#39;t create these Flink environment variables again, otherwise you might hit weird issues. The Scala code you write in Zeppelin will be submitted to this Scala shell.<br>
 Here are the builtin variables created in Flink Scala shell.</p>
 
@@ -683,7 +683,7 @@ Here are the builtin variables created in Flink Scala shell.</p>
 <h3>ZeppelinContext</h3>
 
 <p><code>ZeppelinContext</code> provides some additional functions and utilities.
-See <a href="../usage/other_features/zeppelin_context.html">Zeppelin-Context</a> for more details. 
+See <a href="../usage/other_features/zeppelin_context.html">Zeppelin-Context</a> for more details.
 For Flink interpreter, you can use <code>z</code> to display Flink <code>Dataset/Table</code>. </p>
 
 <p>e.g. you can use <code>z.show</code> to display DataSet, Batch Table, Stream Table.</p>
@@ -723,8 +723,8 @@ Batch Sql interpreter which launch Flink batch job via <code>BatchTableEnvironme
 
 <h4>Support batch SQL and streaming sql together.</h4>
 
-<p>In Flink Sql-client, either you run streaming sql or run batch sql in one session. You can not run them together. 
-But in Zeppelin, you can do that. <code>%flink.ssql</code> is used for running streaming sql, while <code>%flink.bsql</code> is used for running batch sql. 
+<p>In Flink Sql-client, either you run streaming sql or run batch sql in one session. You can not run them together.
+But in Zeppelin, you can do that. <code>%flink.ssql</code> is used for running streaming sql, while <code>%flink.bsql</code> is used for running batch sql.
 Batch/Streaming Flink jobs run in the same Flink session cluster.</p>
 
 <h4>Support multiple statements</h4>
@@ -750,16 +750,16 @@ Batch/Streaming Flink jobs run in the same Flink session cluster.</p>
 
 <h4>Support multiple insert</h4>
 
-<p>Sometimes you have multiple insert statements which read the same source, 
-but write to different sinks. By default, each insert statement would launch a separated Flink job, 
+<p>Sometimes you have multiple insert statements which read the same source,
+but write to different sinks. By default, each insert statement would launch a separated Flink job,
 but you can set paragraph local property: <code>runAsOne</code> to be <code>true</code> to run them in one single Flink job.</p>
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/flink_sql_multiple_insert.png"></p>
 
 <h4>Set job name</h4>
 
-<p>You can set Flink job name for insert statement via setting paragraph local property: <code>jobName</code>. To be noticed, 
-you can only set job name for insert statement. Select statement is not supported yet. 
+<p>You can set Flink job name for insert statement via setting paragraph local property: <code>jobName</code>. To be noticed,
+you can only set job name for insert statement. Select statement is not supported yet.
 And this kind of setting only works for single insert statement. It doesn&#39;t work for multiple insert we mentioned above.</p>
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/flink_sql_jobname.png"></p>
@@ -776,23 +776,23 @@ And this kind of setting only works for single insert statement. It doesn&#39;t 
 
 <h4>Single Mode</h4>
 
-<p>Single mode is for the case when the result of sql statement is always one row, 
-such as the following example. The output format is HTML, 
-and you can specify paragraph local property <code>template</code> for the final output content template. 
+<p>Single mode is for the case when the result of sql statement is always one row,
+such as the following example. The output format is HTML,
+and you can specify paragraph local property <code>template</code> for the final output content template.
 You can use <code>{i}</code> as placeholder for the <code>ith</code> column of result.</p>
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/flink_single_mode.gif"></p>
 
 <h4>Update Mode</h4>
 
-<p>Update mode is suitable for the case when the output is more than one rows, and will always be updated continuously. 
+<p>Update mode is suitable for the case when the output is more than one rows, and will always be updated continuously.
 Here’s one example where we use group by.</p>
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/flink_update_mode.gif"></p>
 
 <h4>Append Mode</h4>
 
-<p>Append mode is suitable for the scenario where output data is always appended. 
+<p>Append mode is suitable for the scenario where output data is always appended.
 E.g. the following example which use tumble window.</p>
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/flink_append_mode.gif"></p>
@@ -920,19 +920,19 @@ You can also register it via <code>stenv</code> which share the same Catalog wit
 <span class="n">bt_env</span><span class="p">.</span><span class="n">register_function</span><span class="p">(</span><span class="s">"python_upper"</span><span class="p">,</span> <span class="n">udf</span><span class="p">(</span><span class="n">PythonUpper</span><span class="p">(),</span> <span class="n">DataTypes</span><span class="p">.</span><span class="n">STRING</span><span class="p">(),</span> <span class="n">DataTypes</span><span class="p">.</span><span class="n">STRING</span><span class="p">()))</span>
 
 </code></pre></div>
-<p>It is also very straightforward to define Python udf almost the same as what you do in IDE. 
-After creating udf class, you need to register it via <code>bt_env</code>. 
+<p>It is also very straightforward to define Python udf almost the same as what you do in IDE.
+After creating udf class, you need to register it via <code>bt_env</code>.
 You can also register it via <code>st_env</code> which share the same Catalog with <code>bt_env</code>.</p>
 
 <h3>UDF via SQL</h3>
 
-<p>Some simple udf can be written in Zeppelin. But if the udf logic is very complicated, 
+<p>Some simple udf can be written in Zeppelin. But if the udf logic is very complicated,
 then it is better to write it in IDE, then register it in Zeppelin as following</p>
 <div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="o">%</span><span class="n">flink</span><span class="p">.</span><span class="n">ssql</span>
 
 <span class="k">CREATE</span> <span class="k">FUNCTION</span> <span class="n">myupper</span> <span class="k">AS</span> <span class="s1">'org.apache.zeppelin.flink.udf.JavaUpper'</span><span class="p">;</span>
 </code></pre></div>
-<p>But this kind of approach requires the udf jar must be on <code>CLASSPATH</code>, 
+<p>But this kind of approach requires the udf jar must be on <code>CLASSPATH</code>,
 so you need to configure <code>flink.execution.jars</code> to include this udf jar on <code>CLASSPATH</code>, such as following:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">%flink.conf
 
@@ -959,13 +959,13 @@ flink.execution.jars /usr/lib/flink-udf-1.0-SNAPSHOT.jar
 
 flink.execution.jars /usr/lib/flink-udf-1.0-SNAPSHOT.jar
 </code></pre></div>
-<p>Zeppelin would scan this jar, find out all the udf classes and then register them automatically for you. 
+<p>Zeppelin would scan this jar, find out all the udf classes and then register them automatically for you.
 The udf name is the class name. For example, here&#39;s the output of show functions after specifing the above udf jars in <code>flink.udf.jars</code></p>
 
 <p><img src="/docs/0.12.0/assets/themes/zeppelin/img/docs-img/flink_udf_jars.png"></p>
 
-<p>By default, Zeppelin would scan all the classes in this jar, 
-so it would be pretty slow if your jar is very big specially when your udf jar has other dependencies. 
+<p>By default, Zeppelin would scan all the classes in this jar,
+so it would be pretty slow if your jar is very big specially when your udf jar has other dependencies.
 So in this case we would recommend you to specify <code>flink.udf.jars.packages</code> to specify the package to scan,
 this can reduce the number of classes to scan and make the udf detection much faster.</p>
 
@@ -988,7 +988,7 @@ this can reduce the number of classes to scan and make the udf detection much fa
 
 <h2>Paragraph local properties</h2>
 
-<p>In the section of <code>Streaming Data Visualization</code>, we demonstrate the different visualization type via paragraph local properties: <code>type</code>. 
+<p>In the section of <code>Streaming Data Visualization</code>, we demonstrate the different visualization type via paragraph local properties: <code>type</code>.
 In this section, we will list and explain all the supported local properties in Flink interpreter.</p>
 
 <table class="table-configuration">
@@ -1067,7 +1067,7 @@ In this section, we will list and explain all the supported local properties in 
       </footer>
     </div>
 
-    
+
 
 
 
