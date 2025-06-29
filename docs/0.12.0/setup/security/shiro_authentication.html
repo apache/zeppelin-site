@@ -16,12 +16,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le styles -->
     <link href="/docs/0.12.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/docs/0.12.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
-    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
     <!-- Le fav and touch icons -->
     <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -31,13 +31,13 @@
     -->
 
     <!-- Js -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/jquery-1.10.2.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/docs.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/anchor.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/toc.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/lunr.min.js"></script>
-    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>    
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>
 
     <!-- atom & rss feed -->
     <link href="/docs/0.12.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    
+
         <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container navbar-container">
         <div class="navbar-header">
@@ -264,7 +264,7 @@
 
 
     <div class="content">
-      
+
 
 <!--<div class="hero-unit Apache Shiro Authentication for Apache Zeppelin">
   <h1></h1>
@@ -365,7 +365,7 @@ To learn more about Apache Shiro Realm, please check <a href="https://shiro.apac
 
 <p>We also provide community custom Realms.</p>
 
-<p><strong>Note</strong>: When using any of the below realms the default 
+<p><strong>Note</strong>: When using any of the below realms the default
       password-based (IniRealm) authentication needs to be disabled.</p>
 
 <h3>Active Directory</h3>
@@ -437,7 +437,7 @@ ldapRealm.permissionsByRole = user_role = *:ToDoItemsJdo:*:*, *:ToDoItem:*:*; ad
 securityManager.sessionManager = $sessionManager
 securityManager.realms = $ldapRealm
 </code></pre></div>
-<p>Also instead of specifying systemPassword in clear text in <code>shiro.ini</code> administrator can choose to specify the same in &quot;hadoop credential&quot;. 
+<p>Also instead of specifying systemPassword in clear text in <code>shiro.ini</code> administrator can choose to specify the same in &quot;hadoop credential&quot;.
 Create a keystore file using the hadoop credential command line:
 <code>
 hadoop credential create ldapRealm.systemPassword -provider jceks://file/user/zeppelin/conf/zeppelin.jceks
@@ -478,7 +478,7 @@ knoxJwtRealm.logout = gateway/knoxssout/api/v1/webssout
 knoxJwtRealm.redirectParam = originalUrl
 knoxJwtRealm.cookieName = hadoop-jwt
 knoxJwtRealm.publicKeyPath = /etc/zeppelin/conf/knox-sso.pem
-# This is required if KNOX SSO is enabled, to check if "knoxJwtRealm.cookieName" cookie was expired/deleted.  
+# This is required if KNOX SSO is enabled, to check if "knoxJwtRealm.cookieName" cookie was expired/deleted.
 authc = org.apache.zeppelin.realm.jwt.KnoxAuthenticationFilter
 </code></pre></div>
 <h3>HTTP SPNEGO Authentication</h3>
@@ -529,7 +529,7 @@ chmod 440 /etc/security/http_secret
 </code></pre></div>
 <h2>Secure Cookie for Zeppelin Sessions (optional)</h2>
 
-<p>Zeppelin can be configured to set <code>HttpOnly</code> flag in the session cookie. With this configuration, Zeppelin cookies can 
+<p>Zeppelin can be configured to set <code>HttpOnly</code> flag in the session cookie. With this configuration, Zeppelin cookies can
 not be accessed via client side scripts thus preventing majority of Cross-site scripting (XSS) attacks.</p>
 
 <p>To enable secure cookie support via Shiro, add the following lines in <code>conf/shiro.ini</code> under <code>[main]</code> section, after
@@ -603,7 +603,7 @@ anyofrolesuser = org.apache.zeppelin.utils.AnyOfRolesUserAuthorizationFilter
       </footer>
     </div>
 
-    
+
 
 
 
