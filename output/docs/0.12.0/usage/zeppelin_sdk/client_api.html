@@ -16,12 +16,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/docs/0.12.0/assets/themes/zeppelin/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le styles -->
     <link href="/docs/0.12.0/assets/themes/zeppelin/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/docs/0.12.0/assets/themes/zeppelin/css/style.css?body=1" rel="stylesheet" type="text/css">
-    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" /> 
+    <link href="/docs/0.12.0/assets/themes/zeppelin/css/syntax.css" rel="stylesheet"  type="text/css" media="screen" />
     <!-- Le fav and touch icons -->
     <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -31,13 +31,13 @@
     -->
 
     <!-- Js -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/docs/0.12.0/assets/themes/zeppelin/jquery-1.10.2.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/bootstrap/js/bootstrap.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/docs.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/anchor.min.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/toc.js"></script>
     <script src="/docs/0.12.0/assets/themes/zeppelin/js/lunr.min.js"></script>
-    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>    
+    <script src="/docs/0.12.0/assets/themes/zeppelin/js/search.js"></script>
 
     <!-- atom & rss feed -->
     <link href="/docs/0.12.0/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    
+
         <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container navbar-container">
         <div class="navbar-header">
@@ -264,7 +264,7 @@
 
 
     <div class="content">
-      
+
 
 <!--<div class="hero-unit Apache Zeppelin SDK - ZeppelinClient API">
   <h1></h1>
@@ -294,7 +294,7 @@ limitations under the License.
 <h2>Overview</h2>
 
 <p>Zeppelin client api is a lower level java api which encapsulates Zeppelin&#39;s rest api so that you can easily integrate Zeppelin
-with your system. You can use zeppelin client api to do most of the things in notebook ui in a programmatic way, such as create/delete note/paragraph, 
+with your system. You can use zeppelin client api to do most of the things in notebook ui in a programmatic way, such as create/delete note/paragraph,
 run note/paragraph and etc.</p>
 
 <h2>How to use Zeppelin Client API</h2>
@@ -331,47 +331,47 @@ run note/paragraph and etc.</p>
 
 <p>Here we list some importance apis of ZeppelinClient, for the completed api, please refer its javadoc.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nc">String</span> <span class="nf">createNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">notePath</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> 
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nc">String</span> <span class="nf">createNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">notePath</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
 
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> 
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
 
-<span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">executeNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> 
+<span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">executeNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
 
-<span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">executeNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span> 
+<span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">executeNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span>
                               <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
-                              
-<span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">queryNoteResult</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> 
+
+<span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">queryNoteResult</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
 
 <span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">submitNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
 
-<span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">submitNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span> 
-                             <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> 
-                             
+<span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">submitNote</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span>
+                             <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
+
 <span class="kd">public</span> <span class="nc">NoteResult</span> <span class="nf">waitUntilNoteFinished</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
 
-<span class="kd">public</span> <span class="nc">String</span> <span class="nf">addParagraph</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span> 
-                           <span class="nc">String</span> <span class="n">title</span><span class="o">,</span> 
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">addParagraph</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span>
+                           <span class="nc">String</span> <span class="n">title</span><span class="o">,</span>
                            <span class="nc">String</span> <span class="n">text</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
-                           
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">updateParagraph</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span> 
-                            <span class="nc">String</span> <span class="n">paragraphId</span><span class="o">,</span> 
-                            <span class="nc">String</span> <span class="n">title</span><span class="o">,</span> 
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">updateParagraph</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span>
+                            <span class="nc">String</span> <span class="n">paragraphId</span><span class="o">,</span>
+                            <span class="nc">String</span> <span class="n">title</span><span class="o">,</span>
                             <span class="nc">String</span> <span class="n">text</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
-                            
+
 <span class="kd">public</span> <span class="nc">ParagraphResult</span> <span class="nf">executeParagraph</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span>
                                         <span class="nc">String</span> <span class="n">paragraphId</span><span class="o">,</span>
                                         <span class="nc">String</span> <span class="n">sessionId</span><span class="o">,</span>
                                         <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
-                                        
+
 <span class="kd">public</span> <span class="nc">ParagraphResult</span> <span class="nf">submitParagraph</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span>
                                        <span class="nc">String</span> <span class="n">paragraphId</span><span class="o">,</span>
                                        <span class="nc">String</span> <span class="n">sessionId</span><span class="o">,</span>
                                        <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
-                                       
+
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">cancelParagraph</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span> <span class="nc">String</span> <span class="n">paragraphId</span><span class="o">)</span>
-    
-<span class="kd">public</span> <span class="nc">ParagraphResult</span> <span class="nf">queryParagraphResult</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span> <span class="nc">String</span> <span class="n">paragraphId</span><span class="o">)</span> 
-    
+
+<span class="kd">public</span> <span class="nc">ParagraphResult</span> <span class="nf">queryParagraphResult</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span> <span class="nc">String</span> <span class="n">paragraphId</span><span class="o">)</span>
+
 <span class="kd">public</span> <span class="nc">ParagraphResult</span> <span class="nf">waitUtilParagraphFinish</span><span class="o">(</span><span class="nc">String</span> <span class="n">noteId</span><span class="o">,</span> <span class="nc">String</span> <span class="n">paragraphId</span><span class="o">)</span></code></pre></figure>
 
 <h2>Examples</h2>
@@ -393,7 +393,7 @@ run note/paragraph and etc.</p>
       </footer>
     </div>
 
-    
+
 
 
 
