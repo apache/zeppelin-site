@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Security"
-description: "This page explains what security characteristics can be expected from Zeppelin, what measures operators of a Zeppelin instance will have to take, and how to report any security issues found in the Zeppelin software."
+description: "This page explains what security characteristics can be expected from Apache Zeppelin, what measures operators of a Zeppelin instance will have to take, and how to report any security issues found in the Zeppelin software."
 group:
 ---
 <!--
@@ -22,7 +22,7 @@ limitations under the License.
 # Zeppelin Security
 
 This page explains what security characteristics can be expected from
-Zeppelin, what measures operators of a Zeppelin instance will have to
+Apache Zeppelin, what measures operators of a Zeppelin instance will have to
 take, and how to report any security issues found in the Zeppelin
 software.
 
@@ -41,6 +41,16 @@ shell and execute arbitrary commands with the privileges of the user
 running the Zeppelin server. As generic interpreters such as sh, Groovy,
 Java and Python make this especially trivial, we plan to disable the sh
 interpreter by default from version 0.11.1 onward.
+
+### JDBC Interpreter
+
+This is the component that we get the most Security reports about.
+Many JDBC drivers have support for specifying powerful query parameters in the
+JDBC URLs. Many of the driver jars have security issues that are fixed in newer
+versions. Zeppelin users should be very careful about which jars they add to their
+Zeppelin deployments. Always use the latest available jars and ensure that you
+set up Zeppelin on a secure network to stop malicious users gaining access to
+your deployment (see below).
 
 ### Zeppelin on Docker
 
