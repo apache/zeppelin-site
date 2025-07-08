@@ -184,6 +184,8 @@ Zeppelin deployments. Always use the latest available jars and ensure that you
 set up Zeppelin on a secure network to stop malicious users gaining access to
 your deployment (see below).</p>
 
+<p><strong>Note:</strong> The JDBC connection string (URL) can accept a variety of parameters, some of which may have significant security implications. In untrusted or shared environments, you must carefully review and monitor all parameters included in the JDBC URL. Certain parameters can enable features such as external network access, file access, or privilege escalation, which may introduce security risks. Always ensure that only safe and intended parameters are used, and regularly audit connection strings for suspicious or unnecessary options.</p>
+
 <h3>Zeppelin on Docker</h3>
 
 <p>An exception to the above is when the Zeppelin interpreter
