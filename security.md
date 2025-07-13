@@ -102,9 +102,15 @@ executables could potentially be altered for malicious purposes.
 To mitigate this risk, it's recommended to set the paths to trusted
 locations for these executables, such as PYTHON and SPARK_HOME.
 
-# Reporting security issues
+# Known Security Issues
 
-If you have found a potential security issue in Zeppelin,
+It is always best to use the latest Apache Zeppelin [release](https://zeppelin.apache.org/download.html).
+A good place to check for CVE announcments is the [Zeppelin users mailing list](https://lists.apache.org/list?users@zeppelin.apache.org).
+Many third party sites maintain lists of CVEs by product. One example is [OpenCVE](https://app.opencve.io/cve/?vendor=apache&product=zeppelin).
+
+# Reporting Security Issues
+
+If you have found a potential security issue in Apache Zeppelin,
 such as a way to bypass the Shiro authentication,
 we encourage you to report this problem at
 [security@zeppelin.apache.org](mailto:security@zeppelin.apache.org).
