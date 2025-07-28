@@ -57,15 +57,17 @@ your deployment (see below).
 ### Zeppelin on Docker
 
 When the Zeppelin interpreter is [run in a Docker container](https://zeppelin.apache.org/docs/latest/quickstart/docker.html),
-this isolates the operating environment of the interpreter through the docker container.
-We would still recommend that you restrict access to your Zeppelin instances regardless of how they are deployed.
+this isolates the operating environment of the interpreter through the Docker container.
+This isolation can provide an operational benefit on large deployments, but is not intended as a security boundary:
+access to your Zeppelin instances should be restricted regardless of how they are deployed.
 
 ### Zeppelin on Kubernetes
 
 When Zeppelin is [deployed on Kubernetes](https://zeppelin.apache.org/docs/latest/quickstart/kubernetes.html),
 Zeppelin creates pods for individual interpreters.
 Also, the Spark interpreter is auto configured to use Spark on Kubernetes in client mode.
-We would still recommend that you restrict access to your Zeppelin instances regardless of how they are deployed.
+This isolation can provide an operational benefit on large deployments, but is not intended as a security boundary:
+access to your Zeppelin instances should be restricted regardless of how they are deployed.
 
 ## JavaScript code execution in the browser
 
@@ -104,7 +106,7 @@ locations for these executables, such as PYTHON and SPARK_HOME.
 # Known Security Issues
 
 It is always best to use the latest Apache Zeppelin [release](https://zeppelin.apache.org/download.html).
-A good place to check for CVE announcments is the [Zeppelin users mailing list](https://lists.apache.org/list?users@zeppelin.apache.org).
+A good place to check for CVE announcements is the [Zeppelin users mailing list](https://lists.apache.org/list?users@zeppelin.apache.org).
 Many third party sites maintain lists of CVEs by product. One example is [OpenCVE](https://app.opencve.io/cve/?vendor=apache&product=zeppelin).
 
 # Reporting Security Issues
