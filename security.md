@@ -56,17 +56,16 @@ your deployment (see below).
 
 ### Zeppelin on Docker
 
-An exception to the above is when the Zeppelin interpreter
-is [run in a Docker container](https://zeppelin.apache.org/docs/latest/quickstart/docker.html).
-This isolates the operating environment of the interpreter through the docker container.
+When the Zeppelin interpreter is [run in a Docker container](https://zeppelin.apache.org/docs/latest/quickstart/docker.html),
+this isolates the operating environment of the interpreter through the docker container.
+We would still recommend that you restrict access to your Zeppelin instances regardless of how they are deployed.
 
 ### Zeppelin on Kubernetes
 
-A similar exception exists when Zeppelin is
-[deployed on Kubernetes](https://zeppelin.apache.org/docs/latest/quickstart/kubernetes.html).
-In this case Zeppelin creates pods for individual interpreters,
-and also the Spark interpreter is auto configured to use Spark
-on Kubernetes in client mode.
+When Zeppelin is [deployed on Kubernetes](https://zeppelin.apache.org/docs/latest/quickstart/kubernetes.html),
+Zeppelin creates pods for individual interpreters.
+Also, the Spark interpreter is auto configured to use Spark on Kubernetes in client mode.
+We would still recommend that you restrict access to your Zeppelin instances regardless of how they are deployed.
 
 ## JavaScript code execution in the browser
 
