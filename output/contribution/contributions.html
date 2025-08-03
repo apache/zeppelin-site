@@ -381,7 +381,7 @@ limitations under the License.
 
 <h1>Contribution Guidelines</h1>
 
-<p><strong>Apache Zeppelin</strong> is an <a href="https://github.com/apache/zeppelin/blob/master/CONTRIBUTING.md">Apache2 License</a> Software.</p>
+<p><strong>Apache Zeppelin</strong> is an <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a> Software.</p>
 
 <p>Contributing to Zeppelin (Source code, Documents, Image, Website) means you agree to the Apache2 License.</p>
 
@@ -488,19 +488,45 @@ Outline the steps to test the PR here.
 
 <p>Zeppelin project is based on Maven. Maven works by convention &amp; defines <a href="https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">directory structure</a> for a project.
 The top-level pom.xml describes the basic project structure. Currently Zeppelin has the following modules.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;module&gt;zeppelin-interpreter&lt;/module&gt;
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;module&gt;build-tools&lt;/module&gt;
+&lt;module&gt;zeppelin-interpreter-parent&lt;/module&gt;
+&lt;module&gt;zeppelin-interpreter&lt;/module&gt;
+&lt;module&gt;zeppelin-interpreter-shaded&lt;/module&gt;
 &lt;module&gt;zeppelin-zengine&lt;/module&gt;
+&lt;module&gt;rlang&lt;/module&gt;
+&lt;module&gt;zeppelin-jupyter-interpreter&lt;/module&gt;
+&lt;module&gt;zeppelin-jupyter-interpreter-shaded&lt;/module&gt;
+&lt;module&gt;groovy&lt;/module&gt;
 &lt;module&gt;spark&lt;/module&gt;
+&lt;module&gt;spark-submit&lt;/module&gt;
 &lt;module&gt;markdown&lt;/module&gt;
+&lt;module&gt;mongodb&lt;/module&gt;
 &lt;module&gt;angular&lt;/module&gt;
 &lt;module&gt;shell&lt;/module&gt;
+&lt;module&gt;livy&lt;/module&gt;
+&lt;module&gt;hbase&lt;/module&gt;
+&lt;module&gt;jdbc&lt;/module&gt;
+&lt;module&gt;file&lt;/module&gt;
 &lt;module&gt;flink&lt;/module&gt;
-&lt;module&gt;ignite&lt;/module&gt;
-&lt;module&gt;lens&lt;/module&gt;
+&lt;module&gt;flink-cmd&lt;/module&gt;
+&lt;module&gt;influxdb&lt;/module&gt;
+&lt;module&gt;python&lt;/module&gt;
 &lt;module&gt;cassandra&lt;/module&gt;
-&lt;module&gt;zeppelin-web&lt;/module&gt;
+&lt;module&gt;elasticsearch&lt;/module&gt;
+&lt;module&gt;bigquery&lt;/module&gt;
+&lt;module&gt;alluxio&lt;/module&gt;
+&lt;module&gt;neo4j&lt;/module&gt;
+&lt;module&gt;java&lt;/module&gt;
+&lt;module&gt;sparql&lt;/module&gt;
+&lt;module&gt;zeppelin-common&lt;/module&gt;
+&lt;module&gt;zeppelin-client&lt;/module&gt;
+&lt;module&gt;zeppelin-client-examples&lt;/module&gt;
+&lt;module&gt;zeppelin-web-angular&lt;/module&gt;
 &lt;module&gt;zeppelin-server&lt;/module&gt;
+&lt;module&gt;zeppelin-jupyter&lt;/module&gt;
+&lt;module&gt;zeppelin-plugins&lt;/module&gt;
 &lt;module&gt;zeppelin-distribution&lt;/module&gt;
+&lt;module&gt;zeppelin-test&lt;/module&gt;
 </code></pre></figure>
 <h3>Code convention</h3>
 
@@ -511,7 +537,7 @@ The top-level pom.xml describes the basic project structure. Currently Zeppelin 
 <li><a href="https://google.github.io/styleguide/shell.xml">Shell style</a></li>
 </ul>
 
-<p>There are some plugins to format, lint your code in IDE (use <a href="https://github.com/apache/zeppelin/tree/master/_tools">_tools/checkstyle.xml</a> as rules)</p>
+<p>There are some plugins to format, lint your code in IDE (use <a href="https://github.com/apache/zeppelin/blob/master/build-tools/src/main/resources/zeppelin/checkstyle.xml">checkstyle.xml</a> as rules)</p>
 
 <ul>
 <li><a href="https://plugins.jetbrains.com/plugin/1065">Checkstyle plugin for Intellij</a> (<a href="http://stackoverflow.com/questions/26955766/intellij-idea-checkstyle">Setting Guide</a>)</li>
@@ -549,7 +575,7 @@ Test coverage report location is in <code>${submodule}/target/site/cobertura/ind
 <p>To build the code, install</p>
 
 <ul>
-<li>Oracle Java 7</li>
+<li>Java 11 (JDK 11)</li>
 <li>Apache Maven</li>
 </ul>
 
