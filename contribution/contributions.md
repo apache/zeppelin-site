@@ -21,7 +21,7 @@ limitations under the License.
 
 # Contribution Guidelines
 
-**Apache Zeppelin** is an [Apache2 License](https://github.com/apache/zeppelin/blob/master/CONTRIBUTING.md) Software.
+**Apache Zeppelin** is an [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0) Software.
 
 Contributing to Zeppelin (Source code, Documents, Image, Website) means you agree to the Apache2 License.
 
@@ -127,19 +127,45 @@ You are free to use whatever IDE you prefer, or your favorite command line edito
 Zeppelin project is based on Maven. Maven works by convention & defines [directory structure] (https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html) for a project.
 The top-level pom.xml describes the basic project structure. Currently Zeppelin has the following modules.
 
+    <module>build-tools</module>
+    <module>zeppelin-interpreter-parent</module>
     <module>zeppelin-interpreter</module>
+    <module>zeppelin-interpreter-shaded</module>
     <module>zeppelin-zengine</module>
+    <module>rlang</module>
+    <module>zeppelin-jupyter-interpreter</module>
+    <module>zeppelin-jupyter-interpreter-shaded</module>
+    <module>groovy</module>
     <module>spark</module>
+    <module>spark-submit</module>
     <module>markdown</module>
+    <module>mongodb</module>
     <module>angular</module>
     <module>shell</module>
+    <module>livy</module>
+    <module>hbase</module>
+    <module>jdbc</module>
+    <module>file</module>
     <module>flink</module>
-    <module>ignite</module>
-    <module>lens</module>
+    <module>flink-cmd</module>
+    <module>influxdb</module>
+    <module>python</module>
     <module>cassandra</module>
-    <module>zeppelin-web</module>
+    <module>elasticsearch</module>
+    <module>bigquery</module>
+    <module>alluxio</module>
+    <module>neo4j</module>
+    <module>java</module>
+    <module>sparql</module>
+    <module>zeppelin-common</module>
+    <module>zeppelin-client</module>
+    <module>zeppelin-client-examples</module>
+    <module>zeppelin-web-angular</module>
     <module>zeppelin-server</module>
+    <module>zeppelin-jupyter</module>
+    <module>zeppelin-plugins</module>
     <module>zeppelin-distribution</module>
+    <module>zeppelin-test</module>
 
 ### Code convention
 We are following Google Code style:
@@ -147,7 +173,7 @@ We are following Google Code style:
 * [Java style](https://google.github.io/styleguide/javaguide.html)
 * [Shell style](https://google.github.io/styleguide/shell.xml)
 
-There are some plugins to format, lint your code in IDE (use [_tools/checkstyle.xml](https://github.com/apache/zeppelin/tree/master/_tools) as rules)
+There are some plugins to format, lint your code in IDE (use [checkstyle.xml](https://github.com/apache/zeppelin/blob/master/build-tools/src/main/resources/zeppelin/checkstyle.xml) as rules)
 
 * [Checkstyle plugin for Intellij](https://plugins.jetbrains.com/plugin/1065) ([Setting Guide](http://stackoverflow.com/questions/26955766/intellij-idea-checkstyle))
 * [Checkstyle plugin for Eclipse](http://eclipse-cs.sourceforge.net/#!/) ([Setting Guide](http://eclipse-cs.sourceforge.net/#!/project-setup))
@@ -191,7 +217,7 @@ If you want not only build Zeppelin but also make change, then you need fork [Ze
 
 To build the code, install
 
- * Oracle Java 7
+ * Java 11 (JDK 11)
  * Apache Maven
 
 ### Building the code
