@@ -188,17 +188,18 @@ your deployment (see below).</p>
 
 <h3>Zeppelin on Docker</h3>
 
-<p>An exception to the above is when the Zeppelin interpreter
-is <a href="https://zeppelin.apache.org/docs/latest/quickstart/docker.html">run in a Docker container</a>.
-This isolates the operating environment of the interpreter through the docker container.</p>
+<p>When the Zeppelin interpreter is <a href="https://zeppelin.apache.org/docs/latest/quickstart/docker.html">run in a Docker container</a>,
+this isolates the operating environment of the interpreter through the Docker container.
+This isolation can provide an operational benefit on large deployments, but is not intended as a security boundary:
+access to your Zeppelin instances should be restricted regardless of how they are deployed.</p>
 
 <h3>Zeppelin on Kubernetes</h3>
 
-<p>A similar exception exists when Zeppelin is
-<a href="https://zeppelin.apache.org/docs/latest/quickstart/kubernetes.html">deployed on Kubernetes</a>.
-In this case Zeppelin creates pods for individual interpreters,
-and also the Spark interpreter is auto configured to use Spark
-on Kubernetes in client mode.</p>
+<p>When Zeppelin is <a href="https://zeppelin.apache.org/docs/latest/quickstart/kubernetes.html">deployed on Kubernetes</a>,
+Zeppelin creates pods for individual interpreters.
+Also, the Spark interpreter is auto configured to use Spark on Kubernetes in client mode.
+This isolation can provide an operational benefit on large deployments, but is not intended as a security boundary:
+access to your Zeppelin instances should be restricted regardless of how they are deployed.</p>
 
 <h2>JavaScript code execution in the browser</h2>
 
@@ -237,7 +238,7 @@ locations for these executables, such as PYTHON and SPARK_HOME.</p>
 <h1>Known Security Issues</h1>
 
 <p>It is always best to use the latest Apache Zeppelin <a href="https://zeppelin.apache.org/download.html">release</a>.
-A good place to check for CVE announcments is the <a href="https://lists.apache.org/list?users@zeppelin.apache.org">Zeppelin users mailing list</a>.
+A good place to check for CVE announcements is the <a href="https://lists.apache.org/list?users@zeppelin.apache.org">Zeppelin users mailing list</a>.
 Many third party sites maintain lists of CVEs by product. One example is <a href="https://app.opencve.io/cve/?vendor=apache&product=zeppelin">OpenCVE</a>.</p>
 
 <h1>Reporting Security Issues</h1>
