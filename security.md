@@ -91,8 +91,7 @@ Non-authenticated users cannot view, store or execute notes, so they
 cannot execute code on the server or on other users' browsers.
 Authenticated users, however, have the same access as described above,
 so even when using authentication it is still important to only give
-trusted users access to Zeppelin. Specifically, unless Docker or K8s
-isolation has been configured as mentioned above, users technically
+trusted users access to Zeppelin. Specifically, users technically
 have access to all notes by other users.
 
 ## Executable verification
