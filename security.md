@@ -73,7 +73,7 @@ access to your Zeppelin instances should be restricted regardless of how they ar
 
 If you want to allow access to a Zeppelin server across a network, you should
 consider what files and other OS and network resources that the OS user used to run
-the server has access to. Zeppelin users may be able to access these.
+the server has access to. Zeppelin users will be able to access these.
 Using a Docker container or equivalent might be one way to limit what is accessible.
 Alternatively, you could look at setting the permissions for the OS user used for
 running the Zeppelin server process.
