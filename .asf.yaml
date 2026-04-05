@@ -1,5 +1,8 @@
 github:
   homepage: https://zeppelin.apache.org
+  labels:
+    - website
+    - jekyll
 
 notifications:
   commits: commits@zeppelin.apache.org
