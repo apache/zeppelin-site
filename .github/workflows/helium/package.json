@@ -23,7 +23,7 @@
     "prttty": "^0.9.1",
     "silent-npm-registry-client": "^3.0.1",
     "stream": "^0.0.3",
-    "underscore": "^1.13.6",
+    "underscore": "^1.13.8",
     "xml2js": "^0.6.2"
   }
 }
