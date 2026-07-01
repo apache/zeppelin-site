@@ -69,6 +69,15 @@ Also, the Spark interpreter is auto configured to use Spark on Kubernetes in cli
 This isolation can provide an operational benefit on large deployments, but is not intended as a security boundary:
 access to your Zeppelin instances should be restricted regardless of how they are deployed.
 
+### Deployment
+
+If you want to allow access to a Zeppelin server across a network, you should
+consider what files and other OS and network resources that the OS user used to run
+the server has access to. Zeppelin users will be able to access these.
+Using a Docker container or equivalent might be one way to limit what is accessible.
+Alternatively, you could look at setting the permissions for the OS user used for
+running the Zeppelin server process.
+
 ## JavaScript code execution in the browser
 
 Zeppelin allows notes to produce rich output, including HTML and even

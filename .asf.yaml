@@ -1,6 +1,22 @@
 github:
   homepage: https://zeppelin.apache.org
+  labels:
+    - website
+    - jekyll
 
+  rulesets:
+    - name: "Default Branch Protection"
+      type: branch
+      branches:
+        includes:
+          - "~DEFAULT_BRANCH"
+          - "release/*"
+          - "rel/*"
+        excludes: []
+      bypass_teams:
+        - root
+      restrict_deletion: true
+      restrict_force_push: true
 notifications:
   commits: commits@zeppelin.apache.org
   issues: reviews@zeppelin.apache.org
@@ -12,7 +28,7 @@ jekyll:
   target: asf-staging
 
 staging:
-  profile: ~
+  profile:
   whoami: asf-staging
 
 publish:
