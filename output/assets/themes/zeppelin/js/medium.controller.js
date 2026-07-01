@@ -1,7 +1,9 @@
 angular.module("app").controller("MediumCtrl", function($scope, $window, $sce) {
-  $scope.mediumPost = mediumPost
+  $scope.mediumPost = $window.mediumPost || []
 
-  var postInfo = $scope.mediumPost[0].items
+  var postInfo = $scope.mediumPost.length && $scope.mediumPost[0].items
+    ? $scope.mediumPost[0].items
+    : []
   var postInfoArray = []
 
   var init = function () {
