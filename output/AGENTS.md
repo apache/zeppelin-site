@@ -76,6 +76,11 @@ Be extra careful with `asf-site` and `asf-staging`. The user cares about proof o
   git ls-remote origin refs/heads/asf-site refs/heads/asf-staging
   ```
 - In the final response, include the exact pushed refspec or push output and the final `git ls-remote` result, so it is clear that `asf-site` moved and `asf-staging` did not.
+- After the manual `Promote ASF staging to site` GitHub Actions workflow is available on `master`, it can be used to promote an already-verified staged site instead of doing the local reset by hand:
+  ```bash
+  gh workflow run promote-asf-staging.yml --repo apache/zeppelin-site --ref master -f confirm=promote
+  ```
+- Use that workflow only after confirming `https://zeppelin.staged.apache.org` has the intended content. It fetches `asf-site` and `asf-staging`, pushes with `--force-with-lease`, and verifies both remote refs.
 
 ## Commit Hygiene
 
