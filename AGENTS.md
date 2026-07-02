@@ -84,3 +84,5 @@ Be extra careful with `asf-site` and `asf-staging`. The user cares about proof o
 - Preserve ASF license headers.
 - Avoid editing generated search indexes, minified assets, or large historical snapshots unless they are the target.
 - For user-facing site edits, run `./zeppelin-site.sh --build-dist` when Docker is available and report whether verification passed.
+- PR titles must not have a `codex` prefix. Use a normal project-facing title that describes the change.
+- A `codex/` prefix is acceptable for temporary branch names only when the user did not request a specific branch name.
