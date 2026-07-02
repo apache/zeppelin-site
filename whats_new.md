@@ -16,31 +16,31 @@ limitations under the License.
 <div class="new">
   <div class="container">
     <h2>What's new in</h2>
-    <span class="newZeppelin center-block">Apache Zeppelin 0.11</span>
+    <span class="newZeppelin center-block">Apache Zeppelin 0.12.1</span>
     <div class="border row">
       <div class="border col-md-4 col-sm-4">
-        <h4>Java 11</h4>
+        <h4>Security Fixes</h4>
         <div>
           <p>
-            Zeppelin 0.11 is built with Java 11. It's recommended to use Java 11 or later to run Zeppelin.
+            Zeppelin 0.12.1 includes several security fixes, including JWT validation, path traversal hardening, and a WebSocket memory leak fix.
           </p>
         </div>
       </div>
 
       <div class="border col-md-4 col-sm-4">
-        <h4>Spark and Flink</h4>
+        <h4>Frontend Upgrades</h4>
         <div>
           <p>
-             The latest version of Apache Spark and Apache Flink are supported. You can use the latest features and improvements in Spark and Flink. 
+            Angular 12 and Webpack 5 upgrades improve the web UI foundation, with strict template mode enabled.
          </p>
         </div>
       </div>
 
       <div class="border col-md-4 col-sm-4">
-        <h4>Python 3</h4>
+        <h4>Stability Improvements</h4>
         <div>
             <p>
-                Python 3.9 is the default version of Python interpreter. 
+              Spark, Flink, Python, Neo4j, and File interpreters received stability improvements, along with CI and E2E testing updates.
             </p>
         </div>
       </div>
@@ -78,7 +78,7 @@ limitations under the License.
 
     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
       <p style="text-align:center; margin-top: 32px; font-size: 14px; color: gray; font-weight: 200; font-style: italic; padding-bottom: 0;">See more details in 
-        <a href="./releases/zeppelin-release-0.11.2.html">0.11.2 Release Note</a>
+        <a href="./releases/zeppelin-release-0.12.1.html">0.12.1 Release Note</a>
       </p>
     </div>
 
