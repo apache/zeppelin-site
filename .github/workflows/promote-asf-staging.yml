@@ -1,0 +1,119 @@
+name: Promote ASF staging to site
+
+run-name: Promote asf-staging to asf-site by @${{ github.actor }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: Type "promote" to reset asf-site to asf-staging.
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: promote-asf-site
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    name: Promote asf-staging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Guard manual promotion
+        env:
+          CONFIRM: ${{ inputs.confirm }}
+          REF_NAME: ${{ github.ref_name }}
+          REPOSITORY: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ "$REPOSITORY" != "apache/zeppelin-site" ]; then
+            echo "This workflow can only promote apache/zeppelin-site." >&2
+            exit 1
+          fi
+
+          if [ "$REF_NAME" != "master" ]; then
+            echo "Run this workflow from the master branch." >&2
+            exit 1
+          fi
+
+          if [ "$CONFIRM" != "promote" ]; then
+            echo 'Type "promote" in the confirm input to run this workflow.' >&2
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch ASF site branches
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git fetch --prune origin \
+            refs/heads/asf-site:refs/remotes/origin/asf-site \
+            refs/heads/asf-staging:refs/remotes/origin/asf-staging
+
+          site_sha="$(git rev-parse origin/asf-site)"
+          staging_sha="$(git rev-parse origin/asf-staging)"
+          ahead_behind="$(git rev-list --left-right --count origin/asf-site...origin/asf-staging)"
+
+          {
+            echo "### Current refs"
+            echo
+            echo "- asf-site: \`$site_sha\`"
+            echo "- asf-staging: \`$staging_sha\`"
+            echo "- ahead/behind: \`$ahead_behind\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Promote asf-staging to asf-site
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          old_site="$(git rev-parse origin/asf-site)"
+          staging_sha="$(git rev-parse origin/asf-staging)"
+
+          if [ "$old_site" = "$staging_sha" ]; then
+            echo "asf-site is already aligned with asf-staging."
+            exit 0
+          fi
+
+          git switch -C asf-site origin/asf-site
+          git reset --hard "$staging_sha"
+          git push --force-with-lease=refs/heads/asf-site:"$old_site" origin HEAD:refs/heads/asf-site
+
+      - name: Verify promoted refs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git ls-remote origin refs/heads/asf-site refs/heads/asf-staging | tee /tmp/asf-site-refs
+
+          site_remote="$(awk '$2 == "refs/heads/asf-site" { print $1 }' /tmp/asf-site-refs)"
+          staging_remote="$(awk '$2 == "refs/heads/asf-staging" { print $1 }' /tmp/asf-site-refs)"
+
+          if [ -z "$site_remote" ] || [ -z "$staging_remote" ]; then
+            echo "Unable to read both asf-site and asf-staging refs." >&2
+            exit 1
+          fi
+
+          if [ "$site_remote" != "$staging_remote" ]; then
+            echo "asf-site and asf-staging are not aligned after promotion." >&2
+            exit 1
+          fi
+
+          {
+            echo
+            echo "### Verified refs"
+            echo
+            echo "- asf-site: \`$site_remote\`"
+            echo "- asf-staging: \`$staging_remote\`"
+          } >> "$GITHUB_STEP_SUMMARY"
