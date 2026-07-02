@@ -59,7 +59,7 @@ ASF Infra builds `master` to the `asf-staging` branch according to `.asf.yaml`.
 After checking [https://zeppelin.staged.apache.org](https://zeppelin.staged.apache.org),
 committers with write access can manually promote the staged site to production:
 
-1. Open the `Promote ASF staging to site` workflow in GitHub Actions.
+1. Open the [`Promote ASF staging to site`](https://github.com/apache/zeppelin-site/actions/workflows/promote-asf-staging.yml) workflow in GitHub Actions.
 2. Click `Run workflow` on the `master` branch.
 3. Type `promote` in the `confirm` input.
 4. Run the workflow.
