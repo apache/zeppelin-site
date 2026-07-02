@@ -16,7 +16,7 @@ Guidance for coding agents working in this checkout of `apache/zeppelin-site`.
 - Start all work from the latest `origin/master`. Fetch it before editing:
   ```bash
   git fetch origin master
-  git switch master
+  git switch master || git switch --track origin/master
   git pull --ff-only origin master
   ```
 - If uncommitted work prevents switching to `master`, stop and ask before moving, stashing, or resetting anything.
@@ -43,8 +43,7 @@ Guidance for coding agents working in this checkout of `apache/zeppelin-site`.
 - `zeppelin-site.sh` removes `_site/` before serving or building.
 - If dependency troubleshooting is needed, use the repo's Docker path:
   ```bash
-  docker run --rm -it -v "$(pwd):/app" zeppelin-site-dev:latest /bin/bash
-  bundle install
+  docker run --rm -it -v "$(pwd):/app" -w /app zeppelin-site-dev:latest /bin/bash -lc "bundle install"
   ```
 
 ## Branch Synchronization Rules
@@ -59,8 +58,7 @@ Be extra careful with `asf-site` and `asf-staging`. The user cares about proof o
   ```bash
   git status --short --branch
   git remote -v
-  git rev-parse asf-site origin/asf-site origin/asf-staging
-  git log --oneline -1 asf-site
+  git rev-parse origin/asf-site origin/asf-staging
   git log --oneline -1 origin/asf-site
   git log --oneline -1 origin/asf-staging
   ```
