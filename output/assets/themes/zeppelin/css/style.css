@@ -836,8 +836,10 @@ a.anchorjs-link:hover { text-decoration: none; }
 
 /* For Medium Blog post */
 .blog {
-  background: #fff;
+  background: rgba(226, 233, 239, 0.4);
+  padding-top: 30px;
   padding-bottom: 28px;
+  margin-bottom: 40px;
 }
 
 .blog .container {

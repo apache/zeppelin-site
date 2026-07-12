@@ -51,5 +51,4 @@ limitations under the License.
       </div>
     </div>
   </div>
-  <hr>
 </div>
