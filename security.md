@@ -26,6 +26,11 @@ Apache Zeppelin, what measures operators of a Zeppelin instance will have to
 take, and how to report any security issues found in the Zeppelin
 software.
 
+The project's
+[security threat model](https://github.com/apache/zeppelin/blob/master/THREAT_MODEL.md)
+defines the security boundaries used when evaluating potential
+vulnerabilities. This page provides deployment guidance for operators.
+
 ## Code execution on the server
 
 It is the nature of the Zeppelin software that it allows
@@ -36,11 +41,12 @@ available to trusted users, and the server on which Zeppelin is
 installed does not contain any secrets or have privileges beyond
 those the users are trusted with.
 
-All interpreters should be assumed to be able to access the local 
-shell and execute arbitrary commands with the privileges of the user
-running the Zeppelin server. As generic interpreters such as sh, Groovy,
-Java and Python make this especially trivial, we plan to disable the sh
-interpreter by default from version 0.11.1 onward.
+All interpreters should be assumed to be able to access the local shell and
+execute arbitrary commands with the privileges of the interpreter process's
+OS identity. By default, when interpreter user impersonation is disabled,
+interpreter processes run as the same OS user as the Zeppelin server. Generic
+interpreters such as sh, Groovy, Java and Python make this access especially
+direct.
 
 ### JDBC Interpreter
 
@@ -96,12 +102,19 @@ to other services on the same domain.
 If you expose your Zeppelin instance on a network you don't fully trust,
 you should configure [Apache Shiro authentication](https://zeppelin.apache.org/docs/latest/setup/security/shiro_authentication.html).
 
-Non-authenticated users cannot view, store or execute notes, so they
-cannot execute code on the server or on other users' browsers.
-Authenticated users, however, have the same access as described above,
-so even when using authentication it is still important to only give
-trusted users access to Zeppelin. Specifically, users technically
-have access to all notes by other users.
+With Shiro authentication configured, unauthenticated users cannot view, store
+or execute notes, so they cannot execute code on the server or on other users'
+browsers. Authenticated users remain subject to each note's
+[configured owner, reader, writer and runner permissions](https://zeppelin.apache.org/docs/latest/setup/security/notebook_authorization.html)
+for operations through Zeppelin's UI, REST APIs and WebSocket APIs.
+
+These note permissions are application-level access controls, not an OS or
+interpreter sandbox. A user who is allowed to run interpreter code can access
+resources available to the interpreter's OS identity, potentially including
+notebook storage and other users' data. Only grant run access to users trusted
+with those resources. When per-user OS identity separation is required, enable
+[interpreter user impersonation](https://zeppelin.apache.org/docs/latest/usage/interpreter/user_impersonation.html)
+and apply filesystem and backend access controls.
 
 ## Executable verification
 
